@@ -31,6 +31,10 @@
           {{ end }}
         </header>
 
+        <div id="tab-of-content-area">
+          {{ .TableOfContents }}
+        </div>
+
         <div class="post-content markdown-html">
           {{ .Site.Params.postHeaderContent | safeHTML }}
           {{ .Content }}

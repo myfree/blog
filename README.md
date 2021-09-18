@@ -24,10 +24,39 @@ hugo server
 hugo -D
 ```
 
-### 需要注意的说明协议
+### 升级
 
-本仓库并不是一个开源项目，下载仓库代码及使用后果概不负责。
+在原主题的基础我进行了升级，增加了一些新的更方便的功能，比如重写代码高亮，代码复制粘贴，文章目录等。
+
+1. 文章目录
+
+默认为下列代码，如果需要调整需要在 `config.toml` 配置文件中进行修改。
+
+```shell
+[markup]
+  [markup.tableOfContents] 
+    endLevel = 3      #3级标题以后不建立索引
+    ordered = false   #是否采用有序列表
+    startLevel = 2    #2级标题开始建立索引
+```
+
+2. 第三方评论
+
+本博客内置的是 Cusdis 评论，请到 [官网](https://cusdis.com/dashboard/project/c1d43485-e8a7-4895-972e-247eddaf242d) 注册并获取 id。
+
+如果遇到问题请参考文章 [hugo 如何使用 Cusdis ?](http://shuxhan.com/post/2021-09-16-hugo-use-cusdis/) 
+
+请将 id 填写在 `config.toml` 中。
+
+```shell
+[params]
+  CusdisId = "xxxxx"
+```
+
+### 额外的一些说明协议
+
+本仓库并不是一个真正意义上的开源项目，下载仓库代码及使用后果概不负责。
 
 本仓库文章版权均归作者所有，具有最终解释权。
 
-禁止商用等，仅限于学习，正常使用等，传播时注意带 README.md 说明文档。
+禁止商用等，仅限于学习，个人使用等，传播时注意带 README.md 说明文档。
