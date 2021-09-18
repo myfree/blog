@@ -1,7 +1,7 @@
 baseURL = "https://shuxhan.com/"
 languageCode = "zh-cn"
 title = "求索日记"
-theme = "yinyang"
+theme = "nov"
 
 [markup]
   [markup.goldmark]
@@ -27,6 +27,7 @@ theme = "yinyang"
 mainSections = ["post"]
 headTitle = "Nov8nana"
 Description = "路漫漫其修远兮，吾将上下而求索！"
+CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d"
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
 favicon = 'https://img.shuxhan.com/favicon.png'
 
