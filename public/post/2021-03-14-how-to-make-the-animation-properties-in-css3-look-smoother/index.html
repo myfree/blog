@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/post/2021-03-14-how-to-make-the-animation-properties-in-css3-look-smoother/" />
+  <link rel="canonical" href="https://shuxhan.com/post/2021-03-14-how-to-make-the-animation-properties-in-css3-look-smoother/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.comindex.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com"
+      },
+      "articleSection" : "post",
+      "name" : "怎么让 css3 里面的动画属性看起来更流畅？",
+      "headline" : "怎么让 css3 里面的动画属性看起来更流畅？",
+      "description" : "ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。\n今天要讲的是 css3 的一个新属性 animation，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：https:\/\/www.runoob.com\/css3\/css3-animations.html，网上类似的教程还是蛮多的。\n这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：怎么让 css3 里面的动画属性看起来更流畅？\n当然在讲之前还是要简单介绍一下 animation 基本属性。\nanimation 属性 animation 属性有下面几个值：\n @keyframes | 动画本身（最重要的） animation-name | 动画的名称 animation-duration | 动画所经历的时间 animation-fill-mode | 当属性为 forwards 时，动画停留在最后一帧  动画主要可以用于一些官网特效，或者自适应的布局。\n如何写一个最基本的动画 动画就是由一个状态到另一个状态的过程，比如从左到右的一个移动过程。\n首先要先了解各个属性具体的作用是什么，就拿从白到黑举个例子吧，首先写一个 @keyframes 的动画过程。\n@keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } 这段代码的意思就是有一个名为 leftright 的动画，将容器从左到右移动了 100px。\n然后我们进一步补全这个动画。\n\u0026lt;!DOCTYPE html\u0026gt; \u0026lt;html\u0026gt; \u0026lt;head\u0026gt; \u0026lt;title\u0026gt;动画\u0026lt;\/title\u0026gt; \u0026lt;style\u0026gt; .demo { width: 100px; height: 100px; background: #000; animation-name: leftright; animation-duration: 1s; } @keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } \u0026lt;\/style\u0026gt; \u0026lt;\/head\u0026gt; \u0026lt;body\u0026gt; \u0026lt;div class=\u0026#34;demo\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;\/body\u0026gt; \u0026lt;\/html\u0026gt; 然后我们到浏览器跑一下这个页面试试看，可以看到一个黑色的方块从左右移动了 100px 的距离，总计1秒完成。",
+      "inLanguage" : "en-US",
+      "author" : "Nov8nana",
+      "creator" : "Nov8nana",
+      "publisher": "Nov8nana",
+      "accountablePerson" : "Nov8nana",
+      "copyrightHolder" : "Nov8nana",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-03-14 07:31:00 \u002b0000 UTC",
+      "dateModified" : "2021-03-14 07:31:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/post\/2021-03-14-how-to-make-the-animation-properties-in-css3-look-smoother\/",
+      "keywords" : [ "css", ]
+  }
+</script>
+<title>怎么让 css3 里面的动画属性看起来更流畅？</title>
+  <meta property="og:title" content="怎么让 css3 里面的动画属性看起来更流畅？" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。
+今天要讲的是 css3 的一个新属性 animation，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：https://www.runoob.com/css3/css3-animations.html，网上类似的教程还是蛮多的。
+这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：怎么让 css3 里面的动画属性看起来更流畅？
+当然在讲之前还是要简单介绍一下 animation 基本属性。
+animation 属性 animation 属性有下面几个值：
+ @keyframes | 动画本身（最重要的） animation-name | 动画的名称 animation-duration | 动画所经历的时间 animation-fill-mode | 当属性为 forwards 时，动画停留在最后一帧  动画主要可以用于一些官网特效，或者自适应的布局。
+如何写一个最基本的动画 动画就是由一个状态到另一个状态的过程，比如从左到右的一个移动过程。
+首先要先了解各个属性具体的作用是什么，就拿从白到黑举个例子吧，首先写一个 @keyframes 的动画过程。
+@keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } 这段代码的意思就是有一个名为 leftright 的动画，将容器从左到右移动了 100px。
+然后我们进一步补全这个动画。
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;动画&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .demo { width: 100px; height: 100px; background: #000; animation-name: leftright; animation-duration: 1s; } @keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;#34;demo&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 然后我们到浏览器跑一下这个页面试试看，可以看到一个黑色的方块从左右移动了 100px 的距离，总计1秒完成。" />
+  <meta name="description" content="ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。
+今天要讲的是 css3 的一个新属性 animation，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：https://www.runoob.com/css3/css3-animations.html，网上类似的教程还是蛮多的。
+这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：怎么让 css3 里面的动画属性看起来更流畅？
+当然在讲之前还是要简单介绍一下 animation 基本属性。
+animation 属性 animation 属性有下面几个值：
+ @keyframes | 动画本身（最重要的） animation-name | 动画的名称 animation-duration | 动画所经历的时间 animation-fill-mode | 当属性为 forwards 时，动画停留在最后一帧  动画主要可以用于一些官网特效，或者自适应的布局。
+如何写一个最基本的动画 动画就是由一个状态到另一个状态的过程，比如从左到右的一个移动过程。
+首先要先了解各个属性具体的作用是什么，就拿从白到黑举个例子吧，首先写一个 @keyframes 的动画过程。
+@keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } 这段代码的意思就是有一个名为 leftright 的动画，将容器从左到右移动了 100px。
+然后我们进一步补全这个动画。
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;动画&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .demo { width: 100px; height: 100px; background: #000; animation-name: leftright; animation-duration: 1s; } @keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;#34;demo&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 然后我们到浏览器跑一下这个页面试试看，可以看到一个黑色的方块从左右移动了 100px 的距离，总计1秒完成。" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{width:2px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#001029}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:rgba(255,255,255,.6)}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{font-family:bree serif,sans-serif;-webkit-font-smoothing:antialiased;margin:0 20px}article{max-width:800px;margin-left:auto;margin-right:auto}a{color:#000;text-decoration:none}a:hover{font-weight:600;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:#282a36}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:700;margin-top:32px;font-family:bungee shade,sans-serif}.header-title a{text-decoration:none}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.2rem;margin:12px 0}.posts-categories{font-size:.8rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}.site-footer-item{margin-right:12px}.post-content img{max-width:100%;display:block;margin-right:auto;margin-top:12px}.post-header{margin-bottom:50px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content img{box-shadow:1px 3px 11px #e3e3e3}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-bottom:50px;margin-top:50px}.related-content li{margin:5px 0}.gallery-img{text-align:center}.gallery-img span{text-align:center}.gallery-img-desc{font-size:.8em;font-weight:800}#disqus_thread{position:relative}#disqus_thread:after{content:"";display:block;height:55px;width:100%;position:absolute;bottom:0;background:#fff}@media screen and (max-width:600px){.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8516e418a4e3ac3474b3c13bdb4687e7";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">怎么让 css3 里面的动画属性看起来更流畅？</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-03-14 07:31:00 UTC">
+                2021.03.14
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-html">
+          
+          <p>ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。</p>
+<p>今天要讲的是 css3 的一个新属性 <code>animation</code>，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：<a href="https://www.runoob.com/css3/css3-animations.html">https://www.runoob.com/css3/css3-animations.html</a>，网上类似的教程还是蛮多的。</p>
+<p>这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：<strong>怎么让 css3 里面的动画属性看起来更流畅？</strong></p>
+<p>当然在讲之前还是要简单介绍一下 animation 基本属性。</p>
+<h3 id="animation-属性">animation 属性</h3>
+<p>animation 属性有下面几个值：</p>
+<ol>
+<li>@keyframes | 动画本身（最重要的）</li>
+<li>animation-name | 动画的名称</li>
+<li>animation-duration | 动画所经历的时间</li>
+<li>animation-fill-mode | 当属性为 forwards 时，动画停留在最后一帧</li>
+</ol>
+<p>动画主要可以用于一些官网特效，或者自适应的布局。</p>
+<h3 id="如何写一个最基本的动画">如何写一个最基本的动画</h3>
+<p>动画就是由一个状态到另一个状态的过程，比如从左到右的一个移动过程。</p>
+<p>首先要先了解各个属性具体的作用是什么，就拿从白到黑举个例子吧，首先写一个 <code>@keyframes</code> 的动画过程。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#ff79c6">keyframes</span> <span style="color:#ff79c6">leftright</span> {
+    <span style="color:#ff79c6">0</span><span style="color:#ff79c6">%</span> {
+        <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">0</span>);
+    }
+    <span style="color:#ff79c6">100</span><span style="color:#ff79c6">%</span> {
+        <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>);
+    }
+}
+</code></pre></div><p>这段代码的意思就是有一个名为 <code>leftright</code> 的动画，将容器从左到右移动了 100px。</p>
+<p>然后我们进一步补全这个动画。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#ff79c6">html</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+    &lt;<span style="color:#ff79c6">title</span>&gt;动画&lt;/<span style="color:#ff79c6">title</span>&gt;
+    &lt;<span style="color:#ff79c6">style</span>&gt;
+        .<span style="color:#50fa7b">demo</span> {
+            <span style="color:#ff79c6">width</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+            <span style="color:#ff79c6">height</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+            <span style="color:#ff79c6">background</span>: <span style="color:#bd93f9">#000</span>;
+            <span style="color:#ff79c6">animation-name</span>: leftright;
+            <span style="color:#ff79c6">animation-duration</span>: <span style="color:#bd93f9">1</span><span style="color:#8be9fd">s</span>;
+        }
+
+        @<span style="color:#ff79c6">keyframes</span> <span style="color:#ff79c6">leftright</span> {
+            <span style="color:#ff79c6">0</span><span style="color:#ff79c6">%</span> {
+                <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">0</span>);
+            }
+            <span style="color:#ff79c6">100</span><span style="color:#ff79c6">%</span> {
+                <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>);
+            }
+        }
+    &lt;/<span style="color:#ff79c6">style</span>&gt;
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+&lt;<span style="color:#ff79c6">body</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+&lt;/<span style="color:#ff79c6">html</span>&gt;
+</code></pre></div><p>然后我们到浏览器跑一下这个页面试试看，可以看到一个黑色的方块从左右移动了 100px 的距离，总计1秒完成。</p>
+<p>但是这个动画结束的很突兀，容器突然回到原地，这是为什么呢？因为我们没有保留最后一帧，这需要一个属性，最上面我们讲过了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#50fa7b">demo</span> {
+    <span style="color:#ff79c6">width</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+    <span style="color:#ff79c6">height</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+    <span style="color:#ff79c6">background</span>: <span style="color:#bd93f9">#fff</span>;
+    <span style="color:#ff79c6">animation-name</span>: leftright; <span style="color:#6272a4">/* 将动画的名称绑定到该标签 */</span>
+    <span style="color:#ff79c6">animation-duration</span>: <span style="color:#bd93f9">1</span><span style="color:#8be9fd">s</span>;     <span style="color:#6272a4">/* 给动画的过程设一个时长 */</span>
+    <span style="color:#ff79c6">animation-fill-mode</span>: <span style="color:#ff79c6">forwards</span>; <span style="color:#6272a4">/* 动画停留在最后一帧 */</span>
+}
+</code></pre></div><p>运行一下，可以看到动画最后停住了。</p>
+<h3 id="让动画拥有一个惯性">让动画拥有一个惯性</h3>
+<p>我们仔细观察这个动画，发现他整个过程不拖泥带水，很迅速的完成了，但是我发现一个问题，整个过程不流畅圆滑，很死板，从左到右，一点也不圆滑。</p>
+<p>分析一下，因为缺少了一个日常生活的习惯动画，那就是惯性，这个属性可不存在啊，没法直接设置，只能通过动画本身的属性来进行调整，继续看这一段代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"> @<span style="color:#ff79c6">keyframes</span> <span style="color:#ff79c6">leftright</span> {
+    <span style="color:#ff79c6">0</span><span style="color:#ff79c6">%</span> {
+        <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">0</span>);
+    }
+    <span style="color:#ff79c6">100</span><span style="color:#ff79c6">%</span> {
+        <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>);
+    }
+}
+</code></pre></div><p><code>0%</code>代表开始，<code>100%</code>代表结束，他们指的是一个时间节点，在这个时间点动画要运行到他们指定的位置。</p>
+<p>所以我们可以添加一个新的时间节点，<code>50%</code>，我们让当时间过了一半的时候，方块运行到 120px 的位置，然后再折回来。</p>
+<p>下面是完整的代码，可以复制到本地，自己运行一下试试看。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#ff79c6">&lt;!</span><span style="color:#ff79c6">DOCTYPE</span> <span style="color:#ff79c6">html</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">html</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">head</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">title</span><span style="color:#ff79c6">&gt;</span><span style="color:#ff79c6">动画</span><span style="color:#ff79c6">&lt;/</span><span style="color:#ff79c6">title</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">style</span><span style="color:#ff79c6">&gt;</span>
+        .<span style="color:#50fa7b">demo</span> {
+            <span style="color:#ff79c6">width</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+            <span style="color:#ff79c6">height</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+            <span style="color:#ff79c6">background</span>: <span style="color:#bd93f9">#000</span>;
+            <span style="color:#ff79c6">animation-name</span>: leftright;
+            <span style="color:#ff79c6">animation-duration</span>: <span style="color:#bd93f9">1</span><span style="color:#8be9fd">s</span>;
+            <span style="color:#ff79c6">animation-fill-mode</span>: <span style="color:#ff79c6">forwards</span>;
+        }
+
+        @<span style="color:#ff79c6">keyframes</span> <span style="color:#ff79c6">leftright</span> {
+            <span style="color:#ff79c6">0</span><span style="color:#ff79c6">%</span> {
+                <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">0</span>);
+            }
+            <span style="color:#ff79c6">50</span><span style="color:#ff79c6">%</span> {
+                <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">120</span><span style="color:#8be9fd">px</span>);
+            }
+            <span style="color:#ff79c6">100</span><span style="color:#ff79c6">%</span> {
+                <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">translateX</span>(<span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>);
+            }
+        }
+    <span style="color:#ff79c6">&lt;/</span><span style="color:#ff79c6">style</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/</span><span style="color:#ff79c6">head</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">body</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">div</span> <span style="color:#ff79c6">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span><span style="color:#ff79c6">&gt;&lt;/</span><span style="color:#ff79c6">div</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/</span><span style="color:#ff79c6">body</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/</span><span style="color:#ff79c6">html</span><span style="color:#ff79c6">&gt;</span>
+</code></pre></div><p>修改完之后，到浏览器看一下效果。</p>
+<p>是不是流畅了很多，有了一种惯性的感觉，这一点在工作中如何遇到写动画的需求就很关键了，怎么让用户的体验更强，是一门技巧。</p>
+<p>虽说这都是一些基础的东西，但是我觉得体验感上去了，网站的回头率才会更高。打一个比方，去某个商城网站购物，整个页面看起来很舒服，特效细节很流畅，是不是就增加了购物的欲望。虽然这么说很浅薄，但是真的会有一些心里作用。</p>
+<p>如何用好动画特效，是一门学问，将 css 玩出花样来，可不是那么简单的。</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/css/">
+                css
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/2021-02-26-chrome-browser-cannot-display-fonts-below-12px/">chrome浏览器无法显示12px以下的字体</a></li>
+    
+    <li><a href="/post/2021-02-03-nuggets-profile-picture-rotation-effect/">掘金个人主页头像旋转效果</a></li>
+    
+    <li><a href="/post/2020-08-03-the-problem-of-text-overflow-hiding-and-conflict-with-flex/">文字溢出隐藏以及和flex冲突的问题</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/post/2021-03-14-how-to-make-the-animation-properties-in-css3-look-smoother/"
+  data-page-url="/post/2021-03-14-how-to-make-the-animation-properties-in-css3-look-smoother/"
+  data-page-title="怎么让 css3 里面的动画属性看起来更流畅？"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+  <script>
+    window.CUSDIS_LOCALE = {
+      "powered_by": "评论由 Cusdis 提供",
+      "post_comment": "发送",
+      "loading": "加载中",
+      "email": "邮箱地址 (可选)",
+      "nickname": "昵称",
+      "reply_placeholder": "回复内容...",
+      "reply_btn": "回复",
+      "sending": "发送中...",
+      "mod_badge": "管理员",
+      "content_is_required": "内容不能为空",
+      "nickname_is_required": "昵称不能为空",
+      "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+    }
+  </script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+  <div style="padding:10px 0;">
+    <span>© 2020 - 2021</span> ·
+    <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+    </a>
+</div>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>
