@@ -28,7 +28,7 @@ the road ahead will be long and our climb will be steep.
   data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
   data-page-id="{{ .RelPermalink }}"
   data-page-url="{{ .RelPermalink }}"
-  data-page-title="{{ .Title }}"
+  data-page-title="关于我"
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>

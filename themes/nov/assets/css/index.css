@@ -417,3 +417,8 @@ a:hover {
     display: none;
   }
 }
+
+
+#cusdis_thread .w-full {
+  border-color: #000;
+}
