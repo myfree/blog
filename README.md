@@ -1,9 +1,7 @@
 ## Blog
 
-基于 hugo 部署的静态博客。
-
 * 项目源码仓库: `main`
-* 静态文件: `/public`
+* 静态文件路径: `/public`
 
 Author: [Nov8nana](https://github.com/N0v8nana)
 
@@ -11,7 +9,9 @@ Bolg: [https://shuxhan.com](https://shuxhan.com)
 
 ## Use
 
-如果想使用博客，可以直接fork本仓库，将 `content` 以及下面 `posts` 内的文件清空，写入自己的文章即可。
+Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+
+如果想使用博客，可以直接 fork 本仓库，将 `content` 以及下面 `post` 内的文件清空，写入自己的文章即可。
 
 本地安装 go 程序，具体方法自行搜索。
 
