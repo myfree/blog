@@ -288,7 +288,8 @@ a:hover {
   max-width: 100%;
   display: block;
   margin-right: auto;
-  margin-top: 12px;
+  margin: 12px auto 0;
+  box-shadow: 1px 3px 11px #e3e3e3;
 }
 
 .post-header {
@@ -333,10 +334,6 @@ a:hover {
   /* text-align: justify; */
   text-justify: ideographic;
   margin-bottom: 1em;
-}
-
-.post-content img {
-  box-shadow: 1px 3px 11px #e3e3e3;
 }
 
 .post-content blockquote {
