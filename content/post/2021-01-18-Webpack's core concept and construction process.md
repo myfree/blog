@@ -166,6 +166,7 @@ import 'redux-thunk';
     vendor: './path/to/vendor.js',
   },
 }
+```
 
 2. 通过CommonsChunkPlugin可以提取出多个代码块都依赖的代码形成一个单独的chunk。在应用有多个页面的场景下提取出所有页面公共的代码减少单个页面的代码，在不同页面之间切换时所有页面公共的代码之前被加载过而不必重新加载。所以通过CommonsChunkPlugin可以提取出多个代码块都依赖的代码形成一个单独的chunk。
 
@@ -198,6 +199,7 @@ module.exports = {
     ]
   },
 };
+```
 
 **分析一下：**
 1. `target: 'node'` 指明构建出代码要运行在node环境中。
