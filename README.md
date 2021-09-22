@@ -22,6 +22,7 @@ hugo server
 
 ## 生成静态文件
 hugo -D
+
 ```
 
 ### 升级
@@ -38,6 +39,7 @@ hugo -D
     endLevel = 3      #3级标题以后不建立索引
     ordered = false   #是否采用有序列表
     startLevel = 2    #2级标题开始建立索引
+
 ```
 
 2. 第三方评论
@@ -51,6 +53,17 @@ hugo -D
 ```shell
 [params]
   CusdisId = "xxxxx"
+
+```
+
+3. 使用不蒜子统计访客数据
+
+```html
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
 ```
 
 ### 额外的一些说明协议
