@@ -175,6 +175,7 @@ a:hover {
 
 .header-title a {
   text-decoration: none;
+  user-select: none;
 }
 
 .header-subtitle {
@@ -212,7 +213,7 @@ a:hover {
 }
 
 .posts-categories {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin: auto;
   text-align: center;
 }
@@ -260,7 +261,7 @@ a:hover {
   font-size: 16px;
   color: #fff;
   padding: 0;  
-  padding: 10px 20px 10px 20px;
+  padding: 10px 7px;
 }
 
 #TableOfContents ul a {
