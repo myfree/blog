@@ -29,7 +29,7 @@ hugo -D
 
 在原主题的基础我进行了升级，增加了一些新的更方便的功能，比如重写代码高亮，代码复制粘贴，文章目录等。
 
-1. 文章目录
+**1. 文章目录**
 
 默认为下列代码，如果需要调整需要在 `config.toml` 配置文件中进行修改。
 
@@ -42,7 +42,7 @@ hugo -D
 
 ```
 
-2. 第三方评论
+**2. 第三方评论**
 
 本博客内置的是 Cusdis 评论，请到 [官网](https://cusdis.com/dashboard/project/c1d43485-e8a7-4895-972e-247eddaf242d) 注册并获取 id。
 
@@ -56,7 +56,7 @@ hugo -D
 
 ```
 
-3. 使用不蒜子统计访客数据
+**3. 使用不蒜子统计访客数据**
 
 ```html
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
