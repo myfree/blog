@@ -42,6 +42,9 @@ article {
 a {
   color: #000;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 a:hover {
@@ -210,6 +213,7 @@ a:hover {
 .posts-line {
   font-size: 1.1rem;
   margin: 12px 0;
+  word-break: break-all;
 }
 
 .posts-categories {
@@ -375,20 +379,24 @@ a:hover {
   font-weight: 800;
 }
 
-/* disqus */
-
-#disqus_thread {
-  position: relative;
+@media screen and (max-width: 768px) {
+  .posts-line {
+    background: #f3f2f2;
+    padding: 6px 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
+  .posts-line:hover {
+    background: #f7f8fa;
+  }
 
-#disqus_thread:after {
-  content: "";
-  display: block;
-  height: 55px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background: white;
+  .posts-line .posts-title a{
+    display: block;
+    text-decoration: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
