@@ -24,10 +24,10 @@ the road ahead will be long and our climb will be steep.
 
 <h3>评论~</h3>
 <div id="cusdis_thread"
-  data-host="https://shuxhan.com"
+  data-host="https://cusdis.com"
   data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
-  data-page-id="{{ .RelPermalink }}"
-  data-page-url="{{ .RelPermalink }}"
+  data-page-id=" {{ .RelPermalink }}"
+  data-page-url=" {{ .RelPermalink }}"
   data-page-title="关于我"
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
