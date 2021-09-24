@@ -56,16 +56,6 @@ hugo -D
 
 ```
 
-**3. 使用不蒜子统计访客数据**
-
-```html
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-```
-
 ### 额外的一些说明协议
 
 本仓库并不是一个真正意义上的开源项目，下载仓库代码及使用后果概不负责。
