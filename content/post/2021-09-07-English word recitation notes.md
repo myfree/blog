@@ -11,7 +11,7 @@ tags:
 
 1. inappropriate 不合适的，不合时宜的
 2. refinement 精炼，提纯，改进（形容表示再一次，进一步，再次改进）
-3. cobvey 转告，传达，运输
+3. convey 转告，传达，运输
 ```html
 If you leave a message, I'll convey it to him.
 <!-- 如果你愿意留下口信，我会转告他的。 -->
