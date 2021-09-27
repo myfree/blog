@@ -25,9 +25,10 @@ hugo -D
 
 ### 配置
 
-在原主题的基础我进行了升级，增加了一些新的更方便的功能，比如重写代码高亮，代码复制粘贴，文章目录等。
+一些主要功能的配置方法，如果有其他配置看不懂的可以在 Issues 留言。
 
-**1. 文章目录**
+<details>
+<summary><strong>1. 文章目录</strong></summary>
 
 默认为下列代码，如果需要调整需要在 `config.toml` 配置文件中进行修改。
 
@@ -39,8 +40,11 @@ hugo -D
     startLevel = 2    #2级标题开始建立索引
 
 ```
+</details>
 
-**2. 第三方评论**
+
+<details>
+<summary><strong>2. 第三方评论</strong></summary>
 
 本博客内置的是 Cusdis 评论，请到 [官网](https://cusdis.com/dashboard/project/c1d43485-e8a7-4895-972e-247eddaf242d) 注册并获取 id。
 
@@ -53,8 +57,10 @@ hugo -D
   CusdisId = "xxxxx"
 
 ```
+</details>
 
-**3. Github repos 展示功能**
+<details>
+<summary><strong>3. Github repos 展示功能</strong></summary>
 
 图片示例
 ![](https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@06d4703e562a8e0aa8f83ae448435d712f8d8d79/2021/09/27/e03885e1598bd19b09aeea9c9b200ba4.png)
@@ -66,16 +72,19 @@ hugo -D
   GithubId = "Nov8nana"
 
 ```
+</details>
 
-### 升级
+### 优化记录
 
 <details>
-<summary>2021.09.27</summary>
+<summary><strong>2021.09.27</strong></summary>
+
 内置了 Github 仓库列表展示功能。
 </details>
 
 <details>
-<summary>2021.09 之前</summary>
+<summary><strong>2021.09 之前</strong></summary>
+
 成功搭建了本项目，初始内容就不赘述了...
 </details>
 
