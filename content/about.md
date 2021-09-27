@@ -22,6 +22,8 @@ the road ahead will be long and our climb will be steep.
 
 2021年的新年愿望是可以 new 一个对象！ —2021
 
+(目前没有添加友链的计划，所以一些申请我就直接略过了~)
+
 ---
 
 <h3>评论~</h3>
