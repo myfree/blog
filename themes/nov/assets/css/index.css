@@ -368,6 +368,46 @@ a:hover {
   margin-top: 20px;
 }
 
+/* repo */
+.repo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.repo-item {
+  display: block;
+  width: 46%;
+  box-shadow: 1px 5px 10px #e3e3e3;
+  margin-bottom: 20px;
+  padding: 10px;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
+
+.repo-item:hover {
+  text-decoration: none;
+  box-shadow: 1px 5px 10px #b8b4b4;
+  /* background: #666;
+  color: #fff; */
+}
+/* .repo-item:hover p{
+  color: #eee;
+} */
+.repo-title {
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.repo-item p {
+  color: #666;
+  font-size: 0.99rem;
+}
+
+
 @media screen and (max-width: 600px) {
 
   .header-title,

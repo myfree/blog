@@ -7,7 +7,7 @@ Author: [Nov8nana](https://github.com/N0v8nana)
 
 Bolg: [https://shuxhan.com](https://shuxhan.com)
 
-## Use
+### Use
 
 1. Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
 2. 如果想使用博客，可以直接 fork 本仓库，将 `content` 以及下面 `post` 内的文件清空，写入自己的文章即可。
@@ -23,7 +23,7 @@ hugo -D
 
 ```
 
-### 升级
+### 配置
 
 在原主题的基础我进行了升级，增加了一些新的更方便的功能，比如重写代码高亮，代码复制粘贴，文章目录等。
 
@@ -53,6 +53,31 @@ hugo -D
   CusdisId = "xxxxx"
 
 ```
+
+**3. Github repos 展示功能**
+
+图片示例
+![](https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@06d4703e562a8e0aa8f83ae448435d712f8d8d79/2021/09/27/e03885e1598bd19b09aeea9c9b200ba4.png)
+
+使用 Ajax 调用 Github 官方提供的 API，直接在 `config.toml` 文件中找到下面代码，将 Github 的用户名改为自己的名字即可。
+
+```shell
+[params]
+  GithubId = "Nov8nana"
+
+```
+
+### 升级
+
+<details>
+<summary>2021.09.27</summary>
+内置了 Github 仓库列表展示功能。
+</details>
+
+<details>
+<summary>2021.09 之前</summary>
+成功搭建了本项目，初始内容就不赘述了...
+</details>
 
 ### 额外的一些说明协议
 

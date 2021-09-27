@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="posts">
+    <div class="row">
+      <div class="col-xs-12">
+        {{ partial "header.html" . }}
+        <div class="post-content markdown-html">
+          {{ .Site.Params.postHeaderContent | safeHTML }}
+          {{ .Content }}
+        </div>
+        <div class="app">
+          <div class="repo"></div>
+        </div>
+
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "scripts.html" . }}
+  <script>
+    var str = '';
+    var x = '{{ .Site.Params.GithubId }}'
+    $.ajax({
+      url: 'https://api.github.com/users/' + x + '/repos',
+      type: 'get',
+      dataType: 'json',
+      async: false,
+      success: function (data) {
+        $.each(data, function (i, item) {
+            // console.log(item)
+            list = "<a target='_blank' href='" + item.html_url + "' class='repo-item'>"+
+              "<span class='repo-title'>" + item.full_name + "</span>"+
+              "<p>" + item.description + "</p>"+
+              "</a>"
+
+            str += list;
+          }),
+          $(".repo").html(str);
+        console.log('数据请求成功')
+
+      },
+      error: function () {
+        console.log('数据请求失败')
+      }
+
+    });
+  </script>
+</body>
+
+</html>
