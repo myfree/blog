@@ -12,12 +12,26 @@
 }
 
 .highlight pre::-webkit-scrollbar-thumb {
-  background-color: #fff;
+  background-color: rgb(192, 185, 185);
 }
 
 .highlight pre::-webkit-scrollbar-button {
   background-color: #fff;
   display: none;
+}
+
+/* html */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #999;
 }
 
 @font-face {
@@ -26,6 +40,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   /* font-family: "Bree Serif", sans-serif; */
   /* font-family: 'SFProIcons'; */
   font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -37,11 +53,12 @@ body {
 
 article {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 20px auto;
   background: #fff;
   padding: 0 50px;
   box-sizing: border-box;
   box-shadow: 1px 5px 10px #aaa6a6;
+  opacity: 0.98;
 }
 
 a {
@@ -49,7 +66,6 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
 }
 
 a:hover {
@@ -259,20 +275,22 @@ a:hover {
 }
 
 #TableOfContents {
-  border-radius: 4px;
   display: inline-block;
   width: max-content;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: 200px;
-  background-color: rgba(81, 81, 81, 0.7);
+  /* background-color: rgba(81, 81, 81, 0.7); */
+  border-left: 1px solid #ddd;
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 #TableOfContents ul {
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   padding: 0;
-  padding: 10px 7px;
+  margin: 0;
 }
 
 #TableOfContents ul a {
@@ -280,9 +298,8 @@ a:hover {
 }
 
 #TableOfContents ul ul {
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 14px;
-  color: #ddd;
 }
 
 #TableOfContents li {
@@ -386,6 +403,96 @@ a:hover {
   margin-top: 20px;
 }
 
+.top-btn {
+  position: fixed;
+  right: 40px;
+  bottom: 100px;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px 0 rgb(0 0 0 / 10%);
+  display: none;
+  opacity: 0;
+  height: 40px;
+  justify-content: center;
+  transition: all .4s ease;
+  width: 40px;
+  z-index: 1;
+}
+
+.top-btn-show {
+
+  display: block;
+  animation-name: show;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.top-btn-hide {
+  animation-name: hide;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.top-btn:hover {
+  cursor: pointer;
+  background: #c1c1c1;
+}
+
+.top-btn div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.top-btn div i {
+  position: absolute;
+  top: 18px;
+  background: #666;
+  width: 16px;
+  height: 2px;
+}
+
+.top-btn div i:nth-child(1) {
+  transform: rotate(-45deg);
+  left: 7px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.top-btn div i:nth-child(2) {
+  transform: rotate(45deg);
+  right: 7px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
 /* repo */
 .repo {
   display: flex;
@@ -409,12 +516,8 @@ a:hover {
 .repo-item:hover {
   text-decoration: none;
   box-shadow: 1px 5px 10px #b8b4b4;
-  /* background: #666;
-  color: #fff; */
 }
-/* .repo-item:hover p{
-  color: #eee;
-} */
+
 .repo-title {
   font-weight: 600;
   font-size: 1.02rem;
@@ -427,9 +530,9 @@ a:hover {
 
 
 @media screen and (max-width: 600px) {
-
   article {
-    padding: 0 20px;
+    margin: 0;
+    padding: 0 10px;
   }
 
   .header-title,
@@ -460,9 +563,4 @@ a:hover {
   .posts-category {
     display: none;
   }
-}
-
-
-#cusdis_thread .w-full {
-  border-color: #000;
 }
