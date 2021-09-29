@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Nov8nana" />
-  <meta property="og:url" content="https://shuxhan.com/post/2020-11-13-why-gettime-returns-the-milliseconds-from-1970-to-present/" />
-  <link rel="canonical" href="https://shuxhan.com/post/2020-11-13-why-gettime-returns-the-milliseconds-from-1970-to-present/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <meta property="og:url" content="https://shuxhan.com/post/2021-09-29-randomly-generate-colors-using-js/" />
+  <link rel="canonical" href="https://shuxhan.com/post/2021-09-29-randomly-generate-colors-using-js/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
   <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
   <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
 
@@ -21,63 +21,37 @@
            "@id": "https:\/\/shuxhan.com\/"
       },
       "articleSection" : "post",
-      "name" : "为什么getTime()返回1970年至今的毫秒？",
-      "headline" : "为什么getTime()返回1970年至今的毫秒？",
-      "description" : "今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数\n 为什么要是1970年呢？\n new Date().getTime(); \/\/ xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。\n当然，这一做法现在看来是很有问题的，例如不方便用它表示更早的时间而且精度有限。\n定义time从1970年1月1日开始，忽然想到在JAVA里，Oracle数据库时间也是从1970年1月1日开始计算。\n比如java类代码:\nDate date = new Date(0); System.out.println(date); \/\/ 打印出来的结果：Thu Jan 01 08:00:00 CST 1970也 是1970年1月1日，实际上时分秒是0点0分0秒(这里打印出来是8点，稍后会作解释)。\n为什么这个时间会定义在1970年1月1日这个时候呢?\n于是开始了Google，中文网页根本找不到答案。于是试着搜索英文关键字,在Sun java论坛总算找到准确的帖子:\nhttp:\/\/forums.sun.com\/thread.jspa?threadID=595140\u0026amp;start=15\n其中有一个回复:\nI suspect that Java was born and raised on a UNIX system. UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970. 是说java起源于UNIX系统，而UNIX认为1970年1月1日0点是时间纪元.\n但这依然没很好的解释\u0026quot;为什么\u0026quot;,出于好奇，继续Google，总算找到了答案:\nhttp:\/\/en.wikipedia.org\/wiki\/Unix_time\n这里的解释是:\n最初计算机操作系统是32位，而时间也是用32位表示。\nSystem.out.println(Integer.MAX_VALUE);\n2147483647\nInteger在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647\/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。",
+      "name" : "使用js随机生成背景颜色",
+      "headline" : "使用js随机生成背景颜色",
+      "description" : "先写一个简单的 html 页面出来\n\u0026lt;style\u0026gt; \/* ... *\/ \u0026lt;\/style\u0026gt; \u0026lt;ul\u0026gt; \u0026lt;li\u0026gt;html\u0026lt;\/li\u0026gt; \u0026lt;li\u0026gt;css\u0026lt;\/li\u0026gt; \u0026lt;li\u0026gt;js\u0026lt;\/li\u0026gt; \u0026lt;\/ul\u0026gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。\nconst randomHex = () =\u0026gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, \u0026#34;0\u0026#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。\n接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。\nvar arr = document.getElementsByTagName(\u0026#39;li\u0026#39;), temp = []; for (var i = 0; i \u0026lt; arr.length; i\u002b\u002b) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。\nvar li = document.getElementsByTagName(\u0026#34;li\u0026#34;); for (var i = 0; i \u0026lt; li.",
       "inLanguage" : "en-US",
       "author" : "Nov8nana",
       "creator" : "Nov8nana",
       "publisher": "Nov8nana",
       "accountablePerson" : "Nov8nana",
       "copyrightHolder" : "Nov8nana",
-      "copyrightYear" : "2020",
-      "datePublished": "2020-11-13 12:56:00 \u002b0000 UTC",
-      "dateModified" : "2020-11-13 12:56:00 \u002b0000 UTC",
-      "url" : "https:\/\/shuxhan.com\/post\/2020-11-13-why-gettime-returns-the-milliseconds-from-1970-to-present\/",
-      "keywords" : [ "杂谈", ]
+      "copyrightYear" : "2021",
+      "datePublished": "2021-09-29 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2021-09-29 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/post\/2021-09-29-randomly-generate-colors-using-js\/",
+      "keywords" : [ "js", ]
   }
 </script>
-<title>为什么getTime()返回1970年至今的毫秒？</title>
-  <meta property="og:title" content="为什么getTime()返回1970年至今的毫秒？" />
+<title>使用js随机生成背景颜色</title>
+  <meta property="og:title" content="使用js随机生成背景颜色" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
- 为什么要是1970年呢？
- new Date().getTime(); // xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。
-当然，这一做法现在看来是很有问题的，例如不方便用它表示更早的时间而且精度有限。
-定义time从1970年1月1日开始，忽然想到在JAVA里，Oracle数据库时间也是从1970年1月1日开始计算。
-比如java类代码:
-Date date = new Date(0); System.out.println(date); // 打印出来的结果：Thu Jan 01 08:00:00 CST 1970也 是1970年1月1日，实际上时分秒是0点0分0秒(这里打印出来是8点，稍后会作解释)。
-为什么这个时间会定义在1970年1月1日这个时候呢?
-于是开始了Google，中文网页根本找不到答案。于是试着搜索英文关键字,在Sun java论坛总算找到准确的帖子:
-http://forums.sun.com/thread.jspa?threadID=595140&amp;amp;start=15
-其中有一个回复:
-I suspect that Java was born and raised on a UNIX system. UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970. 是说java起源于UNIX系统，而UNIX认为1970年1月1日0点是时间纪元.
-但这依然没很好的解释&amp;quot;为什么&amp;quot;,出于好奇，继续Google，总算找到了答案:
-http://en.wikipedia.org/wiki/Unix_time
-这里的解释是:
-最初计算机操作系统是32位，而时间也是用32位表示。
-System.out.println(Integer.MAX_VALUE);
-2147483647
-Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。" />
-  <meta name="description" content="今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
- 为什么要是1970年呢？
- new Date().getTime(); // xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。
-当然，这一做法现在看来是很有问题的，例如不方便用它表示更早的时间而且精度有限。
-定义time从1970年1月1日开始，忽然想到在JAVA里，Oracle数据库时间也是从1970年1月1日开始计算。
-比如java类代码:
-Date date = new Date(0); System.out.println(date); // 打印出来的结果：Thu Jan 01 08:00:00 CST 1970也 是1970年1月1日，实际上时分秒是0点0分0秒(这里打印出来是8点，稍后会作解释)。
-为什么这个时间会定义在1970年1月1日这个时候呢?
-于是开始了Google，中文网页根本找不到答案。于是试着搜索英文关键字,在Sun java论坛总算找到准确的帖子:
-http://forums.sun.com/thread.jspa?threadID=595140&amp;amp;start=15
-其中有一个回复:
-I suspect that Java was born and raised on a UNIX system. UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970. 是说java起源于UNIX系统，而UNIX认为1970年1月1日0点是时间纪元.
-但这依然没很好的解释&amp;quot;为什么&amp;quot;,出于好奇，继续Google，总算找到了答案:
-http://en.wikipedia.org/wiki/Unix_time
-这里的解释是:
-最初计算机操作系统是32位，而时间也是用32位表示。
-System.out.println(Integer.MAX_VALUE);
-2147483647
-Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。" />
+  <meta property="og:description" content="先写一个简单的 html 页面出来
+&amp;lt;style&amp;gt; /* ... */ &amp;lt;/style&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;html&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;css&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;js&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&amp;gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &amp;#34;0&amp;#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&amp;#39;li&amp;#39;), temp = []; for (var i = 0; i &amp;lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i &amp;lt; li." />
+  <meta name="description" content="先写一个简单的 html 页面出来
+&amp;lt;style&amp;gt; /* ... */ &amp;lt;/style&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;html&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;css&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;js&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&amp;gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &amp;#34;0&amp;#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&amp;#39;li&amp;#39;), temp = []; for (var i = 0; i &amp;lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i &amp;lt; li." />
   <meta property="og:locale" content="zh-cn" />
 
   
@@ -152,13 +126,13 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 
         </div>
         <header class="post-header">
-          <h1 class="post-title">为什么getTime()返回1970年至今的毫秒？</h1>
+          <h1 class="post-title">使用js随机生成背景颜色</h1>
           
           <div class="row post-desc">
             <div class="col-xs-6">
               
-              <time class="post-date" datetime="2020-11-13 12:56:00 UTC">
-                2020.11.13
+              <time class="post-date" datetime="2021-09-29 00:00:00 UTC">
+                2021.09.29
               </time>
                
             </div>
@@ -180,43 +154,98 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 
         <div class="post-content markdown-html">
           
-          <p>今天在写new Date()时候，无意中发现了一个很有意思的方法，<code>getTime()</code>，百度了一下，有人说是计算从1970年1月1日至今的毫秒数</p>
-<!-- more -->
-<blockquote>
-<p>为什么要是1970年呢？</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Date</span>().getTime();
+          <p>先写一个简单的 html 页面出来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">style</span>&gt;
+  <span style="color:#6272a4">/* ... */</span>
+&lt;/<span style="color:#ff79c6">style</span>&gt;
 
-<span style="color:#6272a4">// xxxxxxxxxxx
-</span></code></pre></div><p>这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。</p>
-<p>当然，这一做法现在看来是很有问题的，例如不方便用它表示更早的时间而且精度有限。</p>
-<p>定义time从1970年1月1日开始，忽然想到在JAVA里，Oracle数据库时间也是从1970年1月1日开始计算。</p>
-<p>比如java类代码:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Date date <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Date<span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">);</span>
+&lt;<span style="color:#ff79c6">ul</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;html&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;css&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;js&lt;/<span style="color:#ff79c6">li</span>&gt;
+&lt;/<span style="color:#ff79c6">ul</span>&gt;
+</code></pre></div><p>通过 <code>Math.random()</code> 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> randomHex <span style="color:#ff79c6">=</span> () =&gt; <span style="color:#f1fa8c">`#</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">Math</span>.floor(<span style="color:#8be9fd;font-style:italic">Math</span>.random() <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0xffffff</span>).toString(<span style="color:#bd93f9">16</span>).padEnd(<span style="color:#bd93f9">6</span>, <span style="color:#f1fa8c">&#34;0&#34;</span>)<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>;
+</code></pre></div><p>可以在控制台输出看一下结果，随机生成了一个结果 <code>#62113b</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@6b7ef18434bd05126ed7e2ded133242b090fd7ab/2021/09/29/157fa8f9834a8e9001c270d7223a1aa9.png" alt=""></p>
+<p>接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;li&#39;</span>), temp <span style="color:#ff79c6">=</span> [];
+<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arr.length; i<span style="color:#ff79c6">++</span>) {
+  temp.push(arr[i].innerHTML);
+}
 
-System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>date<span style="color:#ff79c6">);</span>
+</code></pre></div><p>然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> li <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#34;li&#34;</span>);
+<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> li.length; i<span style="color:#ff79c6">++</span>) {
+  
+  <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> num <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; num <span style="color:#ff79c6">&lt;</span> li.length; num<span style="color:#ff79c6">++</span>) {
+    li[num].style.background <span style="color:#ff79c6">=</span> randomHex();
+  }
 
-<span style="color:#6272a4">// 打印出来的结果：Thu Jan 01 08:00:00 CST 1970也
-</span></code></pre></div><p>是1970年1月1日，实际上时分秒是0点0分0秒(这里打印出来是8点，稍后会作解释)。</p>
-<p>为什么这个时间会定义在1970年1月1日这个时候呢?</p>
-<p>于是开始了Google，中文网页根本找不到答案。于是试着搜索英文关键字,在Sun java论坛总算找到准确的帖子:</p>
-<p><a href="http://forums.sun.com/thread.jspa?threadID=595140&amp;start=15">http://forums.sun.com/thread.jspa?threadID=595140&amp;start=15</a></p>
-<p>其中有一个回复:</p>
-<p>I suspect that Java was born and raised on a UNIX system.
-UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970. 
-是说java起源于UNIX系统，而UNIX认为1970年1月1日0点是时间纪元.</p>
-<p>但这依然没很好的解释&quot;为什么&quot;,出于好奇，继续Google，总算找到了答案:</p>
-<p><a href="http://en.wikipedia.org/wiki/Unix_time">http://en.wikipedia.org/wiki/Unix_time</a></p>
-<p>这里的解释是:</p>
-<p>最初计算机操作系统是32位，而时间也是用32位表示。</p>
-<p>System.out.println(Integer.MAX_VALUE);</p>
-<p>2147483647</p>
-<p>Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。</p>
-<p>到这里，我想问题的答案已经出来了:</p>
-<p>因为用32位来表示时间的最大间隔是68年，而最早出现的UNIX操作系统考虑到计算机产生的年代和应用的时限综合取了1970年1月1日作为UNIX TIME的纪元时间(开始时间)，而java自然也遵循了这一约束。</p>
-<p>至于时间回归的现象相信随着64为操作系统的产生逐渐得到解决，因为用64位操作系统可以表示到292,277,026,596年12月4日15时30分08秒，相信我们的N代子孙，哪怕地球毁灭那天都不用愁不够用了，因为这个时间已经是千亿年以后了。</p>
-<p>最后一个问题:</p>
-<p>上面System.out.println(new Date(0))，打印出来的时间是8点而非0点，原因是存在系统时间和本地时间的问题，其实系统时间依然是0点，只不过我的电脑时区设置为东8区，故打印的结果是8点。</p>
+}
+
+</code></pre></div><p>这些事件都是在页面加载完成之后运行的，所以需要通过 <code>window.onload</code> 写入事件，然后把所有的代码合在一起。</p>
+<p>看看效果如果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@203b7f35ca165b731066707b8d6eae817baea0eb/2021/09/29/ea9f9e27be2f3587cda141bc998d4b80.png" alt=""></p>
+<p>把这些复制下来放到本地运行一下就可以看到效果了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#ff79c6">html</span> <span style="color:#50fa7b">lang</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">http-equiv</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;X-UA-Compatible&#34;</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;IE=edge&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;viewport&#34;</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">title</span>&gt;随机生成颜色&lt;/<span style="color:#ff79c6">title</span>&gt;
+  &lt;<span style="color:#ff79c6">style</span>&gt;
+    <span style="color:#ff79c6">body</span> {
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+      <span style="color:#ff79c6">justify-content</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">padding-top</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+    }
+    <span style="color:#ff79c6">ul</span> {
+      <span style="color:#ff79c6">list-style</span>: <span style="color:#ff79c6">none</span>;
+      <span style="color:#ff79c6">padding</span>: <span style="color:#bd93f9">0</span>;
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+    }
+    <span style="color:#ff79c6">li</span> {
+      <span style="color:#ff79c6">width</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+      <span style="color:#ff79c6">height</span>: <span style="color:#bd93f9">40</span><span style="color:#8be9fd">px</span>;
+      <span style="color:#ff79c6">color</span>: <span style="color:#bd93f9">#333</span>;
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+      <span style="color:#ff79c6">justify-content</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">align-items</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">margin-right</span>: <span style="color:#bd93f9">30</span><span style="color:#8be9fd">px</span>;
+    }
+  &lt;/<span style="color:#ff79c6">style</span>&gt;
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+&lt;<span style="color:#ff79c6">body</span>&gt;
+  &lt;<span style="color:#ff79c6">ul</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;html&lt;/<span style="color:#ff79c6">li</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;css&lt;/<span style="color:#ff79c6">li</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;js&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;/<span style="color:#ff79c6">ul</span>&gt;
+  &lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#ff79c6">const</span> randomHex <span style="color:#ff79c6">=</span> () =&gt; <span style="color:#f1fa8c">`#</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">Math</span>.floor(<span style="color:#8be9fd;font-style:italic">Math</span>.random() <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0xffffff</span>).toString(<span style="color:#bd93f9">16</span>).padEnd(<span style="color:#bd93f9">6</span>, <span style="color:#f1fa8c">&#34;0&#34;</span>)<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>;
+    console.log(randomHex());
+
+    <span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;li&#39;</span>), temp <span style="color:#ff79c6">=</span> [];
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arr.length; i<span style="color:#ff79c6">++</span>) {
+      temp.push(arr[i].innerHTML);
+    }
+
+    <span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+      <span style="color:#8be9fd;font-style:italic">var</span> li <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#34;li&#34;</span>);
+      <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> li.length; i<span style="color:#ff79c6">++</span>) {
+        
+        <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> num <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; num <span style="color:#ff79c6">&lt;</span> li.length; num<span style="color:#ff79c6">++</span>) {
+          li[num].style.background <span style="color:#ff79c6">=</span> randomHex();
+        }
+
+      }
+    }
+  &lt;/<span style="color:#ff79c6">script</span>&gt;
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+&lt;/<span style="color:#ff79c6">html</span>&gt;
+</code></pre></div><p>如果有更好的写法，欢迎评论!</p>
 
         </div>
 
@@ -224,8 +253,8 @@ UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970.
           <div class="col-xs-12">
             
             <div class="post-tags">
-              <a href="/tags/%E6%9D%82%E8%B0%88/">
-                杂谈
+              <a href="/tags/js/">
+                js
               </a>
             </div>
             
@@ -241,6 +270,19 @@ UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970.
 
           
 
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/2021-03-26-real-time-monitoring-of-page-changes/">实时监听页面的变化</a></li>
+    
+    <li><a href="/post/2021-03-19-get-data-with-ajax-request/">用ajax请求获取数据</a></li>
+    
+    <li><a href="/post/2021-01-18-webpacks-core-concept-and-construction-process/">webpack 的核心概念和构建流程</a></li>
+    
+  </ul>
+</div>
+
 
 
           
@@ -253,9 +295,9 @@ UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970.
   <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
-  data-page-id="/post/2020-11-13-why-gettime-returns-the-milliseconds-from-1970-to-present/"
-  data-page-url="/post/2020-11-13-why-gettime-returns-the-milliseconds-from-1970-to-present/"
-  data-page-title="为什么getTime()返回1970年至今的毫秒？"
+  data-page-id="/post/2021-09-29-randomly-generate-colors-using-js/"
+  data-page-url="/post/2021-09-29-randomly-generate-colors-using-js/"
+  data-page-title="使用js随机生成背景颜色"
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script>
