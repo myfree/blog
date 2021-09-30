@@ -2,6 +2,7 @@ baseURL = "https://shuxhan.com/"
 languageCode = "zh-cn"
 title = "求索日记"
 theme = "nov"
+paginate = 10
 
 [markup]
   [markup.goldmark]
@@ -24,13 +25,12 @@ theme = "nov"
     startLevel = 2
 
 [author]
-  name = "😎 Nov8nana"
+  name = "Nov8nana"
   homepage = "https://shuxhan.com"
 
 [params]
   mainSections = ["posts"]
-  # headTitle = "Nov8nana"
-  iconTitle = "Nov8nana"
+  iconTitle = "😎  Nov8nana"
   Description = "路漫漫其修远兮，吾将上下而求索！"
   CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d" # Cusdis id填写
   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
@@ -48,3 +48,4 @@ theme = "nov"
 [[params.socials]]
   name = "Github"
   link = "https://github.com/Nov8nana"
+
