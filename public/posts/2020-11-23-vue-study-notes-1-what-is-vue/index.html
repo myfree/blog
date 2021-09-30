@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2020-11-23-vue-study-notes-1-what-is-vue/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2020-11-23-vue-study-notes-1-what-is-vue/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "vue学习笔记(1)－－什么是vue?",
+      "headline" : "vue学习笔记(1)－－什么是vue?",
+      "description" : "一、什么是vue? 练习时使用，最新版本\n\u0026lt;script src=\u0026#34;https:\/\/cdn.jsdelivr.net\/npm\/vue\/dist\/vue.js\u0026#34;\u0026gt;\u0026lt;\/script\u0026gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题\n\u0026lt;script src=\u0026#34;https:\/\/cdn.jsdelivr.net\/npm\/vue@2.6.12\u0026#34;\u0026gt;\u0026lt;\/script\u0026gt; hello world\n\u0026lt;div id=\u0026#34;app\u0026#34;\u0026gt; {{message}} \u0026lt;\/div\u0026gt; \u0026lt;script\u0026gt; var app = new Vue({ el: \u0026#34;#app\u0026#34;, data: { message: \u0026#39;hello,world\u0026#39; } }) \u0026lt;\/script\u0026gt; 1.v-指令  v-bind－－绑定属性  \u0026lt;div id=\u0026#34;app-2\u0026#34;\u0026gt; \u0026lt;span v-bind:title=\u0026#34;message\u0026#34;\u0026gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ \u0026lt;\/span\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;script\u0026gt; var app = new Vue({ el: \u0026#39;#app\u0026#39;, data: { message: \u0026#39;页面加载于 \u0026#39; \u002b new Date().toLocaleString() } }) \u0026lt;\/script\u0026gt; v-bind是vue特有的提供的属性，他会在dom上应用一个响应式的操作\n打开console，输入app.message = \u0026quot;hello\u0026quot;，页面会改变内容只显示hello\n又或者输入app.message = false，内容会直接不显示\nvue官网例子：\n\u0026lt;!-- 绑定一个 attribute --\u0026gt; \u0026lt;img v-bind:src=\u0026#34;imageSrc\u0026#34;\u0026gt; \u0026lt;!",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-23 13:04:00 \u002b0000 UTC",
+      "dateModified" : "2020-11-23 13:04:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2020-11-23-vue-study-notes-1-what-is-vue\/",
+      "keywords" : [ "vue","笔记", ]
+  }
+</script>
+<title>vue学习笔记(1)－－什么是vue?</title>
+  <meta property="og:title" content="vue学习笔记(1)－－什么是vue?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="一、什么是vue? 练习时使用，最新版本
+&amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题
+&amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; hello world
+&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{message}} &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#34;#app&amp;#34;, data: { message: &amp;#39;hello,world&amp;#39; } }) &amp;lt;/script&amp;gt; 1.v-指令  v-bind－－绑定属性  &amp;lt;div id=&amp;#34;app-2&amp;#34;&amp;gt; &amp;lt;span v-bind:title=&amp;#34;message&amp;#34;&amp;gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;页面加载于 &amp;#39; &#43; new Date().toLocaleString() } }) &amp;lt;/script&amp;gt; v-bind是vue特有的提供的属性，他会在dom上应用一个响应式的操作
+打开console，输入app.message = &amp;quot;hello&amp;quot;，页面会改变内容只显示hello
+又或者输入app.message = false，内容会直接不显示
+vue官网例子：
+&amp;lt;!-- 绑定一个 attribute --&amp;gt; &amp;lt;img v-bind:src=&amp;#34;imageSrc&amp;#34;&amp;gt; &amp;lt;!" />
+  <meta name="description" content="一、什么是vue? 练习时使用，最新版本
+&amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题
+&amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; hello world
+&amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{message}} &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#34;#app&amp;#34;, data: { message: &amp;#39;hello,world&amp;#39; } }) &amp;lt;/script&amp;gt; 1.v-指令  v-bind－－绑定属性  &amp;lt;div id=&amp;#34;app-2&amp;#34;&amp;gt; &amp;lt;span v-bind:title=&amp;#34;message&amp;#34;&amp;gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;页面加载于 &amp;#39; &#43; new Date().toLocaleString() } }) &amp;lt;/script&amp;gt; v-bind是vue特有的提供的属性，他会在dom上应用一个响应式的操作
+打开console，输入app.message = &amp;quot;hello&amp;quot;，页面会改变内容只显示hello
+又或者输入app.message = false，内容会直接不显示
+vue官网例子：
+&amp;lt;!-- 绑定一个 attribute --&amp;gt; &amp;lt;img v-bind:src=&amp;#34;imageSrc&amp;#34;&amp;gt; &amp;lt;!" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">vue学习笔记(1)－－什么是vue?</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-23 13:04:00 UTC">
+                2020.11.23
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是vue">一、什么是vue?</a>
+      <ul>
+        <li><a href="#1v-指令">1.v-指令</a></li>
+        <li><a href="#2组件化构建应用">2.组件化构建应用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <h2 id="一什么是vue">一、什么是vue?</h2>
+<p>练习时使用，最新版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>生产时使用，明确版本号的版本，避免造成不可预见的问题</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&#34;</span>&gt;&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p><strong>hello world</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+    {{message}}
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+        el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;#app&#34;</span>,
+        data<span style="color:#ff79c6">:</span> {
+            message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,world&#39;</span>
+        }
+    })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><h3 id="1v-指令">1.v-指令</h3>
+<ol>
+<li>v-bind－－绑定属性</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app-2&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">v-bind:title</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;message&#34;</span>&gt;
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  &lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+  el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+  data<span style="color:#ff79c6">:</span> {
+    message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;页面加载于 &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Date</span>().toLocaleString()
+  }
+})
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p><code>v-bind</code>是vue特有的提供的属性，他会在dom上应用一个响应式的操作</p>
+<p>打开console，输入<code>app.message = &quot;hello&quot;</code>，页面会改变内容只显示<code>hello</code></p>
+<p>又或者输入<code>app.message = false</code>，内容会直接不显示</p>
+<p>vue官网例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#6272a4">&lt;!-- 绑定一个 attribute --&gt;</span>
+&lt;<span style="color:#ff79c6">img</span> <span style="color:#50fa7b">v-bind:src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;imageSrc&#34;</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 动态 attribute 名 (2.6.0+) --&gt;</span>
+&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">v-bind:</span>[<span style="color:#50fa7b">key</span>]=&#34;<span style="color:#50fa7b">value</span>&#34;&gt;&lt;/<span style="color:#ff79c6">button</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 缩写 --&gt;</span>
+&lt;<span style="color:#ff79c6">img</span> <span style="color:#50fa7b">:src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;imageSrc&#34;</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 动态 attribute 名缩写 (2.6.0+) --&gt;</span>
+&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">:</span>[<span style="color:#50fa7b">key</span>]=&#34;<span style="color:#50fa7b">value</span>&#34;&gt;&lt;/<span style="color:#ff79c6">button</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 内联字符串拼接 --&gt;</span>
+&lt;<span style="color:#ff79c6">img</span> <span style="color:#50fa7b">:src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&#39;/path/to/images/&#39; + fileName&#34;</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- class 绑定 --&gt;</span>
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ red: isRed }&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;[classA, classB]&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;[classA, { classB: isB, classC: isC }]&#34;</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- style 绑定 --&gt;</span>
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">:style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ fontSize: size + &#39;px&#39; }&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">:style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;[styleObjectA, styleObjectB]&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 绑定一个全是 attribute 的对象 --&gt;</span>
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ id: someProp, &#39;other-attr&#39;: otherProp }&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 通过 prop 修饰符绑定 DOM attribute --&gt;</span>
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:text-content</span>.<span style="color:#50fa7b">prop</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- prop 绑定。“prop”必须在 my-component 中声明。--&gt;</span>
+&lt;<span style="color:#ff79c6">my-component</span> <span style="color:#50fa7b">:prop</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;someThing&#34;</span>&gt;&lt;/<span style="color:#ff79c6">my-component</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 通过 $props 将父组件的 props 一起传给子组件 --&gt;</span>
+&lt;<span style="color:#ff79c6">child-component</span> <span style="color:#50fa7b">v-bind</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;$props&#34;</span>&gt;&lt;/<span style="color:#ff79c6">child-component</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- XLink --&gt;</span>
+&lt;<span style="color:#ff79c6">svg</span>&gt;&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">:xlink:special</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;foo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;&lt;/<span style="color:#ff79c6">svg</span>&gt;
+</code></pre></div><hr>
+<ol start="2">
+<li>v-if－－控制元素的显示隐藏</li>
+</ol>
+<p>刚才写了，通过<code>app.message = false</code>，可以让<code>message</code>代表的内容处于隐藏状态，但是控制的只能是通过<code>v-for</code>引入的内容，无法直接让元素隐藏</p>
+<p>其实，vue中还有一个专门控制元素显示隐藏的指令－－<code>v-if</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">v-if</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;show&#34;</span>&gt;
+    {{message}}
+  &lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;#app&#34;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,world&#39;</span>,
+      show<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>给元素绑定一个指令<code>v-if = &quot;show&quot;</code>，然后在data中控制<code>show</code>的布尔值，true显示，false隐藏</p>
+<p>同时还有这个功能的指令<code>v-show</code>，根据表达式之真假值，切换元素的<code>display</code> CSS property，也是通过绑定的布尔值来显示隐藏</p>
+<p><strong>但是<code>v-if</code>和<code>v-show</code>有些区别</strong></p>
+<p>(1) v-if是控制元素是否渲染最终控制元素的显示隐藏，适用于切换频率低的情况
+(2) v-show不管显示隐藏都渲染，然后通过布尔值绑定<code>display: none</code>属性，适用于切换频率高的情况</p>
+<blockquote>
+<p>注意：<code>v-show</code>不支持<code>&lt;tempalte&gt;</code>元素，也不支持<code>v-else</code></p>
+</blockquote>
+<p><strong>搭配用法</strong></p>
+<p><code>v-else</code>和<code>v-else-if</code></p>
+<p>可以通过使用<code>v-else</code>达到<code>v-if</code>的效果，必须和<code>v-if</code>搭配使用，比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-if</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1&gt;2&#34;</span>&gt;
+  hello
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-else</span>&gt;
+  hi
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>如果<code>v-if</code>不成立，执行<code>v-else</code>，也就是显示v-else里面的内容</p>
+<p>是不是有点javascript里面<code>if函数</code>的感觉了</p>
+<p><code>v-else-if</code>用法大致一样，必须和<code>v-if</code>和<code>v-else</code>搭配使用</p>
+<hr>
+<ol start="3">
+<li>v-for－－遍历数组并显示到页面上</li>
+</ol>
+<p><code>v-for</code>算是vue的核心指令之一了把，主要是渲染一个项目列表的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-for</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;item in list&#34;</span>&gt;{{item.message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;#app&#34;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      list<span style="color:#ff79c6">:</span> [
+        {message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;html&#39;</span>},
+        {message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;css&#39;</span>}
+      ]
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>可以直接把列表数据循环输出</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/a97433ec-8112-4b03-b14f-8d21614b4c68.png" alt=""></p>
+<p>并且在控制台中通过<code>push()</code>还能添加新的列表项</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">app.list.push({message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;js&#34;</span>})
+</code></pre></div><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/8d725ab7-9dfc-4e48-aadc-f8db2ce1c9cb.png" alt=""></p>
+<p>vue对数据操作，就是这么神奇</p>
+<p><strong>不推荐<code>v-for</code>和<code>v-if</code>同时使用，因为<code>v-for</code>拥有更高的优先级</strong></p>
+<hr>
+<ol start="4">
+<li>v-on－－绑定事件监听器</li>
+</ol>
+<p>即绑定事件，通过<code>v-on</code>给div绑定了一个点击事件，注意，在<code>reverseMessage</code>方法中，我们更新了应用的状态，但是吗诶呀触碰到dom，直接通过vue来进行处理，编写代码时只需要关注逻辑层即可</p>
+<p><code>v-on:click=&quot;messagenone&quot;</code>，然后在<code>methods</code>里面写上事件方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-on:click</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;messagenone&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;#app&#34;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+    },
+    methods<span style="color:#ff79c6">:</span> {
+      messagenone<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>);
+        demo.innerHTML <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+      }
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><hr>
+<ol start="5">
+<li>v-model－－数据的双向绑定</li>
+</ol>
+<p>vue还提供了<code>v-model</code>指令，它能轻松实现表单输入和应用状态之间的双向绑定</p>
+<p><strong>可使用场景：标签input, select, textarea 和 components</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+  &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">v-model</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;message&#34;</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;#app&#34;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><hr>
+<ol start="6">
+<li>v-text更新元素的内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-text</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;message&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+        el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+        data<span style="color:#ff79c6">:</span> {
+            message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+        }
+    })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>上面的div和下面的div内容跟随一致变化</p>
+<hr>
+<ol start="7">
+<li>v-html－－更新元素的innerHTML</li>
+</ol>
+<p><red>不建议使用，在网站上动态渲染html是非常危险的，容易导致<code>XXS攻击</code>，不能用在用户提交的内容上，如果必须使用v-html，可以考虑通过使用组件来代替</red></p>
+<hr>
+<ol start="8">
+<li>v-pre</li>
+</ol>
+<p>跳过绑定的元素和他的子元素的编译，直接显示原始内容</p>
+<p>跳过没有指令的节点不进行编译，直接显示内容，会加快页面的响应</p>
+<hr>
+<ol start="9">
+<li>v-cloak</li>
+</ol>
+<p>在编译没有编译完成之前，模板处于的状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">style</span>&gt;<span style="color:#ff79c6">v-cloak</span><span style="color:#ff79c6">]</span> {
+  <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">none</span>;
+}&lt;/<span style="color:#ff79c6">style</span>&gt;
+
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-cloak</span>&gt;
+  {{message}}
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+    	message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>上述代码表示的含义是，如果网络不好，<code>{{message}}</code>模板代表的<code>hello,world</code>还没有编译成功，此时<code>{{message}}</code>处于隐藏状态，当编译完成，页面直接显示<code>hello,world</code></p>
+<hr>
+<ol start="10">
+<li>v-once－－一次性渲染</li>
+</ol>
+<p>绑定该指令的元素及其子元素只会进行一次渲染，之后页面的第二次渲染会将其视为静态资源并跳过，可以用来优化性能</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">v-once</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+        el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+        data<span style="color:#ff79c6">:</span> {
+            message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>,
+        }
+    })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>使用场景：表单提交。可防止用户在请求未及时响应时，多次提交~</p>
+<h3 id="2组件化构建应用">2.组件化构建应用</h3>
+<p>组件化也是vue的核心机制之一，它允许我们使用小型，可复用的组件来构建大型应用</p>
+<p><img src="https://i.loli.net/2020/11/28/UDzxwoIJLq9u6nG.png" alt="vue-learn-3.png"></p>
+<p>在 vue 里，一个组件本质上是一个拥有预定义选项的一个 vue 实例。在 vue 中注册组件很简单</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// 定义名为 todo-item 的新组件
+</span><span style="color:#6272a4"></span>Vue.component(<span style="color:#f1fa8c">&#39;todo-item&#39;</span>, {
+  template<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;&lt;li&gt;这是个待办项&lt;/li&gt;&#39;</span>
+})
+
+<span style="color:#8be9fd;font-style:italic">var</span> app <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue(...)
+</code></pre></div><p>现在可以用它构建另一个组件模板</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">ol</span>&gt;
+  <span style="color:#6272a4">&lt;!-- 创建一个 todo-item 组件的实例 --&gt;</span>
+  &lt;<span style="color:#ff79c6">todo-item</span>&gt;&lt;/<span style="color:#ff79c6">todo-item</span>&gt;
+&lt;/<span style="color:#ff79c6">ol</span>&gt;
+</code></pre></div><p>但是这样会为每个待办项渲染同样的文本，这看起来并不炫酷。我们应该能从父作用域将数据传到子组件才对。让我们来修改一下组件的定义，使之能够接受一个<code>props</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Vue.component(<span style="color:#f1fa8c">&#39;todo-item&#39;</span>, {
+  <span style="color:#6272a4">// todo-item 组件现在接受一个
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// &#34;props&#34;，类似于一个自定义 attribute。
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// 这个 props 名为 todo。
+</span><span style="color:#6272a4"></span>  props<span style="color:#ff79c6">:</span> [<span style="color:#f1fa8c">&#39;todo&#39;</span>],
+  template<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&#39;</span>
+})
+</code></pre></div><p>现在，我们可以使用<code>v-bind</code>指令将待办项传到循环输出的每个组件中</p>
+<p>现在我们为每个 todo-item 提供 todo 对象todo 对象是变量，即其内容可以是动态的，我们也需要为每个组件提供一个<code>key</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app-7&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">ol</span>&gt;
+    &lt;<span style="color:#ff79c6">todo-item</span>
+      <span style="color:#50fa7b">v-for</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;item in groceryList&#34;</span>
+      <span style="color:#50fa7b">v-bind:todo</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;item&#34;</span>
+      <span style="color:#50fa7b">v-bind:key</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;item.id&#34;</span>
+    &gt;&lt;/<span style="color:#ff79c6">todo-item</span>&gt;
+  &lt;/<span style="color:#ff79c6">ol</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Vue.component(<span style="color:#f1fa8c">&#39;todo-item&#39;</span>, {
+  props<span style="color:#ff79c6">:</span> [<span style="color:#f1fa8c">&#39;todo&#39;</span>],
+  template<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&#39;</span>
+})
+
+<span style="color:#8be9fd;font-style:italic">var</span> app7 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+  el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app-7&#39;</span>,
+  data<span style="color:#ff79c6">:</span> {
+    groceryList<span style="color:#ff79c6">:</span> [
+      { id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">0</span>, text<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;蔬菜&#39;</span> },
+      { id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>, text<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;奶酪&#39;</span> },
+      { id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>, text<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;随便其它什么人吃的东西&#39;</span> }
+    ]
+  }
+})
+</code></pre></div><p>尽管这只是一个刻意设计的例子，但是我们已经设法将应用分割成了两个更小的单元。子单元通过<code>prop</code>接口与父单元进行了良好的解耦。我们现在可以进一步改进 <todo-item> 组件，提供更为复杂的模板和逻辑，而不会影响到父单元</p>
+<p>在一个大型应用中，有必要将整个应用程序划分为组件，以使开发更易管理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">app-nav</span>&gt;&lt;/<span style="color:#ff79c6">app-nav</span>&gt;
+  &lt;<span style="color:#ff79c6">app-view</span>&gt;
+    &lt;<span style="color:#ff79c6">app-sidebar</span>&gt;&lt;/<span style="color:#ff79c6">app-sidebar</span>&gt;
+    &lt;<span style="color:#ff79c6">app-content</span>&gt;&lt;/<span style="color:#ff79c6">app-content</span>&gt;
+  &lt;/<span style="color:#ff79c6">app-view</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/vue/">
+                vue
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                笔记
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/posts/2020-11-20-vue-uses-cli-scaffolding-to-build-project-engineering/">vue使用cli脚手架构建项目工程</a></li>
+    
+    <li><a href="/posts/2020-11-17-event-monitoring-function-and-event-capture-and-bubbling-mechanism/">事件监听函数，以及事件的捕获和冒泡机制</a></li>
+    
+    <li><a href="/posts/2020-11-16-the-difference-between-getelementby-series-and-queryselector-series/">getElementBy系列和querySelector系列的区别</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2020-11-23-vue-study-notes-1-what-is-vue/"
+  data-page-url="/posts/2020-11-23-vue-study-notes-1-what-is-vue/"
+  data-page-title="vue学习笔记(1)－－什么是vue?"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2020-10-21-javascript-basic-grammar/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2020-10-21-javascript-basic-grammar/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "javascript——基本语法",
+      "headline" : "javascript——基本语法",
+      "description" : "在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。\n数据类型有：数据，字符串，数组，数字，布尔值等。\n一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：\ntrue;\t\/\/true false;\t\/\/false 2\u0026gt;1;\t\/\/true 2\u0026gt;3;\t\/\/fasle 与\t\u0026amp;\u0026amp; 两者同时为true，运算结果为true\n**或\t|| ** 只要有一个为true，运算结果就是true\n非\t！ 当程序为true时，运算结果取反为false\nvar age = 15; if(age \u0026gt;= 18) { alert(\u0026#39;adult\u0026#39;) }else{ alert(\u0026#39;teenager\u0026#39;) } age值是15，当age大于且等于18的时候浏览器弹出adult，反之弹出teenager\n3.字符串 4.比较运算符 ==和===\n当使用==进行比较的时候，一般会自动转换类型然后再进行比较\n当使用===进行比较的时候，如果数据类型不一样，直接返回false，等到类型一致了，然后再进行比较\n有一个特殊的number就是NaN，它不与任何值相等，包括它自己NaN\nNaN === NaN\t\/\/false 5.null和undefined null表示一个空值，0表示一个数值，\u0027\u0027表示长度为0的字符串，但是null表示空\nundefined表示未定义\n但是区分两者意义不大，大多数还是在用null，undefined仅仅在判断函数参数是否传递的情况下有用\n6.数组Array [ ] ，表示一组按顺序排列的集合，其中的每个值称为元素\nnew Array(1,2,3)\t\/\/[1,2,3] 数组的索引\n二、对象和变量 var person = { name: \u0026#39;jack\u0026#39;, age: 20, city: \u0026#39;hangzhou\u0026#39; } person是对象变量，name: \u0027jack\u0027这就是一个键值对，name是属性名，\u0027jack\u0027是属性",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-10-21 21:11:00 \u002b0000 UTC",
+      "dateModified" : "2020-10-21 21:11:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2020-10-21-javascript-basic-grammar\/",
+      "keywords" : [ "笔记", ]
+  }
+</script>
+<title>javascript——基本语法</title>
+  <meta property="og:title" content="javascript——基本语法" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。
+数据类型有：数据，字符串，数组，数字，布尔值等。
+一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：
+true;	//true false;	//false 2&amp;gt;1;	//true 2&amp;gt;3;	//fasle 与	&amp;amp;&amp;amp; 两者同时为true，运算结果为true
+**或	|| ** 只要有一个为true，运算结果就是true
+非	！ 当程序为true时，运算结果取反为false
+var age = 15; if(age &amp;gt;= 18) { alert(&amp;#39;adult&amp;#39;) }else{ alert(&amp;#39;teenager&amp;#39;) } age值是15，当age大于且等于18的时候浏览器弹出adult，反之弹出teenager
+3.字符串 4.比较运算符 ==和===
+当使用==进行比较的时候，一般会自动转换类型然后再进行比较
+当使用===进行比较的时候，如果数据类型不一样，直接返回false，等到类型一致了，然后再进行比较
+有一个特殊的number就是NaN，它不与任何值相等，包括它自己NaN
+NaN === NaN	//false 5.null和undefined null表示一个空值，0表示一个数值，&#39;&#39;表示长度为0的字符串，但是null表示空
+undefined表示未定义
+但是区分两者意义不大，大多数还是在用null，undefined仅仅在判断函数参数是否传递的情况下有用
+6.数组Array [ ] ，表示一组按顺序排列的集合，其中的每个值称为元素
+new Array(1,2,3)	//[1,2,3] 数组的索引
+二、对象和变量 var person = { name: &amp;#39;jack&amp;#39;, age: 20, city: &amp;#39;hangzhou&amp;#39; } person是对象变量，name: &#39;jack&#39;这就是一个键值对，name是属性名，&#39;jack&#39;是属性" />
+  <meta name="description" content="在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。
+数据类型有：数据，字符串，数组，数字，布尔值等。
+一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：
+true;	//true false;	//false 2&amp;gt;1;	//true 2&amp;gt;3;	//fasle 与	&amp;amp;&amp;amp; 两者同时为true，运算结果为true
+**或	|| ** 只要有一个为true，运算结果就是true
+非	！ 当程序为true时，运算结果取反为false
+var age = 15; if(age &amp;gt;= 18) { alert(&amp;#39;adult&amp;#39;) }else{ alert(&amp;#39;teenager&amp;#39;) } age值是15，当age大于且等于18的时候浏览器弹出adult，反之弹出teenager
+3.字符串 4.比较运算符 ==和===
+当使用==进行比较的时候，一般会自动转换类型然后再进行比较
+当使用===进行比较的时候，如果数据类型不一样，直接返回false，等到类型一致了，然后再进行比较
+有一个特殊的number就是NaN，它不与任何值相等，包括它自己NaN
+NaN === NaN	//false 5.null和undefined null表示一个空值，0表示一个数值，&#39;&#39;表示长度为0的字符串，但是null表示空
+undefined表示未定义
+但是区分两者意义不大，大多数还是在用null，undefined仅仅在判断函数参数是否传递的情况下有用
+6.数组Array [ ] ，表示一组按顺序排列的集合，其中的每个值称为元素
+new Array(1,2,3)	//[1,2,3] 数组的索引
+二、对象和变量 var person = { name: &amp;#39;jack&amp;#39;, age: 20, city: &amp;#39;hangzhou&amp;#39; } person是对象变量，name: &#39;jack&#39;这就是一个键值对，name是属性名，&#39;jack&#39;是属性" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">javascript——基本语法</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-10-21 21:11:00 UTC">
+                2020.10.21
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一数据类型">一、数据类型</a>
+      <ul>
+        <li><a href="#1number">1.number</a></li>
+        <li><a href="#2布尔值">2.布尔值</a></li>
+        <li><a href="#3字符串">3.字符串</a></li>
+        <li><a href="#4比较运算符">4.比较运算符</a></li>
+        <li><a href="#5null和undefined">5.<code>null</code>和<code>undefined</code></a></li>
+        <li><a href="#6数组array">6.数组Array</a></li>
+      </ul>
+    </li>
+    <li><a href="#二对象和变量">二、对象和变量</a></li>
+    <li><a href="#三字符串">三、字符串</a>
+      <ul>
+        <li><a href="#1模板字符串">1.模板字符串</a></li>
+        <li><a href="#2touppercase大写">2.toUpperCase大写</a></li>
+        <li><a href="#3tolowercase小写">3.toLowerCase小写</a></li>
+        <li><a href="#4indexof">4.indexOf</a></li>
+        <li><a href="#5substring">5.substring</a></li>
+      </ul>
+    </li>
+    <li><a href="#四数组">四、数组</a>
+      <ul>
+        <li><a href="#1length属性">1.length属性</a></li>
+        <li><a href="#2通过索引改变数组">2.通过索引改变数组</a></li>
+        <li><a href="#3indexof">3.indexOf</a></li>
+        <li><a href="#4slice">4.slice</a></li>
+        <li><a href="#5push和pop">5.push和pop</a></li>
+        <li><a href="#6unshifth和shift">6.unshifth和shift</a></li>
+        <li><a href="#7sort">7.sort</a></li>
+        <li><a href="#8reverse">8.reverse</a></li>
+        <li><a href="#9splice">9.splice</a></li>
+      </ul>
+    </li>
+    <li><a href="#五条件判断">五、条件判断</a></li>
+    <li><a href="#六循环">六、循环</a>
+      <ul>
+        <li><a href="#1-for循环">1. for循环</a></li>
+        <li><a href="#2-通过for语句遍历数组">2. 通过for语句遍历数组</a></li>
+        <li><a href="#3-用break终止for循环">3. 用break终止for循环</a></li>
+        <li><a href="#4-forin">4. for&hellip;in</a></li>
+        <li><a href="#5-while循环">5. while循环</a></li>
+        <li><a href="#6-dowhile">6. do&hellip;while</a></li>
+      </ul>
+    </li>
+    <li><a href="#七map和set">七、Map和Set</a>
+      <ul>
+        <li><a href="#1-map">1. Map</a></li>
+        <li><a href="#2-set">2. Set</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <p>在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。</p>
+<p>数据类型有：数据，字符串，数组，数字，布尔值等。</p>
+<!-- more -->
+<h2 id="一数据类型">一、数据类型</h2>
+<h3 id="1number">1.number</h3>
+<h3 id="2布尔值">2.布尔值</h3>
+<p>只有true和false两种，可以直接用true和false来表达，比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">true</span>;	<span style="color:#6272a4">//true
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">false</span>;	<span style="color:#6272a4">//false
+</span><span style="color:#6272a4"></span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">1</span>;	<span style="color:#6272a4">//true
+</span><span style="color:#6272a4"></span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">3</span>;	<span style="color:#6272a4">//fasle
+</span></code></pre></div><p><strong>与	&amp;&amp;</strong>
+两者同时为<code>true</code>，运算结果为<code>true</code></p>
+<p>**或	|| **
+只要有一个为<code>true</code>，运算结果就是<code>true</code></p>
+<p><strong>非	！</strong>
+当程序为<code>true</code>时，运算结果取反为<code>false</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">15</span>;
+<span style="color:#ff79c6">if</span>(age <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">18</span>) {
+    alert(<span style="color:#f1fa8c">&#39;adult&#39;</span>)
+}<span style="color:#ff79c6">else</span>{
+    alert(<span style="color:#f1fa8c">&#39;teenager&#39;</span>)
+}
+</code></pre></div><p>age值是15，当age大于且等于18的时候浏览器弹出adult，反之弹出teenager</p>
+<h3 id="3字符串">3.字符串</h3>
+<h3 id="4比较运算符">4.比较运算符</h3>
+<p><code>==</code>和<code>===</code></p>
+<p>当使用<code>==</code>进行比较的时候，一般会自动转换类型然后再进行比较</p>
+<p>当使用<code>===</code>进行比较的时候，如果数据类型不一样，直接返回<code>false</code>，等到类型一致了，然后再进行比较</p>
+<p>有一个特殊的<code>number</code>就是<code>NaN</code>，它不与任何值相等，包括它自己<code>NaN</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">NaN</span> <span style="color:#ff79c6">===</span> <span style="color:#ff79c6">NaN</span>	<span style="color:#6272a4">//false
+</span></code></pre></div><h3 id="5null和undefined">5.<code>null</code>和<code>undefined</code></h3>
+<p><code>null</code>表示一个空值，<code>0</code>表示一个数值，<code>''</code>表示长度为0的字符串，但是<code>null</code>表示空</p>
+<p><code>undefined</code>表示未定义</p>
+<p>但是区分两者意义不大，大多数还是在用<code>null</code>，<code>undefined</code>仅仅在判断函数参数是否传递的情况下有用</p>
+<h3 id="6数组array">6.数组Array</h3>
+<p>[ ] ，表示一组按顺序排列的集合，其中的每个值称为元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Array</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>)	<span style="color:#6272a4">//[1,2,3]
+</span></code></pre></div><p><strong>数组的索引</strong></p>
+<h2 id="二对象和变量">二、对象和变量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> person <span style="color:#ff79c6">=</span> {
+	name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;jack&#39;</span>,
+	age<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">20</span>,
+	city<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hangzhou&#39;</span>
+}
+</code></pre></div><p><code>person</code>是对象变量，<code>name: 'jack'</code>这就是一个键值对，<code>name</code>是属性名，<code>'jack'</code>是属性</p>
+<p>要获取一个对象的属性，用<code>对象变量.属性</code>，也就是<code>person.name</code>，结果是<code>jack</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">person.name	<span style="color:#6272a4">//jack
+</span><span style="color:#6272a4"></span>person.age	<span style="color:#6272a4">//20
+</span></code></pre></div><p><code>var</code>是一个动态语言，就算var定义了x = 100，后面又有x = x+ 100,所以就变成了200,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>;
+x <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">+</span> <span style="color:#bd93f9">100</span>;
+console.log(x)	<span style="color:#6272a4">//200
+</span></code></pre></div><p>假如用int来定义x，后面的x = x + 100就会报错</p>
+<p>并且使用var定义的变量只会存在与该函数作用域，并不是默认的全局变量</p>
+<p>而如果没有使用<code>var</code>，直接定义<code>i = 100</code>，变量i会被默认为全局变量</p>
+<h2 id="三字符串">三、字符串</h2>
+<p>需要用到转义字符<code>\</code></p>
+<h3 id="1模板字符串">1.模板字符串</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;小明&#39;</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> message <span style="color:#ff79c6">=</span> name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;了&#39;</span>;
+<span style="color:#6272a4">//小明今年20了
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> message <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">`</span><span style="color:#f1fa8c">${</span>naem<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">，你今年</span><span style="color:#f1fa8c">${</span><span style="color:#bd93f9">20</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">了`</span>
+<span style="color:#6272a4">//ES6新增的语法，一样的结果
+</span></code></pre></div><p><strong>字符串不可改变</strong></p>
+<p>如果对字符串的某个索引赋值，不会报错，不会发生任何改变</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello,world!&#39;</span>
+a[<span style="color:#bd93f9">0</span>];	<span style="color:#6272a4">//h
+</span><span style="color:#6272a4"></span>a[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> k;
+console.log(a);	<span style="color:#6272a4">//结果为&#39;hello,world!&#39;，不会发生改变
+</span></code></pre></div><h3 id="2touppercase大写">2.toUpperCase大写</h3>
+<p>他会返回一个<code>新的字符串</code>，把一个字符串全部变成<code>大写</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello&#39;</span>;
+a.toUpperCase();	<span style="color:#6272a4">//返回HELLO
+</span></code></pre></div><h3 id="3tolowercase小写">3.toLowerCase小写</h3>
+<p>他会返回一个<code>新的字符串</code>，他会把一个字符串全部变成<code>小写</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello&#39;</span>
+a.toLowerCase();	<span style="color:#6272a4">//HELLO
+</span></code></pre></div><h3 id="4indexof">4.indexOf</h3>
+<p>他会返回指定字符串的索引，如果没有找到指定的字符串，则会返回<code>-1</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello,world!&#39;</span>
+a.indexOf(<span style="color:#f1fa8c">&#39;world&#39;</span>);	<span style="color:#6272a4">//6
+</span></code></pre></div><h3 id="5substring">5.substring</h3>
+<p>他会返回指定<code>区间索引</code>的字符串，包括前一个数，不包括后一个数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello,world!&#39;</span>
+a.substrng(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">5</span>);	<span style="color:#6272a4">//hello
+</span></code></pre></div><p>如果<code>()</code>里面只有一个数值，则从这个数值的索引开始直到结束，比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello,world!&#39;</span>;
+a.substring(<span style="color:#bd93f9">6</span>);	<span style="color:#6272a4">//返回world!
+</span></code></pre></div><h2 id="四数组">四、数组</h2>
+<p>数组<code>Array</code>可以包含任何类型的数据，并通过索引来访问每个数据</p>
+<h3 id="1length属性">1.length属性</h3>
+<p><code>Array</code>的长度可以用<code>length</code>属性来获取，它和索引不一样，从1开始计算</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>,<span style="color:#f1fa8c">&#39;hello&#39;</span>,<span style="color:#ff79c6">null</span>,<span style="color:#ff79c6">true</span>]
+arr.length;	<span style="color:#6272a4">//返回6
+</span></code></pre></div><p>并且通过改变<code>length</code>的值，可以改变数组的内容大小变化</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>,<span style="color:#f1fa8c">&#39;hello&#39;</span>,<span style="color:#ff79c6">null</span>,<span style="color:#ff79c6">true</span>]
+arr.length;	<span style="color:#6272a4">//6
+</span><span style="color:#6272a4"></span>arr.length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8</span>;	<span style="color:#6272a4">//[1,2,3,&#39;hello&#39;,null,true,undefined,undefined]
+</span><span style="color:#6272a4"></span>arr.length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>;	<span style="color:#6272a4">//[1,2]
+</span></code></pre></div><h3 id="2通过索引改变数组">2.通过索引改变数组</h3>
+<p><code>Array</code>可以直接通过索引修改对应的元素</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>]
+arr[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello&#39;</span>
+console.log(arr); 	<span style="color:#6272a4">//[1,&#39;hello&#39;,3]
+</span></code></pre></div><p>js允许直接通过索引改变数组的长度，不会报错，但是不建议这么做</p>
+<h3 id="3indexof">3.indexOf</h3>
+<p><code>Array</code>可以通过<code>indexOf</code>来搜索一个指定的元素的索引</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>,<span style="color:#f1fa8c">&#39;hello&#39;</span>]
+arr.indexOf(<span style="color:#bd93f9">1</span>);	<span style="color:#6272a4">//0
+</span><span style="color:#6272a4"></span>arr.indexOf(<span style="color:#bd93f9">3</span>); <span style="color:#6272a4">//2
+</span></code></pre></div><h3 id="4slice">4.slice</h3>
+<p><code>slice</code>属性与<code>substring</code>类似，后者是截取字符串的内容，<code>slice</code>是截取数组的内容，然后返回一个新的数组</p>
+<p>如果有两个数值，包括前面的数值，不包括后面的数值；如果只有一个数值，则从它开始算起一直到结束</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>,<span style="color:#bd93f9">4</span>,<span style="color:#bd93f9">5</span>];
+arr.slice[<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">2</span>];	<span style="color:#6272a4">//返回[1,2]
+</span><span style="color:#6272a4"></span>arr.slice[<span style="color:#bd93f9">2</span>];	<span style="color:#6272a4">//返回[3,4,5]
+</span></code></pre></div><p>如果<code>slice</code>不指定数值，则返回数组的全部内容，可以利用这个特性复制一个相同的数组出来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>];
+<span style="color:#8be9fd;font-style:italic">var</span> arr1 <span style="color:#ff79c6">=</span> arr.slice();
+console.log(arr1);	<span style="color:#6272a4">//[1,2,3]
+</span><span style="color:#6272a4"></span>arr1 <span style="color:#ff79c6">===</span> arr;	<span style="color:#6272a4">//true
+</span></code></pre></div><blockquote>
+<p>注意：两个数组相比都是false，就算数组内容一样也会false</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>]
+<span style="color:#8be9fd;font-style:italic">var</span> arr1 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>]
+arr <span style="color:#ff79c6">===</span> arr1	<span style="color:#6272a4">//false
+</span></code></pre></div></blockquote>
+<h3 id="5push和pop">5.push和pop</h3>
+<p><code>push()</code>向数组的末尾添加元素</p>
+<p><code>pop()</code>把数组的最后一个元素删掉</p>
+<h3 id="6unshifth和shift">6.unshifth和shift</h3>
+<p><code>unshift()</code>向数组的头部添加元素</p>
+<p><code>shift()</code>把数组的第一个元素删掉</p>
+<h3 id="7sort">7.sort</h3>
+<p><code>sort()</code>可以对数组进行排序，会直接修改当前数组的元素位置，直接调用时，会按照默认的方式排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [B,A,C]
+arr.sort();
+arr	<span style="color:#6272a4">//[A,B,C]
+</span></code></pre></div><h3 id="8reverse">8.reverse</h3>
+<p><code>reverse()</code>会把整个数组调个个，不是反向排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">3</span>]
+arr.reverse();
+arr;	<span style="color:#6272a4">//[3,1,2]
+</span></code></pre></div><h3 id="9splice">9.splice</h3>
+<p>这个属性是万能的方法，通过调用<code>splice()</code>，可以从指定的索引删除元素或者添加元素</p>
+<h2 id="五条件判断">五、条件判断</h2>
+<p>在js中，使用 <code>if() {...} else {...}</code>进行条件判断</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">22</span>;
+<span style="color:#ff79c6">if</span>(age<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">20</span>) {
+	<span style="color:#6272a4">// 如果age&gt;20成立，执行该语句
+</span><span style="color:#6272a4"></span>	console.log(<span style="color:#f1fa8c">&#39;22&gt;20&#39;</span>)
+}<span style="color:#ff79c6">else</span> {
+	<span style="color:#6272a4">// 如果age&gt;20不成立，则执行该语句
+</span><span style="color:#6272a4"></span>	conosle.log(<span style="color:#f1fa8c">&#39;22&lt;20&#39;</span>)
+}
+</code></pre></div><p>最终，控制台会打印出<code>22&gt;20</code>，因为条件成立</p>
+<blockquote>
+<p>执行的语句要用<code>{}</code>包裹起来，防止其他情况会报错</p>
+</blockquote>
+<p><strong>多条件判断语句</strong></p>
+<p>三个或者三个以上多判断语句，被称为多条件判断语句</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>
+<span style="color:#ff79c6">if</span>(a<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">10</span>) {
+	console.log(<span style="color:#f1fa8c">&#39;a&lt;10&#39;</span>)
+}<span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span>(a<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">20</span>){
+	console.log(<span style="color:#f1fa8c">&#39;a&gt;10&#39;</span>)
+}<span style="color:#ff79c6">else</span>{
+	console.log(<span style="color:#f1fa8c">&#39;10&lt;=a&lt;=20&#39;</span>)
+}
+</code></pre></div><blockquote>
+<p>如果多个条件中都满足，则取第一个满足的结果，执行其代码，之后满足的自动忽略掉，所以在 进行条件判断的时候，不要重复判断情况</p>
+</blockquote>
+<p>一个复杂的多条件判断语句</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> height <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">parseFloat</span>(prompt(<span style="color:#f1fa8c">&#39;请输入身高(m):&#39;</span>));
+<span style="color:#8be9fd;font-style:italic">var</span> weight <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">parseFloat</span>(prompt(<span style="color:#f1fa8c">&#39;请输入体重(kg):&#39;</span>));
+<span style="color:#8be9fd;font-style:italic">var</span> bmi <span style="color:#ff79c6">=</span> weight<span style="color:#ff79c6">/</span>(height<span style="color:#ff79c6">*</span>height);
+<span style="color:#ff79c6">if</span>(bmi <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">18.5</span>) {
+	console.log(<span style="color:#f1fa8c">&#39;过轻&#39;</span>)
+}<span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span>(bmi<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">18.5</span>,bmi<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">25</span>) {
+	console.log(<span style="color:#f1fa8c">&#39;正常&#39;</span>)
+}<span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span>(bmi<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">25</span>,bmi<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">28</span>){
+	console.log(<span style="color:#f1fa8c">&#39;过重&#39;</span>)
+}<span style="color:#ff79c6">else</span>  <span style="color:#ff79c6">if</span>(bmi<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">28</span>,bmi<span style="color:#ff79c6">&lt;</span><span style="color:#bd93f9">32</span>){
+	console.log(<span style="color:#f1fa8c">&#39;肥胖&#39;</span>)
+}<span style="color:#ff79c6">else</span>{
+	console.log(<span style="color:#f1fa8c">&#39;严重肥胖&#39;</span>)
+}
+</code></pre></div><blockquote>
+<p><code>parseFloat</code>可以解析一个字符串，并返回一个数字</p>
+</blockquote>
+<h2 id="六循环">六、循环</h2>
+<p>简单的运算可以手打出来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">3</span>
+<span style="color:#6272a4">// 控制台输出 6 
+</span></code></pre></div><p>但是几百次，几千次，几万次的运算无法手打，可以依靠循环语句来进行计算，为了让计算机能够进行成千上万次的运算</p>
+<p>循环语句有两种for和while，他们有不同的用法，适应不同的情况</p>
+<h3 id="1-for循环">1. for循环</h3>
+<p>通过初始条件，结束条件和递增条件来循环执行语句块</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+<span style="color:#8be9fd;font-style:italic">var</span> i
+<span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; i <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">1000</span>; i<span style="color:#ff79c6">++</span>) {
+	x <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">+</span> i
+}
+</code></pre></div><blockquote>
+<p>i = 1是初始条件，i从1开始算起
+i&lt;=是判断条件，满足就执行循环，不满足就退出循环
+i++是递增条件，每次循环过后都是＋1，当无数次后不满足了i&lt;=1000，会跳出循环</p>
+</blockquote>
+<h3 id="2-通过for语句遍历数组">2. 通过for语句遍历数组</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;apple&#39;</span>, <span style="color:#f1fa8c">&#39;banana&#39;</span>, <span style="color:#f1fa8c">&#39;oringen&#39;</span>]
+<span style="color:#8be9fd;font-style:italic">var</span> x,i
+<span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;=</span> arr.length; i<span style="color:#ff79c6">++</span>) {
+	x <span style="color:#ff79c6">=</span> arr[i]
+	console.log(x)
+}
+</code></pre></div><h3 id="3-用break终止for循环">3. 用break终止for循环</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+<span style="color:#ff79c6">for</span> (  ;  ;  ) { <span style="color:#6272a4">// 将无限循环下去
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> (x <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">100</span>) {
+	console.log(x)
+	<span style="color:#ff79c6">break</span>; <span style="color:#6272a4">// 通过if判断来退出循环
+</span><span style="color:#6272a4"></span>    }
+    x <span style="color:#ff79c6">++</span>;
+}
+</code></pre></div><h3 id="4-forin">4. for&hellip;in</h3>
+<p>可以把一个对象对属性循环遍历出来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> person <span style="color:#ff79c6">=</span> {
+	name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;jack&#39;</span>,
+	age<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">20</span>,
+	city<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;beijing&#39;</span>
+};
+<span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">in</span> person) {
+	console.log(i)
+	console.log(person[i])
+}
+</code></pre></div><p><code>var i in person</code>会把person里面所有对属性遍历，然后通过<code>console.log(i)</code>可以把属性名打印出来，<code>console.log(person[i])</code>可以把属性值打印出来</p>
+<p>如果对一个数组进行这样的操作，就可以把数组元素对索引打印出来，打印结果是<code>字符串</code>形式</p>
+<h3 id="5-while循环">5. while循环</h3>
+<p><code>while</code>循环适用于忽视判断条件的情况，<code>for</code>适用于明确了初始条件和结束条件的情况</p>
+<p>比如要计算1-100之间的寄数和，可以用<code>while</code>循环</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+<span style="color:#8be9fd;font-style:italic">var</span> n <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">99</span>
+<span style="color:#ff79c6">while</span> (n <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>) {
+	x <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">+</span> n
+	n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>
+}
+x
+</code></pre></div><p>在变量内部，n不断自减，直接n=-1，不满足判断条件，此时退出循环</p>
+<h3 id="6-dowhile">6. do&hellip;while</h3>
+<p><code>do...while</code>循环是先循环，然后再判断条件，所以不论条件是否满足，<code>do...while</code>至少循环一次，这是它与<code>for</code>和<code>while</code>的区别</p>
+<p>比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> n <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+<span style="color:#ff79c6">do</span>{
+	n <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+}<span style="color:#ff79c6">while</span>(n <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span>)
+n;	<span style="color:#6272a4">//1
+</span></code></pre></div><p>先定义<code>n=0</code>，然后执行<code>n=n+1</code>，所以<code>n=1</code>，再判断条件，当n&gt;1的时候执行，不符合，退出循环，控制台输出<code>n</code>，结果为 <code>1</code></p>
+<h2 id="七map和set">七、Map和Set</h2>
+<h3 id="1-map">1. Map</h3>
+<p><code>Map</code>是一组键值对的结构，具有极快的查找速度</p>
+<p>只要我们定义一个属性名和属性值对应的数组，就可以从这个数组里面通过name直接查找数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> m <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Map([[<span style="color:#f1fa8c">&#39;jack&#39;</span>, <span style="color:#bd93f9">95</span>], [<span style="color:#f1fa8c">&#39;Bob&#39;</span>, <span style="color:#bd93f9">94</span>], [<span style="color:#f1fa8c">&#39;linda&#39;</span>, <span style="color:#bd93f9">93</span>]])
+m.get(<span style="color:#f1fa8c">&#39;jack&#39;</span>)
+</code></pre></div><p>首先，要初始化一个<code>Map</code>数组</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> m <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Map();	<span style="color:#6272a4">//空map
+</span><span style="color:#6272a4"></span>m.set(<span style="color:#f1fa8c">&#39;jack&#39;</span>, <span style="color:#bd93f9">95</span>)	<span style="color:#6272a4">//添加一个新的键值对		key-value
+</span><span style="color:#6272a4"></span>m.has(<span style="color:#f1fa8c">&#39;jack&#39;</span>)		<span style="color:#6272a4">//检查是否存在 &#39;			jack&#39;key
+</span><span style="color:#6272a4"></span>m.get(<span style="color:#f1fa8c">&#39;jack&#39;</span>)		<span style="color:#6272a4">//获取&#39;jack&#39;对应的数据		value
+</span><span style="color:#6272a4"></span>m.<span style="color:#ff79c6">delete</span>(<span style="color:#f1fa8c">&#39;jack&#39;</span>)	<span style="color:#6272a4">//删除&#39;jack&#39;键值对			key-value
+</span><span style="color:#6272a4"></span>m.get(<span style="color:#f1fa8c">&#39;jack&#39;</span>)		<span style="color:#6272a4">//undefined
+</span></code></pre></div><blockquote>
+<p>一个key只能对应一个value，所以如果重复赋值的话，后面的数据会把前面的数据覆盖掉</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> m <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Map();
+m.set(<span style="color:#f1fa8c">&#39;Adam&#39;</span>, <span style="color:#bd93f9">67</span>);
+m.set(<span style="color:#f1fa8c">&#39;Adam&#39;</span>, <span style="color:#bd93f9">88</span>);
+m.get(<span style="color:#f1fa8c">&#39;Adam&#39;</span>); <span style="color:#6272a4">// 88
+</span></code></pre></div><h3 id="2-set">2. Set</h3>
+<p><code>set</code>中值储存<code>key</code>，不储存<code>value</code>，而且在<code>set</code>中，<code>key</code>不能重复，如果重复了，会自动忽略掉重复</p>
+<p>首先，创建一个空的<code>set</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> m <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Set()	<span style="color:#6272a4">//空set
+</span><span style="color:#6272a4"></span>m.add(<span style="color:#bd93f9">1</span>)			<span style="color:#6272a4">//添加一个key
+</span><span style="color:#6272a4"></span>m.<span style="color:#ff79c6">delete</span>(<span style="color:#bd93f9">1</span>)			<span style="color:#6272a4">//删除一个key
+</span><span style="color:#6272a4"></span>m	<span style="color:#6272a4">//控制台输入［ ］空数组，没有数据
+</span></code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                笔记
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2020-10-21-javascript-basic-grammar/"
+  data-page-url="/posts/2020-10-21-javascript-basic-grammar/"
+  data-page-title="javascript——基本语法"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2020-11-15-dom-document-object-model/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2020-11-15-dom-document-object-model/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "DOM－－文档对象模型",
+      "headline" : "DOM－－文档对象模型",
+      "description" : "DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念\n一、什么是DOM？ DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念\njs通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应\n二、节点树 1.节点类型  文档节点－－Document 标签节点－－Element 文本节点－－Text 注释节点－－Comment 属性节点－－Attr  2. 属性  节点类型－－nodeType 节点名称－－nodeName 节点值－－nodeValue 子节点－－childNodes 父节点－－parentNodes 上一个节点－－previousSibling 下一个节点－－nextSibling 第一个子节点－－firstChild 最后一个子节点－－lastChild  3.文档节点－－document (1) 获取  getElementById()－－通过id获取元素  \u0026lt;div id=\u0026#34;demo\u0026#34;\u0026gt;通过id获取元素\u0026lt;\/div\u0026gt; \u0026lt;script\u0026gt; var demo = document.getElementById(\u0026#39;demo\u0026#39;); demo.onclick = function() { console.log(\u0026#39;通过id获取元素\u0026#39;) } \u0026lt;\/script\u0026gt; \u0026lt;!-- 点击id为demo的元素，控制台输出\u0026#39;通过id获取元素\u0026#39; --\u0026gt; getElementsByName()－－通过name获取元素  \u0026lt;input type=\u0026#34;text\u0026#34; name=\u0026#34;int\u0026#34; value=\u0026#34;通过name获取元素1\u0026#34;\u0026gt; \u0026lt;input type=\u0026#34;text\u0026#34; name=\u0026#34;int\u0026#34; value=\u0026#34;通过name获取元素2\u0026#34;\u0026gt; \u0026lt;script\u0026gt; var int = document.getElementsByName(\u0026#39;int\u0026#39;); for(var i = 0;i \u0026lt; int.",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-15 12:58:00 \u002b0000 UTC",
+      "dateModified" : "2020-11-15 12:58:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2020-11-15-dom-document-object-model\/",
+      "keywords" : [ "笔记", ]
+  }
+</script>
+<title>DOM－－文档对象模型</title>
+  <meta property="og:title" content="DOM－－文档对象模型" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
+一、什么是DOM？ DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
+js通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应
+二、节点树 1.节点类型  文档节点－－Document 标签节点－－Element 文本节点－－Text 注释节点－－Comment 属性节点－－Attr  2. 属性  节点类型－－nodeType 节点名称－－nodeName 节点值－－nodeValue 子节点－－childNodes 父节点－－parentNodes 上一个节点－－previousSibling 下一个节点－－nextSibling 第一个子节点－－firstChild 最后一个子节点－－lastChild  3.文档节点－－document (1) 获取  getElementById()－－通过id获取元素  &amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;通过id获取元素&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var demo = document.getElementById(&amp;#39;demo&amp;#39;); demo.onclick = function() { console.log(&amp;#39;通过id获取元素&amp;#39;) } &amp;lt;/script&amp;gt; &amp;lt;!-- 点击id为demo的元素，控制台输出&amp;#39;通过id获取元素&amp;#39; --&amp;gt; getElementsByName()－－通过name获取元素  &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素1&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素2&amp;#34;&amp;gt; &amp;lt;script&amp;gt; var int = document.getElementsByName(&amp;#39;int&amp;#39;); for(var i = 0;i &amp;lt; int." />
+  <meta name="description" content="DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
+一、什么是DOM？ DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
+js通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应
+二、节点树 1.节点类型  文档节点－－Document 标签节点－－Element 文本节点－－Text 注释节点－－Comment 属性节点－－Attr  2. 属性  节点类型－－nodeType 节点名称－－nodeName 节点值－－nodeValue 子节点－－childNodes 父节点－－parentNodes 上一个节点－－previousSibling 下一个节点－－nextSibling 第一个子节点－－firstChild 最后一个子节点－－lastChild  3.文档节点－－document (1) 获取  getElementById()－－通过id获取元素  &amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;通过id获取元素&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var demo = document.getElementById(&amp;#39;demo&amp;#39;); demo.onclick = function() { console.log(&amp;#39;通过id获取元素&amp;#39;) } &amp;lt;/script&amp;gt; &amp;lt;!-- 点击id为demo的元素，控制台输出&amp;#39;通过id获取元素&amp;#39; --&amp;gt; getElementsByName()－－通过name获取元素  &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素1&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素2&amp;#34;&amp;gt; &amp;lt;script&amp;gt; var int = document.getElementsByName(&amp;#39;int&amp;#39;); for(var i = 0;i &amp;lt; int." />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">DOM－－文档对象模型</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-15 12:58:00 UTC">
+                2020.11.15
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是dom">一、什么是DOM？</a></li>
+    <li><a href="#二节点树">二、节点树</a>
+      <ul>
+        <li><a href="#1节点类型">1.节点类型</a></li>
+        <li><a href="#2-属性">2. 属性</a></li>
+        <li><a href="#3文档节点document">3.文档节点－－document</a></li>
+        <li><a href="#4元素节点element对象">4.元素节点(element对象)</a></li>
+        <li><a href="#5属性节点attr对象">5.属性节点(Attr对象)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <p>DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念</p>
+<!-- more -->
+<h2 id="一什么是dom">一、什么是DOM？</h2>
+<p>DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念</p>
+<p>js通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/3ffa522b-37ce-4b61-9c1d-2e7a5ed9fe29.jpg" alt="dom树结构图"></p>
+<!-- more -->
+<h2 id="二节点树">二、节点树</h2>
+<h3 id="1节点类型">1.节点类型</h3>
+<ol>
+<li>文档节点－－Document</li>
+<li>标签节点－－Element</li>
+<li>文本节点－－Text</li>
+<li>注释节点－－Comment</li>
+<li>属性节点－－Attr</li>
+</ol>
+<h3 id="2-属性">2. 属性</h3>
+<ol>
+<li>节点类型－－nodeType</li>
+<li>节点名称－－nodeName</li>
+<li>节点值－－nodeValue</li>
+<li>子节点－－childNodes</li>
+<li>父节点－－parentNodes</li>
+<li>上一个节点－－previousSibling</li>
+<li>下一个节点－－nextSibling</li>
+<li>第一个子节点－－firstChild</li>
+<li>最后一个子节点－－lastChild</li>
+</ol>
+<h3 id="3文档节点document">3.文档节点－－document</h3>
+<h4 id="1-获取">(1) 获取</h4>
+<ol>
+<li>getElementById()－－通过id获取元素</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;通过id获取元素&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>);
+    demo.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#f1fa8c">&#39;通过id获取元素&#39;</span>)
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 点击id为demo的元素，控制台输出&#39;通过id获取元素&#39; --&gt;</span>
+</code></pre></div><ol start="2">
+<li>getElementsByName()－－通过name获取元素</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;通过name获取元素1&#34;</span>&gt;
+&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;通过name获取元素2&#34;</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> <span style="color:#ff79c6">int</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByName(<span style="color:#f1fa8c">&#39;int&#39;</span>);
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;i <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">int</span>.length; i<span style="color:#ff79c6">++</span>) {
+        console.log(<span style="color:#ff79c6">int</span>[i].value);
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 控制台输出name为int的元素的value值 --&gt;</span>
+</code></pre></div><ol start="3">
+<li>getElementsByTagName()－－通过标签名获取元素</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span>&gt;通过标签名获取元素1&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span>&gt;通过标签名获取元素2&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> div <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;div&#39;</span>);
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;i <span style="color:#ff79c6">&lt;</span> div.length; i<span style="color:#ff79c6">++</span>) {
+        console.log(div[i].innerHTML)
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 控制台输出标签名为div的元素的文本内容 --&gt;</span>
+</code></pre></div><ol start="4">
+<li>getElementsByClassName()－－通过class获取元素</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;通过class获取元素1&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;通过class获取元素2&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByClassName(<span style="color:#f1fa8c">&#39;demo&#39;</span>);
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;i <span style="color:#ff79c6">&lt;</span> demo.length; i<span style="color:#ff79c6">++</span>) {
+        console.log(demo[i].innerHTML)
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 控制台输出class为demo的元素的文本内容 --&gt;</span>
+</code></pre></div><ol start="5">
+<li>querySelector()－－通过选择器获取元素</li>
+</ol>
+<p>querySelector()括号里面要跟上符号，<code>class就写.</code>，<code>id就写#</code>，<code>标签直接写标签名TagName</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span>&gt;通过选择器获取标签名&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div&#34;</span>&gt;通过选择器获取class&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div&#34;</span>&gt;通过选择器获取id&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> divtag <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelector(<span style="color:#f1fa8c">&#39;div&#39;</span>);
+    <span style="color:#8be9fd;font-style:italic">var</span> divclass <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelector(<span style="color:#f1fa8c">&#39;.div&#39;</span>);
+    <span style="color:#8be9fd;font-style:italic">var</span> divid <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelector(<span style="color:#f1fa8c">&#39;#div&#39;</span>);
+
+    divtag.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#f1fa8c">&#39;通过选择器获取标签名&#39;</span>)
+    };
+    <span style="color:#6272a4">// 点击标签div，控制台输出&#34;通过选择器获取标签名&#34;
+</span><span style="color:#6272a4"></span>
+    divclass.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#f1fa8c">&#39;通过选择器获取class&#39;</span>)
+    };
+    <span style="color:#6272a4">// 点击class为div，控制台输出&#34;通过选择器获取class&#34;
+</span><span style="color:#6272a4"></span>
+    divid.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#f1fa8c">&#39;通过选择器获取id&#39;</span>)
+    };
+    <span style="color:#6272a4">// 点击id为div，控制台输出&#34;通过选择器获取id&#34;
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><ol start="6">
+<li>querySelectorAll()－－通过选择器获取元素集合</li>
+</ol>
+<p>获取的是一个数组集合</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int1&#34;</span>&gt;
+&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int2&#34;</span>&gt;
+&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int3&#34;</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> <span style="color:#ff79c6">int</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelectorAll(<span style="color:#f1fa8c">&#39;input&#39;</span>)
+    <span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">int</span>.length; i<span style="color:#ff79c6">++</span>) {
+        console.log(<span style="color:#ff79c6">int</span>[i].value)
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- 浏览器依次打印出`int1`,`int2`,`int3` --&gt;</span>
+</code></pre></div><h4 id="2-创建">(2) 创建</h4>
+<ol>
+<li>createElement()－－创建元素（标签）节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">ul</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;ul&#34;</span>&gt;&lt;/<span style="color:#ff79c6">ul</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> ul <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;ul&#39;</span>);
+    ul.appendChild(<span style="color:#8be9fd;font-style:italic">document</span>.createElement(<span style="color:#f1fa8c">&#39;li&#39;</span>))
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>可以看到，ul下面已经生成了一个li标签</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/1730cc20-f0c5-40f7-bfd7-502e65d255d7.png" alt=""></p>
+<ol start="2">
+<li>createTextNode()－－创建文本节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">ul</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;ul&#34;</span>&gt;&lt;/<span style="color:#ff79c6">ul</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> ul <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;ul&#39;</span>);
+    <span style="color:#8be9fd;font-style:italic">var</span> li <span style="color:#ff79c6">=</span> ul.appendChild(<span style="color:#8be9fd;font-style:italic">document</span>.createElement(<span style="color:#f1fa8c">&#39;li&#39;</span>));
+    <span style="color:#8be9fd;font-style:italic">var</span> node <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createTextNode(<span style="color:#f1fa8c">&#39;我是li&#39;</span>);
+    li.appendChild(node);
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>li标签中生成了一段文本</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/2e3bf1b9-8285-4128-a809-a21136cf4687.png" alt=""></p>
+<ol start="3">
+<li>createAttribute()－－创建属性节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> <span style="color:#ff79c6">int</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;input&#39;</span>)[<span style="color:#bd93f9">0</span>];
+    <span style="color:#8be9fd;font-style:italic">var</span> value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createAttribute(<span style="color:#f1fa8c">&#39;value&#39;</span>);
+    value.nodeValue <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;通过创建属性节点生成&#39;</span>;
+    <span style="color:#ff79c6">int</span>.setAttributeNode(value);
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>可以看到value属性值被成功创建</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/3a640bc1-d9b0-436e-b2d4-f440e41cd1af.png" alt=""></p>
+<ol start="4">
+<li>createComment()－－创建注释节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div&#34;</span>&gt;创建一个注释节点&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> div <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div&#39;</span>);
+    <span style="color:#8be9fd;font-style:italic">var</span> comment <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createComment(<span style="color:#f1fa8c">&#39;添加一个注释节点&#39;</span>);
+    div.appendChild(comment);
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>f12查看源码，可以看到div生成一行注释</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/0d1412e5-3790-4005-9c65-a30bfb1f0f6a.png" alt=""></p>
+<ol start="5">
+<li>createDocumentFragment()－－创建文档片段</li>
+</ol>
+<p>文档片段的作用，就相当于是添加的所有的节点的父元素</p>
+<blockquote>
+<p>1.假如没有createDocumentFragment，添加了很多节点，也可以在dom上呈现，但是每次添加的时候都会调用一次appendChild()方法，产生很多次页面渲染，显得比较臃肿
+2.把多次添加的节点放在一个createDocumentFragment节点里面，页面只会调用一次就可以把所有的节点都渲染了</p>
+</blockquote>
+<ol start="6">
+<li>
+<p>createEvent()－－创建事件对象</p>
+</li>
+<li>
+<p>addEventListener()－－添加事件监听函数</p>
+</li>
+<li>
+<p>removeEventListener()－－移除事件监听函数</p>
+</li>
+</ol>
+<p><a href="../20201117-eventlistener" target="_blank">事件监听函数详解</a></p>
+<ol start="9">
+<li>dispatchEvent()－－触发事件</li>
+</ol>
+<h4 id="操作css">操作css</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;dom&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#6272a4">// 直接通过&#39;.&#39;来操作style
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">var</span> demo<span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>);
+    demo.style.color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;red&#39;</span>;
+
+    <span style="color:#6272a4">// 通过setAttribute()来创建属性节点
+</span><span style="color:#6272a4"></span>    demo.setAttribute(<span style="color:#f1fa8c">&#39;style&#39;</span>,<span style="color:#f1fa8c">&#39;background-color: green&#39;</span>);
+
+    <span style="color:#6272a4">// 通过style的cssText属性
+</span><span style="color:#6272a4"></span>    demo.style.cssText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;border: 10px solid black&#34;</span>;
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><h3 id="4元素节点element对象">4.元素节点(element对象)</h3>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/a31a07ef-124c-4f86-8f8f-b88ce42ad09c.png" alt=""></p>
+<p><strong>有关innerHTML, innerText, outerHTML, outerText的区别</strong></p>
+<p>一个是元素内容，一个是文本内容</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/45a3bf80-f294-444c-ae76-64300242dfa3.gif" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div1&#34;</span>&gt;第一个div&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div2&#34;</span>&gt;第二个div&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div3&#34;</span>&gt;第三个div&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div4&#34;</span>&gt;第四个div&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div5&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div6&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div7&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div8&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> div1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div1&#39;</span>).innerHTML
+    console.log(div1)   <span style="color:#6272a4">// 第一个div
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">var</span> div1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div1&#39;</span>).outerHTML
+    console.log(div1)   <span style="color:#6272a4">// &lt;div id=&#34;div1&#34;&gt;第一个div&lt;/div&gt;
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">var</span> div2 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div2&#39;</span>).innerText
+    console.log(div2)   <span style="color:#6272a4">// 第二个div
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">var</span> div2 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div2&#39;</span>).outerText
+    console.log(div2)   <span style="color:#6272a4">// 第二个div
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div5&#39;</span>).innerHTML <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;a&gt;《第5个div》&lt;/a&gt;&#39;</span>
+    <span style="color:#6272a4">// 在原有的标签内增加内容，如果有标签会被识别
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div6&#39;</span>).outerHTML <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;a&gt;《第6个div》&lt;/a&gt;&#39;</span>
+    <span style="color:#6272a4">// 原来的标签会被覆盖，新的文本中如果含有标签会自动生成，如果没有标签则直接以文本形式展示
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div7&#39;</span>).innerText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;a&gt;《第7个div》&lt;/a&gt;&#39;</span>
+    <span style="color:#6272a4">// 在原有的标签内增加内容，新标签不会被识别为标签元素，而是被当作文本内容直接写入原标签内
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;div8&#39;</span>).outerText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&lt;a&gt;《第8个div》&lt;/a&gt;&#39;</span>
+    <span style="color:#6272a4">// 原来的标签会被覆盖，新标签不会被识别为标签元素，而是直接被当作文本形式展示
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><h4 id="1-节点属性">(1) 节点属性</h4>
+<ol>
+<li>childElementCount－－返回当前元素的子节点的个数</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+    &lt;<span style="color:#ff79c6">span</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+    &lt;<span style="color:#ff79c6">p</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    console.log(demo.childElementCount) <span style="color:#6272a4">// 4
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><ol start="2">
+<li>firstElementChild－－返回当前元素的第一个子元素节点
+lastElementChild－－返回当前元素的最后一个子元素节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+    &lt;<span style="color:#ff79c6">span</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+    &lt;<span style="color:#ff79c6">p</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    console.log(demo.firstElementChild) <span style="color:#6272a4">// &lt;a&gt;&lt;/a&gt;
+</span><span style="color:#6272a4"></span>    console.log(demo.lastElementChild)  <span style="color:#6272a4">// &lt;div&gt;&lt;/div&gt;
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><ol start="3">
+<li>nextElementSibling－－返回当前元素的下一个兄弟元素节点
+previousElementSibling－－返回当前元素的上一个兄弟元素节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">span</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">p</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    console.log(demo.nextElementSibling)        <span style="color:#6272a4">// &lt;p&gt;&lt;/p&gt;
+</span><span style="color:#6272a4"></span>    console.log(demo.previousElementSibling)    <span style="color:#6272a4">// &lt;span&gt;&lt;/span&gt;
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><ol start="4">
+<li>返回当前元素所有的子节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">span</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+    &lt;<span style="color:#ff79c6">p</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>).children
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">in</span> demo) {
+        console.log(demo[i])
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>控制台查看返回结果</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/069d6703-ec2f-499e-9236-cc4ddea0a6a5.jpg" alt=""></p>
+<ol start="5">
+<li>返回所有子节点集合</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">span</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+    &lt;<span style="color:#ff79c6">p</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo1&#34;</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>).children
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">in</span> demo1.childNodes) {
+        console.log(demo[i])
+    }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/2f2dded9-71e7-4fe5-b252-3c0e7451d56f.jpg" alt=""></p>
+<h4 id="2-节点方法">(2) 节点方法</h4>
+<ol>
+<li>appendChild－－插入子节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> node <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createTextNode(<span style="color:#f1fa8c">&#39;插入一个子节点&#39;</span>)
+    demo.appendChild(node)
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p>f12可以看到，div被插入了一个节点</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/f5826008-b3f3-404c-8d6e-e11d54e2136a.jpg" alt=""></p>
+<ol start="2">
+<li>insertBefore(a, b)－－在指定位置插入节点</li>
+</ol>
+<p>参数a表示要插入的内容，b表示定位，在b节点之前插入a节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> node <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createTextNode(<span style="color:#f1fa8c">&#39;插入一个子节点&#39;</span>)
+    demo.appendChild(node)
+
+    <span style="color:#8be9fd;font-style:italic">var</span> hr <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createElement(<span style="color:#f1fa8c">&#39;hr&#39;</span>)
+    demo.insertBefore(hr, node)
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p>可以看到，原来的文本节点之前，被添加了一个新的元素节点</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/0676c84c-1c2a-4992-b95b-f95234b11b6d.png" alt=""></p>
+<ol start="3">
+<li>replaceChild(a, b)－－替换节点</li>
+</ol>
+<p>用参数a替换参数b，a表示新节点，b表示旧节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> node <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createTextNode(<span style="color:#f1fa8c">&#39;插入一个子节点&#39;</span>)
+    demo.appendChild(node)
+
+    <span style="color:#8be9fd;font-style:italic">var</span> h3 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createElement(<span style="color:#f1fa8c">&#39;h3&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> h3node <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createTextNode(<span style="color:#f1fa8c">&#39;title标题&#39;</span>)
+    h3.appendChild(h3node)
+    demo.replaceChild(h3, node)
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p><code>h3</code>是新节点，<code>node</code>是旧节点，根据图片可以看到，b替换掉了a，成功上位</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/d44385ba-a6b9-4b9b-b381-c26b87c26b96.jpg" alt=""></p>
+<ol start="4">
+<li>removeChild－－父节点删除子节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;son&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;son&#39;</span>)
+    demo.removeChild(son)
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p>f12可以看到，id为son的元素节点，通过<code>demo.removeChild()</code>已经被删除了</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/0b56c5f7-d57d-469f-ac90-9630ac22a792.jpg" alt=""></p>
+<ol start="5">
+<li>removeAttribute－－删除属性节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;div&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    demo.removeAttribute(<span style="color:#f1fa8c">&#39;class&#39;</span>)
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p>class属性已经被删除了</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/5094309b-decd-4983-9a03-db94eaf87656.jpg" alt=""></p>
+<ol start="6">
+<li>删除文本节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;文本&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    demo.removeChild(demo.childNodes[<span style="color:#bd93f9">0</span>])
+&lt;/<span style="color:#ff79c6">script</span>&gt;  
+</code></pre></div><p>通过<code>demo.childNodesp[0]</code>获取demo的第一个节点，即文本节点，然后<code>removeChild</code>它，就删除了</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/03ef7200-9157-430a-aad0-5caf26a233bb.png" alt=""></p>
+<ol start="7">
+<li>isEqualNode－－判断两个元素是否<code>相等</code>
+isSameNode－－判断两个元素是否<code>相同</code></li>
+</ol>
+<blockquote>
+<p>两者分别代表<code>相等</code>和<code>相同</code></p>
+</blockquote>
+<p>(1) <code>isEqualNode</code>相等，指的是两个节点是否是同一类型，具有相等的属性（包括：nodeName, nodeValue&hellip;等等），还有相等的attributes,childNodes（相等的位置包含相同的值）
+(2) <code>isSameNode</code>相同，指的是两个节点引用的是同一个对象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;button&#34;</span> /&gt;
+&lt;/<span style="color:#ff79c6">form</span>&gt;
+
+&lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;button&#34;</span> /&gt;
+&lt;/<span style="color:#ff79c6">form</span>&gt;
+
+&lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;o&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;button&#34;</span> /&gt;
+&lt;/<span style="color:#ff79c6">form</span>&gt;
+
+&lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;o&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> /&gt;
+&lt;/<span style="color:#ff79c6">form</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> forms <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.forms;
+
+    <span style="color:#8be9fd;font-style:italic">var</span> form1 <span style="color:#ff79c6">=</span> forms[<span style="color:#bd93f9">0</span>];
+    <span style="color:#8be9fd;font-style:italic">var</span> form2 <span style="color:#ff79c6">=</span> forms[<span style="color:#bd93f9">1</span>];
+    <span style="color:#8be9fd;font-style:italic">var</span> form3 <span style="color:#ff79c6">=</span> forms[<span style="color:#bd93f9">2</span>];
+    <span style="color:#8be9fd;font-style:italic">var</span> form4 <span style="color:#ff79c6">=</span> forms[<span style="color:#bd93f9">3</span>];
+    <span style="color:#8be9fd;font-style:italic">var</span> <span style="color:#bd93f9">_</span>form1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.querySelectorAll(<span style="color:#f1fa8c">&#39;form&#39;</span>)[<span style="color:#bd93f9">0</span>];
+
+
+    console.log(form1.isSameNode(form1))  <span style="color:#6272a4">//true  两个节点引用的对象都是第一个form
+</span><span style="color:#6272a4"></span>    console.log(form1.isSameNode(<span style="color:#bd93f9">_</span>form1)) <span style="color:#6272a4">//true  两个节点引用的对象都是第一个form
+</span><span style="color:#6272a4"></span>    console.log(form1.isSameNode(form2))  <span style="color:#6272a4">//false 两个节点引用的不是一个对象
+</span><span style="color:#6272a4"></span>
+    console.log(form1.isEqualNode(form2)) <span style="color:#6272a4">//true  两个节点具有完全等同属性
+</span><span style="color:#6272a4"></span>    console.log(form1.isEqualNode(form3)) <span style="color:#6272a4">//false form1中无等同的id属性
+</span><span style="color:#6272a4"></span>    console.log(form3.isEqualNode(form4))  <span style="color:#6272a4">//fasle form4的childNodes中的input为text类别，与form3不同
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>根据例子代码可以看出区别：</p>
+<p>(1) <code>isSameNode</code>只有引用同一个对象时才相同，比如用两中方法调用同一个对象，再比较这两种方法，比来比去还是那个对象，所以相同
+(2) 而<code>isEqualNode</code>比较两个对象的元素节点是否相等，只要两者一致就可以相等true</p>
+<ol start="8">
+<li>hasChildNodes()－－判断一个元素是否拥有子节点</li>
+</ol>
+<p>判断<code>demo</code>是否拥有子节点，然后输出他的子节点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    <span style="color:#6272a4">&lt;!-- &lt;a&gt;&lt;/a&gt; --&gt;</span>
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    console.log(demo.hasChildNodes())
+    console.log(demo.childNodes)
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/f68efaf2-912a-4c67-a878-cf4c271fac33.png" alt=""></p>
+<ol start="9">
+<li>contains(a)－－判断一个节点是否包含指定子节点（参数a表示要判断的子节点）</li>
+</ol>
+<p>存在<code>id=&quot;a&quot;</code>的元素，因此contains判断成功输出<code>true</code>，</p>
+<p>不存在<code>id=&quot;b&quot;</code>的元素，因此输出<code>false</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;demo&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;a&#34;</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+    &lt;<span style="color:#ff79c6">a</span>&gt;&lt;/<span style="color:#ff79c6">a</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> demo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;demo&#39;</span>)
+    <span style="color:#8be9fd;font-style:italic">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;a&#39;</span>)
+    console.log(demo.contains(a))   <span style="color:#6272a4">// true
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">var</span> b <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;b&#39;</span>)
+    console.log(demo.contains(b))   <span style="color:#6272a4">// false
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><h3 id="5属性节点attr对象">5.属性节点(Attr对象)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;int&#34;</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#8be9fd;font-style:italic">var</span> <span style="color:#ff79c6">int</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;int&#39;</span>)
+
+    <span style="color:#6272a4">// 1.获取属性值
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">int</span>.getAttribute(<span style="color:#f1fa8c">&#34;type&#34;</span>))   
+    <span style="color:#6272a4">// text
+</span><span style="color:#6272a4"></span>    
+    <span style="color:#6272a4">// 2.获取属性节点
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">int</span>.getAttributeNode(<span style="color:#f1fa8c">&#34;type&#34;</span>))
+    <span style="color:#6272a4">// type=&#34;text&#34;
+</span><span style="color:#6272a4"></span>    
+    <span style="color:#6272a4">// 3.设置属性值
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">int</span>.setAttribute(<span style="color:#f1fa8c">&#34;value&#34;</span>, <span style="color:#f1fa8c">&#34;input框&#34;</span>)
+    <span style="color:#6272a4">// &lt;input type=&#34;text&#34; id=&#34;int&#34; value=&#34;input框&#34;&gt;
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 4.设置属性节点
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> name <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createAttribute(<span style="color:#f1fa8c">&#34;name&#34;</span>);
+    name.nodeValue <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;uname&#34;</span>;
+    <span style="color:#ff79c6">int</span>.setAttributeNode(name);
+    console.log(<span style="color:#ff79c6">int</span>.getAttributeNode(<span style="color:#f1fa8c">&#39;name&#39;</span>).value) 
+    <span style="color:#6272a4">// &lt;input type=&#34;text&#34; id=&#34;int&#34; value=&#34;input框&#34; name=&#34;uname&#34;&gt;
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 5.删除属性节点
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">int</span>.removeAttribute(<span style="color:#f1fa8c">&#39;name&#39;</span>))
+    <span style="color:#6272a4">// &lt;input type=&#34;text&#34; id=&#34;int&#34; value=&#34;input框&#34;&gt;
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 6.判断是否存在属性
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">int</span>.hasAttributes())
+    <span style="color:#6272a4">// true
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 7.判断是否存在指定属性
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">int</span>.hasAttribute(<span style="color:#f1fa8c">&#39;value&#39;</span>))
+    <span style="color:#6272a4">// true
+</span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><blockquote>
+<p>注意：<code>hasAttribute</code>和<code>hasAttributes</code>的区别
+<code>hasAttributes</code>判断是否存在属性，
+<code>hasAttribute</code>判断是否存在指定属性</p>
+</blockquote>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                笔记
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/posts/2020-11-14-some-supplementary-summary-about-js-functions-and-methods/">有关js函数，方法的一些补充总结</a></li>
+    
+    <li><a href="/posts/2020-11-04-javascript-functions-variables-and-methods/">javascript——函数、变量和方法</a></li>
+    
+    <li><a href="/posts/2020-10-29-html-event-attributes-dom/">HTML事件属性--DOM</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2020-11-15-dom-document-object-model/"
+  data-page-url="/posts/2020-11-15-dom-document-object-model/"
+  data-page-title="DOM－－文档对象模型"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>

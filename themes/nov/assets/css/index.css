@@ -53,7 +53,7 @@ body {
 
 article {
   max-width: 900px;
-  margin: 20px auto;
+  margin: 0 auto;
   /* background: #FEFBF3; */
   padding: 0 50px;
   box-sizing: border-box;
@@ -193,14 +193,29 @@ a:hover {
 
 .header-title {
   font-size: 2rem;
-  font-weight: bold;
-  margin-top: 32px;
-  font-family: "Bungee Shade", sans-serif;
+  font-weight: 500;
+  margin: 24px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
 }
 
 .header-title a {
   text-decoration: none;
   user-select: none;
+  font-size: 1.4rem;
+  border: none;
+  background: none;
+  color: #1b1d25;
+  padding: .75rem 1.25rem;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.header-title a:hover {
+  /* background: #f1f4f8; */
+  color: #1b1d25;
+  opacity: 1;
 }
 
 .header-subtitle {
@@ -406,6 +421,7 @@ a:hover {
   padding-bottom: 0;
   height: auto;
 }
+
 .post-comments .iframe iframe {
   position: inherit;
 }

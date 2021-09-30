@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2021-05-11-typecho-blog-construction-and-optimization-tutorial-detailed/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2021-05-11-typecho-blog-construction-and-optimization-tutorial-detailed/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Typecho博客搭建及优化教程(详细)",
+      "headline" : "Typecho博客搭建及优化教程(详细)",
+      "description" : "1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！\n如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。\n不喜勿喷，谢谢！\n2.Typecho简介 Typecho 基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。\nTypecho 非常简洁，仅仅 7 张数据表，加上不足 400KB 的代码，就实现了完整的插件与模板机制。超低的 CPU 和内存使用率，足以发挥主机的最高性能。\n原生支持 Markdown 语法，易读更易写。支持 BAE\/GAE\/SAE 等各类云主机，即使面对突如其来的高访问量，也能轻松应对。\nTypecho 的默认模板和后台，全部采用了响应式设计。所以Typecho的大多数自制模板，都采用了自适应设计。\n现在Typecho 拥有很多用户，完整的生态，各种功能插件和简洁优美的主题，是做博客的不二选择，相信你会喜欢上她简洁的风格！\n3.准备 服务器\u002b域名\n搭建Typecho 博客需要使用服务器或者虚拟机，最近也看到一篇使用Vercel\u002bMysql搭建Typecho的文章，但是这种是使用外部Mysql服务的 ，相比使用服务器或者虚拟机这种还是不太方便配置和管理的。使用服务器相比虚拟机会更加的好用。\n**注：**本文只讲解服务器的搭建流程，虚拟机请参考！\n**服务器选择：**推荐去腾讯云或阿里云,有学生机（9元\/月）可供选择，腾讯云还是25岁以下免学生认证的，学生价续费三次，所以有条件可以选择1年购买和续费，腾讯的还有免费升配置，，阿里云的学生机下架了，但是也可以买为新用户提供的，建议选择 轻量应用服务器，1h2g的配置完全够用，流量也完全够用。\n腾讯云：https:\/\/cloud.tencent.com\/act\/campus\n阿里云：https:\/\/developer.aliyun.com\/plan\/grow-up\n如果你买不了这种，也可以去其他服务商买新用户优惠的服务器，建议选择大厂。\n选择服务器要看下地区，如果是大陆地区的服务器，需要去其对应的服务商进行域名备案，否者你无法使用，如果是香港地区或者国外的服务器，则不需要进行备案。\n**注：**阿里和腾讯这两种轻量应用服务器都是需要 备案的，如果嫌麻烦或者不想备案，可选择其他地区的服务器！\n备案操作有些复杂，也需要好几天的时间，但是备案也有备案的好处，比如使用国内的CDN加速等。另请仔细参考各服务商提供的流程，要注意看清备案流程上的注意事项，防止备案驳回浪费时间。\n相比国外和香港的服务器，使用大陆的服务器在国内的访问速度是最好的，当然如果你搞外国业务当我没说。。。\n**域名选择：**域名选择很简单，去各大服务商注册一个就完事了，喜欢什么就注册什么，但是如果你要备案使用大陆服务器，一定不要注册不支持备案的域名，当然绝大多数都是支持备案的。另各大服务商也有新用户注册域名优惠活动，在百度仔细找一下就行了。 腾讯云：https:\/\/cloud.tencent.com\/act\/domainsales\n阿里云：https:\/\/wanwang.aliyun.com\/domain\n华为云：https:\/\/activity.huaweicloud.com\/domain1.html\n下面开始搭建流程：\n4.LNMP环境 首先我们要搭建的就是LNMP环境，LNMP代表的就是：Linux系统下Nginx\u002bMySQL\u002bPHP这种网站服务器架构。\nLinux 是一类Unix计算机操作系统的统称，是目前最流行的免费操作系统。代表版本有：debian、centos、ubuntu、fedora、gentoo等。\nNginx 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP\/POP3\/SMTP服务。\nMysql 是一款安全、跨平台、高效的，并与 PHP、Java 等主流编程语言紧密结合的数据库系统。\nPHP 是一种在服务器端执行的嵌入HTML文档的脚本语言。\n当然如果你不喜欢使用Nginx，或者Mysql，请自行更换其它的，这里不过多介绍！\nLinux系统的话，本文使用Centos 8系统讲解。\n搭建LNMP环境，我们可以选择自行下载对应的安装包，然后在Centos系统中，安装Nginx，Mysql，PHP等，这种纯动手的方式，非常麻烦和复杂，在后期进行多网站管理和配置HTTPS证书，以及网站伪静态配置时非常麻烦。\n所以本文讲解使用宝塔面板来进行安装部署环境！\n5.宝塔是什么 宝塔面板是一款服务器管理软件，支持windows和linux系统，可以通过Web端轻松管理服务器，提升运维效率。例如：创建管理网站、FTP、数据库，拥有可视化文件管理器，可视化软件管理器，可视化CPU、内存、流量监控图表，计划任务等功能。\n宝塔面板拥有极速方便的一键配置与管理，可一键配置服务器环境（LAMP\/LNMP\/Tomcat\/Node.js），一键部署SSL，异地备份；提供SSH开启关闭服务，SSH端口更改，禁ping，防火墙端口放行以及操作日志查看；CPU、内存、磁盘IO、网络IO数据监测，可设置记录保存天数以及任意查看某天数据；\n计划任务可按周期添加执行，支持SHELL脚本，提供网站、数据库备份以及日志切割，且支持一键备份到又拍云存储空间，或者其他云存储空间里；通过web界面就可以轻松管理安装所用的服务器软件，还有实用的扩展插件；集成方便高效的文件管理器，支持上传、下载、打包、解压以及文件编辑查看。\n进入搭建正题：\n6.安装宝塔 选择服务器时，选择系统镜像，不要选择服务商提供的应用镜像，操作系统选择Centos，版本的话7和8都可以。当然你也可以选择其他系统，，，",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-05-11 22:29:00 \u002b0000 UTC",
+      "dateModified" : "2021-05-11 22:29:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2021-05-11-typecho-blog-construction-and-optimization-tutorial-detailed\/",
+      "keywords" : [ "博客","转载","typecho", ]
+  }
+</script>
+<title>Typecho博客搭建及优化教程(详细)</title>
+  <meta property="og:title" content="Typecho博客搭建及优化教程(详细)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
+如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
+不喜勿喷，谢谢！
+2.Typecho简介 Typecho 基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。
+Typecho 非常简洁，仅仅 7 张数据表，加上不足 400KB 的代码，就实现了完整的插件与模板机制。超低的 CPU 和内存使用率，足以发挥主机的最高性能。
+原生支持 Markdown 语法，易读更易写。支持 BAE/GAE/SAE 等各类云主机，即使面对突如其来的高访问量，也能轻松应对。
+Typecho 的默认模板和后台，全部采用了响应式设计。所以Typecho的大多数自制模板，都采用了自适应设计。
+现在Typecho 拥有很多用户，完整的生态，各种功能插件和简洁优美的主题，是做博客的不二选择，相信你会喜欢上她简洁的风格！
+3.准备 服务器&#43;域名
+搭建Typecho 博客需要使用服务器或者虚拟机，最近也看到一篇使用Vercel&#43;Mysql搭建Typecho的文章，但是这种是使用外部Mysql服务的 ，相比使用服务器或者虚拟机这种还是不太方便配置和管理的。使用服务器相比虚拟机会更加的好用。
+**注：**本文只讲解服务器的搭建流程，虚拟机请参考！
+**服务器选择：**推荐去腾讯云或阿里云,有学生机（9元/月）可供选择，腾讯云还是25岁以下免学生认证的，学生价续费三次，所以有条件可以选择1年购买和续费，腾讯的还有免费升配置，，阿里云的学生机下架了，但是也可以买为新用户提供的，建议选择 轻量应用服务器，1h2g的配置完全够用，流量也完全够用。
+腾讯云：https://cloud.tencent.com/act/campus
+阿里云：https://developer.aliyun.com/plan/grow-up
+如果你买不了这种，也可以去其他服务商买新用户优惠的服务器，建议选择大厂。
+选择服务器要看下地区，如果是大陆地区的服务器，需要去其对应的服务商进行域名备案，否者你无法使用，如果是香港地区或者国外的服务器，则不需要进行备案。
+**注：**阿里和腾讯这两种轻量应用服务器都是需要 备案的，如果嫌麻烦或者不想备案，可选择其他地区的服务器！
+备案操作有些复杂，也需要好几天的时间，但是备案也有备案的好处，比如使用国内的CDN加速等。另请仔细参考各服务商提供的流程，要注意看清备案流程上的注意事项，防止备案驳回浪费时间。
+相比国外和香港的服务器，使用大陆的服务器在国内的访问速度是最好的，当然如果你搞外国业务当我没说。。。
+**域名选择：**域名选择很简单，去各大服务商注册一个就完事了，喜欢什么就注册什么，但是如果你要备案使用大陆服务器，一定不要注册不支持备案的域名，当然绝大多数都是支持备案的。另各大服务商也有新用户注册域名优惠活动，在百度仔细找一下就行了。 腾讯云：https://cloud.tencent.com/act/domainsales
+阿里云：https://wanwang.aliyun.com/domain
+华为云：https://activity.huaweicloud.com/domain1.html
+下面开始搭建流程：
+4.LNMP环境 首先我们要搭建的就是LNMP环境，LNMP代表的就是：Linux系统下Nginx&#43;MySQL&#43;PHP这种网站服务器架构。
+Linux 是一类Unix计算机操作系统的统称，是目前最流行的免费操作系统。代表版本有：debian、centos、ubuntu、fedora、gentoo等。
+Nginx 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。
+Mysql 是一款安全、跨平台、高效的，并与 PHP、Java 等主流编程语言紧密结合的数据库系统。
+PHP 是一种在服务器端执行的嵌入HTML文档的脚本语言。
+当然如果你不喜欢使用Nginx，或者Mysql，请自行更换其它的，这里不过多介绍！
+Linux系统的话，本文使用Centos 8系统讲解。
+搭建LNMP环境，我们可以选择自行下载对应的安装包，然后在Centos系统中，安装Nginx，Mysql，PHP等，这种纯动手的方式，非常麻烦和复杂，在后期进行多网站管理和配置HTTPS证书，以及网站伪静态配置时非常麻烦。
+所以本文讲解使用宝塔面板来进行安装部署环境！
+5.宝塔是什么 宝塔面板是一款服务器管理软件，支持windows和linux系统，可以通过Web端轻松管理服务器，提升运维效率。例如：创建管理网站、FTP、数据库，拥有可视化文件管理器，可视化软件管理器，可视化CPU、内存、流量监控图表，计划任务等功能。
+宝塔面板拥有极速方便的一键配置与管理，可一键配置服务器环境（LAMP/LNMP/Tomcat/Node.js），一键部署SSL，异地备份；提供SSH开启关闭服务，SSH端口更改，禁ping，防火墙端口放行以及操作日志查看；CPU、内存、磁盘IO、网络IO数据监测，可设置记录保存天数以及任意查看某天数据；
+计划任务可按周期添加执行，支持SHELL脚本，提供网站、数据库备份以及日志切割，且支持一键备份到又拍云存储空间，或者其他云存储空间里；通过web界面就可以轻松管理安装所用的服务器软件，还有实用的扩展插件；集成方便高效的文件管理器，支持上传、下载、打包、解压以及文件编辑查看。
+进入搭建正题：
+6.安装宝塔 选择服务器时，选择系统镜像，不要选择服务商提供的应用镜像，操作系统选择Centos，版本的话7和8都可以。当然你也可以选择其他系统，，，" />
+  <meta name="description" content="1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
+如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
+不喜勿喷，谢谢！
+2.Typecho简介 Typecho 基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。
+Typecho 非常简洁，仅仅 7 张数据表，加上不足 400KB 的代码，就实现了完整的插件与模板机制。超低的 CPU 和内存使用率，足以发挥主机的最高性能。
+原生支持 Markdown 语法，易读更易写。支持 BAE/GAE/SAE 等各类云主机，即使面对突如其来的高访问量，也能轻松应对。
+Typecho 的默认模板和后台，全部采用了响应式设计。所以Typecho的大多数自制模板，都采用了自适应设计。
+现在Typecho 拥有很多用户，完整的生态，各种功能插件和简洁优美的主题，是做博客的不二选择，相信你会喜欢上她简洁的风格！
+3.准备 服务器&#43;域名
+搭建Typecho 博客需要使用服务器或者虚拟机，最近也看到一篇使用Vercel&#43;Mysql搭建Typecho的文章，但是这种是使用外部Mysql服务的 ，相比使用服务器或者虚拟机这种还是不太方便配置和管理的。使用服务器相比虚拟机会更加的好用。
+**注：**本文只讲解服务器的搭建流程，虚拟机请参考！
+**服务器选择：**推荐去腾讯云或阿里云,有学生机（9元/月）可供选择，腾讯云还是25岁以下免学生认证的，学生价续费三次，所以有条件可以选择1年购买和续费，腾讯的还有免费升配置，，阿里云的学生机下架了，但是也可以买为新用户提供的，建议选择 轻量应用服务器，1h2g的配置完全够用，流量也完全够用。
+腾讯云：https://cloud.tencent.com/act/campus
+阿里云：https://developer.aliyun.com/plan/grow-up
+如果你买不了这种，也可以去其他服务商买新用户优惠的服务器，建议选择大厂。
+选择服务器要看下地区，如果是大陆地区的服务器，需要去其对应的服务商进行域名备案，否者你无法使用，如果是香港地区或者国外的服务器，则不需要进行备案。
+**注：**阿里和腾讯这两种轻量应用服务器都是需要 备案的，如果嫌麻烦或者不想备案，可选择其他地区的服务器！
+备案操作有些复杂，也需要好几天的时间，但是备案也有备案的好处，比如使用国内的CDN加速等。另请仔细参考各服务商提供的流程，要注意看清备案流程上的注意事项，防止备案驳回浪费时间。
+相比国外和香港的服务器，使用大陆的服务器在国内的访问速度是最好的，当然如果你搞外国业务当我没说。。。
+**域名选择：**域名选择很简单，去各大服务商注册一个就完事了，喜欢什么就注册什么，但是如果你要备案使用大陆服务器，一定不要注册不支持备案的域名，当然绝大多数都是支持备案的。另各大服务商也有新用户注册域名优惠活动，在百度仔细找一下就行了。 腾讯云：https://cloud.tencent.com/act/domainsales
+阿里云：https://wanwang.aliyun.com/domain
+华为云：https://activity.huaweicloud.com/domain1.html
+下面开始搭建流程：
+4.LNMP环境 首先我们要搭建的就是LNMP环境，LNMP代表的就是：Linux系统下Nginx&#43;MySQL&#43;PHP这种网站服务器架构。
+Linux 是一类Unix计算机操作系统的统称，是目前最流行的免费操作系统。代表版本有：debian、centos、ubuntu、fedora、gentoo等。
+Nginx 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。
+Mysql 是一款安全、跨平台、高效的，并与 PHP、Java 等主流编程语言紧密结合的数据库系统。
+PHP 是一种在服务器端执行的嵌入HTML文档的脚本语言。
+当然如果你不喜欢使用Nginx，或者Mysql，请自行更换其它的，这里不过多介绍！
+Linux系统的话，本文使用Centos 8系统讲解。
+搭建LNMP环境，我们可以选择自行下载对应的安装包，然后在Centos系统中，安装Nginx，Mysql，PHP等，这种纯动手的方式，非常麻烦和复杂，在后期进行多网站管理和配置HTTPS证书，以及网站伪静态配置时非常麻烦。
+所以本文讲解使用宝塔面板来进行安装部署环境！
+5.宝塔是什么 宝塔面板是一款服务器管理软件，支持windows和linux系统，可以通过Web端轻松管理服务器，提升运维效率。例如：创建管理网站、FTP、数据库，拥有可视化文件管理器，可视化软件管理器，可视化CPU、内存、流量监控图表，计划任务等功能。
+宝塔面板拥有极速方便的一键配置与管理，可一键配置服务器环境（LAMP/LNMP/Tomcat/Node.js），一键部署SSL，异地备份；提供SSH开启关闭服务，SSH端口更改，禁ping，防火墙端口放行以及操作日志查看；CPU、内存、磁盘IO、网络IO数据监测，可设置记录保存天数以及任意查看某天数据；
+计划任务可按周期添加执行，支持SHELL脚本，提供网站、数据库备份以及日志切割，且支持一键备份到又拍云存储空间，或者其他云存储空间里；通过web界面就可以轻松管理安装所用的服务器软件，还有实用的扩展插件；集成方便高效的文件管理器，支持上传、下载、打包、解压以及文件编辑查看。
+进入搭建正题：
+6.安装宝塔 选择服务器时，选择系统镜像，不要选择服务商提供的应用镜像，操作系统选择Centos，版本的话7和8都可以。当然你也可以选择其他系统，，，" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Typecho博客搭建及优化教程(详细)</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-05-11 22:29:00 UTC">
+                2021.05.11
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1前言">1.前言</a></li>
+    <li><a href="#2typecho简介">2.Typecho简介</a></li>
+    <li><a href="#3准备">3.准备</a></li>
+    <li><a href="#4lnmp环境">4.LNMP环境</a></li>
+    <li><a href="#5宝塔是什么">5.宝塔是什么</a></li>
+    <li><a href="#6安装宝塔">6.安装宝塔</a></li>
+    <li><a href="#7安装typecho">7.安装Typecho</a></li>
+    <li><a href="#8优化">8.优化</a></li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <h2 id="1前言">1.前言</h2>
+<p>本文从<a href="http://typecho.org/">Typecho</a> 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！</p>
+<p>如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。</p>
+<p>不喜勿喷，谢谢！</p>
+<h2 id="2typecho简介">2.Typecho简介</h2>
+<p><a href="http://typecho.org/">Typecho</a> 基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。</p>
+<p><a href="http://typecho.org/">Typecho</a> 非常简洁，仅仅 7 张数据表，加上不足 400KB 的代码，就实现了完整的插件与模板机制。超低的 CPU 和内存使用率，足以发挥主机的最高性能。</p>
+<p>原生支持 <a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown</a> 语法，易读更易写。支持 <code>BAE/GAE/SAE</code> 等各类云主机，即使面对突如其来的高访问量，也能轻松应对。</p>
+<p><a href="http://typecho.org/">Typecho</a> 的默认模板和后台，全部采用了响应式设计。所以Typecho的大多数自制模板，都采用了自适应设计。</p>
+<p>现在<a href="http://typecho.org/">Typecho</a> 拥有很多用户，完整的生态，各种功能插件和简洁优美的主题，是做博客的不二选择，相信你会喜欢上她简洁的风格！</p>
+<h2 id="3准备">3.准备</h2>
+<p><strong>服务器+域名</strong></p>
+<p>搭建<a href="http://typecho.org/">Typecho</a> 博客需要使用服务器或者虚拟机，最近也看到一篇使用Vercel+Mysql搭建Typecho的文章，但是这种是使用外部Mysql服务的 ，相比使用服务器或者虚拟机这种还是不太方便配置和管理的。使用服务器相比虚拟机会更加的好用。</p>
+<p>**注：**本文只讲解服务器的搭建流程，虚拟机请参考！</p>
+<p>**服务器选择：**推荐去腾讯云或阿里云,有学生机（9元/月）可供选择，腾讯云还是25岁以下免学生认证的，学生价续费三次，所以有条件可以选择1年购买和续费，腾讯的还有免费升配置，，阿里云的学生机下架了，但是也可以买为新用户提供的，建议选择 <strong>轻量应用服务器</strong>，1h2g的配置完全够用，流量也完全够用。</p>
+<p>腾讯云：<a href="https://cloud.tencent.com/act/campus">https://cloud.tencent.com/act/campus</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@43155aad78ba45bbca19e2d92fbee858741feac7/2021/05/09/49e7bb85ed4228bb7811bf78f79878d0.png" alt=""></p>
+<p>阿里云：<a href="https://developer.aliyun.com/plan/grow-up">https://developer.aliyun.com/plan/grow-up</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@03c05d9f21cf0d470c7975e12cf8c68c4d01f81e/2021/05/09/4f77bef832af425c57bbab74075bad78.png" alt=""></p>
+<p>如果你买不了这种，也可以去其他服务商买新用户优惠的服务器，建议选择大厂。</p>
+<p>选择服务器要看下地区，如果是大陆地区的服务器，需要去其对应的服务商进行域名备案，否者你无法使用，如果是香港地区或者国外的服务器，则不需要进行备案。</p>
+<p>**注：**阿里和腾讯这两种轻量应用服务器都是需要 <strong>备案</strong>的，如果嫌麻烦或者不想备案，可选择其他地区的服务器！</p>
+<p>备案操作有些复杂，也需要好几天的时间，但是备案也有备案的好处，比如使用国内的CDN加速等。另请仔细参考各服务商提供的流程，要注意看清备案流程上的注意事项，防止备案驳回浪费时间。</p>
+<p>相比国外和香港的服务器，使用大陆的服务器在国内的访问速度是最好的，当然如果你搞外国业务当我没说。。。</p>
+<p>**域名选择：**域名选择很简单，去各大服务商注册一个就完事了，喜欢什么就注册什么，但是如果你要备案使用大陆服务器，一定不要注册不支持备案的域名，当然绝大多数都是支持备案的。另各大服务商也有新用户注册域名优惠活动，在百度仔细找一下就行了。
+腾讯云：<a href="https://cloud.tencent.com/act/domainsales">https://cloud.tencent.com/act/domainsales</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@70268324ee13583520eee5fd56fe5a0abd01be1c/2021/05/11/8857ba9becbbb51df2256bd0cf6acbd3.png" alt=""></p>
+<p>阿里云：<a href="https://wanwang.aliyun.com/domain">https://wanwang.aliyun.com/domain</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@4303a988a24359b0d1a32189a52cdc970c52d199/2021/05/11/28dea75217501fa6090df5374a994608.png" alt=""></p>
+<p>华为云：<a href="https://activity.huaweicloud.com/domain1.html">https://activity.huaweicloud.com/domain1.html</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@6e85a2867b6235cf8e952581f93c0c67c085d591/2021/05/11/545398ef8ec2147e76d06536ac1bc62a.png" alt=""></p>
+<p>下面开始搭建流程：</p>
+<h2 id="4lnmp环境">4.LNMP环境</h2>
+<p>首先我们要搭建的就是LNMP环境，LNMP代表的就是：Linux系统下Nginx+MySQL+PHP这种网站服务器架构。</p>
+<p><code>Linux</code> 是一类Unix计算机操作系统的统称，是目前最流行的免费操作系统。代表版本有：debian、centos、ubuntu、fedora、gentoo等。</p>
+<p><code>Nginx</code> 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。</p>
+<p><code>Mysql</code> 是一款安全、跨平台、高效的，并与 <code>PHP</code>、<code>Java</code> 等主流编程语言紧密结合的数据库系统。</p>
+<p><code>PHP</code> 是一种在服务器端执行的嵌入HTML文档的脚本语言。</p>
+<p>当然如果你不喜欢使用Nginx，或者Mysql，请自行更换其它的，这里不过多介绍！</p>
+<p>Linux系统的话，本文使用Centos 8系统讲解。</p>
+<p>搭建LNMP环境，我们可以选择自行下载对应的安装包，然后在Centos系统中，安装<code>Nginx</code>，<code>Mysql</code>，<code>PHP</code>等，这种纯动手的方式，非常麻烦和复杂，在后期进行多网站管理和配置HTTPS证书，以及网站伪静态配置时非常麻烦。</p>
+<p>所以本文讲解使用宝塔面板来进行安装部署环境！</p>
+<h2 id="5宝塔是什么">5.宝塔是什么</h2>
+<p>宝塔面板是一款服务器管理软件，支持windows和linux系统，可以通过Web端轻松管理服务器，提升运维效率。例如：创建管理网站、FTP、数据库，拥有可视化文件管理器，可视化软件管理器，可视化CPU、内存、流量监控图表，计划任务等功能。</p>
+<p>宝塔面板拥有极速方便的一键配置与管理，可一键配置服务器环境（LAMP/LNMP/Tomcat/Node.js），一键部署SSL，异地备份；提供SSH开启关闭服务，SSH端口更改，禁ping，防火墙端口放行以及操作日志查看；CPU、内存、磁盘IO、网络IO数据监测，可设置记录保存天数以及任意查看某天数据；</p>
+<p>计划任务可按周期添加执行，支持SHELL脚本，提供网站、数据库备份以及日志切割，且支持一键备份到又拍云存储空间，或者其他云存储空间里；通过web界面就可以轻松管理安装所用的服务器软件，还有实用的扩展插件；集成方便高效的文件管理器，支持上传、下载、打包、解压以及文件编辑查看。</p>
+<p>进入搭建正题：</p>
+<h2 id="6安装宝塔">6.安装宝塔</h2>
+<p>选择服务器时，选择系统镜像，不要选择服务商提供的应用镜像，操作系统选择Centos，版本的话7和8都可以。当然你也可以选择其他系统，，，</p>
+<p>接着到服务商的控制台，找到你的服务器，进入控制台，重置密码。</p>
+<p>然后在安全&ndash;》防火墙那里添加规则。</p>
+<p>端口范围<strong>8888</strong>，其他默认，备注随意。</p>
+<p>**注：**如果你不添加 <strong>8888</strong>，安装宝塔以后你是进不去的，安装宝塔以后可以修改宝塔的进入端口，再修改一下这里就可以了！</p>
+<p>使用SSH工具连接你的服务器，如果没有SSH工具也可以使用控制台那里提供的远程连接！</p>
+<p>在终端界面输入一下命令开始安装！</p>
+<p>Centos安装命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y wget <span style="color:#ff79c6">&amp;&amp;</span> wget -O install.sh http://download.bt.cn/install/install_6.0.sh <span style="color:#ff79c6">&amp;&amp;</span> sh install.sh
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@cfa51fb29191de86ea5e1e1b44af41b1927c981b/2021/05/11/8c9554cec2f765f559c272a6ac360d6b.png" alt=""></p>
+<p>不同操作系统有不同的安装命令，详情请去<a href="https://www.bt.cn/bbs/thread-19376-1-1.html">宝塔官网</a>查看！</p>
+<p>遇到安装提示直接输入：y</p>
+<p>安装完成后如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@f4cc9ee5c9230b3190855cda03f9d92833a41430/2021/05/11/e556f7143c95278a969612242a46ebae.png" alt=""></p>
+<p>在浏览器中访问外网面板地址。</p>
+<p>**注：**如果你刚才没有在服务器控制台安全防火墙那里添加端口8888是打不开的。</p>
+<p>使用username和password登录宝塔面板，点击我已阅读并同意“《用户协议》”后进入宝塔面板！</p>
+<p>进入宝塔面板后，会弹出一键安装环境套件选择界面，这时我们选择左边的LNMP环境！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a66065eec07834c0c88de1788abe8b1033f41ecf/2021/05/11/c1a01ea7140e5669dd2a039fe5ef81b5.png" alt=""></p>
+<p><strong>Nginx 1.18，Mysql 5.6（如果服务器内存在2g以上可以选择5.7），PHP 7.4（php建议版本选择7.0以上），Pure-Ftpd 1.0.49，phpMyAdmin 5.0（这是一个可以在浏览器页面管理数据库的软件程序，要在服务器控制台安全防火墙那里添加端口888，否则无法打开）</strong></p>
+<p>安装方式有两个，极速安装（安装速度快，节省时间），编译安装（安装速度超级慢，有时会卡死，但会提升服务器性能），可自行选择。本文以极速安装为例！</p>
+<p>安装过程：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@5bfae75f5dc204bd32e8dcead8a18ac69c2ea9dd/2021/05/11/9f0adbe007c866d5f99d7aecc811c0dd.png" alt=""></p>
+<p>安装完成后，会提示绑定宝塔账号，点击免费注册，去注册一个，然后绑定就可以了！</p>
+<p>**说明：**建议，安装完成后，左侧，面板设置，设置下面板的登录信息，修改一下登录入口，用户名，密码和端口。
+<strong>注：</strong> 如果修改面板设置中的端口，也要在服务器控制台安全防火墙那里修改端口。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@fb7de946a69ddf2ece1a54cb5a19be56e03e903a/2021/05/11/80adff2edec40d09eac4a104b1fd2b0a.png" alt=""></p>
+<h2 id="7安装typecho">7.安装Typecho</h2>
+<p>访问<a href="http://typecho.org/">Typecho</a> 官网，点击立即下载，点击下载1.1正式版。</p>
+<p>下载完成后，得到一个1.1-17.10.30-release.tar.gz压缩包，解压后可以看到里面有一个build文件夹，文件夹里面便是Typecho程序文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@3fe15a4565a38bf979ab7acc08c758e1cdbb66dc/2021/05/11/cdfd81118b588eb1591281b9fda9c115.png" alt=""></p>
+<p>先域名解析一下，去你的域名服务商，控制台找到你的域名，解析，添加记录。主机记录填写@，www或者blog其他的都可以（你填写的是什么就要以什么访问，比如填写www便是www.xxx.com等），记录类型A类型，记录值填写自己服务器的IP地址（如果不知道，可查看宝塔页面的左上角），确认就可以了！</p>
+<p>打开宝塔页面，左侧&ndash;》网站&ndash;》添加站点</p>
+<p>添加域名，数据库选择Mysql utf-8，填写数据库账号和密码以及对应的PHP版本，然后提交。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@7d53614e535098e0c9b3e1a3dd8a2ce74237c6ed/2021/05/11/3d4ae9731d4c32a7d828e3c4d6218ef9.png" alt=""></p>
+<p>这里可以先设置一下站点，点击站点右侧的设置，需要设置的有伪静态，SSL证书，，，</p>
+<p>伪静态选择typecho，然后保存。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@9fd898561a9e0b733e50c5475259781c09cc2db5/2021/05/11/bb5a833133b91a2bcb05fe7c8ad07f97.png" alt=""></p>
+<p>SSL证书，选择宝塔SSL证书，申请证书，填写相关信息，提交资料等申请成功就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@77733e1a0d614aeb8b6e8e59120d5f01380def5c/2021/05/11/63078aa08ab79cd588722a625640bc55.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@5ae3b8d7b1ea0bad3da4a329b8e32f08a7149bab/2021/05/11/98cecc20651ad2aa9056965a4004c2a6.png" alt=""></p>
+<p>如果申请失败，可以去域名服务商那里，有提供单域名免费SSL证书，然后选择其他证书，上传证书，开启右上角的强制HTTPs就可以了。</p>
+<p>关闭设置窗口，点击<strong>根目录</strong>下的路径地址**/www/wwwroot/你的域名**，直接进入根目录文件夹，删除index.html文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@c6247286c3564aed5ce8923dffcf4434c7a01766/2021/05/11/4764539572826852ef33d9f4f1b4737f.png" alt=""></p>
+<p>点击上传，弹出窗口，点击上传文件，找到下载的Typecho压缩包，打开，然后开始上传，上传完毕关闭窗口。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@875cd37f19504c58c496452d0fec97f1cd4857ca/2021/05/11/019bdf158e1ff508e71662e2ef06bda8.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@e27ec199f8c28c8e89a9109d14be30a7ba13a2b1/2021/05/11/38a903132952557ffce43ff3d11999c4.png" alt=""></p>
+<p>解压该压缩包后（删除压缩包），得到build文件夹，进入其文件夹内，选择文件名旁边的框，全选文件，右上角选择剪贴，然后回到上一级根目录下，黏贴，然后删掉没用的build文件夹就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@4def70f5e2a5ce3008d56f1f8fd9ea5fbdc70e1b/2021/05/11/7bfe1bcbc959ee73c9869bf11ab950d6.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@00a682158cc429b48648f7c29735475cc047a40a/2021/05/11/ea2c1bc80de015657cf1fad157df5274.png" alt=""></p>
+<p>到这一步，浏览器输入你的域名，就可以安装Typecho了。</p>
+<p>如有在上方遇到<code>Deprecated: Function get_magic_quotes_gpc() is deprecated in /www/wwwroot/woshishabi.top/var/Typecho/Common.php on line 208</code>报错，不用管，没什么影响。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@3d40ba3b7c47a42f47db25ad001221aebb584a29/2021/05/11/f82fb90632987b1cdaddb583e4534664.png" alt=""></p>
+<p>点击下一步，进入初始化配置，这一步需要填写修改的是数据库用户名（添加站点时设置的数据库账号，如果忘了可去宝塔面板页面左侧，数据库查看），数据库密码，数据库名（数据库名和数据库用户名是一样的！），用户名，登录密码，邮件地址，确认，开始安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@727f4eec24c86c957f0e1b7a5cad3f1aeb2efa72/2021/05/11/0d5e93682c1ec6e5d0b441d49bf28618.png" alt=""></p>
+<p>不出意外，安装成功！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a36e5463e04b5047ae55e1603ca9868406c406b5/2021/05/11/f9c0d8bae2e1f5d652774332a986a3ea.png" alt=""></p>
+<p>现在再浏览器访问域名，便可以查看你的Typecho博客了，当然现在是默认主题，还是比较丑的。</p>
+<p>去百度你喜欢的主题下载，然后上传根目录/usr/themes/目录里面，在后台外观设置中更换。各主题教程以及配置教程都有主题文档。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@e4b6d1606ce94074b45f015356ad27fc34ac20c6/2021/05/11/8a851580aaff42f50f52703898b66d6b.png" alt=""></p>
+<p>插件安装是将下载的插件上传根目录/usr/plugin/ 目录里面，在后台设置中启用插件，设置插件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@0ca25bd622a81618cf05fe5791d2e809c5b81d49/2021/05/11/316748ca1a877075d9e0d50ee0775d9e.png" alt=""></p>
+<p>你的后台面板地址就是你的域名/admin，用设置的用户名和密码登录就可以了！</p>
+<p>基本的安装到此为止了，下面说一些优化问题！</p>
+<h2 id="8优化">8.优化</h2>
+<p>**永久链接：**对文章和页面进行重写地址，可以去掉地址栏中的index.php，对seo也是很友好的。</p>
+<p>启用重写功能，选择文章路径，选择你喜欢的风格，也可以自定义风格，下面有可选参数，本站使用的是个性化定义 <code>/{cid}.html</code> 。然后保存设置，会出现（重写功能检测失败, 请检查你的服务器设置，如果你仍然想启用此功能, 请勾选这里。），勾选这里，再次点击保存设置就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@d581ec03f915a2d7b4a5433fc1ddfcccfd3050b6/2021/05/11/bc2528e7c7fa51abd06530cd16cc3b7a.png" alt=""></p>
+<blockquote>
+<p>原文地址来自我的好友：https://www.moeor.com/24.html</p>
+</blockquote>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                博客
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                转载
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/typecho/">
+                typecho
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/posts/2021-05-09-iframe-video-is-introduced-to-the-website-how-to-achieve-a-high-degree-of-adaptation/">网站引入iframe视频，如何实现高度自适应?</a></li>
+    
+    <li><a href="/posts/2021-04-24-kieslowski-and-his-reality/">基耶斯洛夫斯基和他的现实</a></li>
+    
+    <li><a href="/posts/2021-02-04-typecho-blog-small-emoticons-can-not-be-displayed-problem/">typecho 博客小表情无法显示问题</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2021-05-11-typecho-blog-construction-and-optimization-tutorial-detailed/"
+  data-page-url="/posts/2021-05-11-typecho-blog-construction-and-optimization-tutorial-detailed/"
+  data-page-title="Typecho博客搭建及优化教程(详细)"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>

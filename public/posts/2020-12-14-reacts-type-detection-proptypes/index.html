@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2020-12-14-reacts-type-detection-proptypes/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2020-12-14-reacts-type-detection-proptypes/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "React 学习笔记（二）",
+      "headline" : "React 学习笔记（二）",
+      "description" : "React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同\nReact 事件的命名采用小驼峰式（camelCase），而不是纯小写\n使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串\n一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：\n传统的html：用双引号包裹，后面必须跟参数\n\u0026lt;button onclick=\u0026#34;myfun()\u0026#34;\u0026gt;点击\u0026lt;\/button\u0026gt; React：用大括号包裹，后面不跟参数\n\u0026lt;button onclick={myfun}\u0026gt;点击\u0026lt;\/button\u0026gt; 一个完整的事件函数代码如下\nclass Demo extends React.Component { render() { \/\/ 事件函数  function myfun() { alert(\u0026#39;helo,world\u0026#39;) } return ( \/\/ 绑定事件  \u0026lt;button onClick={this.myfun}\u0026gt; Activate Lasers \u0026lt;\/button\u0026gt; ) } } ReactDOM.render( \u0026lt;Demo \/\u0026gt;, document.getElementById(\u0026#39;root\u0026#39;) )  如果方法后面没有()，则需要为这个方法绑定 this\n 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行\n看一下传统的 html 和 React 的对比",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-12-16 13:15:00 \u002b0000 UTC",
+      "dateModified" : "2020-12-16 13:15:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2020-12-14-reacts-type-detection-proptypes\/",
+      "keywords" : [ "react", ]
+  }
+</script>
+<title>React 学习笔记（二）</title>
+  <meta property="og:title" content="React 学习笔记（二）" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+React 事件的命名采用小驼峰式（camelCase），而不是纯小写
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
+一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
+传统的html：用双引号包裹，后面必须跟参数
+&amp;lt;button onclick=&amp;#34;myfun()&amp;#34;&amp;gt;点击&amp;lt;/button&amp;gt; React：用大括号包裹，后面不跟参数
+&amp;lt;button onclick={myfun}&amp;gt;点击&amp;lt;/button&amp;gt; 一个完整的事件函数代码如下
+class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&amp;#39;helo,world&amp;#39;) } return ( // 绑定事件  &amp;lt;button onClick={this.myfun}&amp;gt; Activate Lasers &amp;lt;/button&amp;gt; ) } } ReactDOM.render( &amp;lt;Demo /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
+ 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
+看一下传统的 html 和 React 的对比" />
+  <meta name="description" content="React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+React 事件的命名采用小驼峰式（camelCase），而不是纯小写
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
+一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
+传统的html：用双引号包裹，后面必须跟参数
+&amp;lt;button onclick=&amp;#34;myfun()&amp;#34;&amp;gt;点击&amp;lt;/button&amp;gt; React：用大括号包裹，后面不跟参数
+&amp;lt;button onclick={myfun}&amp;gt;点击&amp;lt;/button&amp;gt; 一个完整的事件函数代码如下
+class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&amp;#39;helo,world&amp;#39;) } return ( // 绑定事件  &amp;lt;button onClick={this.myfun}&amp;gt; Activate Lasers &amp;lt;/button&amp;gt; ) } } ReactDOM.render( &amp;lt;Demo /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
+ 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
+看一下传统的 html 和 React 的对比" />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">React 学习笔记（二）</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-12-16 13:15:00 UTC">
+                2020.12.16
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一事件处理">一、事件处理</a>
+      <ul>
+        <li><a href="#1事件绑定">1.事件绑定</a></li>
+        <li><a href="#2阻止默认行为">2.阻止默认行为</a></li>
+      </ul>
+    </li>
+    <li><a href="#二条件渲染">二、条件渲染</a>
+      <ul>
+        <li><a href="#使用-ifelse-语句进行条件渲染">使用 if..else 语句进行条件渲染</a></li>
+        <li><a href="#怎么阻止条件渲染">怎么阻止条件渲染？</a></li>
+      </ul>
+    </li>
+    <li><a href="#三渲染列表">三、渲染列表</a>
+      <ul>
+        <li><a href="#1分离组件">1.分离组件</a></li>
+        <li><a href="#2key">2.key</a></li>
+        <li><a href="#3使用-id-作为-key">3.使用 id 作为 key</a></li>
+        <li><a href="#4索引-index-可以作为-key-吗">4.索引 index 可以作为 key 吗？</a></li>
+        <li><a href="#5用-key-提取组件">5.用 key 提取组件</a></li>
+        <li><a href="#6key-只是在兄弟节点之间必须唯一">6.key 只是在兄弟节点之间必须唯一</a></li>
+        <li><a href="#7vue-中渲染列表">7.vue 中渲染列表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <p>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同</p>
+<p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写</p>
+<p>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串</p>
+<!-- more -->
+<h2 id="一事件处理">一、事件处理</h2>
+<h3 id="1事件绑定">1.事件绑定</h3>
+<p>React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：</p>
+<p><strong>传统的html</strong>：用双引号包裹，后面必须跟参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;myfun()&#34;</span>&gt;点击&lt;/<span style="color:#ff79c6">button</span>&gt;
+</code></pre></div><p><strong>React</strong>：用大括号包裹，后面不跟参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{myfun}</span>&gt;点击&lt;/<span style="color:#ff79c6">button</span>&gt;
+</code></pre></div><p>一个完整的事件函数代码如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">class</span> Demo <span style="color:#ff79c6">extends</span> React.Component {
+    render() {
+
+        <span style="color:#6272a4">// 事件函数
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">function</span> myfun() {
+            alert(<span style="color:#f1fa8c">&#39;helo,world&#39;</span>)
+        }
+
+        <span style="color:#ff79c6">return</span> (
+            <span style="color:#6272a4">// 绑定事件
+</span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">&lt;</span>button onClick<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.myfun}<span style="color:#ff79c6">&gt;</span>
+                Activate Lasers
+            <span style="color:#ff79c6">&lt;</span>/button&gt;
+        )
+    }
+}
+
+ReactDOM.render(
+    <span style="color:#ff79c6">&lt;</span>Demo <span style="color:#ff79c6">/&gt;</span>,
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+)
+</code></pre></div><blockquote>
+<p>如果方法后面没有<code>()</code>，则需要为这个方法绑定 <code>this</code></p>
+</blockquote>
+<h3 id="2阻止默认行为">2.阻止默认行为</h3>
+<p>在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－<code>preventDefault</code>，可以通过 preventDefault 阻止脚本执行</p>
+<p>看一下传统的 html 和 React 的对比</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;alert(&#39;是否弹窗？&#39;);return false&#34;</span>&gt;
+    Click me
+&lt;/<span style="color:#ff79c6">a</span>&gt;
+</code></pre></div><p>直接在写上 false 就可以阻止脚本执行</p>
+<p>React 通过 preventDefault 属性阻止脚本执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ActionLink() {
+  <span style="color:#8be9fd;font-style:italic">function</span> handleClick(e) {
+    e.preventDefault();
+    console.log(<span style="color:#f1fa8c">&#39;The link was clicked.&#39;</span>);
+  }
+
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>a href<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> onClick<span style="color:#ff79c6">=</span>{handleClick}<span style="color:#ff79c6">&gt;</span>
+      Click me
+    <span style="color:#ff79c6">&lt;</span>/a&gt;
+  );
+}
+</code></pre></div><h2 id="二条件渲染">二、条件渲染</h2>
+<p>在 React 中，可以创建不同的组件来封装各种你需要的行为，然后，根据应用不同的状态，你可以只渲染对应状态下的部分内容。</p>
+<p>React 中的条件渲染和 javascript 中的一样，使用 <code>if</code> 运算符来表示元素当前的状态，然后让 React 根据他们来更新 UI。</p>
+<h3 id="使用-ifelse-语句进行条件渲染">使用 if..else 语句进行条件渲染</h3>
+<p>先写一个条件渲染的例子，定义了两个组件，然后通过判断组件 <code>Greeting</code> 中的变量 <code>isLoggedIn</code> 的真伪，让浏览器渲染组件 <code>UserGreeting</code> 或者 <code>GuestGreeting</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// App.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">import</span> React, { Component } from <span style="color:#f1fa8c">&#39;react&#39;</span>
+
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> App <span style="color:#ff79c6">extends</span> Component {
+  render() {
+    <span style="color:#8be9fd;font-style:italic">function</span> UserGreeting(props) {
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>Welcome back<span style="color:#ff79c6">!&lt;</span>/h3&gt;;
+    }
+
+    <span style="color:#8be9fd;font-style:italic">function</span> GuestGreeting(props) {
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>Please sign up.<span style="color:#ff79c6">&lt;</span>/h3&gt;;
+    }
+
+    <span style="color:#8be9fd;font-style:italic">function</span> Greeting(props) {
+      <span style="color:#ff79c6">const</span> isLoggedIn <span style="color:#ff79c6">=</span> props.isLoggedIn;
+      <span style="color:#ff79c6">if</span> (isLoggedIn) {
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>UserGreeting <span style="color:#ff79c6">/&gt;</span>;
+      }   
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>GuestGreeting <span style="color:#ff79c6">/&gt;</span>;
+    }
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>Greeting isLoggedIn<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">false</span>} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    )
+  }
+}
+</code></pre></div><p>最后变量 <code>isLoggedIn</code> 定义了 <code>false</code>，因此，浏览器渲染 `GuestGreeting。</p>
+<h3 id="怎么阻止条件渲染">怎么阻止条件渲染？</h3>
+<p>在有些情况下，我们希望能隐藏组件，即使他已经被其他组件渲染。我们可以通过 <code>render</code> 方法返回 <code>null</code> 让组件不渲染。</p>
+<p>下面的示例中，<WarningBanner /> 会根据 prop 中 <code>warn</code> 的值来进行条件渲染。如果 <code>warn</code> 的值是 <code>false</code>，那么组件则不会渲染:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> WarningBanner(props) {
+  <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>props.warn) {
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span>;
+  }
+
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;warning&#34;</span><span style="color:#ff79c6">&gt;</span>
+      Warning<span style="color:#ff79c6">!</span>
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+}
+
+<span style="color:#ff79c6">class</span> Page <span style="color:#ff79c6">extends</span> React.Component {
+  constructor(props) {
+    <span style="color:#ff79c6">super</span>(props);
+    <span style="color:#ff79c6">this</span>.state <span style="color:#ff79c6">=</span> {showWarning<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>};
+    <span style="color:#ff79c6">this</span>.handleToggleClick <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.handleToggleClick.bind(<span style="color:#ff79c6">this</span>);
+  }
+
+  handleToggleClick() {
+    <span style="color:#ff79c6">this</span>.setState(state =&gt; ({
+      showWarning<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">!</span>state.showWarning
+    }));
+  }
+
+  render() {
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>WarningBanner warn<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.state.showWarning} <span style="color:#ff79c6">/&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>button onClick<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.handleToggleClick}<span style="color:#ff79c6">&gt;</span>
+          {<span style="color:#ff79c6">this</span>.state.showWarning <span style="color:#ff79c6">?</span> <span style="color:#f1fa8c">&#39;Hide&#39;</span> <span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Show&#39;</span>}
+        <span style="color:#ff79c6">&lt;</span>/button&gt;
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>Page <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h2 id="三渲染列表">三、渲染列表</h2>
+<p>先看一段代码，我们使用 <code>map()</code> 函数让数组中的每一项变双倍，然后得到一个新的数组 <code>doubled</code> 并打印出来。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+<span style="color:#ff79c6">const</span> doubled <span style="color:#ff79c6">=</span> numbers.map((number) =&gt; number <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span>);
+console.log(doubled);
+
+<span style="color:#6272a4">// [2,4,6,8,10]
+</span></code></pre></div><p>而在 React 中，把数组转换为元素列表的过程是相似的。</p>
+<p>先通过 <code>map()</code> 方法遍历 <code>numbers</code> 数组，将数组中的每个元素变成 <code>&lt;li&gt;</code> 标签，最后将得到的数组赋值给 <code>listItems</code> 。</p>
+<p>然后返回 <code>{listItem}</code> 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+<span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+  <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{number}<span style="color:#ff79c6">&lt;</span>/li&gt;
+);
+
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><p>运行之后浏览器出现 1-5 的无序列表</p>
+<h3 id="1分离组件">1.分离组件</h3>
+<p>上面就是一个基本的列表渲染的例子，但是数据写死了。接下来我们将数组重构成一个组件，以后再进行数组渲染时，可以轻松调用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> Map <span style="color:#ff79c6">extends</span> Component {
+  render() {
+
+  <span style="color:#6272a4">// 分离出组件 NumberList 作为转换数组的组件
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+      <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+      <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{number}<span style="color:#ff79c6">&lt;</span>/li&gt;
+      );
+      <span style="color:#ff79c6">return</span> (
+        <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+      );
+    }
+
+    <span style="color:#6272a4">// 传入需要的数据
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">7</span>];
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    )
+  }
+}
+</code></pre></div><h3 id="2key">2.key</h3>
+<p><img src="https://i.loli.net/2020/12/28/mIt3Gk7YTpoysuL.jpg" alt=""></p>
+<p>运行代码之后，页面会正常显示，但是控制台会报一个错误。<code>Each child in a list should have a unique &quot;key&quot; prop.</code>，意思是当你创建一个元素时，必须包括一个特殊的 <code>key</code> 属性。</p>
+<p>现在给每个列表元素分配一个key：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{number.toString()}<span style="color:#ff79c6">&gt;</span>
+      {number}
+    <span style="color:#ff79c6">&lt;</span>/li&gt;
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h3 id="3使用-id-作为-key">3.使用 id 作为 key</h3>
+<p><code>key</code> 帮助 React 识别了哪些元素被改变，比如删除和添加，所以应当给每个元素确定一个标识，也就是 <code>key</code>。</p>
+<p>一个元素的 <code>key</code> 最好是这个元素在列表中拥有的一个独一无二的字符串。通常，我们使用数据中的 <code>id</code> 来作为元素的 <code>key</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> Map <span style="color:#ff79c6">extends</span> Component {
+  render() {
+
+    <span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+      <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+      <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{number.id}<span style="color:#ff79c6">&gt;</span>  <span style="color:#6272a4">// 赋值 key
+</span><span style="color:#6272a4"></span>          {number.text}
+        <span style="color:#ff79c6">&lt;</span>/li&gt;
+      );
+      <span style="color:#ff79c6">return</span> (
+        <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+      );
+    }
+
+    <span style="color:#6272a4">// 传入数据
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">4</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">4</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">5</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">5</span>}
+    ];
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>Fragment<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/Fragment&gt;
+    )
+  }
+}
+</code></pre></div><h3 id="4索引-index-可以作为-key-吗">4.索引 index 可以作为 key 吗？</h3>
+<p>当元素没有确定 id 的时候，万不得已你可以使用元素索引 <code>index</code> 作为 <code>key</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> todoItems <span style="color:#ff79c6">=</span> todos.map((todo, index) =&gt;
+  <span style="color:#6272a4">// 仅仅当没有确定 id 的时候使用索引index作为 key
+</span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{index}<span style="color:#ff79c6">&gt;</span>
+    {todo.text}
+  <span style="color:#ff79c6">&lt;</span>/li&gt;
+);
+</code></pre></div><p>如果列表项目的顺序可能会变化，我们不建议使用索引来用作 <code>key</code> 值，因为这样做会导致性能变差，还可能引起组件状态的问题。</p>
+<h3 id="5用-key-提取组件">5.用 key 提取组件</h3>
+<p>比方说，如果你提取出一个 <code>ListItem</code> 组件，你应该把 <code>key</code> 保留在数组中的这个 <code>&lt;ListItem /&gt;</code> 元素上，而不是放在 <code>ListItem</code> 组件中的 <code>&lt;li&gt;</code> 元素上。</p>
+<p><red>错误的使用方法：</red></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ListItem(props) {
+  <span style="color:#ff79c6">const</span> value <span style="color:#ff79c6">=</span> props.value;
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#6272a4">// 错误！你不需要在这里指定 key：
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{value.toString()}<span style="color:#ff79c6">&gt;</span>
+      {value}
+    <span style="color:#ff79c6">&lt;</span>/li&gt;
+  );
+}
+
+<span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#6272a4">// 错误！元素的 key 应该在这里指定：
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>ListItem value<span style="color:#ff79c6">=</span>{number} <span style="color:#ff79c6">/&gt;</span>
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {listItems}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><p><green>正确的使用方法：</green></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ListItem(props) {
+  <span style="color:#6272a4">// 正确！这里不需要指定 key：
+</span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{props.value}<span style="color:#ff79c6">&lt;</span>/li&gt;;
+}
+
+<span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#6272a4">// 正确！key 应该在数组的上下文中被指定
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>ListItem key<span style="color:#ff79c6">=</span>{number.toString()}              value<span style="color:#ff79c6">=</span>{number} <span style="color:#ff79c6">/&gt;</span>
+
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {listItems}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><blockquote>
+<p>React：一个好的经验法则是：在 map( ) 方法中的元素需要设置 key 属性。</p>
+</blockquote>
+<h3 id="6key-只是在兄弟节点之间必须唯一">6.key 只是在兄弟节点之间必须唯一</h3>
+<p>数组元素中使用的 <code>key</code> 在其兄弟节点之间应该是独一无二的。然而，它们不需要是全局唯一的。当我们生成两个不同的数组时，我们可以使用相同的 <code>key</code> 值：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> Blog(props) {
+  <span style="color:#ff79c6">const</span> sidebar <span style="color:#ff79c6">=</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {props.posts.map((post) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{post.id}<span style="color:#ff79c6">&gt;</span>
+          {post.title}
+        <span style="color:#ff79c6">&lt;</span>/li&gt;
+      )}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+  <span style="color:#ff79c6">const</span> content <span style="color:#ff79c6">=</span> props.posts.map((post) =&gt;
+    <span style="color:#ff79c6">&lt;</span>div key<span style="color:#ff79c6">=</span>{post.id}<span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>{post.title}<span style="color:#ff79c6">&lt;</span>/h3&gt;
+      <span style="color:#ff79c6">&lt;</span>p<span style="color:#ff79c6">&gt;</span>{post.content}<span style="color:#ff79c6">&lt;</span>/p&gt;
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+      {sidebar}
+      <span style="color:#ff79c6">&lt;</span>hr <span style="color:#ff79c6">/&gt;</span>
+      {content}
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> posts <span style="color:#ff79c6">=</span> [
+  {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>, title<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Hello World&#39;</span>, content<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Welcome to learning React!&#39;</span>},
+  {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>, title<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Installation&#39;</span>, content<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;You can install React from npm.&#39;</span>}
+];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>Blog posts<span style="color:#ff79c6">=</span>{posts} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h3 id="7vue-中渲染列表">7.vue 中渲染列表</h3>
+<p>Vue 中渲染列表使用的是特殊指令 <code>v-for</code>，其中也有 <code>key</code> 的相关用法</p>
+<p>React 中采用的是 <code>map()</code> 方法遍历数组，然后渲染列表</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/react/">
+                react
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/posts/2020-12-12-placeholderfragment-in-react/">React 中的占位符 Fragment</a></li>
+    
+    <li><a href="/posts/2020-12-02-why-is-immutability-so-important-in-react/">为什么不可变性在 React 中那么重要？</a></li>
+    
+    <li><a href="/posts/2020-11-27-a-study-plan-about-react/">关于react的一份学习计划</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2020-12-14-reacts-type-detection-proptypes/"
+  data-page-url="/posts/2020-12-14-reacts-type-detection-proptypes/"
+  data-page-title="React 学习笔记（二）"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.86.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="😎 Nov8nana" />
+  <meta property="og:url" content="https://shuxhan.com/posts/2020-11-14-object-oriented-programming/" />
+  <link rel="canonical" href="https://shuxhan.com/posts/2020-11-14-object-oriented-programming/" /><link rel="apple-touch-icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="icon" href="https://img.shuxhan.com/favicon.png" />
+  <link rel="shortcut" href="https://img.shuxhan.com/favicon.png" /><link rel="alternate" type="application/atom+xml" href="https://shuxhan.com/index.xml" title="求索日记">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/shuxhan.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "面向对象编程",
+      "headline" : "面向对象编程",
+      "description" : "面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。\n一、什么是面向对象编程 js是基于原型的，基于面向对象编程\n面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类\n1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。\n自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用\n面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。\n2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统\n面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。\n想要弄明白面向对象，需要先理解类和对象的概念\n《什么是类和对象？》\n二、创建对象的方法 1.创建字面量和实例 window.onload = function() { \/\/ 实例  var person = new Object(); person.name = \u0026#39;小明\u0026#39;; person.age = 22; person.year = function() { console.log(this.name \u002b \u0026#39;今年\u0026#39; \u002b this.age \u002b \u0026#39;岁了！\u0026#39;) }; person.year(); \/\/ 字面量  var student = { name: \u0026#39;小明\u0026#39;, age: 22, year: function () { console.log(this.name \u002b \u0026#39;今年\u0026#39; \u002b this.age \u002b \u0026#39;岁了！\u0026#39;) } } student.",
+      "inLanguage" : "en-US",
+      "author" : "😎 Nov8nana",
+      "creator" : "😎 Nov8nana",
+      "publisher": "😎 Nov8nana",
+      "accountablePerson" : "😎 Nov8nana",
+      "copyrightHolder" : "😎 Nov8nana",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-14 12:58:00 \u002b0000 UTC",
+      "dateModified" : "2020-11-14 12:58:00 \u002b0000 UTC",
+      "url" : "https:\/\/shuxhan.com\/posts\/2020-11-14-object-oriented-programming\/",
+      "keywords" : [ "js","编程", ]
+  }
+</script>
+<title>面向对象编程</title>
+  <meta property="og:title" content="面向对象编程" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+一、什么是面向对象编程 js是基于原型的，基于面向对象编程
+面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
+1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
+自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用
+面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。
+2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统
+面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+想要弄明白面向对象，需要先理解类和对象的概念
+《什么是类和对象？》
+二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name &#43; &amp;#39;今年&amp;#39; &#43; this.age &#43; &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name &#43; &amp;#39;今年&amp;#39; &#43; this.age &#43; &amp;#39;岁了！&amp;#39;) } } student." />
+  <meta name="description" content="面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+一、什么是面向对象编程 js是基于原型的，基于面向对象编程
+面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
+1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
+自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用
+面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。
+2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统
+面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+想要弄明白面向对象，需要先理解类和对象的概念
+《什么是类和对象？》
+二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name &#43; &amp;#39;今年&amp;#39; &#43; this.age &#43; &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name &#43; &amp;#39;今年&amp;#39; &#43; this.age &#43; &amp;#39;岁了！&amp;#39;) } } student." />
+  <meta property="og:locale" content="zh-cn" />
+
+  
+    <style>.highlight pre::-webkit-scrollbar{height:7px}.highlight pre::-webkit-scrollbar-track-piece{background-color:#000}.highlight pre::-webkit-scrollbar-track{background-color:#fff}.highlight pre::-webkit-scrollbar-thumb{background-color:#c0b9b9}.highlight pre::-webkit-scrollbar-button{background-color:#fff;display:none}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background-color:#333;border-radius:5px}::-webkit-scrollbar-track{background-color:#999}@font-face{font-family:sfproicons;src:url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/DFPKingGothicGB-Medium-2.ttf)}body{margin:0;padding:0;font-family:Inter,Noto Sans SC,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:scroll}article{max-width:900px;margin:0 auto;padding:0 50px;box-sizing:border-box;opacity:.98}a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}a:hover{font-weight:inherit;opacity:.8;text-decoration:underline}.post-ads{margin:50px 0}.markdown-html{font-size:1.03rem;max-width:100%}.markdown-html li{line-height:1.8}.markdown-html a{text-decoration:underline;text-decoration-color:#000;word-break:break-all}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.markdown-html pre{padding:16px;overflow:auto;border-radius:10px;border:1px solid #ccc;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;line-height:1.4;font-size:16px}.markdown-html code{padding:.2em .4em;font-size:85%;border-radius:6px;font-family:source code pro,Consolas,Monaco,Menlo,Consolas,monospace;background:#666;color:#fff}.highlight{position:relative}.highlight pre{padding-right:75px}.highlight-copy-btn{position:absolute;top:7px;right:7px;border:0;border-radius:4px;padding:1px;font-size:.8em;line-height:1.8;color:#fff;background-color:#777;min-width:55px;text-align:center}.highlight-copy-btn:hover{background-color:#666;cursor:pointer}.markdown-html pre>code{padding:0;font-size:100%;border:0;background:0 0}.post-content>p>code{background:#666;color:#fff;font-weight:600}.markdown-html pre>code .ln{user-select:none}.Chinese .markdown-html{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:500;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,droid sans,helvetica neue}.header-title a{text-decoration:none;user-select:none;font-size:1.4rem;border:none;background:0 0;color:#1b1d25;padding:.75rem 1.25rem;border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px}.header-title a:hover{color:#1b1d25;opacity:1}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.1rem;margin:12px 0;word-break:break-all}.posts-categories{font-size:.85rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px;margin-bottom:30px}#tab-of-content-area{position:sticky;position:-webkit-sticky;top:60px;margin-left:107%;height:0}@media(max-width:1240px){#tab-of-content-area{display:none}}#TableOfContents{display:inline-block;width:max-content;width:-webkit-max-content;width:-moz-max-content;width:200px;border-left:1px solid #ddd;padding-left:10px;margin-left:10px}#TableOfContents ul{font-size:15px;color:#000;padding:0;margin:0}#TableOfContents ul a{color:inherit}#TableOfContents ul ul{padding-left:10px;font-size:14px}#TableOfContents li{padding:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tab-of-content-button{float:right}.post-content img{max-width:100%;display:block;margin-right:auto;margin:12px auto 0;box-shadow:1px 3px 11px #e3e3e3;transition:all .2s linear;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-ms-transition:all .2s linear;-o-transition:all .2s linear}.post-content img:hover{transform:scale(1.02);-webkit-transform:scale(1.02);-moz-transform:scale(1.02);-ms-transform:scale(1.02);-o-transform:scale(1.02)}.post-header{margin-bottom:26px}.post-title{font-size:1.5rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.post-content blockquote{border:1px solid #bbb;margin:0;padding:0 10px;box-sizing:border-box;border-radius:6px;font-size:16px;color:#666;background:#d6d2c4}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-top:40px}.related-content li{margin:5px 0}.post-comments{margin-top:20px}.post-comments .iframe{padding-bottom:0;height:auto}.post-comments .iframe iframe{position:inherit}.top-btn{position:fixed;right:40px;bottom:60px;-ms-flex-pack:center;-ms-flex-align:center;align-items:center;background:#fff;border-radius:50%;box-shadow:0 5px 5px rgb(0 0 0/.1);display:none;opacity:0;height:40px;justify-content:center;transition:all .4s ease;width:40px;z-index:1}.top-btn-show{display:block;animation-name:show;animation-fill-mode:forwards;animation-duration:.5s}.top-btn-hide{animation-name:hide;animation-fill-mode:forwards;animation-duration:.5s}@keyframes show{0%{transform:translateY(100px);-webkit-transform:translateY(100px);-moz-transform:translateY(100px);-ms-transform:translateY(100px);-o-transform:translateY(100px);opacity:0}100%{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);opacity:1}}.top-btn:hover{cursor:pointer;background:#c1c1c1}.top-btn div{position:relative;width:100%;height:100%}.top-btn div i{position:absolute;top:18px;background:#666;width:16px;height:2px}.top-btn div i:nth-child(1){transform:rotate(-45deg);left:7px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg)}.top-btn div i:nth-child(2){transform:rotate(45deg);right:7px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg)}.repo{display:flex;flex-wrap:wrap;justify-content:space-between}.repo-item{display:block;width:46%;box-shadow:1px 5px 10px #e3e3e3;margin-bottom:20px;padding:10px;transition:all .1s linear;-webkit-transition:all .1s linear;-moz-transition:all .1s linear;-ms-transition:all .1s linear;-o-transition:all .1s linear}.repo-item:hover{text-decoration:none;box-shadow:1px 5px 10px #b8b4b4}.repo-title{font-weight:600;font-size:1.02rem}.repo-item p{color:#666;font-size:.99rem}@media screen and (max-width:600px){article{margin:0;padding:0 10px}.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-html{font-size:16px}.post-content p{letter-spacing:.05em}.repo-item{width:100%}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="求索日记">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  <script>
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+
+<script>
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//tongji.shuxhan.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >😎 Nov8nana</a
+    >
+  </div>
+  <div class="header-subtitle">路漫漫其修远兮，吾将上下而求索！</div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="/about">About</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="/repos">Repos</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/Nov8nana">Github</a>
+  </div>
+  
+
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">面向对象编程</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-14 12:58:00 UTC">
+                2020.11.14
+              </time>
+               
+            </div>
+
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a href="/about">@😎 Nov8nana</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div id="tab-of-content-area">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是面向对象编程">一、什么是面向对象编程</a>
+      <ul>
+        <li><a href="#1面向过程程序设计">1.面向过程程序设计</a></li>
+        <li><a href="#2面向对象程序设计">2.面向对象程序设计</a></li>
+      </ul>
+    </li>
+    <li><a href="#二创建对象的方法">二、创建对象的方法</a>
+      <ul>
+        <li><a href="#1创建字面量和实例">1.创建字面量和实例</a></li>
+        <li><a href="#2工厂模式">2.工厂模式</a></li>
+        <li><a href="#3构造函数">3.构造函数</a></li>
+        <li><a href="#4-原型模式">4. 原型模式</a></li>
+        <li><a href="#5混合模式推荐使用">5.混合模式(推荐使用)</a></li>
+      </ul>
+    </li>
+    <li><a href="#三原型原型链">三、原型，原型链</a>
+      <ul>
+        <li><a href="#1原型对象">1.原型对象</a></li>
+        <li><a href="#2__proto__和prototype的区别">2.__proto__和prototype的区别</a></li>
+        <li><a href="#3继承">3.继承</a></li>
+        <li><a href="#4es6新方法class">4.ES6新方法－－class</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+
+        <div class="post-content markdown-html">
+          
+          <p>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。</p>
+<!-- more -->
+<h2 id="一什么是面向对象编程">一、什么是面向对象编程</h2>
+<p>js是<code>基于原型</code>的，基于<code>面向对象编程</code></p>
+<p>面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/99809398-db39-4c68-97b2-83ff9971f2c6.png" alt=""></p>
+<!-- more -->
+<h3 id="1面向过程程序设计">1.面向过程程序设计</h3>
+<p>将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。</p>
+<p>自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用</p>
+<p>面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。</p>
+<h3 id="2面向对象程序设计">2.面向对象程序设计</h3>
+<p>将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统</p>
+<p>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。</p>
+<p>想要弄明白面向对象，需要先理解类和对象的概念</p>
+<p><a href="../20201118-objects-interfaces-classes">《什么是类和对象？》</a></p>
+<h2 id="二创建对象的方法">二、创建对象的方法</h2>
+<h3 id="1创建字面量和实例">1.创建字面量和实例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#6272a4">// 实例
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">var</span> person <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Object</span>();
+    person.name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;小明&#39;</span>;
+    person.age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">22</span>;
+    person.year <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>)
+    };
+    person.year();
+
+    <span style="color:#6272a4">// 字面量
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">var</span> student <span style="color:#ff79c6">=</span> {
+        name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;小明&#39;</span>,
+        age<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">22</span>,
+        year<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>)
+        }
+    }
+    student.year();
+}
+
+<span style="color:#6272a4">// 小明今年22岁了！
+</span></code></pre></div><p>两者输出的结果是一样的，控制台输出：
+<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/c8eb2a0d-5c3a-461e-b699-79653edcd986.jpg" alt=""></p>
+<blockquote>
+<p>缺点：重复实例化对象，代码冗余高</p>
+</blockquote>
+<h3 id="2工厂模式">2.工厂模式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">function</span> createObj(name, age) {
+        <span style="color:#8be9fd;font-style:italic">var</span> obj <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Object</span>();
+        obj.name <span style="color:#ff79c6">=</span> name,
+        obj.age <span style="color:#ff79c6">=</span> age,
+        obj.year <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>)
+        }
+        <span style="color:#ff79c6">return</span> obj;
+    }
+    <span style="color:#8be9fd;font-style:italic">var</span> obj <span style="color:#ff79c6">=</span> createObj(<span style="color:#f1fa8c">&#39;小明&#39;</span>, <span style="color:#bd93f9">22</span>);
+    obj.year();
+}
+
+<span style="color:#6272a4">// 小明今年22岁了！
+</span></code></pre></div><blockquote>
+<p>优点：解决重复实例化对象的问题
+缺点：无法识别对象的类型，因为所有的实例都指向一个原型</p>
+</blockquote>
+<h3 id="3构造函数">3.构造函数</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">function</span> Person(name, age) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+        <span style="color:#ff79c6">this</span>.year <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>)
+        }
+    }
+    <span style="color:#8be9fd;font-style:italic">var</span> student <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person(<span style="color:#f1fa8c">&#39;小明&#39;</span>, <span style="color:#bd93f9">22</span>);
+    student.year();
+}
+
+<span style="color:#6272a4">// 小明今年22岁了！
+</span></code></pre></div><blockquote>
+<p>优点：可以识别对象的类型
+缺点：多个实例重复创建方法，无法共享</p>
+</blockquote>
+<h3 id="4-原型模式">4. 原型模式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">function</span> Par() {}
+    Par.prototype <span style="color:#ff79c6">=</span> {
+        constructor<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Par&#39;</span>,
+        name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;小明&#39;</span>,
+        age<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">22</span>,
+        year<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>)
+        }
+    };
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Par();
+    son.year();
+}
+
+<span style="color:#6272a4">// 小明今年22岁了！
+</span></code></pre></div><blockquote>
+<p>缺点：所有实例共享他的属性和方法，不能传参和初始化属性值</p>
+</blockquote>
+<h3 id="5混合模式推荐使用">5.混合模式(推荐使用)</h3>
+<p>是构造函数和原型模式混合的写法，拥有各自的优点，构造函数共享实例属性，原型模式共享方法和想要共享的属性，可以传参和初始化属性值</p>
+<p>先用构造函数定义对象的属性方法，然后用原型模式创建方法，使用的属性通过prototype获取，有一个constructor属性，可以指向要操作的函数对象（构造函数）</p>
+<p>比如<code>constructor: Par</code>，就代表下面这个原型方法指向<code>Par()</code>对象（构造函数）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">function</span> Par(name, age) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+    }
+    Par.prototype <span style="color:#ff79c6">=</span> {
+        constructor<span style="color:#ff79c6">:</span> Par,
+        year<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>);
+        }
+    };
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Par(<span style="color:#f1fa8c">&#39;小明&#39;</span>, <span style="color:#bd93f9">22</span>)
+    son.year();
+}
+
+<span style="color:#6272a4">// 小明今年22岁了！
+</span></code></pre></div><h2 id="三原型原型链">三、原型，原型链</h2>
+<h3 id="1原型对象">1.原型对象</h3>
+<ol>
+<li>函数对象都具有<code>prototype</code>属性，它指向函数的原型对象(浏览器内存创建的对象)，原型对象都具有<code>constructor</code>属性，它指向<code>prototype</code>属性所在的函数对象(构造函数)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">function</span> Par(name, age) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+    }
+    Par.prototype <span style="color:#ff79c6">=</span> {
+    <span style="color:#6272a4">// constructor指向对象
+</span><span style="color:#6272a4"></span>        constructor<span style="color:#ff79c6">:</span> Par,
+        year<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;今年&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;岁了！&#39;</span>);
+        }
+    };
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Par(<span style="color:#f1fa8c">&#39;小明&#39;</span>, <span style="color:#bd93f9">22</span>)
+    son.year();
+
+<span style="color:#6272a4">/*********************************************/</span>
+    console.log(Par.prototype)
+    console.log(Par.prototype.constructor)
+<span style="color:#6272a4">/*********************************************/</span>
+}
+</code></pre></div><p>通过控制台可以看到</p>
+<p>构造函数的<code>prototypr</code>属性指向原型对象</p>
+<p>原型对象的<code>construcyor</code>属性指向构造函数</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/769d7f85-0893-4896-84ac-8cb03b8e55d6.jpg" alt=""></p>
+<ol start="2">
+<li>当调用构造函数创建一个实例后，该实例会有一个隐藏属性<code>__proto__ </code>，它指向构造函数的原型对象</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">console.log(son.<span style="color:#bd93f9">__</span>proto__ <span style="color:#ff79c6">===</span> Par.prototype)
+
+<span style="color:#6272a4">// true
+</span></code></pre></div><ol start="3">
+<li>所有的构造函数的prototype都是object类型</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">console.log(<span style="color:#ff79c6">typeof</span> Par.prototype)
+
+<span style="color:#6272a4">// object
+</span></code></pre></div><ol start="4">
+<li>Function的prototype是一个空函数，所有内置函数的__proto__属性都指向这个空函数</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">console.log(<span style="color:#8be9fd;font-style:italic">Math</span>.<span style="color:#bd93f9">__</span>proto__)
+</code></pre></div><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/47a21be9-e931-48e5-8724-96e7af58ab85.jpg" alt=""></p>
+<ol start="5">
+<li>如果构造函数实例和原型对象中同时定义了一个属性，在调用时，会屏蔽原型对象中的属性，如果想要访问原型对象中的属性值，需要通过<code>delete</code>方法将同名属性在实例（构造函数）中彻底删除</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+    <span style="color:#8be9fd;font-style:italic">function</span> Par(name) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+    }
+    Par.prototype.name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;张三&#34;</span>;
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Par(<span style="color:#f1fa8c">&#34;李四&#34;</span>);
+    console.log(son.name); <span style="color:#6272a4">// 李四
+</span><span style="color:#6272a4"></span>    console.log(son.<span style="color:#bd93f9">__</span>proto__.name); <span style="color:#6272a4">// 张三
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 使用delete删除实例的同名属性值
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#ff79c6">delete</span> son.name);   <span style="color:#6272a4">// true
+</span><span style="color:#6272a4"></span>    console.log(son.name); <span style="color:#6272a4">// 张三
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><ol start="6">
+<li>通过<code>hasOwnProperty(属性名)</code>可以判断一个属性存在于构造函数中，还是原型对象中</li>
+</ol>
+<blockquote>
+<p><code>true</code>表示存在构造函数中；<code>false</code>表示存在原型对象中</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">console.log(Par.hasOwnProperty(name));  <span style="color:#6272a4">// false
+</span></code></pre></div><ol start="7">
+<li>操作符<code>in</code>，可以判断一个属性是否存在（存在于构造函数和原型对象中皆可）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+    <span style="color:#8be9fd;font-style:italic">function</span> Par(name, age) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+    }
+    Par.prototype <span style="color:#ff79c6">=</span> {
+        constructor<span style="color:#ff79c6">:</span> Par,
+        year<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age)
+        }
+    };
+    <span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Par(<span style="color:#f1fa8c">&#39;xm&#39;</span>, <span style="color:#f1fa8c">&#39;22&#39;</span>)
+    son.year();
+    console.log(<span style="color:#f1fa8c">&#39;name&#39;</span> <span style="color:#ff79c6">in</span> Par); <span style="color:#6272a4">// true
+</span><span style="color:#6272a4"></span>    console.log(<span style="color:#f1fa8c">&#39;age&#39;</span> <span style="color:#ff79c6">in</span> Par);  <span style="color:#6272a4">// false
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>同样的两个属性，判断其是否存在于实例或者原型对象中，输出的结果不一样</p>
+<blockquote>
+<p>参考:《对象中是否有某一个属性 in》<a href="https://www.cnblogs.com/IwishIcould/p/12333739.html">https://www.cnblogs.com/IwishIcould/p/12333739.html</a></p>
+</blockquote>
+<h3 id="2__proto__和prototype的区别">2.__proto__和prototype的区别</h3>
+<ol>
+<li>
+<p><code>prototype</code>属性只有函数对象上才有，而<code>__proto__</code>属性所有对象都有</p>
+</li>
+<li>
+<p><code>prototype</code>是由函数对象指向原型对象，而<code>__proto__</code>是由实例指向函数对象的原型对象</p>
+</li>
+<li>
+<p>原型链，将父类型的实例作为子类型的原型对象，这种链式关系叫做<code>原型链</code></p>
+</li>
+</ol>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/ed2c179f-0e9d-4da0-bae3-00d2273b10c6.png" alt=""></p>
+<h3 id="3继承">3.继承</h3>
+<ol>
+<li>原型链继承</li>
+</ol>
+<blockquote>
+<p>优点：父类原型定义的属性和方法可以复用
+缺点：子类实例没有自己的属性，不能向父类传递参数</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> test1() {
+    <span style="color:#8be9fd;font-style:italic">function</span> SuperType() {
+        <span style="color:#ff79c6">this</span>.city <span style="color:#ff79c6">=</span> [ <span style="color:#f1fa8c">&#34;北京&#34;</span>, <span style="color:#f1fa8c">&#34;上海&#34;</span>, <span style="color:#f1fa8c">&#34;天津&#34;</span> ];
+        <span style="color:#ff79c6">this</span>.property <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+    }
+    SuperType.prototype <span style="color:#ff79c6">=</span> {
+        constructor <span style="color:#ff79c6">:</span> SuperType,     <span style="color:#6272a4">// 保持构造函数和原型对象的完整性
+</span><span style="color:#6272a4"></span>        age <span style="color:#ff79c6">:</span> <span style="color:#bd93f9">15</span>,
+        getSuperValue <span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.property;
+        }
+    };
+    <span style="color:#8be9fd;font-style:italic">function</span> SonType() {
+        <span style="color:#ff79c6">this</span>.property <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span>;
+    }
+
+    <span style="color:#6272a4">// 重写子类的原型指向父类的实例：继承父类的原型
+</span><span style="color:#6272a4"></span>    SubType.prototype <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SuperType();
+
+    SubType.prototype <span style="color:#ff79c6">=</span> {
+        constructor <span style="color:#ff79c6">:</span> SubType,
+        getSonType <span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.property;
+        }
+    };
+
+    <span style="color:#6272a4">// 优点验证
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    console.log(son.age); <span style="color:#6272a4">// 15
+</span><span style="color:#6272a4"></span>    console.log(son.getSuperValue()); <span style="color:#6272a4">// false
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 缺点验证
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> instance1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    instance1.city.push(<span style="color:#f1fa8c">&#34;重庆&#34;</span>);
+    console.log(instance1.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;, &#34;重庆&#34;]
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    console.log(instance2.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;, &#34;重庆&#34;]
+</span><span style="color:#6272a4"></span>
+}
+
+<span style="color:#6272a4">// test1();
+</span></code></pre></div><ol start="2">
+<li>构造函数继承</li>
+</ol>
+<blockquote>
+<p>优点：子类实例有自己的属性，可以向父类传递参数，解决原型链继承的缺点
+缺点：父类原型的属性和方法不可复用</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> test2() {
+    <span style="color:#8be9fd;font-style:italic">function</span> SuperType(name) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.city <span style="color:#ff79c6">=</span> [ <span style="color:#f1fa8c">&#34;北京&#34;</span>, <span style="color:#f1fa8c">&#34;上海&#34;</span>, <span style="color:#f1fa8c">&#34;天津&#34;</span> ]
+    }
+    SuperType.prototype <span style="color:#ff79c6">=</span> {
+        constructor <span style="color:#ff79c6">:</span> SuperType,
+        age <span style="color:#ff79c6">:</span> <span style="color:#bd93f9">18</span>,
+        showInfo <span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.name;
+        }
+    };
+
+    <span style="color:#8be9fd;font-style:italic">function</span> SubType() {
+        <span style="color:#6272a4">// 父类调用call()或者apply()方法和子类共用同一个this，实现子类实例属性的继承
+</span><span style="color:#6272a4"></span>        SuperType.call(<span style="color:#ff79c6">this</span>, <span style="color:#f1fa8c">&#34;张三&#34;</span>);
+    }
+
+    <span style="color:#6272a4">// 优点验证
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> instance <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    instance.city.push(<span style="color:#f1fa8c">&#34;重庆&#34;</span>);
+    console.log(instance.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;, &#34;重庆&#34;]
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    console.log(instance1.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;]
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">// 缺点验证
+</span><span style="color:#6272a4"></span>    console.log(instance.age); <span style="color:#6272a4">// undefined
+</span><span style="color:#6272a4"></span>    instance.showInfo(); <span style="color:#6272a4">// son.showInfo is not a function
+</span><span style="color:#6272a4"></span>}
+
+<span style="color:#6272a4">// test2();
+</span></code></pre></div><ol start="3">
+<li>组合继承（推荐）</li>
+</ol>
+<blockquote>
+<p>优点：原型的属性和方法可以复用，每个子类实例都有自己的属性
+缺点：父类构造函数调用了两次，子类原型中的父类实例属性被子类实例覆盖</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> test3() {
+    <span style="color:#8be9fd;font-style:italic">function</span> SuperType(name) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.city <span style="color:#ff79c6">=</span> [ <span style="color:#f1fa8c">&#34;北京&#34;</span>, <span style="color:#f1fa8c">&#34;上海&#34;</span>, <span style="color:#f1fa8c">&#34;天津&#34;</span> ]
+    }
+    SuperType.prototype <span style="color:#ff79c6">=</span> {
+        constructor <span style="color:#ff79c6">:</span> SuperType,
+        showInfo <span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+            console.log(<span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;今年&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;岁了&#34;</span>);
+        }
+    };
+
+    <span style="color:#8be9fd;font-style:italic">function</span> SubType(name, age) {
+        <span style="color:#6272a4">// 1. 通过构造方法继承实现实例属性的继承
+</span><span style="color:#6272a4"></span>        SuperType.call(<span style="color:#ff79c6">this</span>, name);
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+    }
+
+    <span style="color:#6272a4">// 2. 通过原型链继承实现原型方法的继承
+</span><span style="color:#6272a4"></span>    SubType.prototype <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SuperType();
+
+    <span style="color:#6272a4">// 优点验证
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> instance <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType(<span style="color:#f1fa8c">&#34;张三&#34;</span>, <span style="color:#bd93f9">15</span>);
+    instance.showInfo(); <span style="color:#6272a4">// 张三今年15岁了
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    instance1.city.push(<span style="color:#f1fa8c">&#34;重庆&#34;</span>);
+    console.log(instance1.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;, &#34;重庆&#34;]
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    console.log(instance2.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;]
+</span><span style="color:#6272a4"></span>
+}
+
+<span style="color:#6272a4">// test3();
+</span></code></pre></div><ol start="4">
+<li>寄生组合继承（推荐）</li>
+</ol>
+<blockquote>
+<p>优点：解决了组合继承的缺点，效率高
+缺点：基本没有</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> test4() {
+    <span style="color:#8be9fd;font-style:italic">function</span> inheritPrototype(subType, superType) {
+        <span style="color:#6272a4">// 1. 继承父类的原型
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">var</span> prototype <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Object</span>.create(superType.prototype);
+        <span style="color:#6272a4">// 2. 重写被污染的construct
+</span><span style="color:#6272a4"></span>        prototype.constructor <span style="color:#ff79c6">=</span> subType;
+        <span style="color:#6272a4">// 3. 重写子类的原型
+</span><span style="color:#6272a4"></span>        subType.prototype <span style="color:#ff79c6">=</span> prototype;
+    }
+    <span style="color:#8be9fd;font-style:italic">function</span> SuperType(name) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+        <span style="color:#ff79c6">this</span>.city <span style="color:#ff79c6">=</span> [ <span style="color:#f1fa8c">&#34;北京&#34;</span>, <span style="color:#f1fa8c">&#34;上海&#34;</span>, <span style="color:#f1fa8c">&#34;天津&#34;</span> ];
+    }
+
+    SuperType.prototype.sayName <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#ff79c6">this</span>.name);
+    };
+
+    <span style="color:#8be9fd;font-style:italic">function</span> SubType(name, age) {
+        SuperType.call(<span style="color:#ff79c6">this</span>, name);
+        <span style="color:#ff79c6">this</span>.age <span style="color:#ff79c6">=</span> age;
+    }
+
+    <span style="color:#6272a4">// 将父类原型指向子类
+</span><span style="color:#6272a4"></span>    inheritPrototype(SubType, SuperType);
+
+    SubType.prototype.sayAge <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#ff79c6">this</span>.age);
+    }
+
+    <span style="color:#6272a4">// 优点验证
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">let</span> instance <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType(<span style="color:#f1fa8c">&#34;张三&#34;</span>, <span style="color:#bd93f9">15</span>);
+    instance.sayName(); <span style="color:#6272a4">// 张三
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    instance1.city.push(<span style="color:#f1fa8c">&#34;重庆&#34;</span>);
+    console.log(instance1.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;, &#34;重庆&#34;]
+</span><span style="color:#6272a4"></span>
+    <span style="color:#8be9fd;font-style:italic">let</span> instance2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> SubType();
+    console.log(instance2.city); <span style="color:#6272a4">// [&#34;北京&#34;, &#34;上海&#34;, &#34;天津&#34;]
+</span><span style="color:#6272a4"></span>}
+
+<span style="color:#6272a4">// test4();
+</span></code></pre></div><h3 id="4es6新方法class">4.ES6新方法－－class</h3>
+<p>新的关键字<code>class</code>在es6开始被引入到javascript中来，<code>class</code>的目的就是让定义类更简单</p>
+<p>用函数方法实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> Person(name) {
+    <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+}
+
+Person.prototype.hello <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+    console.log(<span style="color:#f1fa8c">&#39;Hello, &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;!&#39;</span>);
+}
+
+<span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Person(<span style="color:#f1fa8c">&#39;xm&#39;</span>)
+son.hello();    <span style="color:#6272a4">// Hello, xm!
+</span></code></pre></div><p>用<code>class</code>来实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">class</span> Person {
+    constructor(name) {
+        <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> name;
+    }
+
+    hello() {
+        console.log(<span style="color:#f1fa8c">&#39;Hello, &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;!&#39;</span>);
+    }
+}
+
+<span style="color:#8be9fd;font-style:italic">var</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> person(<span style="color:#f1fa8c">&#39;xm&#39;</span>)
+son.hello();    <span style="color:#6272a4">// Hello, xm!
+</span></code></pre></div><p>可以在看到，在定义<code>class</code>中，直接包含了构造函数<code>constructor</code>属性，和原型对象上的函数<code>hello()</code>方法，省略掉了<code>function</code>关键字</p>
+<p>需要注意：原来的写法是，构造函数和原型对象分散开来写，现在用<code>class</code>可以直接把两者串在一个对象中，只有最后传参和调用方法时写法是一样的</p>
+<p><strong>class继承</strong></p>
+<p>用<code>class</code>定义对象的另一个巨大的好处是继承更方便了。想一想我们从<code>Person</code>派生一个<code>PrimaryPerson</code>需要编写的代码量。现在，原型继承的中间对象，原型对象的构造函数等等都不需要考虑了，直接通过<code>extends</code>来实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">class</span> PrimaryPerson <span style="color:#ff79c6">extends</span> Person {
+    constructor(name, grade) {
+        <span style="color:#ff79c6">super</span>(name); <span style="color:#6272a4">// 记得用super调用父类的构造方法!
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">this</span>.grade <span style="color:#ff79c6">=</span> grade;
+    }
+
+    myGrade() {
+        alert(<span style="color:#f1fa8c">&#39;I am at grade &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.grade);
+    }
+}
+</code></pre></div><p>注意<code>PrimaryPerson</code>的定义也是通过class关键字实现的，而<code>extends</code>则表示原型链对象来自<code>Person</code>，子类的构造函数可能会和父类的不太相同</p>
+<p>例如，<code>PrimaryPerson</code>需要<code>name</code>和<code>grade</code>两个参数，并且需要通过<code>super(name)</code>来调用父类的构造函数，否则父类的<code>name</code>属性无法正常初始化。</p>
+<p><code>PrimaryPerson</code>已经自动获得了父类<code>Person</code>的<code>hello方法</code>，我们又在子类中定义了新的<code>myGrade</code>方法。</p>
+<p>ES6引入的<code>class</code>和原有的<code>JavaScript原型继承</code>有什么区别呢？</p>
+<p>实际上它们没有任何区别，<code>class</code>的作用就是让JavaScript引擎去实现原来需要我们自己编写的原型链代码。简而言之，用<code>class</code>的好处就是极大地简化了原型链代码。</p>
+<p>但是！</p>
+<p>目前并不是所有的浏览器都支持<code>class</code>，所以在选择的时候一定要慎重！</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/js/">
+                js
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                编程
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+<div class="related-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/posts/2020-11-14-some-supplementary-summary-about-js-functions-and-methods/">有关js函数，方法的一些补充总结</a></li>
+    
+  </ul>
+</div>
+
+
+
+          
+
+          
+
+          <div class="post-comments">
+            <section id="comments">
+  <h3>评论~</h3>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="c1d43485-e8a7-4895-972e-247eddaf242d"
+  data-page-id="/posts/2020-11-14-object-oriented-programming/"
+  data-page-url="/posts/2020-11-14-object-oriented-programming/"
+  data-page-title="面向对象编程"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+  window.CUSDIS_LOCALE = {
+    "powered_by": "评论由 Cusdis 提供",
+    "post_comment": "发送",
+    "loading": "加载中",
+    "email": "邮箱地址 (可选)",
+    "nickname": "昵称",
+    "reply_placeholder": "回复内容...",
+    "reply_btn": "回复",
+    "sending": "发送中...",
+    "mod_badge": "管理员",
+    "content_is_required": "内容不能为空",
+    "nickname_is_required": "昵称不能为空",
+    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
+  }
+</script>
+</section>
+          </div>
+        
+
+        <div class="site-footer">
+    <div style="padding:10px 0;">
+      <span>© 2020 - 2021</span> ·Nov8nana ·
+      <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+        <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+      </a>
+    </div>
+  <a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="/js/copycode.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>
