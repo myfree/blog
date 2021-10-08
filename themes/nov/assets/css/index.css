@@ -57,8 +57,8 @@ body {
 }
 
 article {
-  max-width: 1024px;
-  margin: 0 auto;
+  max-width: 888px;
+  margin: 20px auto;
   padding: 0 50px;
   box-sizing: border-box;
   opacity: 0.98;
@@ -189,6 +189,11 @@ a:hover {
 }
 
 /* header */
+.site-header header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .site-date-catalog {
   font-size: 2rem;
@@ -197,11 +202,12 @@ a:hover {
 .header-title {
   font-size: 2rem;
   font-weight: 500;
-  margin: 24px 0;
+  margin: 40px 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
 }
 
 .header-title a {
+  display: block;
   text-decoration: none;
   user-select: none;
   font-size: 1.4rem;
@@ -227,11 +233,12 @@ a:hover {
 }
 
 .header-items {
-  margin: 10px 0;
+  margin: 10px 0 !important;
+  
 }
 
 .header-item {
-  margin: 0 5px;
+  margin: 0 12px 0 2px;
 }
 
 .header-line {
@@ -279,9 +286,8 @@ a:hover {
 
 #tab-of-content-area {
   position: sticky;
-  position: -webkit-sticky;
   top: 60px;
-  margin-left: 107%;
+  margin-left: 109%;
   height: 0;
 }
 
@@ -315,7 +321,7 @@ a:hover {
 
 #TableOfContents ul ul {
   padding-left: 10px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 #TableOfContents li {
@@ -351,7 +357,7 @@ a:hover {
 }
 
 .post-header {
-  margin-bottom: 26px;
+  margin-bottom: 10px;
 }
 
 .post-title {
@@ -555,15 +561,19 @@ a:hover {
 
 
 @media screen and (max-width: 600px) {
+  .site-header header {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 20px;
+  }
+
+  .site-header header .header-title {
+    margin: 10px 0;
+  }
+
   article {
     margin: 0;
     padding: 0 10px;
-  }
-
-  .header-title,
-  .header-subtitle,
-  .header-items {
-    text-align: center;
   }
 
   .posts-line {
