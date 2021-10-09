@@ -58,4 +58,4 @@ $('iframe').wrap('<p class="iframe"></p>')
 
 这个时候再访问带有 iframe 视频的网页，不管宽度如何变化，高度可以随视频自适应。
 
-例如这个网页，可以看一下效果: [https://shuxhan.com/post/2021-05-07-breathing-wild/](../../post/2021-05-07-breathing-wild/)
+例如这个网页，可以看一下效果: [https://shuxhan.com/posts/2021-05-07-breathing-wild/](../../posts/2021-05-07-breathing-wild/)
