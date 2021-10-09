@@ -3,10 +3,9 @@ title: 英语单词背诵笔记
 date: 2021-09-07
 updated: 2021-09-13
 categories: 
-  - 学习
+  - 生活随笔
 tags: 
-  - 英语
-  - 学习
+  - 学习英语
 ---
 
 1. inappropriate 不合适的，不合时宜的
