@@ -1,97 +1,13 @@
-# baseURL = "https://shuxhan.com/"
-# languageCode = "zh-cn"
-# title = "求索日记"
-# theme = "nov"
-# paginate = 10
-
-# [markup]
-#   [markup.goldmark]
-#     [markup.goldmark.renderer]
-#       unsafe = true
-#   [markup.highlight]
-#     codeFences = true
-#     guessSyntax = false
-#     hl_Lines = ""     
-#     lineNoStart = 1  
-#     lineNos = false
-#     lineNumbersInTable = false
-#     noClasses = true
-#     style = "dracula"
-#     tabWidth = 4
-#     anchorlinenos = false
-#   [markup.tableOfContents]
-#     endLevel = 3
-#     ordered = false
-#     startLevel = 2
-
-# [author]
-#   name = "Nov8nana"
-#   homepage = "https://shuxhan.com"
-
-# [params]
-#   mainSections = ["posts"]
-#   iconTitle = "😎  Nov8nana' blog"
-#   Description = "路漫漫其修远兮，吾将上下而求索！"
-#   CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d" # Cusdis id填写
-#   extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
-#   favicon = "https://img.shuxhan.com/favicon.png"
-#   GithubId = "Nov8nana"
-
-# [[params.socials]]
-#   name = "About"
-#   link = "/about"
-# [[params.socials]]
-#   name = "Repos"
-#   link = "/repos"
-# [[params.socials]]
-#   name = "Github"
-#   link = "https://github.com/Nov8nana"
-
-
-# baseurl = "https://shuxhan.com"
-# title = "求索日记"
-# author = "Nov8nana"
-# copyright = "Copyright © 2008–2018, @JeffProd"
-# canonifyurls = true
-# paginate = 10
-# summaryLength = 3
-# theme = "huibo"
-
-# [taxonomies]
-#     tag = "tags"
-#     archive = "archives"
-
-# [params]
-#   icon = "https://img.shuxhan.com/favicon.png"
-#   mainSections = ["posts"]
-#   logo = "Nov8nana' blog"
-
-
-# [[params.socials]]
-#   name = "About"
-#   link = "/about"
-
-# [[params.socials]]
-#   name = "Github"
-#   link = "https://github.com/Nov8nana"
-
-
 baseURL = "https://shuxhan.com/"
 languageCode = "en-us"
 title = "求索日记"
 theme = "huibo"
 paginate = 7
 
-copyright = "© Copyright notice"
-
-[permalinks]
-  # posts = "/:year/:month/:title"
-
 [params]
   favicon = "https://img.shuxhan.com/favicon.png"
 	subtitle = "路漫漫其修远兮，吾将上下而求索！"
- CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d" # Cusdis id填写
-	featherIconsCDN = false
+  CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d" # Cusdis id填写
 
 	# Enable a table of contents
 	toc = true

@@ -1,3 +1,34 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #000;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+
+/* 代码块滚动条样式 */
+.highlight pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.highlight pre::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #777;
+}
+
+.highlight pre::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #000;
+}
+
 body {
     font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-weight: 400;
@@ -29,7 +60,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 2px dashed #ddd;
     margin: 1rem 0;
     padding: 0;
 }
@@ -202,6 +233,7 @@ ul {
 .post .markdown {
     line-height: 1.6;
     font-size: 1.02rem;
+    margin-bottom: 3rem;
 }
 
 .post .markdown img {
@@ -420,11 +452,11 @@ ul {
 
 .post .tags a {
     display: inline-block;
-    border: 1px solid #3700ff;
     border-radius: 3px;
-    padding: 0px 6px;
-    color: #3700ff;
-    line-height: 20px;
+    padding: 8px 16px;
+    color: #fff;
+    background: #34495e;
+    line-height: 16px;
     font-size: 0.85em;
     text-decoration: none;
     margin: 0 10px 0 0;
@@ -519,7 +551,6 @@ ul {
 
     .header .nav li {
         margin: 0 10px 0 0;
-        font-size: 14px;
     }
 
     table {
