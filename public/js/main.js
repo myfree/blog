@@ -1,45 +1,20 @@
-// document.addEventListener("DOMContentLoaded", function(){
-//   var toggle = document.getElementById("scheme-toggle");
+$(function () {
+  $('iframe').wrap('<p class="iframe"></p>')
 
-//   var scheme = "light";
-//   var savedScheme = localStorage.getItem("scheme");
+  $(".top-btn").click(function () {
+    $("html,body").animate({
+      scrollTop: '0px'
+    }, 500);
+  });
 
-//   var container = document.getElementsByTagName("html")[0];
-//   var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() >= 200) {
+      $('.top-btn').addClass('top-btn-show')
+    } else {
+      $('.top-btn').removeClass('top-btn-show')
+    }
+  });
+})
 
-//   if (prefersDark) {
-//     scheme = "dark";
-//   }
-
-//   if(savedScheme) {
-//     scheme = savedScheme;
-//   }
-
-//   if(scheme == "dark") {
-//     darkscheme(toggle, container);
-//   } else {
-//     lightscheme(toggle, container);
-//   }
-
-//   toggle.addEventListener("click", () => {
-//     if (toggle.className === "light") {
-//       darkscheme(toggle, container);
-//     } else if (toggle.className === "dark") {
-//       lightscheme(toggle, container);
-//     }
-//   });
-// });
-
-// function darkscheme(toggle, container) {
-//   localStorage.setItem("scheme", "dark");
-//   toggle.innerHTML = feather.icons.sun.toSvg();
-//   toggle.className = "dark";
-//   container.className = "dark";
-// }
-
-// function lightscheme(toggle, container) {
-//   localStorage.setItem("scheme", "light");
-//   toggle.innerHTML = feather.icons.moon.toSvg();
-//   toggle.className = "light";
-//   container.className = "";
-// }
+console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')
+console.log('Your smile is like the sweetest bite in watermelon. 🍉 The person I like is called hb. ❤\n')
