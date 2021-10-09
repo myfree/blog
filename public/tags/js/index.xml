@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on 求索日记</title>
+    <link>https://shuxhan.com/tags/js/</link>
+    <description>Recent content in js on 求索日记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用js随机生成背景颜色</title>
+      <link>https://shuxhan.com/posts/20210929/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210929/</guid>
+      <description>先写一个简单的 html 页面出来
+&amp;lt;style&amp;gt; /* ... */ &amp;lt;/style&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;html&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;css&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;js&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&amp;gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &amp;#34;0&amp;#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&amp;#39;li&amp;#39;), temp = []; for (var i = 0; i &amp;lt; arr.length; i++) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i &amp;lt; li.</description>
+    </item>
+    
+    <item>
+      <title>实时监听页面的变化</title>
+      <link>https://shuxhan.com/posts/20210326/</link>
+      <pubDate>Fri, 26 Mar 2021 14:24:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210326/</guid>
+      <description>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
+如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
+@media (max-width:768px){ ... } 在js下可以使用下面这种方法
+window.addEventListener(&amp;#39;load&amp;#39;, function() { window.addEventListener(&amp;#39;resize&amp;#39;, function() { console.log(window.innerWidth) var w = window.innerWidth; ... } }) }) 具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 window ，因为这是个例子我就直接写了，实际编码中，慎用 window 事件。</description>
+    </item>
+    
+    <item>
+      <title>用ajax请求获取数据</title>
+      <link>https://shuxhan.com/posts/20210319/</link>
+      <pubDate>Fri, 19 Mar 2021 13:01:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210319/</guid>
+      <description>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的data.json文件，然后用get请求数据，下面是部分代码
+// ajax 请求获取数据 function picShow(){ var str = &amp;#39;&amp;#39;; $.ajax({ url:&amp;#39;./js/data.json&amp;#39;, type:&amp;#39;get&amp;#39;, dataType:&amp;#39;json&amp;#39;, success:function(data){ console.log(&amp;#39;success&amp;#39;) }, error: function() { console.log(&amp;#39;error&amp;#39;) } }) } picShow(); 但是这样做有一个弊端，无法在本地预览，因为浏览器禁止客户端直接获取本地数据，这也算一个跨域问题了，不过这也是为了保证用户的安全。当然这对前端来说很不爽！
+其实解决的方法也很简单，通过node服务，用live server在本地跑一下，就可以让ajax获取数据，当然还有其他更好的解决方法，或者直接在服务器跑，通过jsonp等等。
+live server 不明白的可以百度看看，也是一个技巧。</description>
+    </item>
+    
+    <item>
+      <title>webpack 的核心概念和构建流程</title>
+      <link>https://shuxhan.com/posts/20210118/</link>
+      <pubDate>Mon, 18 Jan 2021 19:59:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210118/</guid>
+      <description>1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3.</description>
+    </item>
+    
+    <item>
+      <title>javascript 进阶问题</title>
+      <link>https://shuxhan.com/posts/20201219/</link>
+      <pubDate>Sat, 19 Dec 2020 13:17:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201219/</guid>
+      <description>Github：https://github.com/lydiahallie/javascript-questions
+相当不错的一个 Github 仓库，javascript questions ，作者每周都会发布一些有关 javascript 的题目，虽然不难但是考察细节，刷了一会，其实一些很简单的问题，结果因为细节思考不到位直接出错。
+ 引用作者的话：我在我的 Instagram 上每天都会发布 JavaScript 的多选问题，并且同时也会在这个仓库中发布。
+  从基础到进阶，测试你有多了解 JavaScript，刷新你的知识，或者帮助你的 coding 面试！
+ </description>
+    </item>
+    
+    <item>
+      <title>在js中运算不能随便把value属性定义成变量</title>
+      <link>https://shuxhan.com/posts/20201118/</link>
+      <pubDate>Wed, 18 Nov 2020 13:00:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201118/</guid>
+      <description>在写一个小demo的时候，无意中发现定义变量的时候直接写入value，会导致获取不到数据，或者获取的不是我们想要的内容，在js中运算不能随便把value属性定义成变量
+先看一段代码
+&amp;lt;input type=&amp;#34;text&amp;#34;&amp;#34; id=&amp;#34;a&amp;#34;&amp;gt; &amp;lt;span&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;b&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;=&amp;#34; onclick=&amp;#34;beto()&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;sub&amp;#34; disabled&amp;gt; &amp;lt;script&amp;gt; function beto() { var a = document.getElementById(&amp;#39;a&amp;#39;).value var b = document.getElementById(&amp;#39;b&amp;#39;).value var sub = document.getElementById(&amp;#39;sub&amp;#39;).value sub = a + b } &amp;lt;/script&amp;gt; 就这么一看，逻辑貌似没有问题，获取a和b的value，乘法运算，然后输出sub
+但是放在浏览器运行的时候，发现完全没有反应
+为什么呢？
+（假装思考五分钟&amp;hellip;）
+因为sub.value不能直接定义在变量中
+// 先定义id为sub的input框 var sub = document.getElementById(&amp;#39;sub&amp;#39;) // 然后在运算的时候在直接使用sub.value sub.value = a * b 顺手放一个写demo时候用的简易计算器
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;简易计算器&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34;&amp;#34; id=&amp;#34;a&amp;#34;&amp;gt; &amp;lt;select id=&amp;#34;c&amp;#34;&amp;gt; &amp;lt;option value=&amp;#34;+&amp;#34;&amp;gt;+&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;-&amp;#34;&amp;gt;-&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;*&amp;#34;&amp;gt;*&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;/&amp;#34;&amp;gt;/&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;b&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;=&amp;#34; onclick=&amp;#34;beto()&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;sub&amp;#34; disabled&amp;gt; &amp;lt;script&amp;gt; function beto() { var a = document.</description>
+    </item>
+    
+    <item>
+      <title>事件监听函数，以及事件的捕获和冒泡机制</title>
+      <link>https://shuxhan.com/posts/20201117/</link>
+      <pubDate>Tue, 17 Nov 2020 13:00:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201117/</guid>
+      <description>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
+函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
+事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
+true是捕获，false是冒泡，默认为冒泡事件
+1.addEventListener()－－添加事件监听函数 给元素添加一个事件，假如有多个事件，不会覆盖，会依次执行
+&amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;dom&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; document.getElementById(&amp;#39;demo&amp;#39;).addEventListener(&amp;#34;click&amp;#34;, myfun) document.getElementById(&amp;#39;demo&amp;#39;).addEventListener(&amp;#34;click&amp;#34;, myfun1) function myfun() { console.log(&amp;#39;事件监听函数&amp;#39;) } function myfun1() { console.log(&amp;#39;addEventListener&amp;#39;) } &amp;lt;/script&amp;gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
+  2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
+ 2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
+&amp;lt;!-- css --&amp;gt; &amp;lt;style&amp;gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &amp;lt;/style&amp;gt; &amp;lt;!-- html --&amp;gt; &amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;点击移除&amp;#34; onclick=&amp;#34;remove()&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;show&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- js --&amp;gt; &amp;lt;script&amp;gt; document.getElementById(&amp;#39;demo&amp;#39;).addEventListener(&amp;#34;mousemove&amp;#34;, myfun) function myfun() { document.</description>
+    </item>
+    
+    <item>
+      <title>面向对象编程</title>
+      <link>https://shuxhan.com/posts/20201114/</link>
+      <pubDate>Sat, 14 Nov 2020 12:58:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201114/</guid>
+      <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+一、什么是面向对象编程 js是基于原型的，基于面向对象编程
+面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
+1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
+自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用
+面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。
+2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统
+面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+想要弄明白面向对象，需要先理解类和对象的概念
+《什么是类和对象？》
+二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) } } student.</description>
+    </item>
+    
+    <item>
+      <title>有关js函数，方法的一些补充总结</title>
+      <link>https://shuxhan.com/posts/20201114/</link>
+      <pubDate>Sat, 14 Nov 2020 12:57:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201114/</guid>
+      <description>数据类型，构造函数，原型和原型链的一些讲解补充
+一、数据类型 1.5个基本类型 string number boolean undefined 未定义 null 值为空 symbol 表示一个符号，符号类型是唯一的并且是不可修改的
+最常见的还是前三种，字符串，数字，布尔值
+2.常见的引用类型 引用类型是一种数据结构，用于将数据和功能组织在一起
+对象－Object, 数组－Array, 函数－Function, 正则－RegExp, 日期－Date等
+二、函数 1.什么是函数？  具有独立功能的代码块，在js中使用function关键字定义函数 让代码结构更加清晰，提高代码可用性 js函数的分类：自定义函数和系统函数  2.自定义函数 有一种匿名函数，没有名字的函数，创建闭包，避免造成全局变量的污染
+匿名自执行函数
+ 概念：匿名函数的定义完成后立即执行，执行函数表达式 作用：实现闭包和创建独立的命名空间 使用：分组操作符()，void操作符，~操作符，!操作符等等 使用场景：函数表达式，对象属性，事件，事件参数，返回值 定义完匿名函数后，一定要调用  // 函数表达式 window.onload = function() { let funcobj = function() { alert(&amp;#34;函数表达式中的匿名函数&amp;#34;) } funcobj(); } // 对象属性 window.onload = function() { let obj = { name: function() { alert(&amp;#39;对象属性中的匿名函数&amp;#39;) } } obj.name(); } 3.</description>
+    </item>
+    
+  </channel>
+</rss>

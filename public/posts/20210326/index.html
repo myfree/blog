@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>实时监听页面的变化 - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="实时监听页面的变化">
+<meta itemprop="description" content="问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
+如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
+@media (max-width:768px){ ... } 在js下可以使用下面这种方法
+window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#39;resize&#39;, function() { console.log(window.innerWidth) var w = window.innerWidth; ... } }) }) 具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 window ，因为这是个例子我就直接写了，实际编码中，慎用 window 事件。"><meta itemprop="datePublished" content="2021-03-26T14:24:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-26T14:24:00+00:00" />
+<meta itemprop="wordCount" content="27">
+<meta itemprop="keywords" content="js," /><meta property="og:title" content="实时监听页面的变化" />
+<meta property="og:description" content="问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
+如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
+@media (max-width:768px){ ... } 在js下可以使用下面这种方法
+window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#39;resize&#39;, function() { console.log(window.innerWidth) var w = window.innerWidth; ... } }) }) 具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 window ，因为这是个例子我就直接写了，实际编码中，慎用 window 事件。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20210326/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-26T14:24:00+00:00" />
+<meta property="article:modified_time" content="2021-03-26T14:24:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="实时监听页面的变化"/>
+<meta name="twitter:description" content="问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
+如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
+@media (max-width:768px){ ... } 在js下可以使用下面这种方法
+window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#39;resize&#39;, function() { console.log(window.innerWidth) var w = window.innerWidth; ... } }) }) 具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 window ，因为这是个例子我就直接写了，实际编码中，慎用 window 事件。"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">实时监听页面的变化</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<p>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。</p>
+<p>如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#ff79c6">media</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">max-width</span>:768px<span style="color:#ff79c6">)</span>{
+    <span style="color:#ff79c6">...</span>
+}
+</code></pre></div><p>在js下可以使用下面这种方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">window</span>.addEventListener(<span style="color:#f1fa8c">&#39;load&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>() {
+    <span style="color:#8be9fd;font-style:italic">window</span>.addEventListener(<span style="color:#f1fa8c">&#39;resize&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>() {
+        console.log(<span style="color:#8be9fd;font-style:italic">window</span>.innerWidth)
+        <span style="color:#8be9fd;font-style:italic">var</span> w <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">window</span>.innerWidth;
+        ...
+        }
+    })
+})
+</code></pre></div><p>具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 <code>window</code> ，因为这是个例子我就直接写了，实际编码中，慎用 
+<code>window</code> 事件。</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/js">js</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

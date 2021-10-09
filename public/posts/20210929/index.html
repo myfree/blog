@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>使用js随机生成背景颜色 - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="使用js随机生成背景颜色">
+<meta itemprop="description" content="先写一个简单的 html 页面出来
+&lt;style&gt; /* ... */ &lt;/style&gt; &lt;ul&gt; &lt;li&gt;html&lt;/li&gt; &lt;li&gt;css&lt;/li&gt; &lt;li&gt;js&lt;/li&gt; &lt;/ul&gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &#34;0&#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&#39;li&#39;), temp = []; for (var i = 0; i &lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li."><meta itemprop="datePublished" content="2021-09-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-09-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="222">
+<meta itemprop="keywords" content="js," /><meta property="og:title" content="使用js随机生成背景颜色" />
+<meta property="og:description" content="先写一个简单的 html 页面出来
+&lt;style&gt; /* ... */ &lt;/style&gt; &lt;ul&gt; &lt;li&gt;html&lt;/li&gt; &lt;li&gt;css&lt;/li&gt; &lt;li&gt;js&lt;/li&gt; &lt;/ul&gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &#34;0&#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&#39;li&#39;), temp = []; for (var i = 0; i &lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20210929/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-29T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用js随机生成背景颜色"/>
+<meta name="twitter:description" content="先写一个简单的 html 页面出来
+&lt;style&gt; /* ... */ &lt;/style&gt; &lt;ul&gt; &lt;li&gt;html&lt;/li&gt; &lt;li&gt;css&lt;/li&gt; &lt;li&gt;js&lt;/li&gt; &lt;/ul&gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
+const randomHex = () =&gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &#34;0&#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
+接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
+var arr = document.getElementsByTagName(&#39;li&#39;), temp = []; for (var i = 0; i &lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
+var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">使用js随机生成背景颜色</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<p>先写一个简单的 html 页面出来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">style</span>&gt;
+  <span style="color:#6272a4">/* ... */</span>
+&lt;/<span style="color:#ff79c6">style</span>&gt;
+
+&lt;<span style="color:#ff79c6">ul</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;html&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;css&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;<span style="color:#ff79c6">li</span>&gt;js&lt;/<span style="color:#ff79c6">li</span>&gt;
+&lt;/<span style="color:#ff79c6">ul</span>&gt;
+</code></pre></div><p>通过 <code>Math.random()</code> 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> randomHex <span style="color:#ff79c6">=</span> () =&gt; <span style="color:#f1fa8c">`#</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">Math</span>.floor(<span style="color:#8be9fd;font-style:italic">Math</span>.random() <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0xffffff</span>).toString(<span style="color:#bd93f9">16</span>).padEnd(<span style="color:#bd93f9">6</span>, <span style="color:#f1fa8c">&#34;0&#34;</span>)<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>;
+</code></pre></div><p>可以在控制台输出看一下结果，随机生成了一个结果 <code>#62113b</code>。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@6b7ef18434bd05126ed7e2ded133242b090fd7ab/2021/09/29/157fa8f9834a8e9001c270d7223a1aa9.png" alt="">
+
+</p>
+<p>接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;li&#39;</span>), temp <span style="color:#ff79c6">=</span> [];
+<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arr.length; i<span style="color:#ff79c6">++</span>) {
+  temp.push(arr[i].innerHTML);
+}
+
+</code></pre></div><p>然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> li <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#34;li&#34;</span>);
+<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> li.length; i<span style="color:#ff79c6">++</span>) {
+  
+  <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> num <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; num <span style="color:#ff79c6">&lt;</span> li.length; num<span style="color:#ff79c6">++</span>) {
+    li[num].style.background <span style="color:#ff79c6">=</span> randomHex();
+  }
+
+}
+
+</code></pre></div><p>这些事件都是在页面加载完成之后运行的，所以需要通过 <code>window.onload</code> 写入事件，然后把所有的代码合在一起。</p>
+<p>看看效果如果。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@203b7f35ca165b731066707b8d6eae817baea0eb/2021/09/29/ea9f9e27be2f3587cda141bc998d4b80.png" alt="">
+
+</p>
+<p>把这些复制下来放到本地运行一下就可以看到效果了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#ff79c6">html</span> <span style="color:#50fa7b">lang</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">http-equiv</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;X-UA-Compatible&#34;</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;IE=edge&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;viewport&#34;</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">title</span>&gt;随机生成颜色&lt;/<span style="color:#ff79c6">title</span>&gt;
+  &lt;<span style="color:#ff79c6">style</span>&gt;
+    <span style="color:#ff79c6">body</span> {
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+      <span style="color:#ff79c6">justify-content</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">padding-top</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+    }
+    <span style="color:#ff79c6">ul</span> {
+      <span style="color:#ff79c6">list-style</span>: <span style="color:#ff79c6">none</span>;
+      <span style="color:#ff79c6">padding</span>: <span style="color:#bd93f9">0</span>;
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+    }
+    <span style="color:#ff79c6">li</span> {
+      <span style="color:#ff79c6">width</span>: <span style="color:#bd93f9">100</span><span style="color:#8be9fd">px</span>;
+      <span style="color:#ff79c6">height</span>: <span style="color:#bd93f9">40</span><span style="color:#8be9fd">px</span>;
+      <span style="color:#ff79c6">color</span>: <span style="color:#bd93f9">#333</span>;
+      <span style="color:#ff79c6">display</span>: <span style="color:#ff79c6">flex</span>;
+      <span style="color:#ff79c6">justify-content</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">align-items</span>: <span style="color:#ff79c6">center</span>;
+      <span style="color:#ff79c6">margin-right</span>: <span style="color:#bd93f9">30</span><span style="color:#8be9fd">px</span>;
+    }
+  &lt;/<span style="color:#ff79c6">style</span>&gt;
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+&lt;<span style="color:#ff79c6">body</span>&gt;
+  &lt;<span style="color:#ff79c6">ul</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;html&lt;/<span style="color:#ff79c6">li</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;css&lt;/<span style="color:#ff79c6">li</span>&gt;
+    &lt;<span style="color:#ff79c6">li</span>&gt;js&lt;/<span style="color:#ff79c6">li</span>&gt;
+  &lt;/<span style="color:#ff79c6">ul</span>&gt;
+  &lt;<span style="color:#ff79c6">script</span>&gt;
+    <span style="color:#ff79c6">const</span> randomHex <span style="color:#ff79c6">=</span> () =&gt; <span style="color:#f1fa8c">`#</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">Math</span>.floor(<span style="color:#8be9fd;font-style:italic">Math</span>.random() <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0xffffff</span>).toString(<span style="color:#bd93f9">16</span>).padEnd(<span style="color:#bd93f9">6</span>, <span style="color:#f1fa8c">&#34;0&#34;</span>)<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>;
+    console.log(randomHex());
+
+    <span style="color:#8be9fd;font-style:italic">var</span> arr <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#39;li&#39;</span>), temp <span style="color:#ff79c6">=</span> [];
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> arr.length; i<span style="color:#ff79c6">++</span>) {
+      temp.push(arr[i].innerHTML);
+    }
+
+    <span style="color:#8be9fd;font-style:italic">window</span>.onload <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+      <span style="color:#8be9fd;font-style:italic">var</span> li <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.getElementsByTagName(<span style="color:#f1fa8c">&#34;li&#34;</span>);
+      <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> li.length; i<span style="color:#ff79c6">++</span>) {
+        
+        <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">var</span> num <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; num <span style="color:#ff79c6">&lt;</span> li.length; num<span style="color:#ff79c6">++</span>) {
+          li[num].style.background <span style="color:#ff79c6">=</span> randomHex();
+        }
+
+      }
+    }
+  &lt;/<span style="color:#ff79c6">script</span>&gt;
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+&lt;/<span style="color:#ff79c6">html</span>&gt;
+</code></pre></div><p>如果有更好的写法，欢迎评论!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/js">js</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

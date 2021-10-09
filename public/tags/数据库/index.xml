@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 求索日记</title>
+    <link>https://shuxhan.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 求索日记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Jul 2021 21:03:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将数据库中的图片信息导出并调用</title>
+      <link>https://shuxhan.com/posts/20210709/</link>
+      <pubDate>Fri, 09 Jul 2021 21:03:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210709/</guid>
+      <description>接口链接：http://121.196.166.173/img/img.php 展示demo：http://121.196.166.173/img
+ 前言 为了写博客以及其他的一些用途，我使用服务器搭建了一个连接 github 仓库的上传网页，并且在数据库中记录上传的信息，比如缩略名、时间戳和图片链接。分别对应 GitHub 仓库中的图片，但是后期我发现在 GitHub 查看图片非常别扭，因此我打算写一个可展示图片的网页，把 GitHub 仓库中的图片通过链接展示出来，当然我们不可能一张张复制，还好有数据库。
+看一下具体内容
+写一个接口 很好，拥有我们需要的字段。事不宜迟，直接开动，下面是完成的接口代码。
+&amp;lt;?php header(&amp;#39;Content-Type:application/json; charset=utf-8&amp;#39;); header(&amp;#34;Access-Control-Allow-Origin:*&amp;#34;); $servername = &amp;#34;localhost&amp;#34;; $username = &amp;#34;imgbed&amp;#34;; $password = &amp;#34;imgbed&amp;#34;; $dbname = &amp;#34;imgbed&amp;#34;; // 创建连接 $conn = new mysqli($servername, $username, $password, $dbname); // 检测连接 if ($conn-&amp;gt;connect_error) { die(&amp;#34;连接失败: &amp;#34; . $conn-&amp;gt;connect_error); } // imgmd5 名称转md5 // imguploadtime 上传时间戳 // imgurl 链接 // 上传 ip $sql = &amp;#34;select imgmd5,imguploadtime,imgurl,imguploadip from remote_imgs &amp;#34;; $result = $conn-&amp;gt;query($sql); if ($result-&amp;gt;num_rows &amp;gt; 0) { // 输出数据  while($row = $result-&amp;gt;fetch_assoc()) { $data[]=$row; } $json = json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);//把数据转换为JSON数据.</description>
+    </item>
+    
+    <item>
+      <title>Oracle数据库安装教程（超详细）</title>
+      <link>https://shuxhan.com/posts/20210513/</link>
+      <pubDate>Thu, 13 May 2021 14:51:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210513/</guid>
+      <description> 转载自：https://www.moeor.com/26.html
+ 前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
+该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
+由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！
+准备 访问Oracle官网下载该版本数据库。下载时需要登录账号，可百度搜索共享的Oracle账号！
+下载地址：https://www.oracle.com/database/technologies/xe-prior-releases.html
+选择适合自己的系统版本，本文以Win10为例。建议使用下载工具或者科学上网，下载更快！
+安装Oracle 下载后解压缩，双击打开文件夹中的 “setup.exe&amp;quot; 安装程序，等待程序启动，进入安装程序。
+开始安装，单击“下一步”
+选择“我接受本许可协议中的条款”，然后单击“下一步”。
+这一步是选择安装位置，由于文件程序比较大，建议安装D盘。新建一个Oracle文件夹，点击“浏览”，选择文件夹，注意查看目标文件夹，文件路径，然后单击“下一步”。
+设置数据库的登录口令，即数据库密码，建议简单一点，比如：root，然后单击“下一步”。
+单击“安装”，开始安装。
+安装过程比较慢，耐心等待安装完成！
+安装完成后，单击“完成”，即Oracle 11gR2已经安装完成了。
+安装完成会在桌面新建一个图标，打开可以通过以web形式访问数据库。
+双击打开，可能会弹出以下错误提示，这个是没有影响的，安装完成后重启一点电脑就可以了！
+验证数据库 选择桌面生成的图标
+鼠标右键打开文件所在位置，弹出文件夹，往上翻，在文件夹中找到bin文件夹。
+双击，进入bin文件夹，往下翻，找到sqlplus.exe程序。
+双击运行。
+输入用户名：system （统一默认都是system），回车
+输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。
+若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！
+</description>
+    </item>
+    
+    <item>
+      <title>typecho 博客小表情无法显示问题</title>
+      <link>https://shuxhan.com/posts/20210204/</link>
+      <pubDate>Thu, 04 Feb 2021 19:47:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20210204/</guid>
+      <description>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。
+表情无法显示的原因是 uft-8 编码的问题，无法识别小表情，需要将其改成 utf8mb4
+第一步，进入数据库 首先登陆博客后台的数据库，然后点击 sql ，输入下列代码：
+alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_contents convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_fields convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_metas convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_options convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_relationships convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_users convert to character set utf8mb4 collate utf8mb4_unicode_ci; 直接复制，然后点击右下角的执行</description>
+    </item>
+    
+  </channel>
+</rss>

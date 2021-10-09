@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>IE10的兼容性处理 - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="IE10的兼容性处理">
+<meta itemprop="description" content="  IE10不支持箭头函数，写js的时候慎用。
+  IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个,会报错，如果加了删掉就OK，Chrome下不会产生影响。
+  zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了zoom: 1.1;，真是让人头大。
+  IE10下img标签自带白边，在默认样式里面设置border: none;即可。
+  img { border: none; }  IE10能兼容大部分的html5新标签，唯独不能兼容 main。
+  box-shadow 阴影属性其实IE10是支持的，但是需要注意语法问题，在普通浏览器color可以用rgba,#等写法，但是在IE10下，只能通过#000000写法，#和六位的颜色标记，不可以简写，否则不生效。
+  IE10不兼容es6新语法。
+  "><meta itemprop="datePublished" content="2021-03-18T22:15:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-18T22:15:00+00:00" />
+<meta itemprop="wordCount" content="16">
+<meta itemprop="keywords" content="IE,浏览器," /><meta property="og:title" content="IE10的兼容性处理" />
+<meta property="og:description" content="  IE10不支持箭头函数，写js的时候慎用。
+  IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个,会报错，如果加了删掉就OK，Chrome下不会产生影响。
+  zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了zoom: 1.1;，真是让人头大。
+  IE10下img标签自带白边，在默认样式里面设置border: none;即可。
+  img { border: none; }  IE10能兼容大部分的html5新标签，唯独不能兼容 main。
+  box-shadow 阴影属性其实IE10是支持的，但是需要注意语法问题，在普通浏览器color可以用rgba,#等写法，但是在IE10下，只能通过#000000写法，#和六位的颜色标记，不可以简写，否则不生效。
+  IE10不兼容es6新语法。
+  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20210318/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-18T22:15:00+00:00" />
+<meta property="article:modified_time" content="2021-03-18T22:15:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IE10的兼容性处理"/>
+<meta name="twitter:description" content="  IE10不支持箭头函数，写js的时候慎用。
+  IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个,会报错，如果加了删掉就OK，Chrome下不会产生影响。
+  zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了zoom: 1.1;，真是让人头大。
+  IE10下img标签自带白边，在默认样式里面设置border: none;即可。
+  img { border: none; }  IE10能兼容大部分的html5新标签，唯独不能兼容 main。
+  box-shadow 阴影属性其实IE10是支持的，但是需要注意语法问题，在普通浏览器color可以用rgba,#等写法，但是在IE10下，只能通过#000000写法，#和六位的颜色标记，不可以简写，否则不生效。
+  IE10不兼容es6新语法。
+  "/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">IE10的兼容性处理</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<ol>
+<li>
+<p>IE10不支持箭头函数，写js的时候慎用。</p>
+</li>
+<li>
+<p>IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个<code>,</code>会报错，如果加了删掉就OK，Chrome下不会产生影响。</p>
+</li>
+<li>
+<p>zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了<code>zoom: 1.1;</code>，真是让人头大。</p>
+</li>
+<li>
+<p>IE10下<code>img</code>标签自带白边，在默认样式里面设置<code>border: none;</code>即可。</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#ff79c6">img</span> {
+    <span style="color:#ff79c6">border</span>: <span style="color:#ff79c6">none</span>;
+}
+</code></pre></div><ol start="5">
+<li>
+<p>IE10能兼容大部分的html5新标签，唯独不能兼容 <code>main</code>。</p>
+</li>
+<li>
+<p>box-shadow 阴影属性其实IE10是支持的，但是需要注意语法问题，在普通浏览器color可以用<code>rgba</code>,<code>#</code>等写法，但是在IE10下，只能通过<code>#000000</code>写法，<code>#</code>和六位的颜色标记，不可以简写，否则不生效。</p>
+</li>
+<li>
+<p>IE10不兼容es6新语法。</p>
+</li>
+</ol>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/ie">IE</a></li>
+							
+							<li class="tag-li"><a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

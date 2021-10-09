@@ -14,7 +14,8 @@ paginate = 7
   maxTags = 7
   wpm = 250
 
-
+[permalinks]
+  posts = "/posts/:year:month:day"
 
 [[menu.main]]
 name = "首页"
@@ -45,6 +46,11 @@ weight = 5
 name = "Github"
 icon = "github"
 url = "https://github.com/Nov8nana/"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
 
 [markup]
   [markup.goldmark]

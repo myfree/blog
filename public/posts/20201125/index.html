@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>vue学习笔记(3)－－computed, watch，calss, style - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="vue学习笔记(3)－－computed, watch，calss, style">
+<meta itemprop="description" content="一、计算属性computed 1.例子 &lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, computed: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
+此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
+2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
+&lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage()}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, methods: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 经过测试，两者的结果是一样的
+我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的
+区别是：计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是message发生改变时才会重新求值，就意味着，只要message还没改变，多次访问revermessage计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数
+而方法，在每次触发重新渲染时，调用方法都会执行一次函数，这就多了一份开销
+我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代"><meta itemprop="datePublished" content="2020-11-25T13:05:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-25T13:05:00+00:00" />
+<meta itemprop="wordCount" content="371">
+<meta itemprop="keywords" content="vue,笔记," /><meta property="og:title" content="vue学习笔记(3)－－computed, watch，calss, style" />
+<meta property="og:description" content="一、计算属性computed 1.例子 &lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, computed: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
+此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
+2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
+&lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage()}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, methods: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 经过测试，两者的结果是一样的
+我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的
+区别是：计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是message发生改变时才会重新求值，就意味着，只要message还没改变，多次访问revermessage计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数
+而方法，在每次触发重新渲染时，调用方法都会执行一次函数，这就多了一份开销
+我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20201125/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-25T13:05:00+00:00" />
+<meta property="article:modified_time" content="2020-11-25T13:05:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vue学习笔记(3)－－computed, watch，calss, style"/>
+<meta name="twitter:description" content="一、计算属性computed 1.例子 &lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, computed: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
+此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
+2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
+&lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage()}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, methods: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 经过测试，两者的结果是一样的
+我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的
+区别是：计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是message发生改变时才会重新求值，就意味着，只要message还没改变，多次访问revermessage计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数
+而方法，在每次触发重新渲染时，调用方法都会执行一次函数，这就多了一份开销
+我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">vue学习笔记(3)－－computed, watch，calss, style</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<h2 id="一计算属性computed">一、计算属性computed</h2>
+<h3 id="1例子">1.例子</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span>&gt;{{revermessage}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+    },
+    computed<span style="color:#ff79c6">:</span> {
+      revermessage<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.message.split(<span style="color:#f1fa8c">&#39;&#39;</span>).reverse().join(<span style="color:#f1fa8c">&#39;&#39;</span>)
+      }
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>声明一个计算属性<code>severmessage</code>，在<code>computed</code>中被指向对<code>message</code>进行一些方法操作后的返回值</p>
+<p>此时<code>vm.severmessage</code>依赖于<code>vm.message</code>的变化，对<code>message</code>改变数据，会引起<code>severmessage</code>的更新</p>
+<h3 id="2计算属性缓存和方法">2.计算属性缓存和方法</h3>
+<p>还可以通过在表达式中调用方法来达到想要的效果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span>&gt;{{message}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span>&gt;{{revermessage()}}&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      message<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;hello,wolrd&#39;</span>
+    },
+    methods<span style="color:#ff79c6">:</span> {
+      revermessage<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.message.split(<span style="color:#f1fa8c">&#39;&#39;</span>).reverse().join(<span style="color:#f1fa8c">&#39;&#39;</span>)
+      }
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>经过测试，两者的结果是一样的</p>
+<p>我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的</p>
+<p>区别是：<strong>计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是<code>message</code>发生改变时才会重新求值</strong>，就意味着，只要<code>message</code>还没改变，多次访问<code>revermessage</code>计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数</p>
+<p>而方法，<strong>在每次触发重新渲染时，调用方法都会执行一次函数</strong>，这就多了一份开销</p>
+<p>我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代</p>
+<h3 id="3计算属性和侦听属性">3.计算属性和侦听属性</h3>
+<p>vue还有一种方式来观测vue实例上的数据变动：<strong>侦听属性－－watch</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  {{fullname}}
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      firstname<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;a&#39;</span>,
+      lastname<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;b&#39;</span>,
+      fullname<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;ab&#39;</span>
+    },
+    watch<span style="color:#ff79c6">:</span> {
+      firstname<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>(val) {
+        <span style="color:#ff79c6">this</span>.fullName <span style="color:#ff79c6">=</span> val <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.lastName
+      },
+      lastname<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>(val) {
+        <span style="color:#ff79c6">this</span>.fullName <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.firstName <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">+</span> val
+      }
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>使用过程是极其繁琐且重复的，再来用计算属性试一下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  {{fullname}}
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      firstname<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;a&#39;</span>,
+      lastname<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;b&#39;</span>
+    },
+    computed<span style="color:#ff79c6">:</span> {
+      fullname<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.firstname <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.lastname
+      }
+    }
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+</code></pre></div><p>很简单快速的就得到了我们想要的函数表达式</p>
+<h3 id="4计算属性的setter">4.计算属性的setter</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">computed<span style="color:#ff79c6">:</span> {
+  fullName<span style="color:#ff79c6">:</span> {
+    <span style="color:#6272a4">// getter
+</span><span style="color:#6272a4"></span>    get<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.firstName <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.lastName
+    },
+    <span style="color:#6272a4">// setter
+</span><span style="color:#6272a4"></span>    set<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> (newValue) {
+      <span style="color:#8be9fd;font-style:italic">var</span> names <span style="color:#ff79c6">=</span> newValue.split(<span style="color:#f1fa8c">&#39; &#39;</span>)
+      <span style="color:#ff79c6">this</span>.firstName <span style="color:#ff79c6">=</span> names[<span style="color:#bd93f9">0</span>]
+      <span style="color:#ff79c6">this</span>.lastName <span style="color:#ff79c6">=</span> names[names.length <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+    }
+  }
+}
+</code></pre></div><p>现在在控制台输入<code>vm.fullName = 'John Doe'</code>，页面会响应，并且<code>setter</code>会被调用，<code>vm.firstname</code>和<code>vm.lastname</code>也会相应地被更新</p>
+<h2 id="二绑定class和style">二、绑定class和style</h2>
+<h3 id="1对象语法">1.对象语法</h3>
+<p>可以给<code>v-bind:class</code>传入一个对象，动态的切换<code>class</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{active: ok}&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>可以通过控制<code>ok</code>的布尔值来动态的控制class</p>
+<p>还可以创建多个字段，并且不影响普通的<code>className</code>的存在</p>
+<p>html:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span>
+  <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;static&#34;</span>
+  <span style="color:#50fa7b">v-bind:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ active: isActive, &#39;text-danger&#39;: hasError }&#34;</span>
+&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">data{
+  isActive<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>,
+  hasError<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">false</span>
+}
+</code></pre></div><p>结果为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;static active&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>当<code>isActive</code>或者<code>hasError</code>变化时，class 列表将相应地更新。例如，如果<code>hasError</code>的值为<code>true</code>，class 列表将变为<code>&quot;static active text-danger&quot;</code>。</p>
+<p>绑定的数据对象也不必直接写在内联模板里</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;app&#34;</span>&gt;
+  &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;classobject&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">div</span>&gt;
+
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">var</span> vm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vue({
+    el<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;#app&#39;</span>,
+    data<span style="color:#ff79c6">:</span> {
+      classobject<span style="color:#ff79c6">:</span> {
+        active<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>,
+        <span style="color:#f1fa8c">&#39;text-danger&#39;</span><span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>
+      }
+    },
+  })
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+<span style="color:#6272a4">&lt;!-- &lt;div class=&#34;active text-danger&#34;&gt;&lt;/div&gt; --&gt;</span>
+</code></pre></div><blockquote>
+<p>如果<code>className</code>有特殊符号，必须加上引号<code>''</code>，或者<code>&quot;&quot;</code></p>
+</blockquote>
+<h3 id="2数组语法">2.数组语法</h3>
+<p>我们可以把一个数组传给<code>v-bind:class</code>，以应用一个 class 列表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;[activeClass, errorClass]&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">data<span style="color:#ff79c6">:</span> {
+  activeClass<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;active&#39;</span>,
+  errorClass<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;text-danger&#39;</span>
+}
+</code></pre></div><p>渲染为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;active text-danger&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><h3 id="3用在组件上">3.用在组件上</h3>
+<p>当在一个自定义组件上使用<code>class</code>property 时，这些 class 将被添加到该组件的根元素上面。这个元素上已经存在的 class 不会被覆盖。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Vue.component(<span style="color:#f1fa8c">&#39;my-component&#39;</span>, {
+  template<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;&lt;p class=&#34;foo bar&#34;&gt;Hi&lt;/p&gt;&#39;</span>
+})
+</code></pre></div><p>然后在使用的使用的时候添加了一些<code>class</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">my-component</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;baz boo&#34;</span>&gt;&lt;/<span style="color:#ff79c6">my-component</span>&gt;
+</code></pre></div><p>html将会被渲染成：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">p</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;foo bar baz boo&#34;</span>&gt;Hi&lt;/<span style="color:#ff79c6">p</span>&gt;
+</code></pre></div><p>对于带数据绑定的<code>class</code>也同样适用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">my-component</span> <span style="color:#50fa7b">v-bind:class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ active: isActive }&#34;</span>&gt;&lt;/<span style="color:#ff79c6">my-component</span>&gt;
+</code></pre></div><p>当<code>isActive</code>为 truthy 时，HTML 将被渲染成为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">p</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;foo bar active&#34;</span>&gt;Hi&lt;/<span style="color:#ff79c6">p</span>&gt;
+</code></pre></div><h3 id="4绑定内联样式style">4.绑定内联样式style</h3>
+<p><code>v-bind:style</code>的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。CSS property 名可以用<code>驼峰式</code>或<code>带引号的短横线</code>来命名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;{ color: activeColor, fontSize: fontSize + &#39;px&#39; }&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>js:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">data<span style="color:#ff79c6">:</span> {
+  activeColor<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;red&#39;</span>,
+  fontSize<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">30</span>
+}
+</code></pre></div><p><strong>或者直接绑定到一个对象，会让模板更加清晰</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;styleObject&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p>js:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">data<span style="color:#ff79c6">:</span> {
+  styleObject<span style="color:#ff79c6">:</span> {
+    color<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;red&#39;</span>,
+    fontSize<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;13px&#39;</span>
+  }
+}
+</code></pre></div><p><strong>也可以将多个对象应用到一个元素上</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">v-bind:style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;[baseStyles, overridingStyles]&#34;</span>&gt;&lt;/<span style="color:#ff79c6">div</span>&gt;
+</code></pre></div><p><strong>自动添加前缀</strong></p>
+<p>当<code>v-bind:style</code>需要使用浏览器前缀的时候，如：<code>-webkit-</code>等，vue会自动侦测并帮生成相应的前缀</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/vue">vue</a></li>
+							
+							<li class="tag-li"><a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

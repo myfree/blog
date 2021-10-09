@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Oracle数据库安装教程（超详细） - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Oracle数据库安装教程（超详细）">
+<meta itemprop="description" content=" 转载自：https://www.moeor.com/26.html
+ 前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
+该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
+由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！
+准备 访问Oracle官网下载该版本数据库。下载时需要登录账号，可百度搜索共享的Oracle账号！
+下载地址：https://www.oracle.com/database/technologies/xe-prior-releases.html
+选择适合自己的系统版本，本文以Win10为例。建议使用下载工具或者科学上网，下载更快！
+安装Oracle 下载后解压缩，双击打开文件夹中的 “setup.exe&quot; 安装程序，等待程序启动，进入安装程序。
+开始安装，单击“下一步”
+选择“我接受本许可协议中的条款”，然后单击“下一步”。
+这一步是选择安装位置，由于文件程序比较大，建议安装D盘。新建一个Oracle文件夹，点击“浏览”，选择文件夹，注意查看目标文件夹，文件路径，然后单击“下一步”。
+设置数据库的登录口令，即数据库密码，建议简单一点，比如：root，然后单击“下一步”。
+单击“安装”，开始安装。
+安装过程比较慢，耐心等待安装完成！
+安装完成后，单击“完成”，即Oracle 11gR2已经安装完成了。
+安装完成会在桌面新建一个图标，打开可以通过以web形式访问数据库。
+双击打开，可能会弹出以下错误提示，这个是没有影响的，安装完成后重启一点电脑就可以了！
+验证数据库 选择桌面生成的图标
+鼠标右键打开文件所在位置，弹出文件夹，往上翻，在文件夹中找到bin文件夹。
+双击，进入bin文件夹，往下翻，找到sqlplus.exe程序。
+双击运行。
+输入用户名：system （统一默认都是system），回车
+输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。
+若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！
+"><meta itemprop="datePublished" content="2021-05-13T14:51:00+00:00" />
+<meta itemprop="dateModified" content="2021-05-13T14:51:00+00:00" />
+<meta itemprop="wordCount" content="51">
+<meta itemprop="keywords" content="数据库,转载," /><meta property="og:title" content="Oracle数据库安装教程（超详细）" />
+<meta property="og:description" content=" 转载自：https://www.moeor.com/26.html
+ 前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
+该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
+由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！
+准备 访问Oracle官网下载该版本数据库。下载时需要登录账号，可百度搜索共享的Oracle账号！
+下载地址：https://www.oracle.com/database/technologies/xe-prior-releases.html
+选择适合自己的系统版本，本文以Win10为例。建议使用下载工具或者科学上网，下载更快！
+安装Oracle 下载后解压缩，双击打开文件夹中的 “setup.exe&quot; 安装程序，等待程序启动，进入安装程序。
+开始安装，单击“下一步”
+选择“我接受本许可协议中的条款”，然后单击“下一步”。
+这一步是选择安装位置，由于文件程序比较大，建议安装D盘。新建一个Oracle文件夹，点击“浏览”，选择文件夹，注意查看目标文件夹，文件路径，然后单击“下一步”。
+设置数据库的登录口令，即数据库密码，建议简单一点，比如：root，然后单击“下一步”。
+单击“安装”，开始安装。
+安装过程比较慢，耐心等待安装完成！
+安装完成后，单击“完成”，即Oracle 11gR2已经安装完成了。
+安装完成会在桌面新建一个图标，打开可以通过以web形式访问数据库。
+双击打开，可能会弹出以下错误提示，这个是没有影响的，安装完成后重启一点电脑就可以了！
+验证数据库 选择桌面生成的图标
+鼠标右键打开文件所在位置，弹出文件夹，往上翻，在文件夹中找到bin文件夹。
+双击，进入bin文件夹，往下翻，找到sqlplus.exe程序。
+双击运行。
+输入用户名：system （统一默认都是system），回车
+输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。
+若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20210513/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-13T14:51:00+00:00" />
+<meta property="article:modified_time" content="2021-05-13T14:51:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Oracle数据库安装教程（超详细）"/>
+<meta name="twitter:description" content=" 转载自：https://www.moeor.com/26.html
+ 前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
+该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
+由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！
+准备 访问Oracle官网下载该版本数据库。下载时需要登录账号，可百度搜索共享的Oracle账号！
+下载地址：https://www.oracle.com/database/technologies/xe-prior-releases.html
+选择适合自己的系统版本，本文以Win10为例。建议使用下载工具或者科学上网，下载更快！
+安装Oracle 下载后解压缩，双击打开文件夹中的 “setup.exe&quot; 安装程序，等待程序启动，进入安装程序。
+开始安装，单击“下一步”
+选择“我接受本许可协议中的条款”，然后单击“下一步”。
+这一步是选择安装位置，由于文件程序比较大，建议安装D盘。新建一个Oracle文件夹，点击“浏览”，选择文件夹，注意查看目标文件夹，文件路径，然后单击“下一步”。
+设置数据库的登录口令，即数据库密码，建议简单一点，比如：root，然后单击“下一步”。
+单击“安装”，开始安装。
+安装过程比较慢，耐心等待安装完成！
+安装完成后，单击“完成”，即Oracle 11gR2已经安装完成了。
+安装完成会在桌面新建一个图标，打开可以通过以web形式访问数据库。
+双击打开，可能会弹出以下错误提示，这个是没有影响的，安装完成后重启一点电脑就可以了！
+验证数据库 选择桌面生成的图标
+鼠标右键打开文件所在位置，弹出文件夹，往上翻，在文件夹中找到bin文件夹。
+双击，进入bin文件夹，往下翻，找到sqlplus.exe程序。
+双击运行。
+输入用户名：system （统一默认都是system），回车
+输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。
+若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！
+"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">Oracle数据库安装教程（超详细）</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<blockquote>
+<p>转载自：<a href="https://www.moeor.com/26.html">https://www.moeor.com/26.html</a></p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！</p>
+<p>该版本是一个便携式安装版本，直接安装，就可以了，非常方便。</p>
+<p>由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！</p>
+<h2 id="准备">准备</h2>
+<p>访问Oracle官网下载该版本数据库。下载时需要登录账号，可百度搜索共享的Oracle账号！</p>
+<p>下载地址：<a href="https://www.oracle.com/database/technologies/xe-prior-releases.html">https://www.oracle.com/database/technologies/xe-prior-releases.html</a></p>
+<p>选择适合自己的系统版本，本文以Win10为例。建议使用下载工具或者科学上网，下载更快！</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@e1f7fcbd785a29e7557097df1755aed89c16c968/2021/05/11/99cc9b081e46194f8b640e2f352d89f6.png" alt="">
+
+</p>
+<h2 id="安装oracle">安装Oracle</h2>
+<p>下载后解压缩，双击打开文件夹中的 “setup.exe&quot; 安装程序，等待程序启动，进入安装程序。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@1c5eba14ea8007304de26481b669b4cff9426974/2021/05/13/df3abc5a83b7c91f00cf6cf567e1b359.png" alt="">
+
+</p>
+<p>开始安装，单击“下一步”</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a498eff439c7a1fb6ecf689b340a2991a6762244/2021/05/13/6b374bd36f944a00280fab1e2f815373.png" alt="">
+
+</p>
+<p>选择“我接受本许可协议中的条款”，然后单击“下一步”。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@1baf820117dab495d28f03fcdfb67a3381c5cc58/2021/05/13/3d6083366f666aec5501c49f1e779d32.png" alt="">
+
+</p>
+<p>这一步是选择安装位置，由于文件程序比较大，建议安装D盘。新建一个Oracle文件夹，点击“浏览”，选择文件夹，注意查看目标文件夹，文件路径，然后单击“下一步”。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@d03796ad1360ebcf299a1256c285a9954139d26f/2021/05/13/5e499a1e837713df54db8b0b30158597.png" alt="">
+
+</p>
+<p>设置数据库的登录口令，即数据库密码，建议简单一点，比如：root，然后单击“下一步”。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@d7620084d1fa96b23b0fe857d3a3966334bcb254/2021/05/13/e3e27b7444149da7bad8697ae5ed6e8f.png" alt="">
+
+</p>
+<p>单击“安装”，开始安装。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a524ceec42f824eb97159548be97f845e8f69922/2021/05/13/fa6e9c01746ab85be71069ceaaff3f9d.png" alt="">
+
+</p>
+<p>安装过程比较慢，耐心等待安装完成！</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a011e4ff700ed49bd56112a92b3c7389392be504/2021/05/13/c546d78497d65d38ed9edb0a65a0cf9c.png" alt="">
+
+</p>
+<p>安装完成后，单击“完成”，即Oracle 11gR2已经安装完成了。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@0b5485723c2b077a44e7b26abd36068e22d3adce/2021/05/13/40bffb1334b9db9aec7b7ad1947539ca.png" alt="">
+
+</p>
+<p>安装完成会在桌面新建一个图标，打开可以通过以web形式访问数据库。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@9f98f96ad0a8cbcc25396774457ed673d9d290ae/2021/05/13/04d4abda4d784b316a2e59d33df4027a.png" alt="">
+
+</p>
+<p>双击打开，可能会弹出以下错误提示，这个是没有影响的，安装完成后重启一点电脑就可以了！</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@6ff05993f14aa903721fd584aa4d87c1cf19ab52/2021/05/13/6b0a4050880c0304e2f0b9f11a6a68d3.png" alt="">
+
+</p>
+<h2 id="验证数据库">验证数据库</h2>
+<p>选择桌面生成的图标</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@9f98f96ad0a8cbcc25396774457ed673d9d290ae/2021/05/13/04d4abda4d784b316a2e59d33df4027a.png" alt="">
+
+</p>
+<p>鼠标右键打开文件所在位置，弹出文件夹，往上翻，在文件夹中找到bin文件夹。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@a526321b88a4d748a7aa76b9222e812b800db612/2021/05/13/dfb0416ef070cf8a0d40346978711b27.png" alt="">
+
+</p>
+<p>双击，进入bin文件夹，往下翻，找到sqlplus.exe程序。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@5147b48ae28e6a5aa4dfeb8349cd69c99cd901f2/2021/05/13/c7d4881fd814068a2f80a2cb93e84446.png" alt="">
+
+</p>
+<p>双击运行。</p>
+<p>输入用户名：system （统一默认都是system），回车</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@940caba68b237ab9e0a7e3a2ebf797faa7e4e26a/2021/05/13/8b4fd08621b9be9e8d21dc2139197408.png" alt="">
+
+</p>
+<p>输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@cccfaf923a89a22488b0e5909b1e66ffaf26fbe9/2021/05/13/a0f5417730e52a5a0f1693958364ea7e.png" alt="">
+
+</p>
+<p>若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！</p>
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@121f078ebe25c5553eb55aeae2448c1a05896c62/2021/05/13/d13a463bde29e2148c9984468b7b67e5.png" alt="">
+
+</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+							
+							<li class="tag-li"><a href="/tags/%E8%BD%AC%E8%BD%BD">转载</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

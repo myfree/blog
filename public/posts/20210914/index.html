@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>使用jq做一个数字递增效果 - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="使用jq做一个数字递增效果">
+<meta itemprop="description" content="数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
+用 jquery 也很好处理，大概就是下面这些。
+ data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&quot;num-ber&quot; 和 id=&quot;count-number&quot; 按照这个填入。
+&lt;p&gt; &lt;span class=&#34;num-ber&#34; id=&#34;count-number&#34; data-to=&#34;40&#34; data-speed=&#34;1000&#34;&gt;&lt;/span&gt;&#43; &lt;/p&gt; 引入 jquery 之后再添加下面的 js 代码。
+$.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var c = $.extend({}, $.fn.countTo.defaults, { from: $(this).data(&#34;from&#34;), to: $(this).data(&#34;to&#34;), speed: $(this).data(&#34;speed&#34;), refreshInterval: $(this).data(&#34;refresh-interval&#34;), decimals: $(this).data(&#34;decimals&#34;) }, a); var h = Math.ceil(c.speed / c.refreshInterval), i = (c.to - c.from) / h; var j = this, f = $(this), e = 0, g = c."><meta itemprop="datePublished" content="2021-09-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-09-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="208">
+<meta itemprop="keywords" content="jquery," /><meta property="og:title" content="使用jq做一个数字递增效果" />
+<meta property="og:description" content="数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
+用 jquery 也很好处理，大概就是下面这些。
+ data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&quot;num-ber&quot; 和 id=&quot;count-number&quot; 按照这个填入。
+&lt;p&gt; &lt;span class=&#34;num-ber&#34; id=&#34;count-number&#34; data-to=&#34;40&#34; data-speed=&#34;1000&#34;&gt;&lt;/span&gt;&#43; &lt;/p&gt; 引入 jquery 之后再添加下面的 js 代码。
+$.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var c = $.extend({}, $.fn.countTo.defaults, { from: $(this).data(&#34;from&#34;), to: $(this).data(&#34;to&#34;), speed: $(this).data(&#34;speed&#34;), refreshInterval: $(this).data(&#34;refresh-interval&#34;), decimals: $(this).data(&#34;decimals&#34;) }, a); var h = Math.ceil(c.speed / c.refreshInterval), i = (c.to - c.from) / h; var j = this, f = $(this), e = 0, g = c." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20210914/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-14T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用jq做一个数字递增效果"/>
+<meta name="twitter:description" content="数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
+用 jquery 也很好处理，大概就是下面这些。
+ data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&quot;num-ber&quot; 和 id=&quot;count-number&quot; 按照这个填入。
+&lt;p&gt; &lt;span class=&#34;num-ber&#34; id=&#34;count-number&#34; data-to=&#34;40&#34; data-speed=&#34;1000&#34;&gt;&lt;/span&gt;&#43; &lt;/p&gt; 引入 jquery 之后再添加下面的 js 代码。
+$.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var c = $.extend({}, $.fn.countTo.defaults, { from: $(this).data(&#34;from&#34;), to: $(this).data(&#34;to&#34;), speed: $(this).data(&#34;speed&#34;), refreshInterval: $(this).data(&#34;refresh-interval&#34;), decimals: $(this).data(&#34;decimals&#34;) }, a); var h = Math.ceil(c.speed / c.refreshInterval), i = (c.to - c.from) / h; var j = this, f = $(this), e = 0, g = c."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">使用jq做一个数字递增效果</h1>
+				</div>
+			</div>
+
+			
+			
+					
+			<div class="markdown">
+				<p>数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。</p>
+<p>用 jquery 也很好处理，大概就是下面这些。</p>
+<ul>
+<li><code>data-to</code> 属性代表最后想要递增到的数值</li>
+<li><code>data-speed</code> 代表数值想要递增的过程时间</li>
+</ul>
+<p><code>class=&quot;num-ber&quot;</code> 和 <code>id=&quot;count-number&quot;</code> 按照这个填入。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">p</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;num-ber&#34;</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;count-number&#34;</span> <span style="color:#50fa7b">data-to</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;40&#34;</span> <span style="color:#50fa7b">data-speed</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1000&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;+
+&lt;/<span style="color:#ff79c6">p</span>&gt;
+</code></pre></div><p>引入 jquery 之后再添加下面的 js 代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$.fn.countTo <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> (a) {
+  a <span style="color:#ff79c6">=</span> a <span style="color:#ff79c6">||</span> {};
+  <span style="color:#ff79c6">return</span> $(<span style="color:#ff79c6">this</span>).each(<span style="color:#8be9fd;font-style:italic">function</span> () {
+    <span style="color:#8be9fd;font-style:italic">var</span> c <span style="color:#ff79c6">=</span> $.extend({},
+      $.fn.countTo.defaults, {
+        from<span style="color:#ff79c6">:</span> $(<span style="color:#ff79c6">this</span>).data(<span style="color:#f1fa8c">&#34;from&#34;</span>),
+        to<span style="color:#ff79c6">:</span> $(<span style="color:#ff79c6">this</span>).data(<span style="color:#f1fa8c">&#34;to&#34;</span>),
+        speed<span style="color:#ff79c6">:</span> $(<span style="color:#ff79c6">this</span>).data(<span style="color:#f1fa8c">&#34;speed&#34;</span>),
+        refreshInterval<span style="color:#ff79c6">:</span> $(<span style="color:#ff79c6">this</span>).data(<span style="color:#f1fa8c">&#34;refresh-interval&#34;</span>),
+        decimals<span style="color:#ff79c6">:</span> $(<span style="color:#ff79c6">this</span>).data(<span style="color:#f1fa8c">&#34;decimals&#34;</span>)
+      }, a);
+    <span style="color:#8be9fd;font-style:italic">var</span> h <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Math</span>.ceil(c.speed <span style="color:#ff79c6">/</span> c.refreshInterval),
+      i <span style="color:#ff79c6">=</span> (c.to <span style="color:#ff79c6">-</span> c.from) <span style="color:#ff79c6">/</span> h;
+    <span style="color:#8be9fd;font-style:italic">var</span> j <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>,
+      f <span style="color:#ff79c6">=</span> $(<span style="color:#ff79c6">this</span>),
+      e <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+      g <span style="color:#ff79c6">=</span> c.from,
+      d <span style="color:#ff79c6">=</span> f.data(<span style="color:#f1fa8c">&#34;countTo&#34;</span>) <span style="color:#ff79c6">||</span> {};
+    f.data(<span style="color:#f1fa8c">&#34;countTo&#34;</span>, d);
+    <span style="color:#ff79c6">if</span> (d.interval) {
+      clearInterval(d.interval)
+    }
+    d.interval <span style="color:#ff79c6">=</span> setInterval(k, c.refreshInterval);
+    b(g);
+
+    <span style="color:#8be9fd;font-style:italic">function</span> k() {
+      g <span style="color:#ff79c6">+=</span> i;
+      e<span style="color:#ff79c6">++</span>;
+      b(g);
+      <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">typeof</span> (c.onUpdate) <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;function&#34;</span>) {
+        c.onUpdate.call(j, g)
+      }
+      <span style="color:#ff79c6">if</span> (e <span style="color:#ff79c6">&gt;=</span> h) {
+        f.removeData(<span style="color:#f1fa8c">&#34;countTo&#34;</span>);
+        clearInterval(d.interval);
+        g <span style="color:#ff79c6">=</span> c.to;
+        <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">typeof</span> (c.onComplete) <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;function&#34;</span>) {
+          c.onComplete.call(j, g)
+        }
+      }
+    }
+
+    <span style="color:#8be9fd;font-style:italic">function</span> b(m) {
+      <span style="color:#8be9fd;font-style:italic">var</span> l <span style="color:#ff79c6">=</span> c.formatter.call(j, m, c);
+      f.html(l)
+    }
+  })
+};
+$.fn.countTo.defaults <span style="color:#ff79c6">=</span> {
+  from<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">0</span>,
+  to<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">0</span>,
+  speed<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1000</span>,
+  refreshInterval<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">100</span>,
+  decimals<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">0</span>,
+  formatter<span style="color:#ff79c6">:</span> formatter,
+  onUpdate<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">null</span>,
+  onComplete<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">null</span>
+};
+
+<span style="color:#8be9fd;font-style:italic">function</span> formatter(b, a) {
+  <span style="color:#ff79c6">return</span> b.toFixed(<span style="color:#bd93f9">0</span>)
+}
+$(<span style="color:#f1fa8c">&#34;#count-number&#34;</span>).data(<span style="color:#f1fa8c">&#34;countToOptions&#34;</span>, {
+  formatter<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span> (b, a) {
+    <span style="color:#ff79c6">return</span> b.toFixed(<span style="color:#bd93f9">0</span>).replace(<span style="color:#f1fa8c">/\B(?=(?:\d{3})+(?!\d))/g</span>, <span style="color:#f1fa8c">&#34;,&#34;</span>)
+  }
+});
+$(<span style="color:#f1fa8c">&#34;.num-ber&#34;</span>).each(count);
+
+<span style="color:#8be9fd;font-style:italic">function</span> count(a) {
+  <span style="color:#8be9fd;font-style:italic">var</span> b <span style="color:#ff79c6">=</span> $(<span style="color:#ff79c6">this</span>);
+  a <span style="color:#ff79c6">=</span> $.extend({},
+    a <span style="color:#ff79c6">||</span> {},
+    b.data(<span style="color:#f1fa8c">&#34;countToOptions&#34;</span>) <span style="color:#ff79c6">||</span> {});
+  b.countTo(a)
+};
+</code></pre></div>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/jquery">jquery</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>

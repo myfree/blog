@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>React 学习笔记（二） - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="React 学习笔记（二）">
+<meta itemprop="description" content="React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+React 事件的命名采用小驼峰式（camelCase），而不是纯小写
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
+一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
+传统的html：用双引号包裹，后面必须跟参数
+&lt;button onclick=&#34;myfun()&#34;&gt;点击&lt;/button&gt; React：用大括号包裹，后面不跟参数
+&lt;button onclick={myfun}&gt;点击&lt;/button&gt; 一个完整的事件函数代码如下
+class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&#39;helo,world&#39;) } return ( // 绑定事件  &lt;button onClick={this.myfun}&gt; Activate Lasers &lt;/button&gt; ) } } ReactDOM.render( &lt;Demo /&gt;, document.getElementById(&#39;root&#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
+ 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
+看一下传统的 html 和 React 的对比"><meta itemprop="datePublished" content="2020-12-16T13:15:00+00:00" />
+<meta itemprop="dateModified" content="2020-12-16T13:15:00+00:00" />
+<meta itemprop="wordCount" content="783">
+<meta itemprop="keywords" content="react," /><meta property="og:title" content="React 学习笔记（二）" />
+<meta property="og:description" content="React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+React 事件的命名采用小驼峰式（camelCase），而不是纯小写
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
+一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
+传统的html：用双引号包裹，后面必须跟参数
+&lt;button onclick=&#34;myfun()&#34;&gt;点击&lt;/button&gt; React：用大括号包裹，后面不跟参数
+&lt;button onclick={myfun}&gt;点击&lt;/button&gt; 一个完整的事件函数代码如下
+class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&#39;helo,world&#39;) } return ( // 绑定事件  &lt;button onClick={this.myfun}&gt; Activate Lasers &lt;/button&gt; ) } } ReactDOM.render( &lt;Demo /&gt;, document.getElementById(&#39;root&#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
+ 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
+看一下传统的 html 和 React 的对比" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shuxhan.com/posts/20201216/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-16T13:15:00+00:00" />
+<meta property="article:modified_time" content="2020-12-16T13:15:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React 学习笔记（二）"/>
+<meta name="twitter:description" content="React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+React 事件的命名采用小驼峰式（camelCase），而不是纯小写
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
+一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
+传统的html：用双引号包裹，后面必须跟参数
+&lt;button onclick=&#34;myfun()&#34;&gt;点击&lt;/button&gt; React：用大括号包裹，后面不跟参数
+&lt;button onclick={myfun}&gt;点击&lt;/button&gt; 一个完整的事件函数代码如下
+class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&#39;helo,world&#39;) } return ( // 绑定事件  &lt;button onClick={this.myfun}&gt; Activate Lasers &lt;/button&gt; ) } } ReactDOM.render( &lt;Demo /&gt;, document.getElementById(&#39;root&#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
+ 2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
+看一下传统的 html 和 React 的对比"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+
+	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	
+	
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://shuxhan.com/">求索日记</a></h1>
+	<div class="site-description"><p>路漫漫其修远兮，吾将上下而求索！</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/Nov8nana/" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav>
+		
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">首页</a>
+			</li>
+			
+			<li>
+				<a href="/posts">归档</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+			</li>
+			
+			<li>
+				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+			</li>
+			
+			<li>
+				<a href="/about">关于我</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">React 学习笔记（二）</h1>
+				</div>
+			</div>
+
+			
+			
+			<aside class="toc">
+				<header>
+				<h2>Contents</h2>
+				</header>
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一事件处理">一、事件处理</a>
+      <ul>
+        <li><a href="#1事件绑定">1.事件绑定</a></li>
+        <li><a href="#2阻止默认行为">2.阻止默认行为</a></li>
+      </ul>
+    </li>
+    <li><a href="#二条件渲染">二、条件渲染</a>
+      <ul>
+        <li><a href="#使用-ifelse-语句进行条件渲染">使用 if..else 语句进行条件渲染</a></li>
+        <li><a href="#怎么阻止条件渲染">怎么阻止条件渲染？</a></li>
+      </ul>
+    </li>
+    <li><a href="#三渲染列表">三、渲染列表</a>
+      <ul>
+        <li><a href="#1分离组件">1.分离组件</a></li>
+        <li><a href="#2key">2.key</a></li>
+        <li><a href="#3使用-id-作为-key">3.使用 id 作为 key</a></li>
+        <li><a href="#4索引-index-可以作为-key-吗">4.索引 index 可以作为 key 吗？</a></li>
+        <li><a href="#5用-key-提取组件">5.用 key 提取组件</a></li>
+        <li><a href="#6key-只是在兄弟节点之间必须唯一">6.key 只是在兄弟节点之间必须唯一</a></li>
+        <li><a href="#7vue-中渲染列表">7.vue 中渲染列表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+			</aside>
+			
+					
+			<div class="markdown">
+				<p>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同</p>
+<p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写</p>
+<p>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串</p>
+<!-- more -->
+<h2 id="一事件处理">一、事件处理</h2>
+<h3 id="1事件绑定">1.事件绑定</h3>
+<p>React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：</p>
+<p><strong>传统的html</strong>：用双引号包裹，后面必须跟参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;myfun()&#34;</span>&gt;点击&lt;/<span style="color:#ff79c6">button</span>&gt;
+</code></pre></div><p><strong>React</strong>：用大括号包裹，后面不跟参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{myfun}</span>&gt;点击&lt;/<span style="color:#ff79c6">button</span>&gt;
+</code></pre></div><p>一个完整的事件函数代码如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">class</span> Demo <span style="color:#ff79c6">extends</span> React.Component {
+    render() {
+
+        <span style="color:#6272a4">// 事件函数
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">function</span> myfun() {
+            alert(<span style="color:#f1fa8c">&#39;helo,world&#39;</span>)
+        }
+
+        <span style="color:#ff79c6">return</span> (
+            <span style="color:#6272a4">// 绑定事件
+</span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">&lt;</span>button onClick<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.myfun}<span style="color:#ff79c6">&gt;</span>
+                Activate Lasers
+            <span style="color:#ff79c6">&lt;</span>/button&gt;
+        )
+    }
+}
+
+ReactDOM.render(
+    <span style="color:#ff79c6">&lt;</span>Demo <span style="color:#ff79c6">/&gt;</span>,
+    <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+)
+</code></pre></div><blockquote>
+<p>如果方法后面没有<code>()</code>，则需要为这个方法绑定 <code>this</code></p>
+</blockquote>
+<h3 id="2阻止默认行为">2.阻止默认行为</h3>
+<p>在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－<code>preventDefault</code>，可以通过 preventDefault 阻止脚本执行</p>
+<p>看一下传统的 html 和 React 的对比</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> <span style="color:#50fa7b">onclick</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;alert(&#39;是否弹窗？&#39;);return false&#34;</span>&gt;
+    Click me
+&lt;/<span style="color:#ff79c6">a</span>&gt;
+</code></pre></div><p>直接在写上 false 就可以阻止脚本执行</p>
+<p>React 通过 preventDefault 属性阻止脚本执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ActionLink() {
+  <span style="color:#8be9fd;font-style:italic">function</span> handleClick(e) {
+    e.preventDefault();
+    console.log(<span style="color:#f1fa8c">&#39;The link was clicked.&#39;</span>);
+  }
+
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>a href<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;#&#34;</span> onClick<span style="color:#ff79c6">=</span>{handleClick}<span style="color:#ff79c6">&gt;</span>
+      Click me
+    <span style="color:#ff79c6">&lt;</span>/a&gt;
+  );
+}
+</code></pre></div><h2 id="二条件渲染">二、条件渲染</h2>
+<p>在 React 中，可以创建不同的组件来封装各种你需要的行为，然后，根据应用不同的状态，你可以只渲染对应状态下的部分内容。</p>
+<p>React 中的条件渲染和 javascript 中的一样，使用 <code>if</code> 运算符来表示元素当前的状态，然后让 React 根据他们来更新 UI。</p>
+<h3 id="使用-ifelse-语句进行条件渲染">使用 if..else 语句进行条件渲染</h3>
+<p>先写一个条件渲染的例子，定义了两个组件，然后通过判断组件 <code>Greeting</code> 中的变量 <code>isLoggedIn</code> 的真伪，让浏览器渲染组件 <code>UserGreeting</code> 或者 <code>GuestGreeting</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// App.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">import</span> React, { Component } from <span style="color:#f1fa8c">&#39;react&#39;</span>
+
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> App <span style="color:#ff79c6">extends</span> Component {
+  render() {
+    <span style="color:#8be9fd;font-style:italic">function</span> UserGreeting(props) {
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>Welcome back<span style="color:#ff79c6">!&lt;</span>/h3&gt;;
+    }
+
+    <span style="color:#8be9fd;font-style:italic">function</span> GuestGreeting(props) {
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>Please sign up.<span style="color:#ff79c6">&lt;</span>/h3&gt;;
+    }
+
+    <span style="color:#8be9fd;font-style:italic">function</span> Greeting(props) {
+      <span style="color:#ff79c6">const</span> isLoggedIn <span style="color:#ff79c6">=</span> props.isLoggedIn;
+      <span style="color:#ff79c6">if</span> (isLoggedIn) {
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>UserGreeting <span style="color:#ff79c6">/&gt;</span>;
+      }   
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>GuestGreeting <span style="color:#ff79c6">/&gt;</span>;
+    }
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>Greeting isLoggedIn<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">false</span>} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    )
+  }
+}
+</code></pre></div><p>最后变量 <code>isLoggedIn</code> 定义了 <code>false</code>，因此，浏览器渲染 `GuestGreeting。</p>
+<h3 id="怎么阻止条件渲染">怎么阻止条件渲染？</h3>
+<p>在有些情况下，我们希望能隐藏组件，即使他已经被其他组件渲染。我们可以通过 <code>render</code> 方法返回 <code>null</code> 让组件不渲染。</p>
+<p>下面的示例中，<WarningBanner /> 会根据 prop 中 <code>warn</code> 的值来进行条件渲染。如果 <code>warn</code> 的值是 <code>false</code>，那么组件则不会渲染:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> WarningBanner(props) {
+  <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span>props.warn) {
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span>;
+  }
+
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>div className<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;warning&#34;</span><span style="color:#ff79c6">&gt;</span>
+      Warning<span style="color:#ff79c6">!</span>
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+}
+
+<span style="color:#ff79c6">class</span> Page <span style="color:#ff79c6">extends</span> React.Component {
+  constructor(props) {
+    <span style="color:#ff79c6">super</span>(props);
+    <span style="color:#ff79c6">this</span>.state <span style="color:#ff79c6">=</span> {showWarning<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">true</span>};
+    <span style="color:#ff79c6">this</span>.handleToggleClick <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.handleToggleClick.bind(<span style="color:#ff79c6">this</span>);
+  }
+
+  handleToggleClick() {
+    <span style="color:#ff79c6">this</span>.setState(state =&gt; ({
+      showWarning<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">!</span>state.showWarning
+    }));
+  }
+
+  render() {
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>WarningBanner warn<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.state.showWarning} <span style="color:#ff79c6">/&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>button onClick<span style="color:#ff79c6">=</span>{<span style="color:#ff79c6">this</span>.handleToggleClick}<span style="color:#ff79c6">&gt;</span>
+          {<span style="color:#ff79c6">this</span>.state.showWarning <span style="color:#ff79c6">?</span> <span style="color:#f1fa8c">&#39;Hide&#39;</span> <span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Show&#39;</span>}
+        <span style="color:#ff79c6">&lt;</span>/button&gt;
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>Page <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h2 id="三渲染列表">三、渲染列表</h2>
+<p>先看一段代码，我们使用 <code>map()</code> 函数让数组中的每一项变双倍，然后得到一个新的数组 <code>doubled</code> 并打印出来。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+<span style="color:#ff79c6">const</span> doubled <span style="color:#ff79c6">=</span> numbers.map((number) =&gt; number <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span>);
+console.log(doubled);
+
+<span style="color:#6272a4">// [2,4,6,8,10]
+</span></code></pre></div><p>而在 React 中，把数组转换为元素列表的过程是相似的。</p>
+<p>先通过 <code>map()</code> 方法遍历 <code>numbers</code> 数组，将数组中的每个元素变成 <code>&lt;li&gt;</code> 标签，最后将得到的数组赋值给 <code>listItems</code> 。</p>
+<p>然后返回 <code>{listItem}</code> 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+<span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+  <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{number}<span style="color:#ff79c6">&lt;</span>/li&gt;
+);
+
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><p>运行之后浏览器出现 1-5 的无序列表</p>
+<h3 id="1分离组件">1.分离组件</h3>
+<p>上面就是一个基本的列表渲染的例子，但是数据写死了。接下来我们将数组重构成一个组件，以后再进行数组渲染时，可以轻松调用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> Map <span style="color:#ff79c6">extends</span> Component {
+  render() {
+
+  <span style="color:#6272a4">// 分离出组件 NumberList 作为转换数组的组件
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+      <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+      <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{number}<span style="color:#ff79c6">&lt;</span>/li&gt;
+      );
+      <span style="color:#ff79c6">return</span> (
+        <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+      );
+    }
+
+    <span style="color:#6272a4">// 传入需要的数据
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">7</span>];
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/div&gt;
+    )
+  }
+}
+</code></pre></div><h3 id="2key">2.key</h3>
+<p>
+  <img src="https://i.loli.net/2020/12/28/mIt3Gk7YTpoysuL.jpg" alt="">
+
+</p>
+<p>运行代码之后，页面会正常显示，但是控制台会报一个错误。<code>Each child in a list should have a unique &quot;key&quot; prop.</code>，意思是当你创建一个元素时，必须包括一个特殊的 <code>key</code> 属性。</p>
+<p>现在给每个列表元素分配一个key：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{number.toString()}<span style="color:#ff79c6">&gt;</span>
+      {number}
+    <span style="color:#ff79c6">&lt;</span>/li&gt;
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h3 id="3使用-id-作为-key">3.使用 id 作为 key</h3>
+<p><code>key</code> 帮助 React 识别了哪些元素被改变，比如删除和添加，所以应当给每个元素确定一个标识，也就是 <code>key</code>。</p>
+<p>一个元素的 <code>key</code> 最好是这个元素在列表中拥有的一个独一无二的字符串。通常，我们使用数据中的 <code>id</code> 来作为元素的 <code>key</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Map.js
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> <span style="color:#ff79c6">class</span> Map <span style="color:#ff79c6">extends</span> Component {
+  render() {
+
+    <span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+      <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+      <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{number.id}<span style="color:#ff79c6">&gt;</span>  <span style="color:#6272a4">// 赋值 key
+</span><span style="color:#6272a4"></span>          {number.text}
+        <span style="color:#ff79c6">&lt;</span>/li&gt;
+      );
+      <span style="color:#ff79c6">return</span> (
+        <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>{listItems}<span style="color:#ff79c6">&lt;</span>/ul&gt;
+      );
+    }
+
+    <span style="color:#6272a4">// 传入数据
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">4</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">4</span>},
+      {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">5</span>,text<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">5</span>}
+    ];
+
+    <span style="color:#ff79c6">return</span> (
+      <span style="color:#ff79c6">&lt;</span>Fragment<span style="color:#ff79c6">&gt;</span>
+        <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>/Fragment&gt;
+    )
+  }
+}
+</code></pre></div><h3 id="4索引-index-可以作为-key-吗">4.索引 index 可以作为 key 吗？</h3>
+<p>当元素没有确定 id 的时候，万不得已你可以使用元素索引 <code>index</code> 作为 <code>key</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> todoItems <span style="color:#ff79c6">=</span> todos.map((todo, index) =&gt;
+  <span style="color:#6272a4">// 仅仅当没有确定 id 的时候使用索引index作为 key
+</span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{index}<span style="color:#ff79c6">&gt;</span>
+    {todo.text}
+  <span style="color:#ff79c6">&lt;</span>/li&gt;
+);
+</code></pre></div><p>如果列表项目的顺序可能会变化，我们不建议使用索引来用作 <code>key</code> 值，因为这样做会导致性能变差，还可能引起组件状态的问题。</p>
+<h3 id="5用-key-提取组件">5.用 key 提取组件</h3>
+<p>比方说，如果你提取出一个 <code>ListItem</code> 组件，你应该把 <code>key</code> 保留在数组中的这个 <code>&lt;ListItem /&gt;</code> 元素上，而不是放在 <code>ListItem</code> 组件中的 <code>&lt;li&gt;</code> 元素上。</p>
+<p><red>错误的使用方法：</red></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ListItem(props) {
+  <span style="color:#ff79c6">const</span> value <span style="color:#ff79c6">=</span> props.value;
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#6272a4">// 错误！你不需要在这里指定 key：
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{value.toString()}<span style="color:#ff79c6">&gt;</span>
+      {value}
+    <span style="color:#ff79c6">&lt;</span>/li&gt;
+  );
+}
+
+<span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#6272a4">// 错误！元素的 key 应该在这里指定：
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>ListItem value<span style="color:#ff79c6">=</span>{number} <span style="color:#ff79c6">/&gt;</span>
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {listItems}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><p><green>正确的使用方法：</green></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> ListItem(props) {
+  <span style="color:#6272a4">// 正确！这里不需要指定 key：
+</span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&lt;</span>li<span style="color:#ff79c6">&gt;</span>{props.value}<span style="color:#ff79c6">&lt;</span>/li&gt;;
+}
+
+<span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {
+  <span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> props.numbers;
+  <span style="color:#ff79c6">const</span> listItems <span style="color:#ff79c6">=</span> numbers.map((number) =&gt;
+    <span style="color:#6272a4">// 正确！key 应该在数组的上下文中被指定
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">&lt;</span>ListItem key<span style="color:#ff79c6">=</span>{number.toString()}              value<span style="color:#ff79c6">=</span>{number} <span style="color:#ff79c6">/&gt;</span>
+
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {listItems}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> numbers <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">5</span>];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>NumberList numbers<span style="color:#ff79c6">=</span>{numbers} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><blockquote>
+<p>React：一个好的经验法则是：在 map( ) 方法中的元素需要设置 key 属性。</p>
+</blockquote>
+<h3 id="6key-只是在兄弟节点之间必须唯一">6.key 只是在兄弟节点之间必须唯一</h3>
+<p>数组元素中使用的 <code>key</code> 在其兄弟节点之间应该是独一无二的。然而，它们不需要是全局唯一的。当我们生成两个不同的数组时，我们可以使用相同的 <code>key</code> 值：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> Blog(props) {
+  <span style="color:#ff79c6">const</span> sidebar <span style="color:#ff79c6">=</span> (
+    <span style="color:#ff79c6">&lt;</span>ul<span style="color:#ff79c6">&gt;</span>
+      {props.posts.map((post) =&gt;
+        <span style="color:#ff79c6">&lt;</span>li key<span style="color:#ff79c6">=</span>{post.id}<span style="color:#ff79c6">&gt;</span>
+          {post.title}
+        <span style="color:#ff79c6">&lt;</span>/li&gt;
+      )}
+    <span style="color:#ff79c6">&lt;</span>/ul&gt;
+  );
+  <span style="color:#ff79c6">const</span> content <span style="color:#ff79c6">=</span> props.posts.map((post) =&gt;
+    <span style="color:#ff79c6">&lt;</span>div key<span style="color:#ff79c6">=</span>{post.id}<span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;</span>h3<span style="color:#ff79c6">&gt;</span>{post.title}<span style="color:#ff79c6">&lt;</span>/h3&gt;
+      <span style="color:#ff79c6">&lt;</span>p<span style="color:#ff79c6">&gt;</span>{post.content}<span style="color:#ff79c6">&lt;</span>/p&gt;
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+  <span style="color:#ff79c6">return</span> (
+    <span style="color:#ff79c6">&lt;</span>div<span style="color:#ff79c6">&gt;</span>
+      {sidebar}
+      <span style="color:#ff79c6">&lt;</span>hr <span style="color:#ff79c6">/&gt;</span>
+      {content}
+    <span style="color:#ff79c6">&lt;</span>/div&gt;
+  );
+}
+
+<span style="color:#ff79c6">const</span> posts <span style="color:#ff79c6">=</span> [
+  {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">1</span>, title<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Hello World&#39;</span>, content<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Welcome to learning React!&#39;</span>},
+  {id<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>, title<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Installation&#39;</span>, content<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;You can install React from npm.&#39;</span>}
+];
+ReactDOM.render(
+  <span style="color:#ff79c6">&lt;</span>Blog posts<span style="color:#ff79c6">=</span>{posts} <span style="color:#ff79c6">/&gt;</span>,
+  <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#39;root&#39;</span>)
+);
+</code></pre></div><h3 id="7vue-中渲染列表">7.vue 中渲染列表</h3>
+<p>Vue 中渲染列表使用的是特殊指令 <code>v-for</code>，其中也有 <code>key</code> 的相关用法</p>
+<p>React 中采用的是 <code>map()</code> 方法遍历数组，然后渲染列表</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/react">react</a></li>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div class="back">
+				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			
+
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '165c1f06227b75546d96', 
+    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
+    repo: 'gitalk-comment', 
+    owner: 'Nov8nana', 
+    admin: ['Nov8nana'], 
+    id: location.pathname, 
+  })
+
+  gitalk.render('gitalk-container'); 
+</script>
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·求索日记 ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="https://shuxhan.com/js/main.js"></script>
+<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+</body>
+</html>
