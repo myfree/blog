@@ -1377,7 +1377,9 @@ Github: https://github.com/Nov8nana
 欢迎和我一起探讨一些问题，或者聊聊人生与理想。
 the road ahead will be long and our climb will be steep.
 2021年的新年愿望是可以 new 一个对象！ —2021
-(目前没有添加友链的计划，所以一些申请我就直接略过了~)</description>
+(目前没有添加友链的计划，所以一些申请我就直接略过了~)
+ 关于评论，我原本没有打算放上来的，后来考虑一二，觉得还是有些交互性比较合理，所以就使用了 Gitalk，基于 Github 的一个第三方平台，觉得效果还不错。
+但是它有一个弊端，需要 user 自己亲自访问一遍网页，才能注册出一个评论模块。如果在阅读时碰到还没有注册的页面，可以在 关于我 页面留言备注一下需要评论的网页链接。</description>
     </item>
     
   </channel>

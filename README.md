@@ -25,39 +25,7 @@ hugo -D
 
 ### 配置
 
-一些主要功能的配置方法，如果有其他配置看不懂的可以在 Issues 留言。
-
-<details>
-<summary><strong>1. 文章目录</strong></summary>
-
-默认为下列代码，如果需要调整需要在 `config.toml` 配置文件中进行修改。
-
-```shell
-[markup]
-  [markup.tableOfContents] 
-    endLevel = 3      #3级标题以后不建立索引
-    ordered = false   #是否采用有序列表
-    startLevel = 2    #2级标题开始建立索引
-
-```
-</details>
-
-
-<details>
-<summary><strong>2. 第三方评论</strong></summary>
-
-本博客内置的是 Cusdis 评论，请到 [官网](https://cusdis.com/dashboard/project/c1d43485-e8a7-4895-972e-247eddaf242d) 注册并获取 id。
-
-如果遇到问题请参考文章 [hugo 如何使用 Cusdis ?](http://shuxhan.com/post/2021-09-16-hugo-use-cusdis/) 
-
-请将 id 填写在 `config.toml` 中。
-
-```shell
-[params]
-  CusdisId = "xxxxx"
-
-```
-</details>
+一些主要功能的配置方法已经写在配置文件里，如果有其他配置看不懂的可以在 Issues 留言。
 
 
 ### 额外的一些说明协议
