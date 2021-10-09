@@ -59,34 +59,6 @@ hugo -D
 ```
 </details>
 
-<details>
-<summary><strong>3. Github repos 展示功能</strong></summary>
-
-图片示例
-![](https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@06d4703e562a8e0aa8f83ae448435d712f8d8d79/2021/09/27/e03885e1598bd19b09aeea9c9b200ba4.png)
-
-使用 Ajax 调用 Github 官方提供的 API，直接在 `config.toml` 文件中找到下面代码，将 Github 的用户名改为自己的名字即可。
-
-```shell
-[params]
-  GithubId = "Nov8nana"
-
-```
-</details>
-
-### 优化记录
-
-<details>
-<summary><strong>2021.09.27</strong></summary>
-
-内置了 Github 仓库列表展示功能。
-</details>
-
-<details>
-<summary><strong>2021.09 之前</strong></summary>
-
-成功搭建了本项目，初始内容就不赘述了...
-</details>
 
 ### 额外的一些说明协议
 
