@@ -32,17 +32,17 @@
 
 body {
     font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-family: Source Sans, sans-serif;
     font-weight: 400;
     color: #111827;
     line-height: 1.8em;
-    font-size: 17px;
+    font-size: 16px;
     overflow-x: hidden;
 }
 
 a {
     color: rgb(37, 99, 235);
     text-decoration: none;
-    word-break: break-word;
 }
 
 a:hover {
@@ -132,9 +132,8 @@ textarea {
 blockquote {
     margin: 0;
     font-style: italic;
-    font-size: 1.1rem;
-    border-left: 3px solid;
-    border-color: #3700ff;
+    font-size: 1rem;
+    border-left: 3px solid #32383e8e;
     padding-left: 20px;
     background: #eee;
     padding: 1px 10px;
@@ -234,8 +233,8 @@ ul {
 }
 
 .post .markdown {
-    line-height: 1.6;
-    font-size: 1.02rem;
+    line-height: 1.8;
+    font-size: 0.98rem;
     margin-bottom: 3rem;
 }
 
@@ -292,6 +291,7 @@ ul {
 .header {
     margin-bottom: 20px;
     padding-bottom: 20px;
+    position: relative;
 }
 
 .header .avatar {
@@ -325,6 +325,33 @@ ul {
 .header .site-description {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.fixed-author {
+    position: absolute;
+    margin-left: 103%;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: #3b4351;
+}
+
+.fixed-author img {
+    width: 56px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 10px 10px 10px 0;
 }
 
 .header nav {
@@ -395,6 +422,20 @@ ul {
     margin-bottom: 45px;
 }
 
+.recent-posts .posts .post a {
+    display: block;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    padding: 4px;
+}
+
+.recent-posts .posts .post a:hover {
+    background: rgba(221, 221, 221, 0.2);
+}
+
 .post-header {
     display: flex;
 
@@ -411,6 +452,7 @@ ul {
     font-size: 3em;
     display: block;
     margin-bottom: 20px;
+    color: #111827;
 }
 
 .post-header .meta .date .list-time {
@@ -421,6 +463,7 @@ ul {
 .post-header .meta .date .rest {
     display: block;
     font-size: 0.75em;
+    color: #111827;
 }
 
 .post-header h1.title {
@@ -438,7 +481,7 @@ ul {
 
 .post .title.small {
     margin: 0 0 10px 0;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -453,12 +496,13 @@ ul {
 
 .post-list .title.small {
     font-weight: 500;
-    font-size: 1.12rem;
+    font-size: 1.06rem;
 }
 
 .post .post-header .matter {
-    font-size: 1rem;
+    font-size: 15px;
     line-height: 1.625;
+    color: #88847b;
 }
 
 .post .draft-label {
@@ -545,7 +589,7 @@ ul {
 
 @media (max-width: 900px) {
     body {
-        padding: 20px;
+        padding: 10px;
     }
 
     h1 {
@@ -742,5 +786,9 @@ figcaption {
 @media (max-width:1363px) {
     .post-toc {
         position: static;
+    }
+
+    .fixed-author {
+        display: none;
     }
 }

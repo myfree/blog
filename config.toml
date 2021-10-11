@@ -6,6 +6,8 @@ paginate = 7
 
 [params]
   favicon = "https://img.shuxhan.com/favicon.png"
+  authorname = "Nov8nana"
+  authorimg = "https://img.shuxhan.com/author.png"
 	subtitle = "路漫漫其修远兮，吾将上下而求索！"
 
 	# Enable a table of contents

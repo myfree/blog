@@ -6,14 +6,19 @@
     <description>Recent content on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://shuxhan.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>有关国庆出行的感想</title>
       <link>https://shuxhan.com/posts/20211007/</link>
       <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20211007/</guid>
-      <description>好长时间没回老家了，这次本想借着国庆七天回家一趟，顺便处理一些其他的事情。所以我从9月30日晚，与家人一同驾车回家。
+      
+        <description>好长时间没回老家了，这次本想借着国庆七天回家一趟，顺便处理一些其他的事情。所以我从9月30日晚，与家人一同驾车回家。
 艰难的回家之路 刚上高速跑得很快，原以为已经错开出行高峰期，结果发现是我想多了，不出意外的堵在高速上。
 导航呢，这时候也是推荐不走高速，直接从国道走（真的是后悔），然后我们就下了高速，结果这个导航给我整的有点蒙，在临安绕来绕去，11点从杭州出发，凌晨3点还在临安出不去，国道都在堵车，然后没办法只能就地休息，困得实在不行了，其实睡也睡不舒服，跑夜车都是这个样子。
 睡到5点多，这时候已经是10月1日了，继续出发，按照导航走，结果走到了一个盘山公路，不知道叫什么山，没注意看。
@@ -27,6 +32,7 @@
 到杭州之后就开始胃疼了，大致算了一下，7天，有4天都在路上奔波，吃的都是饼干泡面，实在是扛不住，到这边之后吃完饭洗了个澡直接睡到下午六点，起来还是精神有些萎靡，我估计至少得三天才能缓成正常。毕竟年纪大了，真的痛苦。
 关于开车出行的反思 长了个记性，以后再也不开学出行跑长途了，特别节假日，火车七八个小时，睡一觉就能解决的问题搞得那么复杂，不过也是因为带了一些行李的缘故。下次就打算行李直接寄回去，随身背个包，然后坐火车轻装上阵，岂不是美滋滋。
 吐槽高速的一些事情 安徽段高速真的不行，管理不到位，救援迟缓，在安徽境内高速上堵车的时候，应急车道基本没闲着，私家车直接跑，路过别的省份基本很少有这种现象，而且出现事故的时候，救援迟缓，交管不到位，直接导致堵车堵了很长时间，我在河南段，浙江段跑的时候，看到事故都是处理的很快，基本没有太长的堵车现象。</description>
+      
     </item>
     
     <item>
@@ -35,12 +41,14 @@
       <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210929/</guid>
-      <description>先写一个简单的 html 页面出来
+      
+        <description>先写一个简单的 html 页面出来
 &amp;lt;style&amp;gt; /* ... */ &amp;lt;/style&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;html&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;css&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;js&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
 const randomHex = () =&amp;gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &amp;#34;0&amp;#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
 接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
 var arr = document.getElementsByTagName(&amp;#39;li&amp;#39;), temp = []; for (var i = 0; i &amp;lt; arr.length; i++) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
 var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i &amp;lt; li.</description>
+      
     </item>
     
     <item>
@@ -49,7 +57,8 @@ var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i 
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210916/</guid>
-      <description>Cusdis 是一个界面清爽、注重隐私的轻量级 (~5kb gzip) 评论系统，可以很方便地与 React、Vue 或其他博客系统结合，并且还提供了一个后台来管理所有的评论。
+      
+        <description>Cusdis 是一个界面清爽、注重隐私的轻量级 (~5kb gzip) 评论系统，可以很方便地与 React、Vue 或其他博客系统结合，并且还提供了一个后台来管理所有的评论。
 由于 Cusdis 自称是 Disqus 的替代方案，因此它还支持一键从 Disqus 导入、支持邮件通知等功能。
 官方地址: https://cusdis.com/
 他通常是用于静态博客的一个第三方评论系统，但是官方文档没有提供如何在 hugo 中使用的参数，我也是报错了多次才琢磨出来。
@@ -59,6 +68,7 @@ var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i 
 data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
 &amp;lt;div id=&amp;#34;cusdis_thread&amp;#34; data-host=&amp;#34;https://cusdis.com&amp;#34; data-app-id=&amp;#34;xxxxxxxxx&amp;#34; data-page-id=&amp;#34;{{ PAGE_ID }}&amp;#34; data-page-url=&amp;#34;{{ PAGE_URL }}&amp;#34; data-page-title=&amp;#34;{{ PAGE_TITLE }}&amp;#34; &amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script async defer src=&amp;#34;https://cusdis.com/js/cusdis.es.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 将这些代码复制到本地主题的 comments.html 文件内（就是评论的那个模块，每个主题或许都不一样，注意分辨）。
 这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。</description>
+      
     </item>
     
     <item>
@@ -67,11 +77,13 @@ var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i 
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210914/</guid>
-      <description>数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
+      
+        <description>数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
 用 jquery 也很好处理，大概就是下面这些。
  data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&amp;quot;num-ber&amp;quot; 和 id=&amp;quot;count-number&amp;quot; 按照这个填入。
 &amp;lt;p&amp;gt; &amp;lt;span class=&amp;#34;num-ber&amp;#34; id=&amp;#34;count-number&amp;#34; data-to=&amp;#34;40&amp;#34; data-speed=&amp;#34;1000&amp;#34;&amp;gt;&amp;lt;/span&amp;gt;+ &amp;lt;/p&amp;gt; 引入 jquery 之后再添加下面的 js 代码。
 $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var c = $.extend({}, $.fn.countTo.defaults, { from: $(this).data(&amp;#34;from&amp;#34;), to: $(this).data(&amp;#34;to&amp;#34;), speed: $(this).data(&amp;#34;speed&amp;#34;), refreshInterval: $(this).data(&amp;#34;refresh-interval&amp;#34;), decimals: $(this).data(&amp;#34;decimals&amp;#34;) }, a); var h = Math.ceil(c.speed / c.refreshInterval), i = (c.to - c.from) / h; var j = this, f = $(this), e = 0, g = c.</description>
+      
     </item>
     
     <item>
@@ -80,8 +92,10 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210913/</guid>
-      <description>复制到 console 即可运行。
+      
+        <description>复制到 console 即可运行。
 stime = Date.parse(new Date()); result = {} count = 0 flag = true while (flag) { obj = await fetch(&amp;#39;https://api.juejin.cn/growth_api/v1/lottery/draw&amp;#39;, { method: &amp;#39;POST&amp;#39;, credentials: &amp;#34;include&amp;#34;, headers: { &amp;#39;Content-type&amp;#39;: &amp;#39;application/json; charset=UTF-8&amp;#39; } }) .then(res =&amp;gt; { obj = res.json() return obj }) if (obj.err_no === 0) { if (obj.data.lottery_name in result) { result[obj.data.lottery_name] += 1 } else { result[obj.data.lottery_name] = 1 } count ++ } else { flag = false } } etime = Date.</description>
+      
     </item>
     
     <item>
@@ -90,7 +104,9 @@ stime = Date.parse(new Date()); result = {} count = 0 flag = true while (flag) {
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210907/</guid>
-      <description> inappropriate 不合适的，不合时宜的 refinement 精炼，提纯，改进（形容表示再一次，进一步，再次改进） convey 转告，传达，运输  If you leave a message, I&amp;#39;ll convey it to him. &amp;lt;!-- 如果你愿意留下口信，我会转告他的。 --&amp;gt; broaden 拓宽，增长（知识） broad 宽广的，广阔的 promotion(n.) 提升，晋升（多用于职场）  His promotion means a raise in salary. &amp;lt;!-- 他的提升意味着要增加薪水。 --&amp;gt; forebear 祖先，祖宗（不特指某一辈分的人，常用语: 祖祖辈辈） theory 理论，学说，原理，原则 verdor 小贩，供应商 practice 训练，实践，习惯  This bad practice will gradually die out. &amp;lt;!-- 这个坏习惯会逐渐消失。 --&amp;gt; prefix 前缀  </description>
+      
+        <description> inappropriate 不合适的，不合时宜的 refinement 精炼，提纯，改进（形容表示再一次，进一步，再次改进） convey 转告，传达，运输  If you leave a message, I&amp;#39;ll convey it to him. &amp;lt;!-- 如果你愿意留下口信，我会转告他的。 --&amp;gt; broaden 拓宽，增长（知识） broad 宽广的，广阔的 promotion(n.) 提升，晋升（多用于职场）  His promotion means a raise in salary. &amp;lt;!-- 他的提升意味着要增加薪水。 --&amp;gt; forebear 祖先，祖宗（不特指某一辈分的人，常用语: 祖祖辈辈） theory 理论，学说，原理，原则 verdor 小贩，供应商 practice 训练，实践，习惯  This bad practice will gradually die out. &amp;lt;!-- 这个坏习惯会逐渐消失。 --&amp;gt; prefix 前缀  </description>
+      
     </item>
     
     <item>
@@ -99,9 +115,11 @@ stime = Date.parse(new Date()); result = {} count = 0 flag = true while (flag) {
       <pubDate>Thu, 19 Aug 2021 11:15:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210819/</guid>
-      <description>npm install下载依赖包的时候出现下面错误，请求失败。
+      
+        <description>npm install下载依赖包的时候出现下面错误，请求失败。
 npm ERR! FetchError: request to https://registry.npm.taobao.org/cnpm failed, reason: connect ECONNREFUSED 127.0.0.1:1181 调试过后发现是本地代理的问题，取消它。
 npm config delete proxy npm config delete https-proxy npm install 成功运行，完毕。</description>
+      
     </item>
     
     <item>
@@ -110,7 +128,8 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
       <pubDate>Wed, 21 Jul 2021 17:47:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210721/</guid>
-      <description>写这篇文章，大概是想回顾一下自己从写第一篇博客，一直到现在的心理历程吧！但是动笔的时候，又突然改变想法了。决定好好审视一下自己的内心，“我为什么要写博客？”
+      
+        <description>写这篇文章，大概是想回顾一下自己从写第一篇博客，一直到现在的心理历程吧！但是动笔的时候，又突然改变想法了。决定好好审视一下自己的内心，“我为什么要写博客？”
  伊始 故事最开始源于2020年五月份，当时我正频临毕业之际，正处于找工作的状态，对前途还是有些迷茫的，不知道未来该怎么走，往哪方面发展，再加上对自己不够自信，可能有些焦虑吧。
 但是不论心态怎么变化，生活总是要继续的，在闲暇之余我浏览很多技术网站，希望可以提升自己，当时我比较热衷于csdn 和博客园吧，两个比较大的中文博客网站，不论是学习和查资料，百度出来的内容基本都是这两个网站的文章。然后在平时学习累计的过程中，我也会写一些笔记或者总结的内容，开始我是直接存放在本地，后来我放在 Gayhub 上面。
  Gayhub: 又名，Github. 全球最大的同性交友网站，在这里你可以畅快的交流技术，copy code 。
@@ -136,6 +155,7 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
 反思 很多时候，我都会审视自己，在这个时代要不要继续坚持下去写博客，大部分人做的都是公众号，自媒体等等。这也是时代的趋势。然后我自己慢慢思考，拨开云雾见光明，我发现我想要的不是自媒体那样的感觉，我更渴望拥有自己的一片净土，偶尔放一些新奇的玩意，然后写写自己的生活记录和一些技术笔记。
 我知道自己的水平远达不到大神的地步，单纯的想写点东西。仅此而已，不为其他。
 落笔于 2021.07.21</description>
+      
     </item>
     
     <item>
@@ -144,11 +164,13 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
       <pubDate>Fri, 09 Jul 2021 21:03:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210709/</guid>
-      <description>接口链接：http://121.196.166.173/img/img.php 展示demo：http://121.196.166.173/img
+      
+        <description>接口链接：http://121.196.166.173/img/img.php 展示demo：http://121.196.166.173/img
  前言 为了写博客以及其他的一些用途，我使用服务器搭建了一个连接 github 仓库的上传网页，并且在数据库中记录上传的信息，比如缩略名、时间戳和图片链接。分别对应 GitHub 仓库中的图片，但是后期我发现在 GitHub 查看图片非常别扭，因此我打算写一个可展示图片的网页，把 GitHub 仓库中的图片通过链接展示出来，当然我们不可能一张张复制，还好有数据库。
 看一下具体内容
 写一个接口 很好，拥有我们需要的字段。事不宜迟，直接开动，下面是完成的接口代码。
 &amp;lt;?php header(&amp;#39;Content-Type:application/json; charset=utf-8&amp;#39;); header(&amp;#34;Access-Control-Allow-Origin:*&amp;#34;); $servername = &amp;#34;localhost&amp;#34;; $username = &amp;#34;imgbed&amp;#34;; $password = &amp;#34;imgbed&amp;#34;; $dbname = &amp;#34;imgbed&amp;#34;; // 创建连接 $conn = new mysqli($servername, $username, $password, $dbname); // 检测连接 if ($conn-&amp;gt;connect_error) { die(&amp;#34;连接失败: &amp;#34; . $conn-&amp;gt;connect_error); } // imgmd5 名称转md5 // imguploadtime 上传时间戳 // imgurl 链接 // 上传 ip $sql = &amp;#34;select imgmd5,imguploadtime,imgurl,imguploadip from remote_imgs &amp;#34;; $result = $conn-&amp;gt;query($sql); if ($result-&amp;gt;num_rows &amp;gt; 0) { // 输出数据  while($row = $result-&amp;gt;fetch_assoc()) { $data[]=$row; } $json = json_encode($data,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);//把数据转换为JSON数据.</description>
+      
     </item>
     
     <item>
@@ -157,10 +179,12 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
       <pubDate>Thu, 10 Jun 2021 15:39:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210610/</guid>
-      <description>从6月8日世界海洋日开始，南大洋将被认定为世界第五大洋。世界上就有七大洲，五大洋啦！中学课文需要改一改了。
+      
+        <description>从6月8日世界海洋日开始，南大洋将被认定为世界第五大洋。世界上就有七大洲，五大洋啦！中学课文需要改一改了。
 美国国家地理学会宣布，南极洲周围海域将被称为南大洋，并正式承认南大洋为地球第五大洋。
 南大洋是海洋生态系统的重要家园，也是南半球的焦点。它直接包围着南极洲，从大陆的海岸线一直延伸到南纬 60 度。
 海洋的边界与其他四个大洋中的三个相连——大西洋、印度洋和太平洋。但南大洋与其它大洋的不同之处在于，它在很大程度上不是由周围的陆地决定的，而是由于内部有一股洋流，这片水域很独特。</description>
+      
     </item>
     
     <item>
@@ -169,11 +193,13 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
       <pubDate>Tue, 08 Jun 2021 21:02:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210608/</guid>
-      <description>如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。
+      
+        <description>如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。
 先用 node 安装一下。
 npm install axios 然后在 main.js 文件中引入。
 import axios from &amp;#39;axios&amp;#39; import VueAxios from &amp;#39;vue-axios&amp;#39; Vue.use(VueAxios, axios) 以我的一个工程目录作为实例，看一下代码。
 // ListThere.vue  // html 代码 ... &amp;lt;div&amp;gt;{{ info }}&amp;lt;/div&amp;gt; ... // js 代码 import axios from &amp;#34;axios&amp;#34;; export default { name: &amp;#34;ListThere&amp;#34;, data() { return { ... }; }, components: { ... }, methods: { ... }, mounted() { axios .get(&amp;#34;http://api.h-camel.com/api?mod=interview&amp;amp;ctr=issues&amp;amp;act=today&amp;#34;) .then((response) =&amp;gt; (this.</description>
+      
     </item>
     
     <item>
@@ -182,13 +208,15 @@ import axios from &amp;#39;axios&amp;#39; import VueAxios from &amp;#39;vue-axio
       <pubDate>Sun, 30 May 2021 11:37:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210530/</guid>
-      <description>为了方便写一些东西，pc端和手机端都可以同步，我用leanote搭建了一个在线笔记，但是必须在服务器后台运行一个指令
+      
+        <description>为了方便写一些东西，pc端和手机端都可以同步，我用leanote搭建了一个在线笔记，但是必须在服务器后台运行一个指令
 base run.sh 不然就访问不了端口，我也不可能时刻在终端保持指令运行，所以就需要把指令放在服务器后台，让它自己保持运行，刚好有这么一插件 Supervisor管理器 2.2 。
 是一款免费的Python插件，点击下载即可，然后进入设置。
 点击添加进程守护。
 把进程环境目录和启动命令都填好，名称就随便写个自己能分辨出来的就行，最后点击确定。
 让它一直保持启动状态就可以，其他的不用动，以后就不用打开服务器终端输入指令了，直接在浏览器访问端口，就可以访问网页。
 如果为了更方便，做个反代处理即可。</description>
+      
     </item>
     
     <item>
@@ -197,7 +225,8 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
       <pubDate>Thu, 27 May 2021 21:42:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210527/</guid>
-      <description>1.问题  css 中使用动画属性会和同标签下的fixed属性冲突，导致定位失效，那么该如何解决他呢？
+      
+        <description>1.问题  css 中使用动画属性会和同标签下的fixed属性冲突，导致定位失效，那么该如何解决他呢？
  2.分析 简单说一下问题产生的背景，昨天夜里我想给我的博客页面做一个简单的动画，浏览器刷新的时候从下往上渐现的效果，代码如下：
 /* index-container类名是页面的主体部分 */ .index-container { opacity: 0; animation-name: index; animation-duration: 0.7s; animation-fill-mode: forwards; } /* 一个简单的动画实现 */ @keyframes index { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } } 运行之后发现，动画可以很好的显示，但是当我翻阅文章详情的时候发现，目录固定失效了。
 按照原来的设置是当页面往下滑动的时候，目录会紧贴浏览器的顶部，方便跳转和查看目录，但是现在它已经不能紧贴了。看一下浏览器设置，属性确实生效了，但是页面并没有显示我们想要的结果。
@@ -208,6 +237,7 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
 3.方法 虽然没有明确的方法，但是给了我一个思路，因为动画中的一些属性，比如 scale、translate 等，会造车容器的宽高重新计算，而 fixed 属性则依赖于规定的一个像素值，所以当执行动画的时候，页面的高度发生了变化，所以 fixed 不能安心的执行自己的任务了。
 原因找到了，方法自然而然就出来了，看图（图很丑，手画的，能理解意思就行）
 这是我最开始的布局，我将动画绑定给 红色框 的容器了，而目录就在红色框内，所以失效。</description>
+      
     </item>
     
     <item>
@@ -216,7 +246,8 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
       <pubDate>Thu, 13 May 2021 14:51:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210513/</guid>
-      <description> 转载自：https://www.moeor.com/26.html
+      
+        <description> 转载自：https://www.moeor.com/26.html
  前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
 该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
 由于官网的更新，找不到以前那种提供客户端服务端的安装了，所以这里不再讲解！
@@ -241,6 +272,7 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
 输入口令：（刚才安装时设置的口令），口令输入是不显示的，直接回车就行了。
 若出现 “连接到: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production” 语句时，则安装成功！
 </description>
+      
     </item>
     
     <item>
@@ -249,7 +281,8 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
       <pubDate>Tue, 11 May 2021 22:29:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210511/</guid>
-      <description>1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
+      
+        <description>1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
 如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
 不喜勿喷，谢谢！
 2.Typecho简介 Typecho 基于PHP5开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。
@@ -282,6 +315,7 @@ Linux系统的话，本文使用Centos 8系统讲解。
 搭建LNMP环境，我们可以选择自行下载对应的安装包，然后在Centos系统中，安装Nginx，Mysql，PHP等，这种纯动手的方式，非常麻烦和复杂，在后期进行多网站管理和配置HTTPS证书，以及网站伪静态配置时非常麻烦。
 所以本文讲解使用宝塔面板来进行安装部署环境！
 5.宝塔是什么 宝塔面板是一款服务器管理软件，支持windows和linux系统，可以通过Web端轻松管理服务器，提升运维效率。例如：创建管理网站、FTP、数据库，拥有可视化文件管理器，可视化软件管理器，可视化CPU、内存、流量监控图表，计划任务等功能。</description>
+      
     </item>
     
     <item>
@@ -290,7 +324,8 @@ Linux系统的话，本文使用Centos 8系统讲解。
       <pubDate>Sun, 09 May 2021 18:50:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210509/</guid>
-      <description>我想很多小伙伴在写博客的时候都能遇到一个令人头疼的问题，某一篇文章想用 iframe 引入一个外链视频，但是大小总是有问题，宽度可以固定到 100% ，但是高度比如用实际高度来表示，比如 100px, 200px，诸如此类。
+      
+        <description>我想很多小伙伴在写博客的时候都能遇到一个令人头疼的问题，某一篇文章想用 iframe 引入一个外链视频，但是大小总是有问题，宽度可以固定到 100% ，但是高度比如用实际高度来表示，比如 100px, 200px，诸如此类。
 但是问题来了，在不同的页面宽度下，视频的高度是一致的，就会导致一个很麻烦的问题,
 看下面两个图，
 pc端
@@ -302,6 +337,7 @@ pc端
   加上一段 js 代码，最好放在网站底部， &amp;lt;/body&amp;gt; 前即可。
   $(&amp;#39;iframe&amp;#39;).wrap(&amp;#39;&amp;lt;p class=&amp;#34;iframe&amp;#34;&amp;gt;&amp;lt;/p&amp;gt;&amp;#39;) 在css文件的底部加上:  .iframe{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; } .iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 这个时候再访问带有 iframe 视频的网页，不管宽度如何变化，高度可以随视频自适应。
 例如这个网页，可以看一下效果: https://shuxhan.com/posts/2021-05-07-breathing-wild/</description>
+      
     </item>
     
     <item>
@@ -310,7 +346,8 @@ pc端
       <pubDate>Fri, 07 May 2021 21:48:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210507/</guid>
-      <description>2021许嵩第8张全创作专辑《呼吸之野》首支曲目《乌鸦》5月7日正式发行。
+      
+        <description>2021许嵩第8张全创作专辑《呼吸之野》首支曲目《乌鸦》5月7日正式发行。
  《乌鸦》 我们都曾领受过误解、怀疑、孤立，都品尝过爱而不得或种种挫败的滋味，都有过觉得“一切都糟透了”的时候……但感伤过后，却还是会相信“一切都会好起来的”，还是会为了反转剧情而振作前行——也许是为了心里最在乎的人，也许是因为心底笃定的信念。被生活不断刮蹭的脆弱羽翼之下，有着强韧的骨架。许嵩以从未讨喜的乌鸦为第一视角，飞抵呼吸之野。
 人生不过一场呼吸。呼吸不停，则生命与思考不止。当人们习惯于蒙上口罩生活，畅快呼吸日渐成为一种奢侈。比这更为奢侈的，是袒露真心的酣畅对谈，是呼吸于野，吐纳心声。《呼吸之野》从冷色调里起笔，以自如沉着的笔触，描摹情感与境遇。十首音乐，如十场呼吸冥想般令人全神贯注。许嵩在想象与写实的互照里，在温柔与凛冽的交汇处，在浪漫与生猛的切换中，记述着生活与思考。
 在《呼吸之野》里，古典气质与当代元素浑然一体。许嵩构建了有别于其过往作品的音乐语汇，有承接亦有创新。《呼吸之野》是赤诚、饱满且充满细节的，它能够让人在专注聆听时回归内心深处。
@@ -336,6 +373,7 @@ pc端
 在《呼吸之野》里，古典气质与当代元素浑然一体。许嵩构建了有别于其过往作品的音乐语汇，有承接亦有创新。《呼吸之野》是赤诚、饱满且充满细节的，它能够让人在专注聆听时回归内心深处。
 为拍摄专辑平面相片及音乐录影带，许嵩与二十余人拍摄团队进驻高原上人迹罕至的原始森林。帐篷帘幕外，旷野篝火，雪山江河，独行旅人，构成一幅冷暖交汇的静谧画卷。
 呼，向外输出，吸，向内滋长，一呼一吸间，许嵩始终坚持用作品与听众进行交互。自2009年发行首张专辑至今12年里，许嵩已一人作词、作曲、演唱、制作、策划8张个人专辑以及近50首原创单曲，佳作不断。2019年举办“寻宝游戏”巡回演唱会大获好评后，许嵩折返到潜心创作的生活状态，以新作《呼吸之野》再一次展现了强大的创作能量。</description>
+      
     </item>
     
     <item>
@@ -344,7 +382,8 @@ pc端
       <pubDate>Sat, 24 Apr 2021 11:47:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210424/</guid>
-      <description>文章作者: 江江_Jan 文章链接: https://blog.jannns.com/posts/Kieslowski-and-his-reality/ 版权声明: 本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议。转载请注明来自 江卮可乐！
+      
+        <description>文章作者: 江江_Jan 文章链接: https://blog.jannns.com/posts/Kieslowski-and-his-reality/ 版权声明: 本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议。转载请注明来自 江卮可乐！
  前言 克日什托夫·基耶斯洛夫斯基（以下简称基氏），20世纪波兰著名导演，其作品**《蓝白红三部曲》（也称三色系列），被许多评论家视为电影史的巅峰。**
 比起身份上电影人的定义，基氏本人更像是一个哲学家、斗争者。他立足于现实生活，擅长用冷静陈述的方式表达对世界的感知，热衷于揭露生活的残酷本质和人性的阴暗内里，并甘愿为【自由的表达】和外界抗衡。
 **我对基氏作品的感知是客观且冷静（甚至有点冷漠）。**他的叙事似乎不带任何感情色彩，但回味起来却能感受到他对生命的热爱。
@@ -380,6 +419,7 @@ pc端
 导演的布局真的太妙了，每一个要素都紧紧地联系在一起。蓝色基调、交响乐贯穿全剧，既烘托氛围，又表达茱莉沉默背后压抑的感情……
 后记 本来想把三色系列都写一遍，但好几遍《蓝》看下来感觉还是需要时间去消化。基耶斯洛夫斯基的电影值得反复看的，不同的人生阶段应该也会有不同的看法。
 一人所学有限，若有疏漏，还请大家批评指正。</description>
+      
     </item>
     
     <item>
@@ -388,7 +428,8 @@ pc端
       <pubDate>Wed, 21 Apr 2021 20:19:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210421/</guid>
-      <description>一、搭建 docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比之前，个人还是喜欢 docsify 的风格和源码。不想要那么多附带的功能，能满足写文章，目录的功能就行了。
+      
+        <description>一、搭建 docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比之前，个人还是喜欢 docsify 的风格和源码。不想要那么多附带的功能，能满足写文章，目录的功能就行了。
 点击查看demo.
 打开终端输入指令，把本地环境搭建起来：
 npm install docsify-cli -g 初始化文档：
@@ -403,6 +444,7 @@ window.$docsify = { ... loadNavbar: true, ... } 如图：
 window.$docsify = { ... loadSidebar: true, ... } 如图：
 README.md  主页
 ## about  博客地址：[https://shuxhan.com](https://shuxhan.com) 作者：shuxhan 时间：2021.</description>
+      
     </item>
     
     <item>
@@ -411,8 +453,10 @@ window.$docsify = { ... loadSidebar: true, ... } 如图：
       <pubDate>Sat, 03 Apr 2021 16:13:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210403/</guid>
-      <description>清明时节雨纷纷，路上行人欲断魂。
+      
+        <description>清明时节雨纷纷，路上行人欲断魂。
 云栖竹径 </description>
+      
     </item>
     
     <item>
@@ -421,7 +465,8 @@ window.$docsify = { ... loadSidebar: true, ... } 如图：
       <pubDate>Thu, 01 Apr 2021 16:21:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210401/</guid>
-      <description>之所以学习 Python ，本意是想写一些脚本之类的程序，用来在浏览器爬一些自己想要的文字，图片等资料，这些程序其实 GitHub 蛮多的，但奈何我对后端的语言一窍不通，直接拿过来给我用我都不会。
+      
+        <description>之所以学习 Python ，本意是想写一些脚本之类的程序，用来在浏览器爬一些自己想要的文字，图片等资料，这些程序其实 GitHub 蛮多的，但奈何我对后端的语言一窍不通，直接拿过来给我用我都不会。
 因此就萌生了先学习 Python 基础知识的想法，一直听说廖雪峰的 Python 教程写的不错，这次趁着这个机会要好好研读一番。也没想说用的多牛逼，至少希望能为自己浅薄的技术栈再增加一点光彩，毕竟我也曾梦想成为一个全栈开发。
 下载安装完 Python 环境,就开始学习吧！
 运行我的第一个python程序 print(&amp;#39;hello,world&amp;#39;) 数据类型 在 Python 中，能直接处理的数据类型有几种，整数、浮点数、字符串、布尔值、空值、变量。
@@ -431,6 +476,7 @@ a = 123 print(a) # 终端输出数值 123 a = &amp;#39;abc&amp;#39; print(a) # �
 并且在赋值上面有一个逻辑顺序，比如定义一个 a = &#39;a&#39; 的变量。在 Python 中其实走了两步，先创造了一个字符串 a ，然后将这个字符串赋值给变量 a 。
 其实这在数学上是有些反逻辑的，x = x + 2 这个计算是行不通的在数学上，但是在计算机中，先计算 x + 2 ，然后将其赋值给左侧的 x ，这是计算机的逻辑。
 x = 1 x = x + 2 print(x) # 3 其实很多计算机语言都是如此，比如我们所熟知的 js 等等。</description>
+      
     </item>
     
     <item>
@@ -439,10 +485,12 @@ x = 1 x = x + 2 print(x) # 3 其实很多计算机语言都是如此，比如我
       <pubDate>Fri, 26 Mar 2021 14:24:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210326/</guid>
-      <description>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
+      
+        <description>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
 如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
 @media (max-width:768px){ ... } 在js下可以使用下面这种方法
 window.addEventListener(&amp;#39;load&amp;#39;, function() { window.addEventListener(&amp;#39;resize&amp;#39;, function() { console.log(window.innerWidth) var w = window.innerWidth; ... } }) }) 具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 window ，因为这是个例子我就直接写了，实际编码中，慎用 window 事件。</description>
+      
     </item>
     
     <item>
@@ -451,13 +499,15 @@ window.addEventListener(&amp;#39;load&amp;#39;, function() { window.addEventList
       <pubDate>Mon, 22 Mar 2021 15:12:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210322/</guid>
-      <description>有一个需求，滚轮滚动到相应位置的时候执行当前的动画，这个动画在footer里面，而网页的主体通过ajax进行渲染，我在js里面调用ajax渲染数据，然后再获取主体的高度，滚动到该高度的时候执行动画。
+      
+        <description>有一个需求，滚轮滚动到相应位置的时候执行当前的动画，这个动画在footer里面，而网页的主体通过ajax进行渲染，我在js里面调用ajax渲染数据，然后再获取主体的高度，滚动到该高度的时候执行动画。
 本地测试了一下没什么问题，该有的效果都有了。放在服务器上测试发现无论怎么写，都是先获取主体的高度，然后才进行数据的渲染。那么必然高度是一个极小的值，不符合我想要的属性。
 我大致想了两种解决办法，均以失败告终，本地是ajax先执行，服务器是js先执行。
  让获取高度的事件时间延时500ms，发现最后获取不到事件了； 将该事件写在ajax的success回调里面，结果是只有打开网页第一次能够成功，然后不管刷新多少次均无效，事件被屏蔽，所以方法二也被废除；  最后我想到了，ajax不就是一种异步方法，我将其改为同步不就行，先让ajax执行完在执行js事件。
 async: false, 我在ajax里面写了async这个方法，false 意思是将其默认为同步获取数据，很好，回到服务器打开控制台，发现是先渲染了数据，才获取了主体的高度，问题得以解决。
  当然这样做有弊端的，如果接口出问题，ajax渲染失败，那么整个网页的js都将执行不了。不过我想真到了数据都渲染不出的地方，访问网页就没有意义了，所以最后我采用了这种方法。
  </description>
+      
     </item>
     
     <item>
@@ -466,9 +516,11 @@ async: false, 我在ajax里面写了async这个方法，false 意思是将其默
       <pubDate>Mon, 22 Mar 2021 14:54:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210322/</guid>
-      <description>起因是因为IE10不兼容es6，所以引发了一系列的问题。
+      
+        <description>起因是因为IE10不兼容es6，所以引发了一系列的问题。
  一 使用ajax拼接字符串有很多方法，最简单的莫过于使用es6的语法中的关键符号，
 str += `&amp;lt;li class=&amp;#34;wrap-item&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-wrap&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-son&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34; ` + item.link + `&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34; ` + item.pic+ `&amp;#34; alt=&amp;#34;缩略图&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-main&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-title&amp;#34;&amp;gt; &amp;lt;span&amp;gt;编号：&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt; ` + item.title + ` &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-guide&amp;#34;&amp;gt; ` + item.guide + ` &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-link&amp;#34; id=&amp;#34;picLink&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34; ` + item.link + ` &amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;预览&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt; ` 可以很快的把模版字符串写好，但是正因为它是es6的新特性，因此对于低版本的浏览器兼容性不太好，报错无效字符。</description>
+      
     </item>
     
     <item>
@@ -477,10 +529,12 @@ str += `&amp;lt;li class=&amp;#34;wrap-item&amp;#34;&amp;gt; &amp;lt;div class=&
       <pubDate>Fri, 19 Mar 2021 13:01:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210319/</guid>
-      <description>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的data.json文件，然后用get请求数据，下面是部分代码
+      
+        <description>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的data.json文件，然后用get请求数据，下面是部分代码
 // ajax 请求获取数据 function picShow(){ var str = &amp;#39;&amp;#39;; $.ajax({ url:&amp;#39;./js/data.json&amp;#39;, type:&amp;#39;get&amp;#39;, dataType:&amp;#39;json&amp;#39;, success:function(data){ console.log(&amp;#39;success&amp;#39;) }, error: function() { console.log(&amp;#39;error&amp;#39;) } }) } picShow(); 但是这样做有一个弊端，无法在本地预览，因为浏览器禁止客户端直接获取本地数据，这也算一个跨域问题了，不过这也是为了保证用户的安全。当然这对前端来说很不爽！
 其实解决的方法也很简单，通过node服务，用live server在本地跑一下，就可以让ajax获取数据，当然还有其他更好的解决方法，或者直接在服务器跑，通过jsonp等等。
 live server 不明白的可以百度看看，也是一个技巧。</description>
+      
     </item>
     
     <item>
@@ -489,7 +543,8 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
       <pubDate>Thu, 18 Mar 2021 22:15:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210318/</guid>
-      <description>  IE10不支持箭头函数，写js的时候慎用。
+      
+        <description>  IE10不支持箭头函数，写js的时候慎用。
   IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个,会报错，如果加了删掉就OK，Chrome下不会产生影响。
   zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了zoom: 1.1;，真是让人头大。
   IE10下img标签自带白边，在默认样式里面设置border: none;即可。
@@ -497,6 +552,7 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
   box-shadow 阴影属性其实IE10是支持的，但是需要注意语法问题，在普通浏览器color可以用rgba,#等写法，但是在IE10下，只能通过#000000写法，#和六位的颜色标记，不可以简写，否则不生效。
   IE10不兼容es6新语法。
   </description>
+      
     </item>
     
     <item>
@@ -505,12 +561,14 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
       <pubDate>Wed, 17 Mar 2021 21:55:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210317/</guid>
-      <description>页面监听是我们经常用的一个功能，下面两个段代码表示两个事件，分别在页面滚动500px和1000px的时候触发，在代码中使用了箭头函数。
+      
+        <description>页面监听是我们经常用的一个功能，下面两个段代码表示两个事件，分别在页面滚动500px和1000px的时候触发，在代码中使用了箭头函数。
 window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; { var scrollTop = document.documentElement.scrollTop if (scrollTop &amp;gt; 500) { console.log(&amp;#39;滚动了500px&amp;#39;) } }) window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; { var scrollTop = document.documentElement.scrollTop if (scrollTop &amp;gt; 1000) { console.log(&amp;#39;滚动了1000px&amp;#39;) } }) 但是后面又要求代码兼容到IE10，就不能采用这种写法了。然后我就想使用原生的function写法。
 window.onscroll = function() { // ... } 在用的过程中我发现，如果只有一个window.scroll没有任何问题，但是如果有多个window.scroll，后面的就不会生效。
 那么如何解决这个问题呢？
 window.scroll只能存在一次，第一个会生效，后面的不生效，可以通过js处理这个问题。
 function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&amp;#39;on&amp;#39; + type, function() { toDo.call(window) }) } else { window.addEventListener(type, toDo, false) } } addEvent(&amp;#39;scroll&amp;#39;, function(){ console.log(&amp;#39;第一次调用window.scroll&amp;#39;) } addEvent(&amp;#39;scroll&amp;#39;, function(){ console.</description>
+      
     </item>
     
     <item>
@@ -519,12 +577,14 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&am
       <pubDate>Tue, 16 Mar 2021 10:29:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210316/</guid>
-      <description>$(&amp;#34;#test&amp;#34;).click(function () { $(&amp;#39;html,body&amp;#39;).animate({ &amp;#39;scrollTop&amp;#39;: &amp;#39;0&amp;#39; }, 500,) }) 这行代码使用的是jquery的写法，一个500毫秒的动画，这样写在Chrome浏览器等没问题，可以正常运行。
+      
+        <description>$(&amp;#34;#test&amp;#34;).click(function () { $(&amp;#39;html,body&amp;#39;).animate({ &amp;#39;scrollTop&amp;#39;: &amp;#39;0&amp;#39; }, 500,) }) 这行代码使用的是jquery的写法，一个500毫秒的动画，这样写在Chrome浏览器等没问题，可以正常运行。
 但是今天在写项目的过程中，要求代码兼容到IE10，没办法，被迫在IE浏览器下运行，结果发现这行代码会报错。这是怎么回事呢？
 简单分析一下，这有点类似js中定时器的写法，setimeout，两个参数，分别代表指定的时间，和定时时间。
 而animate是动画的属性，这个时间共花费500毫秒执行完毕。但是这个不是重点，为什么会报错呢？
 这时候我注意到500后面的,，我突然想到一种可能，先把,删掉。果然不出我所料。控制台不会报错了。
 我猜测，这是由IE的机制引起的，浏览器识别到,的时候，会自动默认后面跟有语句，但是如果空着不写，与浏览器预期的后果不同，就会产生报错。可能IE内核要求也比较严格吧。</description>
+      
     </item>
     
     <item>
@@ -533,7 +593,8 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&am
       <pubDate>Sun, 14 Mar 2021 07:31:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210314/</guid>
-      <description>ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。
+      
+        <description>ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。
 今天要讲的是 css3 的一个新属性 animation，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：https://www.runoob.com/css3/css3-animations.html，网上类似的教程还是蛮多的。
 这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：怎么让 css3 里面的动画属性看起来更流畅？
 当然在讲之前还是要简单介绍一下 animation 基本属性。
@@ -544,6 +605,7 @@ animation 属性 animation 属性有下面几个值：
 @keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } 这段代码的意思就是有一个名为 leftright 的动画，将容器从左到右移动了 100px。
 然后我们进一步补全这个动画。
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;动画&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .demo { width: 100px; height: 100px; background: #000; animation-name: leftright; animation-duration: 1s; } @keyframes leftright { 0% { transform: translateX(0); } 100% { transform: translateX(100px); } } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;#34;demo&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 然后我们到浏览器跑一下这个页面试试看，可以看到一个黑色的方块从左右移动了 100px 的距离，总计1秒完成。</description>
+      
     </item>
     
     <item>
@@ -552,7 +614,8 @@ animation 属性 animation 属性有下面几个值：
       <pubDate>Fri, 26 Feb 2021 22:38:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210226/</guid>
-      <description>最近正在面试，遇到了很多有意思的东西，比如今天，在面试前先做了一套面试题，其中有这么一道题，觉得挺有意思，之前也没见过，就打算记录下来：
+      
+        <description>最近正在面试，遇到了很多有意思的东西，比如今天，在面试前先做了一套面试题，其中有这么一道题，觉得挺有意思，之前也没见过，就打算记录下来：
 &amp;lt;!-- chrome浏览器12px字体大小以下无法显示，均显示为12px，应该怎么解决。 --&amp;gt; 我确实有点蒙，在之前写代码的时候，没有遇到过这样的情况，不过既然这样问了，就得想出解决的办法。
 首先我想到之前的一个问题，0.5px 的边框该如何实现，通过 scale(0.5) 可以实现，这是 css3 新属性。
 所以当时我就写了通过 transform:scale() 可以实现。不过后续在面试的中，面试官也没有提及这些问题。
@@ -562,6 +625,7 @@ animation 属性 animation 属性有下面几个值：
 &amp;lt;div style=&amp;#34;font-size: 13px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 12px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 11px;transform: scale(0.5);&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; 字体确实可以再次缩小到自己想到的程度，但是存在一些弊端，所有带有长度的属性均被缩小，比如图中的div的长度，本来默认是 100% ，但是显示只有原来的一半了。
 虽然存在这么个问题，但是按照我自己的预估，平时我们浏览的网站基本没有低于12px大小的字体吧！反正我是没有遇到过，我估计面试题也是想考验我们对一些生僻知识的处理吧，不过也不算生僻，前有0.5px，后有12px，其实都大同小异。
 在遇到这个问题的时候，确实可以通过 scale() 处理一下，然后在认真设置其他属性，尽量避免更多的弊端。</description>
+      
     </item>
     
     <item>
@@ -570,7 +634,8 @@ animation 属性 animation 属性有下面几个值：
       <pubDate>Thu, 25 Feb 2021 22:41:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210225/</guid>
-      <description>很多小伙伴在做个人网站或者博客时，总能用到各种各样的图床工具，毕竟在写文章的时候需要插入一些图片，我也不例外，来盘点一下之前用的工具，
+      
+        <description>很多小伙伴在做个人网站或者博客时，总能用到各种各样的图床工具，毕竟在写文章的时候需要插入一些图片，我也不例外，来盘点一下之前用的工具，
  最开始是找一些免费的图床网站，比如sm.ms等，但是后来为了安全性和稳定性考虑放弃了这种。 然后是在 github，gitee 仓库存储的（缺点就是github访问速度有些尴尬，gitee其实挺好的，但时用起来怪怪的） 阿里云oss储存桶（挺好使的，搭配picgo软件，一年也才9.9，但是链接很尴尬，直接下载，无法右键访问图片，搜过了解决办法，嫌太麻烦就搁置了，至今在那放着） 后来在自己的服务器建一个网站，把图片放进去，使用的时候直接引用链接（缺点就是上传太麻烦，然后就是图片太占内存了，影响服务器的性能） 然后就是今天的重头戏，autoPicCdn ，一款开源软件  也是基于github实现图床功能，后来才知道可以用 jsdelivr 给资源进行加速，autoPicCdn 就是基于这样的功能实现。
 今天就讲讲用宝塔面板配置 autoPicCdn 的流程吧！
 准备工作  进入 github 仓库下载资源到本地。 https://github.com/yumusb/autoPicCdn  在 github 建立一个新的仓库，自由命名，我的是 shuxhan/pic-cdn ，简单易懂 去这个页面 https://github.com/settings/tokens生成一个有写权限的 token（repo：Full control of private repositories 和write:packages 前打勾，然后点击确定，会生成一个 token码，记住它，最好复制到你的记事本，不然一刷新网页就不会再显示了  然后解压。
@@ -579,6 +644,7 @@ animation 属性 animation 属性有下面几个值：
 配置文件 找到目录中的 up.php 配置文件，
 将下面两个地方配置好，具体的内容在代码里。
 //必选项 define(&amp;#34;TYPE&amp;#34;,&amp;#34;GITHUB&amp;#34;);//选择github //define(&amp;#34;TYPE&amp;#34;,&amp;#34;GITEE&amp;#34;);//选择gitee，如果使用gitee，需要手动建立master分支，可以看这里 https://gitee.com/help/articles/4122  define(&amp;#34;USER&amp;#34;,&amp;#34;shuxhan&amp;#34;);//你的GitHub/Gitee的用户名  define(&amp;#34;REPO&amp;#34;,&amp;#34;pic-cdn&amp;#34;);//必须是上面用户名下的 公开仓库  define(&amp;#34;MAIL&amp;#34;,&amp;#34;shuxhan@163.com&amp;#34;);//邮箱无所谓，随便写  define(&amp;#34;TOKEN&amp;#34;,&amp;#34;971b0a96ff5af545d5fe081f829cf5542007e70b&amp;#34;); // Github 去这个页面 https://github.</description>
+      
     </item>
     
     <item>
@@ -587,10 +653,12 @@ animation 属性 animation 属性有下面几个值：
       <pubDate>Sun, 14 Feb 2021 23:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210214/</guid>
-      <description>因为疫情防控等因素，本来打算过年回老家的，但是最终决定留在了杭州，不过也好，还是和家人在一起，倒也落个轻松自在，一起吃吃饭，出去玩玩什么的。
+      
+        <description>因为疫情防控等因素，本来打算过年回老家的，但是最终决定留在了杭州，不过也好，还是和家人在一起，倒也落个轻松自在，一起吃吃饭，出去玩玩什么的。
 因此这两天先后去了三个景点。西溪湿地公园，良渚古城遗址，大宋千古情。
 本文依旧是相册，但是我的拍照能力真的还需要很大的提高，随便放几张献丑了。
 西溪 良渚 宋城 </description>
+      
     </item>
     
     <item>
@@ -599,10 +667,12 @@ animation 属性 animation 属性有下面几个值：
       <pubDate>Thu, 04 Feb 2021 19:47:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210204/</guid>
-      <description>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。
+      
+        <description>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。
 表情无法显示的原因是 uft-8 编码的问题，无法识别小表情，需要将其改成 utf8mb4
 第一步，进入数据库 首先登陆博客后台的数据库，然后点击 sql ，输入下列代码：
 alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_contents convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_fields convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_metas convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_options convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_relationships convert to character set utf8mb4 collate utf8mb4_unicode_ci; alter table typecho_users convert to character set utf8mb4 collate utf8mb4_unicode_ci; 直接复制，然后点击右下角的执行</description>
+      
     </item>
     
     <item>
@@ -611,9 +681,11 @@ alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_un
       <pubDate>Wed, 03 Feb 2021 19:43:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210203/</guid>
-      <description>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。
+      
+        <description>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。
 下面是具体代码，img 是头像元素，直接写在 hover 中即可。
 img:hover { transform: rotate(666turn); transition-delay: 1s; transition-property: all; transition-duration: 59s; transition-timing-function: cubic-bezier(.34,0,.84,1); } ps：今天是2021年2月4号，农历腊月二十三，传统的小年，祝朋友们小年愉快。不知不觉，快过年了。</description>
+      
     </item>
     
     <item>
@@ -622,9 +694,11 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
       <pubDate>Mon, 01 Feb 2021 19:48:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210201/</guid>
-      <description>昨天杭州温度很高，应该算是最近一段时间最高的一天了，太阳也很温暖。恰逢周日，便与家人去湘湖转一圈，散散心，看看风景。
+      
+        <description>昨天杭州温度很高，应该算是最近一段时间最高的一天了，太阳也很温暖。恰逢周日，便与家人去湘湖转一圈，散散心，看看风景。
 之前也来过一次，但都是在外围看了看，这次深入到内部，发现风景真的不错，杭州最出名的应该算西湖了，但我觉得，湘湖的风光并不逊色于西湖。
 勾践越王城 洗马池 </description>
+      
     </item>
     
     <item>
@@ -633,7 +707,8 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
       <pubDate>Wed, 20 Jan 2021 19:58:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210120/</guid>
-      <description>一、javascript 由三部分组成 1.ECMAScript（核心） 它规定了语言的组成部分：法语，类型，语句，关键字，操作符等等。
+      
+        <description>一、javascript 由三部分组成 1.ECMAScript（核心） 它规定了语言的组成部分：法语，类型，语句，关键字，操作符等等。
 2.DOM（文档对象模型） DOM 把整个页面映射为一个多层节点结果，开发人员可借助DOM提供的API，轻松地删除、添加、替换或修改任何节点。
 3.BOM（浏览器对象模型） 支持可以访问和操作浏览器窗口的浏览器对象模型，开发人员可以控制浏览器显示的页面以外的部分。
 二、什么是ES5？ 作为ECMAScript第五个版本（第四版因为过于复杂废弃了），浏览器支持情况可看第一副图，增加特性如下。
@@ -646,6 +721,7 @@ ES6特性如下：
   块级作用域 关键字let, 常量const
   对象字面量的属性赋值简写（property value shorthand）
   var obj = { // __proto__  __proto__: theProtoObj, // Shorthand for ‘handler: handler’  handler, // Method definitions  toString() { // Super calls  return &amp;#34;d &amp;#34; + super.</description>
+      
     </item>
     
     <item>
@@ -654,7 +730,9 @@ ES6特性如下：
       <pubDate>Mon, 18 Jan 2021 19:59:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210118/</guid>
-      <description>1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3.</description>
+      
+        <description>1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3.</description>
+      
     </item>
     
     <item>
@@ -663,7 +741,8 @@ ES6特性如下：
       <pubDate>Sun, 17 Jan 2021 19:59:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210117/</guid>
-      <description>自从上次更新厨房日记之后，好像过了两个月多，实际上我一直在进阶我的厨艺，为什么没有更新我的厨房日记呢？因为实际在做的过程中我发现，每种菜的组合太多了，没必要组合一次就写一篇攻略，那样就有些做无用功了，没有太大的意义。
+      
+        <description>自从上次更新厨房日记之后，好像过了两个月多，实际上我一直在进阶我的厨艺，为什么没有更新我的厨房日记呢？因为实际在做的过程中我发现，每种菜的组合太多了，没必要组合一次就写一篇攻略，那样就有些做无用功了，没有太大的意义。
 思来想去，我决定了，不再更新做菜的步骤攻略，我想这些攻略网上一抓一大把。把内容着重放在做菜中遇到的一些问题，细节，这样不但可以让我记忆的深刻，还能分享出更多有意思的东西让小伙伴们开心。
 今天做了一道菜，红烧茄子，我在茄子的时候发现皮挺硬的，就在想要不要去皮（不要笑我，因为之前没做过茄子）。想了一会没想出个所以然，直接百度一番，“烧茄子要不要去皮？”，第一条搜索结果是这样说的，
  “不要。营养专家建议在吃茄子的时候最好不要去皮，因在茄子表皮及表皮与肉质的连接部位，含有大量的有益于人体健康的物质，如芦丁、维生素E、维生素P的含量都隐藏在茄子皮中，如果将茄子皮去掉会降低营养价值。”
@@ -672,6 +751,7 @@ ES6特性如下：
  略加思考，好像说得有那么几分道理，很是欣喜，所以我就采用了他的说法。今天做的是烧茄子，所以不用去皮，直接炒就可以了。
 又增加了一个小技巧。
 结束语：当你在心情不好的时候，或者有心事，可以做一些让你分散注意力的事情，就比如说做菜，不仅可以享受食物，享受生活，内心还可以获得成就感，我感觉这是一举两得的事情。</description>
+      
     </item>
     
     <item>
@@ -680,7 +760,8 @@ ES6特性如下：
       <pubDate>Sat, 16 Jan 2021 20:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210116/</guid>
-      <description>最新网上爆出风风火火的一件事，许嵩的《有何不可》被抄袭，抄袭者为罗聪，《简单的幸福》。
+      
+        <description>最新网上爆出风风火火的一件事，许嵩的《有何不可》被抄袭，抄袭者为罗聪，《简单的幸福》。
 我从14年开始听许嵩的歌，一直到现在，许多年过去了，他的歌依旧脍炙人口，从之前的抒情浪漫情歌，批判社会的思想，一直到现在具体哲学内涵，中华传统思想。大部分都是包揽作词作曲为一身，真的很有才华。
 因为太有才华了，所以被“碰瓷”抄袭。这也算是一场闹剧了。据说嵩哥本人对此没有发表什么看法和言论，一直都是粉丝和公司在发声。
 据网友戏称：“许嵩：这要放十年前，我早写歌骂你了。”，“低情商：这不就是抄袭《有何不可》？高情商：你这《有何不可》唱得有点跑调”。
@@ -690,6 +771,7 @@ ES6特性如下：
 这也一直是我的理念，在写博客的时候，我也很注重版权，引用别人写的文章的时候，我都会申请作者授权，标明出处。同时，对于我自己的文章，如果你想要引用转载，只需要标明出处即可。
 大部分做技术的人应该都是和我抱有一样的想法，喜欢分享，但是可不能张冠李戴，毕竟写文章也是耗费脑细胞的。并不指望能获得什么成绩，只是希望当有人看到你的文章时，解决了自己的问题，有一丝认可足以。
 版权一直是一件很重要的事情，很多年前我们还比较淡漠，但是这几年对版权的重视开始慢慢提升了，审查力度增加，这是一件好事。</description>
+      
     </item>
     
     <item>
@@ -698,7 +780,8 @@ ES6特性如下：
       <pubDate>Thu, 07 Jan 2021 20:46:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210107/</guid>
-      <description>最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。
+      
+        <description>最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。
 今天分享的是一款基于 React 的富文本编辑器－－Braft Editor。
  Braft Editor 官网：https://braft.margox.cn Github 仓库地址：https://github.com/margox/braft-editor
  这款插件非常方便，只需要下载然后引入即可直接使用，页面整体风格清新，符合绝大多数人的审美观，支持图片，音视频的插入。
@@ -707,6 +790,7 @@ ES6特性如下：
 1.安装 在项目中直接通过 npm 或者 yarn 下载插件：
 # 使用 npm 安装 npm install braft-editor --save # 使用 yarn 安装 yarn add braft-editor 2.使用 新建一个组件 EditorDemo.js，在里面写入下列代码：
 // EditorDemo.js  import React from &amp;#39;react&amp;#39;; import BraftEditor from &amp;#39;braft-editor&amp;#39;; import &amp;#39;braft-editor/dist/index.css&amp;#39;; export default class PageDemo extends React.Component { state = { editorState: BraftEditor.createEditorState(null) } render () { return ( &amp;lt;BraftEditor value={this.</description>
+      
     </item>
     
     <item>
@@ -715,7 +799,8 @@ ES6特性如下：
       <pubDate>Wed, 06 Jan 2021 20:47:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210106/</guid>
-      <description>关于 React 框架 和 Vue 框架 的对比，用两者写出同一个程序，对比其代码实现的过程，看看它们的差异究竟有多大？
+      
+        <description>关于 React 框架 和 Vue 框架 的对比，用两者写出同一个程序，对比其代码实现的过程，看看它们的差异究竟有多大？
  转载于：https://blog.csdn.net/csdnnews/article/details/81880378 原文：https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd 作者简介：Sunil Sandhu，一位 Web 全栈工程师 + 空想家。 译者：安翔，责编：屠敏
  众所周知，Vue 和 React 都是目前非常著名的前端框架。我在工作中经常使用 Vue，因此我对它有很深入的了解。同时，我也对 React 充满了好奇，想要学习一下，一探究竟。
 于是我阅读了 React 文档并观看了一些视频教程，虽然这些资料很不错，但是我真正想了解的是 React 与 Vue 之间的不同之处。所谓“不同之处”，我并非想知道它们是否都具有虚拟 DOMS 或者它们如何渲染页面，而是希望有人能够从代码的角度解释这两者之间的差异。我想找到一篇解释这些差异的文章，以便 Vue 或者 React 的初学者可以更好地理解它们两者之间的差异。
@@ -724,6 +809,7 @@ ES6特性如下：
 两个应用程序的外观如下：
 两个应用程序的 CSS 代码几乎一样，但这些代码的位置存在差异。考虑到这一点，我们来看看这两个应用程序的文件结构：
 你会发现它们的结构几乎完全相同。唯一的区别在于 React App 拥有三个 CSS 文件，而 Vue App 中没有 CSS 文件。这是因为 React 的 create-react-app 组件需要一个附带文件来保存其样式，而 Vue CLI 采用全包方法，其样式在实际组件文件中声明。</description>
+      
     </item>
     
     <item>
@@ -732,9 +818,11 @@ ES6特性如下：
       <pubDate>Tue, 05 Jan 2021 20:54:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210105/</guid>
-      <description>create-react-app 脚手架指令可以生成 React 项目，在项目完成之后执行打包命令 npm run build，文件夹内生成 build文件夹，就是打包后的文件，在浏览器运行 index.html 发现页面空白，打开控制台有报错，css 和 js 文件的引用路径有问题。
+      
+        <description>create-react-app 脚手架指令可以生成 React 项目，在项目完成之后执行打包命令 npm run build，文件夹内生成 build文件夹，就是打包后的文件，在浏览器运行 index.html 发现页面空白，打开控制台有报错，css 和 js 文件的引用路径有问题。
 浏览 index.html 代码可以发现：
 &amp;lt;!-- index.html --&amp;gt; &amp;lt;!doctype html&amp;gt; &amp;lt;html lang=&amp;#34;zh&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width,initial-scale=1&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;theme-color&amp;#34; content=&amp;#34;#000000&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;description&amp;#34; content=&amp;#34;Web site created using create-react-app&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;React App&amp;lt;/title&amp;gt; &amp;lt;link href=&amp;#34;/static/css/main.3394d54e.chunk.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;noscript&amp;gt;You need to enable JavaScript to run this app.&amp;lt;/noscript&amp;gt; &amp;lt;div id=&amp;#34;root&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt;!function (e) { function r(r) { for (var n, l, f = r[0], i = r[1], a = r[2], c = 0, s = []; c &amp;lt; f.</description>
+      
     </item>
     
     <item>
@@ -743,13 +831,15 @@ ES6特性如下：
       <pubDate>Mon, 04 Jan 2021 20:50:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210104/</guid>
-      <description>本文主要写如何在 React 中引入 less 。因为 less 和 css 非常像，因此很容易学习。而且 less 仅对 css 语言增加了少许方便的扩展，这就是 less 如此易学的原因之一。
+      
+        <description>本文主要写如何在 React 中引入 less 。因为 less 和 css 非常像，因此很容易学习。而且 less 仅对 css 语言增加了少许方便的扩展，这就是 less 如此易学的原因之一。
 1.安装 less npm install less less-loader --save-dev 2.暴露 webpack 文件 利用 npx create-react-app 搭建的 React 项目，默认隐藏 webpack 配置文件，引入 less 需要修改 webpack 配置文件，因此我们需要执行命令暴露 webpack 配置文件。
  这里需要注意，一旦暴露，无法回退。
  npm run eject 如果这一步失败，执行下列命令：
 git add . git commit -m &amp;#34;init&amp;#34; 然后再执行 npm run eject
  注意：暴露 webpack 文件只能在 create-react-app 之初，一旦项目结构发生改变，再进行暴露操作就会失败。所以尽量在项目建立时就进行 npm run eject 操作。
  3.修改 wenpack.config.js 配置 在合适的位置添加：</description>
+      
     </item>
     
     <item>
@@ -758,7 +848,8 @@ git add . git commit -m &amp;#34;init&amp;#34; 然后再执行 npm run eject
       <pubDate>Fri, 01 Jan 2021 20:48:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20210101/</guid>
-      <description>之前有说到，在 React 中渲染列表的时候，要给每一个数据加一个 key 值，赋予一个确定的标示，而且也详细描述了如何给一个标示，方法知道了，那么为什么要这么做呢？
+      
+        <description>之前有说到，在 React 中渲染列表的时候，要给每一个数据加一个 key 值，赋予一个确定的标示，而且也详细描述了如何给一个标示，方法知道了，那么为什么要这么做呢？
 在 React 中如何渲染列表？
 在默认条件下，当递归 DOM 节点的子元素时，React 会同时遍历两个子元素的列表；当产生差异时，生成一个 mutation。
 在子元素列表末尾新增元素时，更新开销比较小。比如：
@@ -768,6 +859,7 @@ git add . git commit -m &amp;#34;init&amp;#34; 然后再执行 npm run eject
 key
 为了解决上述问题， React 支持 key 属性，当子元素拥有 key 时，React 使用 key 来匹配原有树上的子元素以及最新树上的子元素。以下例子在新增 key 之后使得之前的低效转换变得高效：
 &amp;lt;ul&amp;gt; &amp;lt;li key=&amp;#34;1&amp;#34;&amp;gt;Duke&amp;lt;/li&amp;gt; &amp;lt;li key=&amp;#34;2&amp;#34;&amp;gt;Villanova&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li key=&amp;#34;0&amp;#34;&amp;gt;Connecticut&amp;lt;/li&amp;gt; &amp;lt;li key=&amp;#34;1&amp;#34;&amp;gt;Duke&amp;lt;/li&amp;gt; &amp;lt;li key=&amp;#34;2&amp;#34;&amp;gt;Villanova&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 现在 React 知道只有带着 &#39;0&#39; key 的元素是新元素，带着 &#39;1&#39; 以及 &#39;2&#39; key 的元素仅仅移动了。</description>
+      
     </item>
     
     <item>
@@ -776,7 +868,8 @@ key
       <pubDate>Tue, 29 Dec 2020 13:26:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201229/</guid>
-      <description>来源于：https://react.docschina.org/docs/forms.html
+      
+        <description>来源于：https://react.docschina.org/docs/forms.html
 一、表单 在 React 中，html 表单元素的工作方式和其他的 DOM 元素不太一样，因为表单内部通常会保持一些内部的 state，比如下面这个纯 html 表单只接受一个名称：
 &amp;lt;form&amp;gt; &amp;lt;label&amp;gt; 名字: &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;name&amp;#34; /&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;提交&amp;#34; /&amp;gt; &amp;lt;/form&amp;gt; 这个表单具有默认的 html 表单行为，即在用户提交表单之后自动刷新页面。如果你在 React 中执行相同的代码，它仍然有效。
 但大多数情况下，使用 JavaScript 函数可以很方便的处理表单的提交， 同时还可以访问用户填写的表单数据。实现这种效果的标准方式是使用“受控组件”。
@@ -784,6 +877,7 @@ key
 我们可以把两者结合起来，使 React 的 state 成为“唯一数据源”。渲染表单的 React 组件还控制着用户输入过程中表单发生的操作。被 React 以这种方式控制取值的表单输入元素就叫做“受控组件”。
 例如，如果我们想让前一个示例在提交时打印出名称，我们可以将表单写为受控组件：
 class NameForm extends React.Component { constructor(props) { super(props); this.state = {value: &amp;#39;&amp;#39;}; this.handleChange = this.handleChange.bind(this); this.</description>
+      
     </item>
     
     <item>
@@ -792,7 +886,8 @@ class NameForm extends React.Component { constructor(props) { super(props); this
       <pubDate>Fri, 25 Dec 2020 13:25:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201225/</guid>
-      <description>年度总结这个东西很有意思（我觉得），可以静下心来好好回顾一下这一年做了些什么事情，希望我能养成这个好习惯，多总结。
+      
+        <description>年度总结这个东西很有意思（我觉得），可以静下心来好好回顾一下这一年做了些什么事情，希望我能养成这个好习惯，多总结。
 这个博客是我在年中搭建起来了，到现在也将近半年了，没怎么做过seo优化，也没怎么想过推广，就简简单单的写一些自己的东西。更大的原因是我的文笔太拙劣，不敢让人发现，哈哈哈。
 大学四年过的还算充实，学到了自己感兴趣的东西，培养的业余兴趣爱好，旅游爬山等，但有名的大山目前只爬了嵩山（河南境内），因为在郑州读的大学。更远的山也没怎么去过，我给自己定个计划，在两年内爬一次泰山，因为工作太忙咯，不敢说短期内一定有时间。想体会一下&amp;quot;会当凌绝顶，一览众山小&amp;quot;的感觉。
 但是吧，我的大学结束的有些虎头蛇尾的感觉，因为疫情的原因，学校禁止进入，一直到毕业前夕才允许分批次返校，很多同学都没有看到就草草结束大学生活。所以心心念念的毕业照也没有了，本来和朋友商量好一起拍一组有意思的毕业照，真的是今年最大的遗憾了。
@@ -807,6 +902,7 @@ class NameForm extends React.Component { constructor(props) { super(props); this
 这两天是圣诞节，虽说是洋节，但是自己也可以乐呵一下，在这里祝愿大家都能在2020年有一个好的结束，画上圆满的句号，迎接新的2021年。
 抽出空闲的时间简单的写了一下总结，就好像跟看电影一样，又回顾了一遍剧情，又得到了不一样的感受。
 你好，自己，明年见。</description>
+      
     </item>
     
     <item>
@@ -815,10 +911,12 @@ class NameForm extends React.Component { constructor(props) { super(props); this
       <pubDate>Mon, 21 Dec 2020 13:19:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201221/</guid>
-      <description>一、React 组件是什么？  组件，从概念上类似于 javascript 函数，他接受任意入参（props），并返回作用于描述页面展示内容的 React 元素。
+      
+        <description>一、React 组件是什么？  组件，从概念上类似于 javascript 函数，他接受任意入参（props），并返回作用于描述页面展示内容的 React 元素。
  组件允许你将 UI 拆分为独立可复用的代码片段，并对每个片段进行独立构思。
 1.创建一个组件 // 函数组件 function Welcome(props) { return &amp;lt;h1&amp;gt;Hello, {props.name}&amp;lt;/h1&amp;gt;; } // class组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } 2.渲染组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } ReactDOM.render( &amp;lt;Welcome /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) ); 3.组件 React的基础原则有三条，分别是：
  React 界面完全由数据驱动 React 中一切都是组件 props 是 React 组件之间通讯的基本方式  给组件输入一个参数，最终返回一个 React Element,React Element 就是在页面上展示的内容，相当于一个 DOM 节点</description>
+      
     </item>
     
     <item>
@@ -827,11 +925,13 @@ class NameForm extends React.Component { constructor(props) { super(props); this
       <pubDate>Sat, 19 Dec 2020 13:17:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201219/</guid>
-      <description>Github：https://github.com/lydiahallie/javascript-questions
+      
+        <description>Github：https://github.com/lydiahallie/javascript-questions
 相当不错的一个 Github 仓库，javascript questions ，作者每周都会发布一些有关 javascript 的题目，虽然不难但是考察细节，刷了一会，其实一些很简单的问题，结果因为细节思考不到位直接出错。
  引用作者的话：我在我的 Instagram 上每天都会发布 JavaScript 的多选问题，并且同时也会在这个仓库中发布。
   从基础到进阶，测试你有多了解 JavaScript，刷新你的知识，或者帮助你的 coding 面试！
  </description>
+      
     </item>
     
     <item>
@@ -840,7 +940,8 @@ class NameForm extends React.Component { constructor(props) { super(props); this
       <pubDate>Wed, 16 Dec 2020 13:15:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201216/</guid>
-      <description>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
+      
+        <description>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
 React 事件的命名采用小驼峰式（camelCase），而不是纯小写
 使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
 一、事件处理 1.事件绑定 React 元素的事件处理和 DOM 元素类似，但是在语法上有些区别，比如：
@@ -850,6 +951,7 @@ React 事件的命名采用小驼峰式（camelCase），而不是纯小写
 class Demo extends React.Component { render() { // 事件函数  function myfun() { alert(&amp;#39;helo,world&amp;#39;) } return ( // 绑定事件  &amp;lt;button onClick={this.myfun}&amp;gt; Activate Lasers &amp;lt;/button&amp;gt; ) } } ReactDOM.render( &amp;lt;Demo /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) )  如果方法后面没有()，则需要为这个方法绑定 this
  2.阻止默认行为 在 React 中还有一个不同的点，不能通过返回 fasle 阻止默认行为， React 提供了一个属性－－preventDefault，可以通过 preventDefault 阻止脚本执行
 看一下传统的 html 和 React 的对比</description>
+      
     </item>
     
     <item>
@@ -858,7 +960,8 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
       <pubDate>Sun, 13 Dec 2020 13:11:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201213/</guid>
-      <description>缘于一些小事，本想发在朋友圈里，但是熟人挺多，不方便发，就在博客里吐槽一下
+      
+        <description>缘于一些小事，本想发在朋友圈里，但是熟人挺多，不方便发，就在博客里吐槽一下
 一个正常的人际交往应该是互相传递出好的情绪，开心的事情，这样不但有利于两个人之间的交往，而且对个人对身心健康也是有帮助的
 正面的情绪绝对有助于自己的身体和心理健康，反观整体郁郁寡欢，跟别人说自己多不顺，和别人吵架，不好的情绪就传达给另一个人了
 并不是说不能找人倾述自己生活的不痛快和不开心，但是作为一个成年人了，应该要把握好那个感觉，不要真把别人当垃圾桶了，什么都往里倒，宣泄
@@ -867,6 +970,7 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
  每个人都会有自己的烦心事，都能理解，毕竟生活确实很苦闷，但要学会自己调节自己。
 我也会经常烦闷，但是我选择做一些爱好的事情来排遣掉自己的不好的情绪，并不会将这些传递给别人，所以我也算过的很开心吧
 成年人，不就是要学会自己克制自己的缺点，希望每个人都能生活的很愉快！</description>
+      
     </item>
     
     <item>
@@ -875,9 +979,11 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
       <pubDate>Sat, 12 Dec 2020 13:10:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201212/</guid>
-      <description>在 React 项目中， render 方法只能有一个根元素，一般都是 &amp;lt;div&amp;gt; &amp;lt;div/&amp;gt; ，然后在里面写上我们的组件，渲染到浏览器一看，除了我们想要显示的组件，外面还套着一层 div ，如果在写项目的时候，套了很多曾组件，那么每一层都会多出来一个父级元素 div ，不美观，而且在调整样式的时候会有些麻烦
+      
+        <description>在 React 项目中， render 方法只能有一个根元素，一般都是 &amp;lt;div&amp;gt; &amp;lt;div/&amp;gt; ，然后在里面写上我们的组件，渲染到浏览器一看，除了我们想要显示的组件，外面还套着一层 div ，如果在写项目的时候，套了很多曾组件，那么每一层都会多出来一个父级元素 div ，不美观，而且在调整样式的时候会有些麻烦
 因此， React 提供了一个占位符 Fragment，写法是：
 // index.js  import React, { Component,Fragment } from &amp;#39;react&amp;#39; export default class index extends Component { render() { return ( &amp;lt;Fragment&amp;gt; &amp;lt;h2&amp;gt;hello,wolrd&amp;lt;/h2&amp;gt; &amp;lt;/Fragment&amp;gt; ) } } 在引入 React 的时候，增加一个属性 Fragment ，然后 render()方法下唯一的根元素我们用 &amp;lt;Fragment&amp;gt; &amp;lt;/Fragment&amp;gt; 来代替，这时候再看浏览器，就不会显示多余的标签了，直接显示 &amp;lt;h2&amp;gt;标签</description>
+      
     </item>
     
     <item>
@@ -886,13 +992,15 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
       <pubDate>Wed, 02 Dec 2020 13:09:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201202/</guid>
-      <description>根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
+      
+        <description>根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
  React 文档
  一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
 直接修改数据 var player = {score: 1, name: &amp;#39;Jeff&amp;#39;}; player.score = 2; // player 修改后的值为 {score: 2, name: &amp;#39;Jeff&amp;#39;} 新数据替换旧数据 var player = {score: 1, name: &amp;#39;Jeff&amp;#39;}; var newPlayer = Object.assign({}, player, {score: 2}); // player 的值没有改变, 但是 newPlayer 的值是 {score: 2, name: &amp;#39;Jeff&amp;#39;}  // 使用对象展开语法，就可以写成： // var newPlayer = {...player, score: 2}; 不直接修改（或改变底层数据）这种方式和前一种方式的结果是一样的，这种方式有以下几点好处:
 简化复杂的功能 不可变性使得复杂的特性更容易实现。在后面的章节里，我们会实现一种叫做“时间旅行”的功能。“时间旅行”可以使我们回顾井字棋的历史步骤，并且可以“跳回”之前的步骤。这个功能并不是只有游戏才会用到——撤销和恢复功能在开发中是一个很常见的需求。不直接在数据上修改可以让我们追溯并复用游戏的历史记录
 跟踪数据的改变 如果直接修改数据，那么就很难跟踪到数据的改变。跟踪数据的改变需要可变对象可以与改变之前的版本进行对比，这样整个对象树都需要被遍历一次
 确定在 React 中何时重新渲染 不可变性最主要的优势在于它可以帮助我们在 React 中创建 pure components。我们可以很轻松的确定不可变数据是否发生了改变，从而确定何时对组件进行重新渲染</description>
+      
     </item>
     
     <item>
@@ -901,7 +1009,8 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
       <pubDate>Fri, 27 Nov 2020 13:08:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201127/</guid>
-      <description>有关react框架的学习计划，除了之前推荐的react开源作者写的学习建议，我还参考了阮一峰的react实例教程，写的通俗易懂，又难易并进，可以很快的掌握react的核心要点
+      
+        <description>有关react框架的学习计划，除了之前推荐的react开源作者写的学习建议，我还参考了阮一峰的react实例教程，写的通俗易懂，又难易并进，可以很快的掌握react的核心要点
 之前说了，为了公司的项目决定学习react框架，看了一份react.js开源作者的一份学习计划，react学习路径－－怎么学习react？个人感觉还是不错，但是需要看的文档比较多且官方文档没有那么详细的讲解，只说个原理，有些难以参透。
 在网络上浏览很久，发现大家对阮一峰的react教程风评不错，就去看了一下。
 很适合刚接触react的人，可以很快的上手，再参照一下官方文档，理解上来就很深入且进一步了。
@@ -912,6 +1021,7 @@ react官方文档
  github &amp;raquo;&amp;gt; ruanyf/react-demos
 把这个库clone下来，然后跟着练习。
 只要有一定的javascript基本，我觉得学习react并不困难，当然这只是入门，想要更深入的了解他，我觉得还有一段路程去经历，以后也会慢慢记录在react使用中遇到的问题，以及一些知识点的笔记。</description>
+      
     </item>
     
     <item>
@@ -920,11 +1030,13 @@ react官方文档
       <pubDate>Thu, 26 Nov 2020 13:08:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201126/</guid>
-      <description>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。
+      
+        <description>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。
 减少io请求,通常我们在请求后，会返回一个html到浏览器。这时，我们如果打开控制台，就会发现在html页面通过script,link等标签引用的静态资源， 浏览器会再次发出请求去获取这些资源。但是webpack的打包，将所有的静态资源都合并好了，减少了io请求。
 # 安装webpack npm install --save-dev webpack # 安装webpack-cli依赖 npm install --save-dev webpack-cli # 创建新项目 mkdir demo # cd项目 cd demo # 初始化 npm init -y # 安装开发版本cli npm install webpack webpack-cli --save-dev 新建一个html文件和一个js文件，工程目录如下
 demo |- package.json + |- index.html + |- /src + |- index.js src/index.js:
 function component() { var element = document.createElement(&amp;#39;div&amp;#39;); // Lodash（目前通过一个 script 脚本引入）对于执行这一行是必需的  element.innerHTML = _.join([&amp;#39;Hello&amp;#39;, &amp;#39;webpack&amp;#39;], &amp;#39; &amp;#39;); return element; } document.</description>
+      
     </item>
     
     <item>
@@ -933,7 +1045,8 @@ function component() { var element = document.createElement(&amp;#39;div&amp;#39
       <pubDate>Wed, 25 Nov 2020 13:05:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201125/</guid>
-      <description>一、计算属性computed 1.例子 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{message}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{revermessage}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;hello,wolrd&amp;#39; }, computed: { revermessage: function() { return this.message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) } } }) &amp;lt;/script&amp;gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
+      
+        <description>一、计算属性computed 1.例子 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{message}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{revermessage}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;hello,wolrd&amp;#39; }, computed: { revermessage: function() { return this.message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) } } }) &amp;lt;/script&amp;gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
 此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
 2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{message}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{revermessage()}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;hello,wolrd&amp;#39; }, methods: { revermessage: function() { return this.message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) } } }) &amp;lt;/script&amp;gt; 经过测试，两者的结果是一样的
@@ -941,6 +1054,7 @@ function component() { var element = document.createElement(&amp;#39;div&amp;#39
 区别是：计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是message发生改变时才会重新求值，就意味着，只要message还没改变，多次访问revermessage计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数
 而方法，在每次触发重新渲染时，调用方法都会执行一次函数，这就多了一份开销
 我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代</description>
+      
     </item>
     
     <item>
@@ -949,7 +1063,8 @@ function component() { var element = document.createElement(&amp;#39;div&amp;#39
       <pubDate>Tue, 24 Nov 2020 13:05:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201124/</guid>
-      <description>一、vue实例 1.创建vue实例 一个vue实例应该通过new Vue来创建根实例，所有的 vue 组件其实都是 vue 实例
+      
+        <description>一、vue实例 1.创建vue实例 一个vue实例应该通过new Vue来创建根实例，所有的 vue 组件其实都是 vue 实例
 var vm = new Vue({ ... }) 当一个实例被创建时，data对象中的 property 都被加入到vue的响应式系统中，当值发生改变时，试图也会改变
 var data = {a: 1} var vm = new Vue({ data: data }) 此时在控制台输入vm.a == data.a会返回true，变量data已经被赋给vue实例中的data对象了
 同时，对两个对象的数据进行操作改变也会影响到另一个
@@ -957,6 +1072,7 @@ vm.a = 2 // data.a = 2  data.a = 3 // vm.a = 3 当数据改变时，视图也会
 如果一开始就知道后面会添加一个property，但是一开始不存在或为空，需要设置一些初始值
 data: { newTodoText: &amp;#39;&amp;#39;, visitCount: 0, hideCompletedTods: fasle, todos: [], error: null } 使用Object.freeze()方法的时候，无法修改数据引起视图变化
  Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。</description>
+      
     </item>
     
     <item>
@@ -965,7 +1081,8 @@ data: { newTodoText: &amp;#39;&amp;#39;, visitCount: 0, hideCompletedTods: fasle
       <pubDate>Mon, 23 Nov 2020 13:04:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201123/</guid>
-      <description>一、什么是vue? 练习时使用，最新版本
+      
+        <description>一、什么是vue? 练习时使用，最新版本
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; hello world
 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{message}} &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#34;#app&amp;#34;, data: { message: &amp;#39;hello,world&amp;#39; } }) &amp;lt;/script&amp;gt; 1.v-指令  v-bind－－绑定属性  &amp;lt;div id=&amp;#34;app-2&amp;#34;&amp;gt; &amp;lt;span v-bind:title=&amp;#34;message&amp;#34;&amp;gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var app = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;页面加载于 &amp;#39; + new Date().toLocaleString() } }) &amp;lt;/script&amp;gt; v-bind是vue特有的提供的属性，他会在dom上应用一个响应式的操作
@@ -973,6 +1090,7 @@ data: { newTodoText: &amp;#39;&amp;#39;, visitCount: 0, hideCompletedTods: fasle
 又或者输入app.message = false，内容会直接不显示
 vue官网例子：
 &amp;lt;!-- 绑定一个 attribute --&amp;gt; &amp;lt;img v-bind:src=&amp;#34;imageSrc&amp;#34;&amp;gt; &amp;lt;!</description>
+      
     </item>
     
     <item>
@@ -981,7 +1099,8 @@ vue官网例子：
       <pubDate>Sun, 22 Nov 2020 13:02:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201122/</guid>
-      <description>react学习笔记，记录我在开发和学习过程中遇到的问题和知识点
+      
+        <description>react学习笔记，记录我在开发和学习过程中遇到的问题和知识点
 2013年5月Facebook推出了React.js开源软件前端框架，函数式编程，是使用人数最多的前端框架，也拥有最健全的文档和完善的社区
 React官网
 16版本之后的react叫做 react fiber
@@ -991,6 +1110,7 @@ npx create-react-app my-app //创建项目 cd my-app //进入项目 npm start //
 3.运行项目 安装依赖包，在命令行中输入:
 yarn install然后重新启动npm start或者yarn start
 4.工程目录 build //打包之后自动生成的目录public-- //生成的页面内容| favicon.ico| index.html| manifest.json //不需要，可以删除src----- //放置的是项目的源代码 | index.js //入口的js文件，放置整个项目需要引入的第三方模块或者文件| index.css //项目页面的全局css样式| App.</description>
+      
     </item>
     
     <item>
@@ -999,7 +1119,8 @@ yarn install然后重新启动npm start或者yarn start
       <pubDate>Sat, 21 Nov 2020 13:01:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201121/</guid>
-      <description>类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象，对象通过他们公开的方法来定义他们与外界的交互行为，而方法就形成了与外界交互的接口
+      
+        <description>类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象，对象通过他们公开的方法来定义他们与外界的交互行为，而方法就形成了与外界交互的接口
 类，对象和接口 1.类和对象 区别：
  对象是类的一个实例。就比如一个人，他有具体的属性，身高，体重，姓名等状态，跑步，跳舞等行为 类是抽象的概念，代表一类事物的模版。对一类对象的行为和状态进行描述，抽离出其共性，形成类  关系：
  类就是对事物的一种描述，对象是具体存在的一个实例   类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象
@@ -1012,6 +1133,7 @@ yarn install然后重新启动npm start或者yarn start
  接口和类，实际上都是相同的数据结构
 在接口中，可以声明属性，方法，事件，类型，但是不能声明变量，也就是说，接口只能定义成员，不能给成员赋值
 使用接口的好处，提高代码灵活性，降低对象之间的耦合度，在实际项目中非常有用</description>
+      
     </item>
     
     <item>
@@ -1020,7 +1142,8 @@ yarn install然后重新启动npm start或者yarn start
       <pubDate>Fri, 20 Nov 2020 13:03:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201120/</guid>
-      <description>vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题
+      
+        <description>vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题
 1.下载安装node 测试一下是否成功安装，
 $ node -v // 返回下载的版本号 2.安装webpack环境 $ npm install webpack -g // 如果失败，可能是因为用户没有权限 // 使用下面这种，管理员权限 $ sudo npm install webpack -g 如果返回版本号代表成功，如果没有，则需要输入下面的命令
 $ npm install webpack webpack-cli -g  webpack 4.X 开始，需要安装 webpack-cli 依赖
@@ -1029,6 +1152,7 @@ $ vue -V 如果返会版本号，说明安装成功
 4.构建项目 前面那些命令执行完之后，就可以构建ci项目了，找到我们想要放置项目的文件夹，进入终端，cd到这个文件夹
 输入命令：
 $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name (vuedomo)： &amp;mdash;&amp;ndash;项目名称，直接回车，按照括号中默认名字（注意这里的名字不能有大写字母，如果有会报错Sorry, name can no longer contain capital letters） Project description (A Vue.</description>
+      
     </item>
     
     <item>
@@ -1037,7 +1161,8 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
       <pubDate>Thu, 19 Nov 2020 13:02:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201119/</guid>
-      <description>转载于:https://github.com/petehunt/react-howto，react开源作者对于react框架的一个学习路径的建议，个人感觉还是相当不错的学习路线
+      
+        <description>转载于:https://github.com/petehunt/react-howto，react开源作者对于react框架的一个学习路径的建议，个人感觉还是相当不错的学习路线
  如何学习React? 如果你是一个 React (或者前端) 新手, 出于以下的原因, 你可能会对这个生态圈感到困惑:
  React 的目标群体历来是喜欢尝试新事物的开发者和前端专家. Facebook 开源的内容是应用在他们的实际应用中, 因此他们没有关注那些比 Facebook 小的工程需求. 现有的 React 指引水平参差不齐.  在本文中, 我会假设你已有使用 HTML, CSS 和 JavaScript 开发网页的基础.
 为什么要听我的? 关于 React, 现在已经有大量的相互冲突的建议了, 为什么要听我的?
@@ -1046,6 +1171,7 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
 你应该按照以下的顺序进行学习, 而不是跳着学或者同时学习:
  React npm JavaScript “打包工具” ES6 Routing Flux  你不需要把这些都学完才去使用 React. 只需要在你遇到问题需要解决的时候, 才进入下一步的学习.
 另外, 在 React 社区中, 有一些前沿主题是经常被提及到的, 以下的这些主题很有意思, 但也很难弄懂, 所以它们远没有上面的主题流行, 大多数应用也不需要用到这些.</description>
+      
     </item>
     
     <item>
@@ -1054,7 +1180,8 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
       <pubDate>Wed, 18 Nov 2020 13:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201118/</guid>
-      <description>在写一个小demo的时候，无意中发现定义变量的时候直接写入value，会导致获取不到数据，或者获取的不是我们想要的内容，在js中运算不能随便把value属性定义成变量
+      
+        <description>在写一个小demo的时候，无意中发现定义变量的时候直接写入value，会导致获取不到数据，或者获取的不是我们想要的内容，在js中运算不能随便把value属性定义成变量
 先看一段代码
 &amp;lt;input type=&amp;#34;text&amp;#34;&amp;#34; id=&amp;#34;a&amp;#34;&amp;gt; &amp;lt;span&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;b&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;=&amp;#34; onclick=&amp;#34;beto()&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;sub&amp;#34; disabled&amp;gt; &amp;lt;script&amp;gt; function beto() { var a = document.getElementById(&amp;#39;a&amp;#39;).value var b = document.getElementById(&amp;#39;b&amp;#39;).value var sub = document.getElementById(&amp;#39;sub&amp;#39;).value sub = a + b } &amp;lt;/script&amp;gt; 就这么一看，逻辑貌似没有问题，获取a和b的value，乘法运算，然后输出sub
 但是放在浏览器运行的时候，发现完全没有反应
@@ -1063,6 +1190,7 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
 因为sub.value不能直接定义在变量中
 // 先定义id为sub的input框 var sub = document.getElementById(&amp;#39;sub&amp;#39;) // 然后在运算的时候在直接使用sub.value sub.value = a * b 顺手放一个写demo时候用的简易计算器
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;简易计算器&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34;&amp;#34; id=&amp;#34;a&amp;#34;&amp;gt; &amp;lt;select id=&amp;#34;c&amp;#34;&amp;gt; &amp;lt;option value=&amp;#34;+&amp;#34;&amp;gt;+&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;-&amp;#34;&amp;gt;-&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;*&amp;#34;&amp;gt;*&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;/&amp;#34;&amp;gt;/&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;b&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;=&amp;#34; onclick=&amp;#34;beto()&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;sub&amp;#34; disabled&amp;gt; &amp;lt;script&amp;gt; function beto() { var a = document.</description>
+      
     </item>
     
     <item>
@@ -1071,7 +1199,8 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
       <pubDate>Tue, 17 Nov 2020 13:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201117/</guid>
-      <description>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
+      
+        <description>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
 事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 true是捕获，false是冒泡，默认为冒泡事件
@@ -1080,6 +1209,7 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
   2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
  2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
 &amp;lt;!-- css --&amp;gt; &amp;lt;style&amp;gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &amp;lt;/style&amp;gt; &amp;lt;!-- html --&amp;gt; &amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;点击移除&amp;#34; onclick=&amp;#34;remove()&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;show&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- js --&amp;gt; &amp;lt;script&amp;gt; document.getElementById(&amp;#39;demo&amp;#39;).addEventListener(&amp;#34;mousemove&amp;#34;, myfun) function myfun() { document.</description>
+      
     </item>
     
     <item>
@@ -1088,13 +1218,15 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
       <pubDate>Mon, 16 Nov 2020 12:59:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201116/</guid>
-      <description>querySelector和querySelectorAll的用法和getElementBy大致一样，获取的时候带上符号，getElementBy获取的是元素的动态集合，querySelector获取的是元素的静态集合。
+      
+        <description>querySelector和querySelectorAll的用法和getElementBy大致一样，获取的时候带上符号，getElementBy获取的是元素的动态集合，querySelector获取的是元素的静态集合。
 但是需要注意：getElementBy系列和querySelector系列的区别
 比如，我们写一个for循环，每次获取li标签的时候，ul生成一个li子元素
 &amp;lt;ul id=&amp;#34;ul&amp;#34;&amp;gt; &amp;lt;li&amp;gt;a&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;b&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;c&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;script&amp;gt; var ul = document.getElementById(&amp;#39;ul&amp;#39;); var li = document.getElementsByTagName(&amp;#39;li&amp;#39;); for(var i = 0;i &amp;lt; li.length; i++) { ul.appendChild(document.createElement(&amp;#39;li&amp;#39;)) }; console.log(li.length); // 陷入死循环 &amp;lt;/script&amp;gt; 用i &amp;lt; li.length来进行判断时，会导致浏览器死循环，因为循环一次的时候，浏览器又重新获取li标签数组，每调用一次就会重新对文档进行查询，就会进入死循环
 进行修改：把i &amp;lt; li.length改成i &amp;lt; 3，把li标签数组静态化，然后打印
 conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 &amp;lt;ul id=&amp;#34;ul&amp;#34;&amp;gt; &amp;lt;li&amp;gt;a&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;b&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;c&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;script&amp;gt; var ul = document.querySelector(&amp;#39;ul&amp;#39;); var li = document.querySelectorAll(&amp;#39;li&amp;#39;); for(var i = 0;i&amp;lt;li.length;i++) { ul.appendChild(document.createElement(&amp;#39;li&amp;#39;)) }; console.log(li.length); // 输出对结果是原来的li.length = 3，而不是增加后的 6 &amp;lt;/script&amp;gt; 静态集合体现在querySelectorAll(&#39;li&#39;)获取到ul里所有li后，不管后续再动态添加了多少li，都是不会对其参数影响</description>
+      
     </item>
     
     <item>
@@ -1103,10 +1235,12 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
       <pubDate>Sun, 15 Nov 2020 12:58:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201115/</guid>
-      <description>DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
+      
+        <description>DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
 一、什么是DOM？ DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
 js通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应
 二、节点树 1.节点类型  文档节点－－Document 标签节点－－Element 文本节点－－Text 注释节点－－Comment 属性节点－－Attr  2. 属性  节点类型－－nodeType 节点名称－－nodeName 节点值－－nodeValue 子节点－－childNodes 父节点－－parentNodes 上一个节点－－previousSibling 下一个节点－－nextSibling 第一个子节点－－firstChild 最后一个子节点－－lastChild  3.文档节点－－document (1) 获取  getElementById()－－通过id获取元素  &amp;lt;div id=&amp;#34;demo&amp;#34;&amp;gt;通过id获取元素&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var demo = document.getElementById(&amp;#39;demo&amp;#39;); demo.onclick = function() { console.log(&amp;#39;通过id获取元素&amp;#39;) } &amp;lt;/script&amp;gt; &amp;lt;!-- 点击id为demo的元素，控制台输出&amp;#39;通过id获取元素&amp;#39; --&amp;gt; getElementsByName()－－通过name获取元素  &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素1&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;int&amp;#34; value=&amp;#34;通过name获取元素2&amp;#34;&amp;gt; &amp;lt;script&amp;gt; var int = document.getElementsByName(&amp;#39;int&amp;#39;); for(var i = 0;i &amp;lt; int.</description>
+      
     </item>
     
     <item>
@@ -1115,7 +1249,8 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
       <pubDate>Sat, 14 Nov 2020 12:57:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201114/</guid>
-      <description>数据类型，构造函数，原型和原型链的一些讲解补充
+      
+        <description>数据类型，构造函数，原型和原型链的一些讲解补充
 一、数据类型 1.5个基本类型 string number boolean undefined 未定义 null 值为空 symbol 表示一个符号，符号类型是唯一的并且是不可修改的
 最常见的还是前三种，字符串，数字，布尔值
 2.常见的引用类型 引用类型是一种数据结构，用于将数据和功能组织在一起
@@ -1123,6 +1258,7 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
 二、函数 1.什么是函数？  具有独立功能的代码块，在js中使用function关键字定义函数 让代码结构更加清晰，提高代码可用性 js函数的分类：自定义函数和系统函数  2.自定义函数 有一种匿名函数，没有名字的函数，创建闭包，避免造成全局变量的污染
 匿名自执行函数
  概念：匿名函数的定义完成后立即执行，执行函数表达式 作用：实现闭包和创建独立的命名空间 使用：分组操作符()，void操作符，~操作符，!操作符等等 使用场景：函数表达式，对象属性，事件，事件参数，返回值 定义完匿名函数后，一定要调用  // 函数表达式 window.onload = function() { let funcobj = function() { alert(&amp;#34;函数表达式中的匿名函数&amp;#34;) } funcobj(); } // 对象属性 window.onload = function() { let obj = { name: function() { alert(&amp;#39;对象属性中的匿名函数&amp;#39;) } } obj.name(); } 3.</description>
+      
     </item>
     
     <item>
@@ -1131,7 +1267,8 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
       <pubDate>Fri, 13 Nov 2020 12:56:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201113/</guid>
-      <description>今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
+      
+        <description>今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
  为什么要是1970年呢？
  new Date().getTime(); // xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。
 当然，这一做法现在看来是很有问题的，例如不方便用它表示更早的时间而且精度有限。
@@ -1150,6 +1287,7 @@ http://en.wikipedia.org/wiki/Unix_time
 System.out.println(Integer.MAX_VALUE);
 2147483647
 Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。</description>
+      
     </item>
     
     <item>
@@ -1158,7 +1296,8 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
       <pubDate>Thu, 12 Nov 2020 12:58:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201112/</guid>
-      <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+      
+        <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
 一、什么是面向对象编程 js是基于原型的，基于面向对象编程
 面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
 1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
@@ -1169,6 +1308,7 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 想要弄明白面向对象，需要先理解类和对象的概念
 《什么是类和对象？》
 二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) } } student.</description>
+      
     </item>
     
     <item>
@@ -1177,7 +1317,8 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
       <pubDate>Mon, 09 Nov 2020 21:13:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201109/</guid>
-      <description>厨房日记，记录我的&amp;rsquo;高光&amp;rsquo;时刻
+      
+        <description>厨房日记，记录我的&amp;rsquo;高光&amp;rsquo;时刻
 今日菜谱
 莴笋炒肉 准备食材：两根莴笋，一块猪肉，两只青椒
 调料：盐，酱油，醋，油，料酒，姜，蒜
@@ -1189,6 +1330,7 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
  加入三四片干辣椒，少许胡椒，八角， 等到锅中调料榨出香味，下牛肉，翻炒均匀防止糊锅 倒入料酒，酱油 在翻炒的过程中，用炖锅烧半锅清水，2-3分钟后，将烧锅内牛肉、配料全部倒入炖锅，用勺子翻滚均匀 用盖子盖住 将萝卜切成片，稍微有点厚度的那种，不薄也不厚，6-7分钟左右，下萝卜，并加入适当的盐 下稍加翻滚，盖住盖子，留一个缝隙 在这个期间洗净胡萝卜，去皮，切成块，等到烧锅20分钟左右，下胡萝卜和粉丝   为什么要这么晚才下胡萝卜和粉丝呢？ 因为他俩比较软，熟得快，如果放在锅中时间过长，很容易煮烂
  继续煮至30分钟左右，煮的差不多了，尝一下咸淡，可适当加入调料 放一会就可以出锅啦  这是一道耗时比较长的菜，可以慢慢做，大致是这些流程，具体的可根据实际情况调整，比如加入的配菜不同
  </description>
+      
     </item>
     
     <item>
@@ -1197,7 +1339,8 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
       <pubDate>Wed, 04 Nov 2020 21:12:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201104/</guid>
-      <description>当代码出现有规律的重复之后，可以利用函数，定义变量，调用方法，不用去重复的改动代码，只需要进行函数的修改。基本上所有的高级语言都支持函数，javascript也不例外，它可以像变量一样被使用，方便且强大，因此本文对js函数进行系统的学习，并在学习过程中做了详细的笔记以及样例。
+      
+        <description>当代码出现有规律的重复之后，可以利用函数，定义变量，调用方法，不用去重复的改动代码，只需要进行函数的修改。基本上所有的高级语言都支持函数，javascript也不例外，它可以像变量一样被使用，方便且强大，因此本文对js函数进行系统的学习，并在学习过程中做了详细的笔记以及样例。
 一、函数的定义和调用 1.定义函数 function abs(x) { if(x = 0) { return x; } else { return -x; } }  function()指出这是一个函数定义 abs是函数的代码 (x)里面的内容是函数的参数 {...}的内容是函数体，可以包括若干语句，甚至可以没有任何语句   函数体中，必须以return结尾，才可以把结果返回，如果不用return结尾的话，就会返回undefined
  也可以直接定义一个对象，这个对象也可以写成函数的方式
 var abs = function (x) { if (x&amp;gt;=0) { return x }else { return -x } }； function(x)就是一个匿名函数，这个函数被赋值给了变量abs，所以可以直接通过abs调用该函数
@@ -1206,6 +1349,7 @@ var abs = function (x) { if (x&amp;gt;=0) { return x }else { return -x } }； fu
 3.检查参数 可以对参数进行检查，看看是否是自己想要的参数对类型
 如果传入对参数abs(x)中非数字，控制台返回结果this is not number，如果传参为数字，则进行条件判断
 function abs(x) { // 检查参数x是否为数字  if (typeof x !</description>
+      
     </item>
     
     <item>
@@ -1214,7 +1358,8 @@ function abs(x) { // 检查参数x是否为数字  if (typeof x !</description>
       <pubDate>Thu, 29 Oct 2020 21:12:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201029/</guid>
-      <description>研究html的对象，事件和方法，从js的角度来思考，这个标签的属性是通过什么方法，触发什么事件来实现的
+      
+        <description>研究html的对象，事件和方法，从js的角度来思考，这个标签的属性是通过什么方法，触发什么事件来实现的
   键盘鼠标事件   页面窗口事件   表单事件   一、window事件属性 针对window对象触发的事件，在&amp;lt;body&amp;gt;中执行
 1.onbeforeprint／onafterprint 在浏览器打印之间/后触发
 &amp;lt;body onbeforeprint = print()&amp;gt; &amp;lt;script&amp;gt; function print() { alert(&amp;#34;打印之间！&amp;#34;) } &amp;lt;/script&amp;gt; 打印前和打印后的事件方法类似，一个是在打印前触发事件，一个是在打印这个事件结束之后触发onafterprint这个事件
@@ -1229,6 +1374,7 @@ demo查看
 5.onload 页面加载完成之后触发
 demo查看
 6.onmessage 在消息被触发时运行 ?</description>
+      
     </item>
     
     <item>
@@ -1237,7 +1383,8 @@ demo查看
       <pubDate>Wed, 21 Oct 2020 21:11:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20201021/</guid>
-      <description>在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。
+      
+        <description>在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。
 数据类型有：数据，字符串，数组，数字，布尔值等。
 一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：
 true;	//true false;	//false 2&amp;gt;1;	//true 2&amp;gt;3;	//fasle 与	&amp;amp;&amp;amp; 两者同时为true，运算结果为true
@@ -1254,6 +1401,7 @@ undefined表示未定义
 6.数组Array [ ] ，表示一组按顺序排列的集合，其中的每个值称为元素
 new Array(1,2,3)	//[1,2,3] 数组的索引
 二、对象和变量 var person = { name: &amp;#39;jack&amp;#39;, age: 20, city: &amp;#39;hangzhou&amp;#39; } person是对象变量，name: &#39;jack&#39;这就是一个键值对，name是属性名，&#39;jack&#39;是属性</description>
+      
     </item>
     
     <item>
@@ -1262,7 +1410,8 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
       <pubDate>Fri, 18 Sep 2020 21:10:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200918/</guid>
-      <description>这里我要推荐一本书，叫做《Web全栈工程师的自我修养》，在看的过程中，自己也代入进去进行分析，然后写了这篇笔记。
+      
+        <description>这里我要推荐一本书，叫做《Web全栈工程师的自我修养》，在看的过程中，自己也代入进去进行分析，然后写了这篇笔记。
 “全栈工程师正在成为IT行业的新秀，无论是在上市互联网公司还是在创业公司，都对全栈工程师青睐有加。本书作者是腾讯公 司高级工程师，在前端、后端和APP开发方面都有丰富的经验，在本书中分享了全栈工程师的技能与要求、核心竞争力、未来发 展方向、对移动端的思考。除此之外，本书还详细记录了作者从零开始、学习心得。本书内容全面、客观务实适合互联网行业新人 、程序员。以及期待技术转型的从业者阅读参考。”
 作者余果毕业于西安点击科技大学软件工程学院，曾任腾讯社交用户体验设计部高级UI工程师、前端开发负责人，负责多个项目的产品设计，以自身的经历为模板撰写了这本书。
 从自身说起，因为对技术和机器的热爱让他走向了计算机这门行业，而在书中，他也经常提及自己理性和感性思维相结合，对全栈工程师进行了深入分析。
@@ -1280,6 +1429,7 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
 那他一个人效率就相当于三个的效率了，其实这样说并不严谨，我也只是打个比方。
 我突然想到一句话，不知道说的准确与否，
 “全栈的职位存在是不合理的，但全栈的思维是一个有上进心的工程师所必备的。”</description>
+      
     </item>
     
     <item>
@@ -1288,13 +1438,15 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
       <pubDate>Fri, 11 Sep 2020 21:08:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200911/</guid>
-      <description>我在写博客的时候，想给博客网页添加自己喜欢的音乐，这样我在写作和阅读的时候，心情也会比较愉悦，这个时候，我们就需要用到audio这个标签。
+      
+        <description>我在写博客的时候，想给博客网页添加自己喜欢的音乐，这样我在写作和阅读的时候，心情也会比较愉悦，这个时候，我们就需要用到audio这个标签。
 &amp;lt;audio src=&amp;#34;&amp;#34;&amp;gt;&amp;lt;/audio&amp;gt; 同时audio标签还带有很多实用的属性，常用的有以下几个：
  src &amp;ndash; 这个就不说了，懂的都懂 autoplay &amp;ndash; 如果出现该属性，音频在就绪后马上播放 controls &amp;ndash; 网页中显示音频控件 loop &amp;ndash; 循环播放 muted &amp;ndash; 默认静音  但是我在设置 autoplay 的时候发现，chrome对自动播放深恶痛绝，直接从根源上限制了这个属性的开启，意思是说，这个属性直接禁用，在打开网页没有交互的情况下，不允许自动播放。
 但仔细想一想，这个做法其实是对用户比较有利的。假设用户使用的时候宽带流量，直接自动播放视频、音频，就会对用户造成损失。甚至一些广告会自动播放，这就直接影响到了用户的体验。所以，对于chrome的做法我还是比较赞同的。
 回过头一想，不对啊，我的目的是解决这个问题，不是夸赞谷歌的。我想给自己的个人博客添加喜欢的音乐，所以我找了一个不算办法的办法。我直接在模拟一个事件，当鼠标点击网页任意处的时候，自动触发autoplay的音频效果，直接上代码。
 &amp;lt;script&amp;gt; function toggleSound() { var music = document.getElementById(&amp;#34;vd&amp;#34;); //获取ID  console.log(music); console.log(music.paused); if (music.paused) { //判读是否播放  music.paused=false; music.play(); //没有就播放  } } setInterval(&amp;#34;toggleSound()&amp;#34;,1); &amp;lt;/script&amp;gt; 这样处理过之后，插入音频，任意点击网页某个地方，都会触发播放效果，但凡事有利有弊，这样做的话，一旦开启播放，将无法启用暂停功能，也就是说会一直播放下去
 如果是像我这样写个人博客，这个弊端倒是影响不大，我在这里记录一下这个方法。</description>
+      
     </item>
     
     <item>
@@ -1303,9 +1455,11 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
       <pubDate>Tue, 11 Aug 2020 21:09:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200811/</guid>
-      <description>本书从前端开发人员的需求出发，以“流”为线索，从结构、内容到美化装饰灯方面，全面且深入地讲解前端开发人员必须了解和掌握的大量的CSS知识点。同时，作者结合多年的从业经验，通过大量的实战案例，详尽解析CSS的相关知识与常见问题。
+      
+        <description>本书从前端开发人员的需求出发，以“流”为线索，从结构、内容到美化装饰灯方面，全面且深入地讲解前端开发人员必须了解和掌握的大量的CSS知识点。同时，作者结合多年的从业经验，通过大量的实战案例，详尽解析CSS的相关知识与常见问题。
 作者还为本书开发了专门的配套网站，进行实例展示。问题答疑。作为一本CSS深度学习的书，书中介绍大量许多前端开发人员都不知道的CSS知识点。通过阅读本书，读者会对CSS世界的深度和广度有一个全新的认识。
 这本书作者采用口语化的方式，讲述在css中遇到的一些有意思的问题，循序渐进，引人入胜，对有前端基础的人来说，读这本书还是很有意思的。我经常在闲余时间看看这本书，会给我一些启发。</description>
+      
     </item>
     
     <item>
@@ -1314,7 +1468,8 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
       <pubDate>Mon, 03 Aug 2020 21:08:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200803/</guid>
-      <description>在某些段落中，页面要求文字只显示一行，但是width固定，而文字过长，就会出现一个需求，超过长度限制的文字被隐藏且显示省略号，css 支持这样的属性。
+      
+        <description>在某些段落中，页面要求文字只显示一行，但是width固定，而文字过长，就会出现一个需求，超过长度限制的文字被隐藏且显示省略号，css 支持这样的属性。
 单行文本溢出隐藏
 div{ overflow: hidden; white-space: nowrap; text-overflow: ellipsis; } 多行文本溢出隐藏
 div { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; } 简单的几行代码就可以达到我们的要求。
@@ -1324,6 +1479,7 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 只要保证flex布局和隐藏的样式不在同级元素中就可以，所以在文字外部多包裹一层标签。
 可以采用下面这段代码的写法；
 &amp;lt;p&amp;gt; &amp;lt;!-- 我们在这一层的标签进行flex布局 --&amp;gt; &amp;lt;span&amp;gt; &amp;lt;!-- 这一层的标签我们引入文字过长隐藏的样式 --&amp;gt; &amp;lt;!-- 文本 --&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;/p&amp;gt; </description>
+      
     </item>
     
     <item>
@@ -1332,7 +1488,8 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
       <pubDate>Fri, 19 Jun 2020 21:07:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200619/</guid>
-      <description>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。
+      
+        <description>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。
 每个vue实例在被创建的时候都要经过一系列的初始化过程——例如，需要把设置数据监听、编译模板、将实例挂载到DOM并在数据变化时更新DOM等，我们要把这一系列的过程称为组件的生命周期（组件从注册到销毁的整个过程）。我们有时候需要在组件生命周期的某个过程中，执行某些代码，基于此，vue提供了生命周期钩子函数，给了用户在不同阶段添加自己的代码的机会。
 但是在此之前，我们要详细的介绍下组件的生命周期，以及生命后期中每个阶段组件完成和未完成的部分。
 一、组件的生命周期 放一张大家都很熟悉的官网文章中对生命周期的注释图。
@@ -1350,6 +1507,7 @@ beforeMount: function () { console.log(&amp;#39;beforeMount:&amp;#39;,document.g
 4.mounted el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
 有初始值的DOM渲染，例如我们的初始数据list,渲染出来的li，只有这里才能获取
 mounted: function () { console.log(&amp;#39;mounted:&amp;#39;,document.getElementsByTagName(&amp;#39;li&amp;#39;).length); }, 结果 mounted: 3 , 可以看到到这里为止，挂载到实例上了，我们可以获取到li的个数了</description>
+      
     </item>
     
     <item>
@@ -1358,9 +1516,11 @@ mounted: function () { console.log(&amp;#39;mounted:&amp;#39;,document.getElemen
       <pubDate>Sun, 14 Jun 2020 20:57:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/posts/20200614/</guid>
-      <description>2020年6月14日
+      
+        <description>2020年6月14日
 我的博客正式建立。
 愿一切安好。</description>
+      
     </item>
     
     <item>
@@ -1369,7 +1529,8 @@ mounted: function () { console.log(&amp;#39;mounted:&amp;#39;,document.getElemen
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://shuxhan.com/about/</guid>
-      <description>学习新思想，争做新青年，一个在杭州的新生代农民工。
+      
+        <description>学习新思想，争做新青年，一个在杭州的新生代农民工。
 这是一个我在闲暇时间写的博客，会写一些生活琐事，也会写一些技术笔记。我的本意是想在生活中不断追寻新的感悟，因此博客叫做求索日记。
 Blog: https://shuxhan.com
 E-mail: shuxhan@163.com
@@ -1379,6 +1540,7 @@ the road ahead will be long and our climb will be steep.
 2021年的新年愿望是可以 new 一个对象！ —2021
 (目前没有添加友链的计划，所以一些申请我就直接略过了~)
  关于评论，我原本没有打算放上来的，后来考虑一二，觉得还是有些交互性比较合理，所以就使用了 Gitalk，基于 Github 的一个第三方平台，觉得效果还不错。</description>
+      
     </item>
     
   </channel>
