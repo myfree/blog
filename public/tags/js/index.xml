@@ -102,25 +102,6 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
     </item>
     
     <item>
-      <title>面向对象编程</title>
-      <link>https://shuxhan.com/posts/20201114/</link>
-      <pubDate>Sat, 14 Nov 2020 12:58:00 +0000</pubDate>
-      
-      <guid>https://shuxhan.com/posts/20201114/</guid>
-      <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
-一、什么是面向对象编程 js是基于原型的，基于面向对象编程
-面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
-1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
-自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用
-面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。
-2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统
-面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
-想要弄明白面向对象，需要先理解类和对象的概念
-《什么是类和对象？》
-二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) } } student.</description>
-    </item>
-    
-    <item>
       <title>有关js函数，方法的一些补充总结</title>
       <link>https://shuxhan.com/posts/20201114/</link>
       <pubDate>Sat, 14 Nov 2020 12:57:00 +0000</pubDate>
@@ -134,6 +115,25 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
 二、函数 1.什么是函数？  具有独立功能的代码块，在js中使用function关键字定义函数 让代码结构更加清晰，提高代码可用性 js函数的分类：自定义函数和系统函数  2.自定义函数 有一种匿名函数，没有名字的函数，创建闭包，避免造成全局变量的污染
 匿名自执行函数
  概念：匿名函数的定义完成后立即执行，执行函数表达式 作用：实现闭包和创建独立的命名空间 使用：分组操作符()，void操作符，~操作符，!操作符等等 使用场景：函数表达式，对象属性，事件，事件参数，返回值 定义完匿名函数后，一定要调用  // 函数表达式 window.onload = function() { let funcobj = function() { alert(&amp;#34;函数表达式中的匿名函数&amp;#34;) } funcobj(); } // 对象属性 window.onload = function() { let obj = { name: function() { alert(&amp;#39;对象属性中的匿名函数&amp;#39;) } } obj.name(); } 3.</description>
+    </item>
+    
+    <item>
+      <title>面向对象编程</title>
+      <link>https://shuxhan.com/posts/20201112/</link>
+      <pubDate>Thu, 12 Nov 2020 12:58:00 +0000</pubDate>
+      
+      <guid>https://shuxhan.com/posts/20201112/</guid>
+      <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+一、什么是面向对象编程 js是基于原型的，基于面向对象编程
+面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
+1.面向过程程序设计 将一个项目（或者一个事件）从头到尾按顺序，一步一步完成，先做什么，后做什么，一直到结束，也是我们人做事的方法。
+自上而下，先确定一个整体的框架，然后添砖加瓦，逐步实现想要得到的效果，适用于简单的系统，容易理解。但是难以应对复杂的系统，不易维护扩展，难以复用
+面向过程是分析解决问题的步骤，然后用函数把这些步骤一步一步的实现，然后在使用的时候一一调用则可。强调的是完成这件事儿的动作，更接近我们日常处理事情的思维。
+2.面向对象程序设计 将一个项目（或者一个事件）分成更小的项目，每一个部分负责一方面的功能，最后由这些部分组成一个整体，先设计组件，在完成拼装，适用于大型复杂的系统
+面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
+想要弄明白面向对象，需要先理解类和对象的概念
+《什么是类和对象？》
+二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &amp;#39;小明&amp;#39;; person.age = 22; person.year = function() { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) }; person.year(); // 字面量  var student = { name: &amp;#39;小明&amp;#39;, age: 22, year: function () { console.log(this.name + &amp;#39;今年&amp;#39; + this.age + &amp;#39;岁了！&amp;#39;) } } student.</description>
     </item>
     
   </channel>

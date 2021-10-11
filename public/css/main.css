@@ -313,6 +313,7 @@ ul {
     color: #333;
     text-decoration: none !important;
     font-size: 2rem;
+    font-style: italic;
 }
 
 .site-title a:hover {

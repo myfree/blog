@@ -45,10 +45,10 @@
     
     <item>
       <title>面向对象编程</title>
-      <link>https://shuxhan.com/posts/20201114/</link>
-      <pubDate>Sat, 14 Nov 2020 12:58:00 +0000</pubDate>
+      <link>https://shuxhan.com/posts/20201112/</link>
+      <pubDate>Thu, 12 Nov 2020 12:58:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201114/</guid>
+      <guid>https://shuxhan.com/posts/20201112/</guid>
       <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
 一、什么是面向对象编程 js是基于原型的，基于面向对象编程
 面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
