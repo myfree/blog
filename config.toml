@@ -7,12 +7,9 @@ paginate = 7
 [params]
   favicon = "https://img.shuxhan.com/favicon.png"
 	subtitle = "路漫漫其修远兮，吾将上下而求索！"
-  CusdisId = "c1d43485-e8a7-4895-972e-247eddaf242d" # Cusdis id填写
 
 	# Enable a table of contents
 	toc = true
-  maxTags = 7
-  wpm = 250
 
 [permalinks]
   posts = "/posts/:year:month:day"
@@ -23,14 +20,14 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "编程技术"
-url = "/categories/编程技术/"
-weight = 3
-
-[[menu.main]]
 name = "归档"
 url = "/posts"
 weight = 2
+
+[[menu.main]]
+name = "编程技术"
+url = "/categories/编程技术/"
+weight = 3
 
 [[menu.main]]
 name = "生活随笔"

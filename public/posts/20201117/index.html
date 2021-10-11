@@ -46,7 +46,6 @@
 
 	<script src="https://shuxhan.com/js/feather.min.js"></script>
 	
-	
 </head>
 
 <body>
@@ -96,8 +95,22 @@
 				</div>
 			</div>
 
-			
-			
+			<div class="post-toc" id="post-toc">
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#函数事件">函数事件</a>
+      <ul>
+        <li><a href="#1addeventlistener添加事件监听函数">1.addEventListener()－－添加事件监听函数</a></li>
+        <li><a href="#2removeeventlistener移除事件监听函数">2.removeEventListener()－－移除事件监听函数</a></li>
+        <li><a href="#3利用事件的捕获和冒泡做点事情">3.利用事件的捕获和冒泡做点事情</a></li>
+        <li><a href="#4事件处理程序">4.事件处理程序</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
 					
 			<div class="markdown">
 				<p>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，<code>事件流</code>，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流</p>
