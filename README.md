@@ -3,9 +3,9 @@
 * 项目源码仓库: `main`
 * 静态文件路径: `/public`
 
-Author: [Nov8nana](https://github.com/N0v8nana)
-
 Bolg: [https://shuxhan.com](https://shuxhan.com)
+
+Comment Repo: [https://github.com/Nov8nana/blog-comment-Vssue](https://github.com/Nov8nana/blog-comment-Vssue)
 
 ### Use
 

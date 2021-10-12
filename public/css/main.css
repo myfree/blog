@@ -775,6 +775,11 @@ figcaption {
     height: 0;
 }
 
+#TableOfContents {
+    max-height: 420px;
+    overflow-y: scroll;
+}
+
 .post-toc-content li {
     list-style: none;
 }
