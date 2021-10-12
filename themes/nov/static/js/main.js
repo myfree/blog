@@ -15,6 +15,19 @@ $(function () {
     }
   });
 
+  var i = 1;
+  $('.nav-menu').click(function () {
+    if (i == 1) {
+      $(this).toggleClass('nav-menu-open');
+      $('.header nav ul').toggleClass('nav-menu-ul')
+    } else {
+      $('.nav-menu').removeClass('nav-menu-open');
+      $('.header nav ul').removeClass('nav-menu-ul')
+    }
+  });
+
+
+
 })
 
 console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')

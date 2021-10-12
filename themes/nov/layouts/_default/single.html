@@ -5,12 +5,13 @@
 	<div class="container wrapper">
 		{{ partial "head.html" . }}
 
-		<div class="post">
+		<div class="post section">
 			<div class="post-header posts-header">
 				
 				<div class="matter">
 					<h1 class="title">{{ .Title }}</h1>
 				</div>
+				<div class="post-time">发布于: {{ dateFormat "2006-01-02" .Date }}</div>
 			</div>
 
 			{{ partial "toc.html" . }}

@@ -1,13 +1,9 @@
 <div class="header">
-	{{ if .Site.Params.Avatar }}
-		<div class="avatar">
-			<a href="{{ .Site.BaseURL }}">
-				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
-			</a>
-		</div>
-	{{ end }}
-	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-	<div class="site-description">
+
+	<h5 class="site-title">
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Params.Author }}</a>
+	</h5>
+	<!-- <div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
 		{{- end -}}
@@ -18,7 +14,7 @@
 				{{- end -}}
 			</ul>
 		</nav>
-	</div>
+	</div> -->
 
 	<nav class="nav">
 		<ul class="flat">
@@ -28,10 +24,10 @@
 			</li>
 			{{ end }}
 		</ul>
+		<div class="nav-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</nav>
-
-	<div class="fixed-author">
-		<a href="/about"><img src="{{ .Site.Params.authorimg }}" /></a>
-		<span>{{ .Site.Params.authorname }}</span>
-	</div>
 </div>
