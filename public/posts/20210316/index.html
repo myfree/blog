@@ -37,6 +37,8 @@
 
 	<script src="https://shuxhan.com/js/feather.min.js"></script>
 	
+
+	
 </head>
 
 <body>
@@ -126,25 +128,34 @@
 			<div class="back">
 				<a href="https://shuxhan.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
-			
+			<section id="comments">
+  <hr>
+  
 
+  <div id="vssue"></div>
+  
+  <link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/vssue.css" />
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+  <script>
+    new Vue({
+      el: '#vssue',
+      data: {
+        title: 'IE10下`,`符号不能留白',
+        options: {
+          owner: 'Nov8nana',
+          repo: 'blog-comment-Vssue',
+          clientId: '165c1f06227b75546d96',
+          clientSecret: '278f65bee5c6a473078446e278e26438615fdd75', 
+          autoCreateIssue: true
+        },
+      },
 
-<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/gitalk.css" />
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+      template: `<vssue :title="title" :options="options"></vssue>`,
+    })
+  </script>
 
-<div id="gitalk-container"></div>
-<script>
-  var gitalk = new Gitalk({
-    clientID: '165c1f06227b75546d96', 
-    clientSecret: '52469023ed644ea30e25de1e9a0b58e2b14732a4', 
-    repo: 'gitalk-comment', 
-    owner: 'Nov8nana', 
-    admin: ['Nov8nana'], 
-    id: location.pathname, 
-  })
-
-  gitalk.render('gitalk-container'); 
-</script>
+</section>
 
 		</div>
 		
