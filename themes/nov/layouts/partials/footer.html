@@ -1,0 +1,22 @@
+<div class="footer wrapper">
+	<div style="padding:10px 0;">
+		<span>© 2020 - 2021</span> ·{{ .Site.Title }} ·
+		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+		</a>
+	</div>
+	<a class="top-btn" id="">
+    <div>
+      <i></i>
+      <i></i>
+    </div>
+  </a>
+</div>
+<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+<script src="{{ .Site.BaseURL }}js/main.js"></script>
+<script src="{{ .Site.BaseURL }}js/copycode.js"></script>
+
+{{- with .Site.Params.Social -}}
+<script>feather.replace()</script>
+{{- end -}}
