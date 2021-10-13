@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>杂谈 on 求索日记</title>
-    <link>https://shuxhan.com/tags/%E6%9D%82%E8%B0%88/</link>
+    <link>https://imzsh.com/tags/%E6%9D%82%E8%B0%88/</link>
     <description>Recent content in 杂谈 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 12:56:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 12:56:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么getTime()返回1970年至今的毫秒？</title>
-      <link>https://shuxhan.com/posts/20201113/</link>
+      <link>https://imzsh.com/posts/20201113/</link>
       <pubDate>Fri, 13 Nov 2020 12:56:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201113/</guid>
+      <guid>https://imzsh.com/posts/20201113/</guid>
       <description>今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
  为什么要是1970年呢？
  new Date().getTime(); // xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。

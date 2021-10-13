@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>组件 on 求索日记</title>
-    <link>https://shuxhan.com/tags/%E7%BB%84%E4%BB%B6/</link>
+    <link>https://imzsh.com/tags/%E7%BB%84%E4%BB%B6/</link>
     <description>Recent content in 组件 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jan 2021 20:46:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/%E7%BB%84%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 20:46:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/%E7%BB%84%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基于 React 的富文本编辑器－－Braft Editor</title>
-      <link>https://shuxhan.com/posts/20210107/</link>
+      <link>https://imzsh.com/posts/20210107/</link>
       <pubDate>Thu, 07 Jan 2021 20:46:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210107/</guid>
+      <guid>https://imzsh.com/posts/20210107/</guid>
       <description>最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。
 今天分享的是一款基于 React 的富文本编辑器－－Braft Editor。
  Braft Editor 官网：https://braft.margox.cn Github 仓库地址：https://github.com/margox/braft-editor
@@ -26,10 +26,10 @@
     
     <item>
       <title>React －－万物皆可组件</title>
-      <link>https://shuxhan.com/posts/20201221/</link>
+      <link>https://imzsh.com/posts/20201221/</link>
       <pubDate>Mon, 21 Dec 2020 13:19:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201221/</guid>
+      <guid>https://imzsh.com/posts/20201221/</guid>
       <description>一、React 组件是什么？  组件，从概念上类似于 javascript 函数，他接受任意入参（props），并返回作用于描述页面展示内容的 React 元素。
  组件允许你将 UI 拆分为独立可复用的代码片段，并对每个片段进行独立构思。
 1.创建一个组件 // 函数组件 function Welcome(props) { return &amp;lt;h1&amp;gt;Hello, {props.name}&amp;lt;/h1&amp;gt;; } // class组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } 2.渲染组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } ReactDOM.render( &amp;lt;Welcome /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) ); 3.组件 React的基础原则有三条，分别是：

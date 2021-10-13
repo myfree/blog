@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客 on 求索日记</title>
-    <link>https://shuxhan.com/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://imzsh.com/tags/%E5%8D%9A%E5%AE%A2/</link>
     <description>Recent content in 博客 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 如何使用 Cusdis ?</title>
-      <link>https://shuxhan.com/posts/20210916/</link>
+      <link>https://imzsh.com/posts/20210916/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210916/</guid>
+      <guid>https://imzsh.com/posts/20210916/</guid>
       <description>Cusdis 是一个界面清爽、注重隐私的轻量级 (~5kb gzip) 评论系统，可以很方便地与 React、Vue 或其他博客系统结合，并且还提供了一个后台来管理所有的评论。
 由于 Cusdis 自称是 Disqus 的替代方案，因此它还支持一键从 Disqus 导入、支持邮件通知等功能。
 官方地址: https://cusdis.com/
@@ -27,10 +27,10 @@
     
     <item>
       <title>关于我为什么要写博客？</title>
-      <link>https://shuxhan.com/posts/20210721/</link>
+      <link>https://imzsh.com/posts/20210721/</link>
       <pubDate>Wed, 21 Jul 2021 17:47:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210721/</guid>
+      <guid>https://imzsh.com/posts/20210721/</guid>
       <description>写这篇文章，大概是想回顾一下自己从写第一篇博客，一直到现在的心理历程吧！但是动笔的时候，又突然改变想法了。决定好好审视一下自己的内心，“我为什么要写博客？”
  伊始 故事最开始源于2020年五月份，当时我正频临毕业之际，正处于找工作的状态，对前途还是有些迷茫的，不知道未来该怎么走，往哪方面发展，再加上对自己不够自信，可能有些焦虑吧。
 但是不论心态怎么变化，生活总是要继续的，在闲暇之余我浏览很多技术网站，希望可以提升自己，当时我比较热衷于csdn 和博客园吧，两个比较大的中文博客网站，不论是学习和查资料，百度出来的内容基本都是这两个网站的文章。然后在平时学习累计的过程中，我也会写一些笔记或者总结的内容，开始我是直接存放在本地，后来我放在 Gayhub 上面。
@@ -61,10 +61,10 @@
     
     <item>
       <title>Typecho博客搭建及优化教程(详细)</title>
-      <link>https://shuxhan.com/posts/20210511/</link>
+      <link>https://imzsh.com/posts/20210511/</link>
       <pubDate>Tue, 11 May 2021 22:29:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210511/</guid>
+      <guid>https://imzsh.com/posts/20210511/</guid>
       <description>1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
 如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
 不喜勿喷，谢谢！
@@ -102,10 +102,10 @@ Linux系统的话，本文使用Centos 8系统讲解。
     
     <item>
       <title>网站引入iframe视频，如何实现高度自适应?</title>
-      <link>https://shuxhan.com/posts/20210509/</link>
+      <link>https://imzsh.com/posts/20210509/</link>
       <pubDate>Sun, 09 May 2021 18:50:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210509/</guid>
+      <guid>https://imzsh.com/posts/20210509/</guid>
       <description>我想很多小伙伴在写博客的时候都能遇到一个令人头疼的问题，某一篇文章想用 iframe 引入一个外链视频，但是大小总是有问题，宽度可以固定到 100% ，但是高度比如用实际高度来表示，比如 100px, 200px，诸如此类。
 但是问题来了，在不同的页面宽度下，视频的高度是一致的，就会导致一个很麻烦的问题,
 看下面两个图，
@@ -122,10 +122,10 @@ pc端
     
     <item>
       <title>typecho 博客小表情无法显示问题</title>
-      <link>https://shuxhan.com/posts/20210204/</link>
+      <link>https://imzsh.com/posts/20210204/</link>
       <pubDate>Thu, 04 Feb 2021 19:47:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210204/</guid>
+      <guid>https://imzsh.com/posts/20210204/</guid>
       <description>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。
 表情无法显示的原因是 uft-8 编码的问题，无法识别小表情，需要将其改成 utf8mb4
 第一步，进入数据库 首先登陆博客后台的数据库，然后点击 sql ，输入下列代码：
@@ -134,10 +134,10 @@ alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_un
     
     <item>
       <title>hello, world</title>
-      <link>https://shuxhan.com/posts/20200614/</link>
+      <link>https://imzsh.com/posts/20200614/</link>
       <pubDate>Sun, 14 Jun 2020 20:57:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20200614/</guid>
+      <guid>https://imzsh.com/posts/20200614/</guid>
       <description>2020年6月14日
 我的博客正式建立。
 愿一切安好。</description>

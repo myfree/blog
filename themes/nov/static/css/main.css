@@ -30,9 +30,21 @@
     background: #000;
 }
 
+#TableOfContents::-webkit-scrollbar {
+    box-shadow: none;
+}
+
+#TableOfContents::-webkit-scrollbar-thumb {
+    box-shadow: none;
+}
+
+#TableOfContents::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+
 body {
-    font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-family: Source Sans, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Heiti SC, Hiragino Sans GB, Microsoft YaHei, Dengxian, Simsun, sans-serif;
     font-weight: 400;
     color: #111827;
     line-height: 1.8em;
@@ -41,7 +53,7 @@ body {
 }
 
 a {
-    color: rgb(37, 99, 235);
+    color: #1e90ff;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -237,8 +249,15 @@ ul {
 
 .post .markdown {
     line-height: 1.8;
-    font-size: 0.98rem;
+    font-size: 1rem;
     margin-bottom: 3rem;
+    color: #2c3e50;
+    font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.post .markdown a:hover {
+    color: #1e90ff;
+    text-decoration: underline;
 }
 
 .post .markdown img {
@@ -246,7 +265,7 @@ ul {
 }
 
 .post .markdown code {
-    background: #1118278f;
+    background: #47658290;
     color: #fff;
     font-family: source code pro, Consolas, Monaco, Menlo, Consolas, monospace;
     border-radius: 3px;
@@ -262,6 +281,12 @@ ul {
     margin-bottom: 0;
     margin-top: 0;
     padding: 20px;
+    color: inherit;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .highlight pre code {
@@ -273,6 +298,7 @@ ul {
 .highlight {
     font-size: 0.8em;
     position: relative;
+
 }
 
 .highlight .highlight-copy-btn {
@@ -281,31 +307,33 @@ ul {
     right: 6px;
 }
 
-.container {
-    /* max-width: 800px; */
-    /* margin-top: 50px; */
-}
-
 .section {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 100px;
+    padding: 0 10px;
 }
 
-.header {
-    height: 50px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+header {
+    width: 100%;
     box-shadow: 0 2px 5px rgb(0 0 0 / 6%);
     position: fixed;
     top: 0;
     width: 100%;
     background: #fff;
-    padding: 0 10%;
     box-sizing: border-box;
     z-index: 99;
+}
+
+.header {
+    margin: 0 auto;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 10px;
 }
 
 .header .avatar {
@@ -329,7 +357,7 @@ ul {
 .site-title a {
     color: #004050;
     text-decoration: none !important;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -364,6 +392,7 @@ ul {
 }
 
 .header nav li a {
+    font-size: 0.96rem;
     color: #00323c;
 }
 
@@ -478,15 +507,16 @@ ul {
 
 .post-header h1.title {
     margin: -10px 0 0 0;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.6rem;
-    color: #000;
+    color: rgb(48, 48, 48);
 }
 
 .post-time {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 10px;
+    color: #4d6781;
 }
 
 .post .posts-header {
@@ -556,7 +586,7 @@ ul {
     color: #999;
     border-top: 1px solid #f4f4f4;
     margin-top: 40px;
-    padding: 15px 0;
+    padding: 15px 10px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -606,9 +636,7 @@ ul {
 }
 
 @media (max-width: 900px) {
-    body {
-        padding: 10px;
-    }
+
 
     h1 {
         font-size: 1.8rem;
@@ -786,7 +814,7 @@ figcaption {
 .post-toc {
     position: sticky;
     z-index: 99999;
-    top: 140px;
+    top: 174px;
     margin-left: 105%;
     width: 300px;
     height: 0;
@@ -814,13 +842,9 @@ figcaption {
     }
 }
 
-@media (max-width:1000px) {
+@media (max-width:840px) {
     .site-title a {
         font-size: 1.6rem;
-    }
-
-    .header {
-        padding: 0;
     }
 
     .header nav ul {
@@ -831,7 +855,7 @@ figcaption {
         display: block;
         position: absolute;
         top: -15px;
-        right: 20px;
+        right: 0;
         width: 40px;
         height: 30px;
         display: flex;
@@ -863,7 +887,7 @@ figcaption {
     }
 
     .nav-menu-open {
-        right: 12px;
+        right: -6px;
     }
 
     .nav-menu-open span:nth-child(2) {
@@ -876,7 +900,7 @@ figcaption {
         -moz-transform: rotate(45deg) translateY(10px);
         -ms-transform: rotate(45deg) translateY(10px);
         -o-transform: rotate(45deg) translateY(10px);
-}
+    }
 
     .nav-menu-open span:nth-child(3) {
         transform: rotate(-45deg) translateY(-11px);
@@ -884,7 +908,7 @@ figcaption {
         -moz-transform: rotate(-45deg) translateY(-11px);
         -ms-transform: rotate(-45deg) translateY(-11px);
         -o-transform: rotate(-45deg) translateY(-11px);
-}
+    }
 
     .header nav ul.nav-menu-ul {
         display: flex;
@@ -900,5 +924,6 @@ figcaption {
     .header nav ul.nav-menu-ul a {
         display: block;
         text-align: center;
+        font-size: 1.02;
     }
 }

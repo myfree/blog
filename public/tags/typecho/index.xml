@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>typecho on 求索日记</title>
-    <link>https://shuxhan.com/tags/typecho/</link>
+    <link>https://imzsh.com/tags/typecho/</link>
     <description>Recent content in typecho on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 May 2021 22:29:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/typecho/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 22:29:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/typecho/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Typecho博客搭建及优化教程(详细)</title>
-      <link>https://shuxhan.com/posts/20210511/</link>
+      <link>https://imzsh.com/posts/20210511/</link>
       <pubDate>Tue, 11 May 2021 22:29:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210511/</guid>
+      <guid>https://imzsh.com/posts/20210511/</guid>
       <description>1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
 如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
 不喜勿喷，谢谢！

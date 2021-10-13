@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vue on 求索日记</title>
-    <link>https://shuxhan.com/tags/vue/</link>
+    <link>https://imzsh.com/tags/vue/</link>
     <description>Recent content in vue on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2021 21:02:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 21:02:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 vue 中使用 axios 调用数据</title>
-      <link>https://shuxhan.com/posts/20210608/</link>
+      <link>https://imzsh.com/posts/20210608/</link>
       <pubDate>Tue, 08 Jun 2021 21:02:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210608/</guid>
+      <guid>https://imzsh.com/posts/20210608/</guid>
       <description>如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。
 先用 node 安装一下。
 npm install axios 然后在 main.js 文件中引入。
@@ -22,10 +22,10 @@ import axios from &amp;#39;axios&amp;#39; import VueAxios from &amp;#39;vue-axio
     
     <item>
       <title>vue学习笔记(3)－－computed, watch，calss, style</title>
-      <link>https://shuxhan.com/posts/20201125/</link>
+      <link>https://imzsh.com/posts/20201125/</link>
       <pubDate>Wed, 25 Nov 2020 13:05:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201125/</guid>
+      <guid>https://imzsh.com/posts/20201125/</guid>
       <description>一、计算属性computed 1.例子 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{message}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{revermessage}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;hello,wolrd&amp;#39; }, computed: { revermessage: function() { return this.message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) } } }) &amp;lt;/script&amp;gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
 此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
 2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
@@ -38,10 +38,10 @@ import axios from &amp;#39;axios&amp;#39; import VueAxios from &amp;#39;vue-axio
     
     <item>
       <title>vue学习笔记(2)－－vue实例和模板语法</title>
-      <link>https://shuxhan.com/posts/20201124/</link>
+      <link>https://imzsh.com/posts/20201124/</link>
       <pubDate>Tue, 24 Nov 2020 13:05:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201124/</guid>
+      <guid>https://imzsh.com/posts/20201124/</guid>
       <description>一、vue实例 1.创建vue实例 一个vue实例应该通过new Vue来创建根实例，所有的 vue 组件其实都是 vue 实例
 var vm = new Vue({ ... }) 当一个实例被创建时，data对象中的 property 都被加入到vue的响应式系统中，当值发生改变时，试图也会改变
 var data = {a: 1} var vm = new Vue({ data: data }) 此时在控制台输入vm.a == data.a会返回true，变量data已经被赋给vue实例中的data对象了
@@ -54,10 +54,10 @@ data: { newTodoText: &amp;#39;&amp;#39;, visitCount: 0, hideCompletedTods: fasle
     
     <item>
       <title>vue学习笔记(1)－－什么是vue?</title>
-      <link>https://shuxhan.com/posts/20201123/</link>
+      <link>https://imzsh.com/posts/20201123/</link>
       <pubDate>Mon, 23 Nov 2020 13:04:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201123/</guid>
+      <guid>https://imzsh.com/posts/20201123/</guid>
       <description>一、什么是vue? 练习时使用，最新版本
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; hello world
@@ -70,10 +70,10 @@ vue官网例子：
     
     <item>
       <title>vue使用cli脚手架构建项目工程</title>
-      <link>https://shuxhan.com/posts/20201120/</link>
+      <link>https://imzsh.com/posts/20201120/</link>
       <pubDate>Fri, 20 Nov 2020 13:03:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201120/</guid>
+      <guid>https://imzsh.com/posts/20201120/</guid>
       <description>vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题
 1.下载安装node 测试一下是否成功安装，
 $ node -v // 返回下载的版本号 2.安装webpack环境 $ npm install webpack -g // 如果失败，可能是因为用户没有权限 // 使用下面这种，管理员权限 $ sudo npm install webpack -g 如果返回版本号代表成功，如果没有，则需要输入下面的命令
@@ -87,10 +87,10 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
     
     <item>
       <title>vue生命周期</title>
-      <link>https://shuxhan.com/posts/20200619/</link>
+      <link>https://imzsh.com/posts/20200619/</link>
       <pubDate>Fri, 19 Jun 2020 21:07:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20200619/</guid>
+      <guid>https://imzsh.com/posts/20200619/</guid>
       <description>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。
 每个vue实例在被创建的时候都要经过一系列的初始化过程——例如，需要把设置数据监听、编译模板、将实例挂载到DOM并在数据变化时更新DOM等，我们要把这一系列的过程称为组件的生命周期（组件从注册到销毁的整个过程）。我们有时候需要在组件生命周期的某个过程中，执行某些代码，基于此，vue提供了生命周期钩子函数，给了用户在不同阶段添加自己的代码的机会。
 但是在此之前，我们要详细的介绍下组件的生命周期，以及生命后期中每个阶段组件完成和未完成的部分。

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程技术 on 求索日记</title>
-    <link>https://shuxhan.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/</link>
+    <link>https://imzsh.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 编程技术 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用js随机生成背景颜色</title>
-      <link>https://shuxhan.com/posts/20210929/</link>
+      <link>https://imzsh.com/posts/20210929/</link>
       <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210929/</guid>
+      <guid>https://imzsh.com/posts/20210929/</guid>
       <description>先写一个简单的 html 页面出来
 &amp;lt;style&amp;gt; /* ... */ &amp;lt;/style&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;html&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;css&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;js&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 通过 Math.random() 属性可以随机生成一个数字，然后通过转化为十六进制的方法进行处理，下面就是随机生成 6 位数字的代码，并进行转化的代码。
 const randomHex = () =&amp;gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, &amp;#34;0&amp;#34;)}`; 可以在控制台输出看一下结果，随机生成了一个结果 #62113b。
@@ -23,10 +23,10 @@ var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i 
     
     <item>
       <title>hugo 如何使用 Cusdis ?</title>
-      <link>https://shuxhan.com/posts/20210916/</link>
+      <link>https://imzsh.com/posts/20210916/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210916/</guid>
+      <guid>https://imzsh.com/posts/20210916/</guid>
       <description>Cusdis 是一个界面清爽、注重隐私的轻量级 (~5kb gzip) 评论系统，可以很方便地与 React、Vue 或其他博客系统结合，并且还提供了一个后台来管理所有的评论。
 由于 Cusdis 自称是 Disqus 的替代方案，因此它还支持一键从 Disqus 导入、支持邮件通知等功能。
 官方地址: https://cusdis.com/
@@ -41,10 +41,10 @@ var li = document.getElementsByTagName(&amp;#34;li&amp;#34;); for (var i = 0; i 
     
     <item>
       <title>使用jq做一个数字递增效果</title>
-      <link>https://shuxhan.com/posts/20210914/</link>
+      <link>https://imzsh.com/posts/20210914/</link>
       <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210914/</guid>
+      <guid>https://imzsh.com/posts/20210914/</guid>
       <description>数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
 用 jquery 也很好处理，大概就是下面这些。
  data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&amp;quot;num-ber&amp;quot; 和 id=&amp;quot;count-number&amp;quot; 按照这个填入。
@@ -54,20 +54,20 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
     
     <item>
       <title>掘金抽奖脚本</title>
-      <link>https://shuxhan.com/posts/20210913/</link>
+      <link>https://imzsh.com/posts/20210913/</link>
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210913/</guid>
+      <guid>https://imzsh.com/posts/20210913/</guid>
       <description>复制到 console 即可运行。
 stime = Date.parse(new Date()); result = {} count = 0 flag = true while (flag) { obj = await fetch(&amp;#39;https://api.juejin.cn/growth_api/v1/lottery/draw&amp;#39;, { method: &amp;#39;POST&amp;#39;, credentials: &amp;#34;include&amp;#34;, headers: { &amp;#39;Content-type&amp;#39;: &amp;#39;application/json; charset=UTF-8&amp;#39; } }) .then(res =&amp;gt; { obj = res.json() return obj }) if (obj.err_no === 0) { if (obj.data.lottery_name in result) { result[obj.data.lottery_name] += 1 } else { result[obj.data.lottery_name] = 1 } count ++ } else { flag = false } } etime = Date.</description>
     </item>
     
     <item>
       <title>npm install 报错和取消本地代理的问题</title>
-      <link>https://shuxhan.com/posts/20210819/</link>
+      <link>https://imzsh.com/posts/20210819/</link>
       <pubDate>Thu, 19 Aug 2021 11:15:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210819/</guid>
+      <guid>https://imzsh.com/posts/20210819/</guid>
       <description>npm install下载依赖包的时候出现下面错误，请求失败。
 npm ERR! FetchError: request to https://registry.npm.taobao.org/cnpm failed, reason: connect ECONNREFUSED 127.0.0.1:1181 调试过后发现是本地代理的问题，取消它。
 npm config delete proxy npm config delete https-proxy npm install 成功运行，完毕。</description>
@@ -75,10 +75,10 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
     
     <item>
       <title>将数据库中的图片信息导出并调用</title>
-      <link>https://shuxhan.com/posts/20210709/</link>
+      <link>https://imzsh.com/posts/20210709/</link>
       <pubDate>Fri, 09 Jul 2021 21:03:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210709/</guid>
+      <guid>https://imzsh.com/posts/20210709/</guid>
       <description>接口链接：http://121.196.166.173/img/img.php 展示demo：http://121.196.166.173/img
  前言 为了写博客以及其他的一些用途，我使用服务器搭建了一个连接 github 仓库的上传网页，并且在数据库中记录上传的信息，比如缩略名、时间戳和图片链接。分别对应 GitHub 仓库中的图片，但是后期我发现在 GitHub 查看图片非常别扭，因此我打算写一个可展示图片的网页，把 GitHub 仓库中的图片通过链接展示出来，当然我们不可能一张张复制，还好有数据库。
 看一下具体内容
@@ -88,10 +88,10 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
     
     <item>
       <title>在 vue 中使用 axios 调用数据</title>
-      <link>https://shuxhan.com/posts/20210608/</link>
+      <link>https://imzsh.com/posts/20210608/</link>
       <pubDate>Tue, 08 Jun 2021 21:02:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210608/</guid>
+      <guid>https://imzsh.com/posts/20210608/</guid>
       <description>如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。
 先用 node 安装一下。
 npm install axios 然后在 main.js 文件中引入。
@@ -101,10 +101,10 @@ import axios from &amp;#39;axios&amp;#39; import VueAxios from &amp;#39;vue-axio
     
     <item>
       <title>宝塔如何实现进程守护？</title>
-      <link>https://shuxhan.com/posts/20210530/</link>
+      <link>https://imzsh.com/posts/20210530/</link>
       <pubDate>Sun, 30 May 2021 11:37:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210530/</guid>
+      <guid>https://imzsh.com/posts/20210530/</guid>
       <description>为了方便写一些东西，pc端和手机端都可以同步，我用leanote搭建了一个在线笔记，但是必须在服务器后台运行一个指令
 base run.sh 不然就访问不了端口，我也不可能时刻在终端保持指令运行，所以就需要把指令放在服务器后台，让它自己保持运行，刚好有这么一插件 Supervisor管理器 2.2 。
 是一款免费的Python插件，点击下载即可，然后进入设置。
@@ -116,10 +116,10 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
     
     <item>
       <title>css 中 fixed 定位属性和动画的冲突问题及解决方法</title>
-      <link>https://shuxhan.com/posts/20210527/</link>
+      <link>https://imzsh.com/posts/20210527/</link>
       <pubDate>Thu, 27 May 2021 21:42:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210527/</guid>
+      <guid>https://imzsh.com/posts/20210527/</guid>
       <description>1.问题  css 中使用动画属性会和同标签下的fixed属性冲突，导致定位失效，那么该如何解决他呢？
  2.分析 简单说一下问题产生的背景，昨天夜里我想给我的博客页面做一个简单的动画，浏览器刷新的时候从下往上渐现的效果，代码如下：
 /* index-container类名是页面的主体部分 */ .index-container { opacity: 0; animation-name: index; animation-duration: 0.7s; animation-fill-mode: forwards; } /* 一个简单的动画实现 */ @keyframes index { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } } 运行之后发现，动画可以很好的显示，但是当我翻阅文章详情的时候发现，目录固定失效了。
@@ -135,10 +135,10 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
     
     <item>
       <title>Oracle数据库安装教程（超详细）</title>
-      <link>https://shuxhan.com/posts/20210513/</link>
+      <link>https://imzsh.com/posts/20210513/</link>
       <pubDate>Thu, 13 May 2021 14:51:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210513/</guid>
+      <guid>https://imzsh.com/posts/20210513/</guid>
       <description> 转载自：https://www.moeor.com/26.html
  前言 本教程讲解Oracle Database Express Edition (XE) Release 11.2.0.2.0 (11gR2)版本的下载安装教程！
 该版本是一个便携式安装版本，直接安装，就可以了，非常方便。
@@ -168,10 +168,10 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
     
     <item>
       <title>Typecho博客搭建及优化教程(详细)</title>
-      <link>https://shuxhan.com/posts/20210511/</link>
+      <link>https://imzsh.com/posts/20210511/</link>
       <pubDate>Tue, 11 May 2021 22:29:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210511/</guid>
+      <guid>https://imzsh.com/posts/20210511/</guid>
       <description>1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
 如果不喜欢前面的啰嗦讲解，请跳过，直接从宝塔安装开始。
 不喜勿喷，谢谢！
@@ -209,10 +209,10 @@ Linux系统的话，本文使用Centos 8系统讲解。
     
     <item>
       <title>网站引入iframe视频，如何实现高度自适应?</title>
-      <link>https://shuxhan.com/posts/20210509/</link>
+      <link>https://imzsh.com/posts/20210509/</link>
       <pubDate>Sun, 09 May 2021 18:50:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210509/</guid>
+      <guid>https://imzsh.com/posts/20210509/</guid>
       <description>我想很多小伙伴在写博客的时候都能遇到一个令人头疼的问题，某一篇文章想用 iframe 引入一个外链视频，但是大小总是有问题，宽度可以固定到 100% ，但是高度比如用实际高度来表示，比如 100px, 200px，诸如此类。
 但是问题来了，在不同的页面宽度下，视频的高度是一致的，就会导致一个很麻烦的问题,
 看下面两个图，
@@ -229,10 +229,10 @@ pc端
     
     <item>
       <title>基于 docsify 搭建一个文档</title>
-      <link>https://shuxhan.com/posts/20210421/</link>
+      <link>https://imzsh.com/posts/20210421/</link>
       <pubDate>Wed, 21 Apr 2021 20:19:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210421/</guid>
+      <guid>https://imzsh.com/posts/20210421/</guid>
       <description>一、搭建 docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比之前，个人还是喜欢 docsify 的风格和源码。不想要那么多附带的功能，能满足写文章，目录的功能就行了。
 点击查看demo.
 打开终端输入指令，把本地环境搭建起来：
@@ -252,10 +252,10 @@ window.$docsify = { ... loadSidebar: true, ... } 如图：
     
     <item>
       <title>我的 python 学习笔记</title>
-      <link>https://shuxhan.com/posts/20210401/</link>
+      <link>https://imzsh.com/posts/20210401/</link>
       <pubDate>Thu, 01 Apr 2021 16:21:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210401/</guid>
+      <guid>https://imzsh.com/posts/20210401/</guid>
       <description>之所以学习 Python ，本意是想写一些脚本之类的程序，用来在浏览器爬一些自己想要的文字，图片等资料，这些程序其实 GitHub 蛮多的，但奈何我对后端的语言一窍不通，直接拿过来给我用我都不会。
 因此就萌生了先学习 Python 基础知识的想法，一直听说廖雪峰的 Python 教程写的不错，这次趁着这个机会要好好研读一番。也没想说用的多牛逼，至少希望能为自己浅薄的技术栈再增加一点光彩，毕竟我也曾梦想成为一个全栈开发。
 下载安装完 Python 环境,就开始学习吧！
@@ -270,10 +270,10 @@ x = 1 x = x + 2 print(x) # 3 其实很多计算机语言都是如此，比如我
     
     <item>
       <title>实时监听页面的变化</title>
-      <link>https://shuxhan.com/posts/20210326/</link>
+      <link>https://imzsh.com/posts/20210326/</link>
       <pubDate>Fri, 26 Mar 2021 14:24:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210326/</guid>
+      <guid>https://imzsh.com/posts/20210326/</guid>
       <description>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。
 如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。
 @media (max-width:768px){ ... } 在js下可以使用下面这种方法
@@ -282,10 +282,10 @@ window.addEventListener(&amp;#39;load&amp;#39;, function() { window.addEventList
     
     <item>
       <title>ajax 和 js 事件的执行顺序</title>
-      <link>https://shuxhan.com/posts/20210322/</link>
+      <link>https://imzsh.com/posts/20210322/</link>
       <pubDate>Mon, 22 Mar 2021 15:12:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210322/</guid>
+      <guid>https://imzsh.com/posts/20210322/</guid>
       <description>有一个需求，滚轮滚动到相应位置的时候执行当前的动画，这个动画在footer里面，而网页的主体通过ajax进行渲染，我在js里面调用ajax渲染数据，然后再获取主体的高度，滚动到该高度的时候执行动画。
 本地测试了一下没什么问题，该有的效果都有了。放在服务器上测试发现无论怎么写，都是先获取主体的高度，然后才进行数据的渲染。那么必然高度是一个极小的值，不符合我想要的属性。
 我大致想了两种解决办法，均以失败告终，本地是ajax先执行，服务器是js先执行。
@@ -297,10 +297,10 @@ async: false, 我在ajax里面写了async这个方法，false 意思是将其默
     
     <item>
       <title>ajax拼接模版字符串的几种方法</title>
-      <link>https://shuxhan.com/posts/20210322/</link>
+      <link>https://imzsh.com/posts/20210322/</link>
       <pubDate>Mon, 22 Mar 2021 14:54:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210322/</guid>
+      <guid>https://imzsh.com/posts/20210322/</guid>
       <description>起因是因为IE10不兼容es6，所以引发了一系列的问题。
  一 使用ajax拼接字符串有很多方法，最简单的莫过于使用es6的语法中的关键符号，
 str += `&amp;lt;li class=&amp;#34;wrap-item&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-wrap&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-son&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34; ` + item.link + `&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34; ` + item.pic+ `&amp;#34; alt=&amp;#34;缩略图&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-main&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pic-title&amp;#34;&amp;gt; &amp;lt;span&amp;gt;编号：&amp;lt;/span&amp;gt; &amp;lt;span&amp;gt; ` + item.title + ` &amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-guide&amp;#34;&amp;gt; ` + item.guide + ` &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic-link&amp;#34; id=&amp;#34;picLink&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34; ` + item.link + ` &amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;预览&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt; ` 可以很快的把模版字符串写好，但是正因为它是es6的新特性，因此对于低版本的浏览器兼容性不太好，报错无效字符。</description>
@@ -308,10 +308,10 @@ str += `&amp;lt;li class=&amp;#34;wrap-item&amp;#34;&amp;gt; &amp;lt;div class=&
     
     <item>
       <title>用ajax请求获取数据</title>
-      <link>https://shuxhan.com/posts/20210319/</link>
+      <link>https://imzsh.com/posts/20210319/</link>
       <pubDate>Fri, 19 Mar 2021 13:01:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210319/</guid>
+      <guid>https://imzsh.com/posts/20210319/</guid>
       <description>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的data.json文件，然后用get请求数据，下面是部分代码
 // ajax 请求获取数据 function picShow(){ var str = &amp;#39;&amp;#39;; $.ajax({ url:&amp;#39;./js/data.json&amp;#39;, type:&amp;#39;get&amp;#39;, dataType:&amp;#39;json&amp;#39;, success:function(data){ console.log(&amp;#39;success&amp;#39;) }, error: function() { console.log(&amp;#39;error&amp;#39;) } }) } picShow(); 但是这样做有一个弊端，无法在本地预览，因为浏览器禁止客户端直接获取本地数据，这也算一个跨域问题了，不过这也是为了保证用户的安全。当然这对前端来说很不爽！
 其实解决的方法也很简单，通过node服务，用live server在本地跑一下，就可以让ajax获取数据，当然还有其他更好的解决方法，或者直接在服务器跑，通过jsonp等等。
@@ -320,10 +320,10 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
     
     <item>
       <title>IE10的兼容性处理</title>
-      <link>https://shuxhan.com/posts/20210318/</link>
+      <link>https://imzsh.com/posts/20210318/</link>
       <pubDate>Thu, 18 Mar 2021 22:15:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210318/</guid>
+      <guid>https://imzsh.com/posts/20210318/</guid>
       <description>  IE10不支持箭头函数，写js的时候慎用。
   IE10下对js的语法要求严格，正常参数后如果没有多余的代码，写个,会报错，如果加了删掉就OK，Chrome下不会产生影响。
   zoom属性能不用，尽量别用。我在Chrome使用zoom进行大小调整，放到IE10运行，整个页面都错位了，找半天才想起来之前给一个容器设置了zoom: 1.1;，真是让人头大。
@@ -336,10 +336,10 @@ live server 不明白的可以百度看看，也是一个技巧。</description>
     
     <item>
       <title>window.scroll 方法只能存在一次该如何解决？</title>
-      <link>https://shuxhan.com/posts/20210317/</link>
+      <link>https://imzsh.com/posts/20210317/</link>
       <pubDate>Wed, 17 Mar 2021 21:55:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210317/</guid>
+      <guid>https://imzsh.com/posts/20210317/</guid>
       <description>页面监听是我们经常用的一个功能，下面两个段代码表示两个事件，分别在页面滚动500px和1000px的时候触发，在代码中使用了箭头函数。
 window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; { var scrollTop = document.documentElement.scrollTop if (scrollTop &amp;gt; 500) { console.log(&amp;#39;滚动了500px&amp;#39;) } }) window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; { var scrollTop = document.documentElement.scrollTop if (scrollTop &amp;gt; 1000) { console.log(&amp;#39;滚动了1000px&amp;#39;) } }) 但是后面又要求代码兼容到IE10，就不能采用这种写法了。然后我就想使用原生的function写法。
 window.onscroll = function() { // ... } 在用的过程中我发现，如果只有一个window.scroll没有任何问题，但是如果有多个window.scroll，后面的就不会生效。
@@ -350,10 +350,10 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&am
     
     <item>
       <title>IE10下`,`符号不能留白</title>
-      <link>https://shuxhan.com/posts/20210316/</link>
+      <link>https://imzsh.com/posts/20210316/</link>
       <pubDate>Tue, 16 Mar 2021 10:29:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210316/</guid>
+      <guid>https://imzsh.com/posts/20210316/</guid>
       <description>$(&amp;#34;#test&amp;#34;).click(function () { $(&amp;#39;html,body&amp;#39;).animate({ &amp;#39;scrollTop&amp;#39;: &amp;#39;0&amp;#39; }, 500,) }) 这行代码使用的是jquery的写法，一个500毫秒的动画，这样写在Chrome浏览器等没问题，可以正常运行。
 但是今天在写项目的过程中，要求代码兼容到IE10，没办法，被迫在IE浏览器下运行，结果发现这行代码会报错。这是怎么回事呢？
 简单分析一下，这有点类似js中定时器的写法，setimeout，两个参数，分别代表指定的时间，和定时时间。
@@ -364,10 +364,10 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&am
     
     <item>
       <title>怎么让 css3 里面的动画属性看起来更流畅？</title>
-      <link>https://shuxhan.com/posts/20210314/</link>
+      <link>https://imzsh.com/posts/20210314/</link>
       <pubDate>Sun, 14 Mar 2021 07:31:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210314/</guid>
+      <guid>https://imzsh.com/posts/20210314/</guid>
       <description>ps：先说点题外话，因为工作的原因很久没更新博客了，最近也是告一段落，处理一了一些事情之后可以安心坐下来，把我的博客重新整理一下。
 今天要讲的是 css3 的一个新属性 animation，也算是一个回顾吧，我只是将平时如何使用，以及一些技巧分享出来。如果想学习更基础的内容，可以点击链接：https://www.runoob.com/css3/css3-animations.html，网上类似的教程还是蛮多的。
 这篇文章并不细讲动画的基础属性，而是稍微扩展一个话题：怎么让 css3 里面的动画属性看起来更流畅？
@@ -383,10 +383,10 @@ animation 属性 animation 属性有下面几个值：
     
     <item>
       <title>chrome浏览器无法显示12px以下的字体</title>
-      <link>https://shuxhan.com/posts/20210226/</link>
+      <link>https://imzsh.com/posts/20210226/</link>
       <pubDate>Fri, 26 Feb 2021 22:38:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210226/</guid>
+      <guid>https://imzsh.com/posts/20210226/</guid>
       <description>最近正在面试，遇到了很多有意思的东西，比如今天，在面试前先做了一套面试题，其中有这么一道题，觉得挺有意思，之前也没见过，就打算记录下来：
 &amp;lt;!-- chrome浏览器12px字体大小以下无法显示，均显示为12px，应该怎么解决。 --&amp;gt; 我确实有点蒙，在之前写代码的时候，没有遇到过这样的情况，不过既然这样问了，就得想出解决的办法。
 首先我想到之前的一个问题，0.5px 的边框该如何实现，通过 scale(0.5) 可以实现，这是 css3 新属性。
@@ -401,10 +401,10 @@ animation 属性 animation 属性有下面几个值：
     
     <item>
       <title>使用宝塔面板安装 autoPicCdn 图床工具</title>
-      <link>https://shuxhan.com/posts/20210225/</link>
+      <link>https://imzsh.com/posts/20210225/</link>
       <pubDate>Thu, 25 Feb 2021 22:41:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210225/</guid>
+      <guid>https://imzsh.com/posts/20210225/</guid>
       <description>很多小伙伴在做个人网站或者博客时，总能用到各种各样的图床工具，毕竟在写文章的时候需要插入一些图片，我也不例外，来盘点一下之前用的工具，
  最开始是找一些免费的图床网站，比如sm.ms等，但是后来为了安全性和稳定性考虑放弃了这种。 然后是在 github，gitee 仓库存储的（缺点就是github访问速度有些尴尬，gitee其实挺好的，但时用起来怪怪的） 阿里云oss储存桶（挺好使的，搭配picgo软件，一年也才9.9，但是链接很尴尬，直接下载，无法右键访问图片，搜过了解决办法，嫌太麻烦就搁置了，至今在那放着） 后来在自己的服务器建一个网站，把图片放进去，使用的时候直接引用链接（缺点就是上传太麻烦，然后就是图片太占内存了，影响服务器的性能） 然后就是今天的重头戏，autoPicCdn ，一款开源软件  也是基于github实现图床功能，后来才知道可以用 jsdelivr 给资源进行加速，autoPicCdn 就是基于这样的功能实现。
 今天就讲讲用宝塔面板配置 autoPicCdn 的流程吧！
@@ -418,10 +418,10 @@ animation 属性 animation 属性有下面几个值：
     
     <item>
       <title>typecho 博客小表情无法显示问题</title>
-      <link>https://shuxhan.com/posts/20210204/</link>
+      <link>https://imzsh.com/posts/20210204/</link>
       <pubDate>Thu, 04 Feb 2021 19:47:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210204/</guid>
+      <guid>https://imzsh.com/posts/20210204/</guid>
       <description>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。
 表情无法显示的原因是 uft-8 编码的问题，无法识别小表情，需要将其改成 utf8mb4
 第一步，进入数据库 首先登陆博客后台的数据库，然后点击 sql ，输入下列代码：
@@ -430,10 +430,10 @@ alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_un
     
     <item>
       <title>掘金个人主页头像旋转效果</title>
-      <link>https://shuxhan.com/posts/20210203/</link>
+      <link>https://imzsh.com/posts/20210203/</link>
       <pubDate>Wed, 03 Feb 2021 19:43:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210203/</guid>
+      <guid>https://imzsh.com/posts/20210203/</guid>
       <description>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。
 下面是具体代码，img 是头像元素，直接写在 hover 中即可。
 img:hover { transform: rotate(666turn); transition-delay: 1s; transition-property: all; transition-duration: 59s; transition-timing-function: cubic-bezier(.34,0,.84,1); } ps：今天是2021年2月4号，农历腊月二十三，传统的小年，祝朋友们小年愉快。不知不觉，快过年了。</description>
@@ -441,10 +441,10 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
     
     <item>
       <title>ES5 和 ES6 的区别？</title>
-      <link>https://shuxhan.com/posts/20210120/</link>
+      <link>https://imzsh.com/posts/20210120/</link>
       <pubDate>Wed, 20 Jan 2021 19:58:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210120/</guid>
+      <guid>https://imzsh.com/posts/20210120/</guid>
       <description>一、javascript 由三部分组成 1.ECMAScript（核心） 它规定了语言的组成部分：法语，类型，语句，关键字，操作符等等。
 2.DOM（文档对象模型） DOM 把整个页面映射为一个多层节点结果，开发人员可借助DOM提供的API，轻松地删除、添加、替换或修改任何节点。
 3.BOM（浏览器对象模型） 支持可以访问和操作浏览器窗口的浏览器对象模型，开发人员可以控制浏览器显示的页面以外的部分。
@@ -462,19 +462,19 @@ ES6特性如下：
     
     <item>
       <title>webpack 的核心概念和构建流程</title>
-      <link>https://shuxhan.com/posts/20210118/</link>
+      <link>https://imzsh.com/posts/20210118/</link>
       <pubDate>Mon, 18 Jan 2021 19:59:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210118/</guid>
+      <guid>https://imzsh.com/posts/20210118/</guid>
       <description>1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3.</description>
     </item>
     
     <item>
       <title>基于 React 的富文本编辑器－－Braft Editor</title>
-      <link>https://shuxhan.com/posts/20210107/</link>
+      <link>https://imzsh.com/posts/20210107/</link>
       <pubDate>Thu, 07 Jan 2021 20:46:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210107/</guid>
+      <guid>https://imzsh.com/posts/20210107/</guid>
       <description>最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。
 今天分享的是一款基于 React 的富文本编辑器－－Braft Editor。
  Braft Editor 官网：https://braft.margox.cn Github 仓库地址：https://github.com/margox/braft-editor
@@ -488,10 +488,10 @@ ES6特性如下：
     
     <item>
       <title>使用 React 与 Vue 创建同一款 App，差别究竟有多大？</title>
-      <link>https://shuxhan.com/posts/20210106/</link>
+      <link>https://imzsh.com/posts/20210106/</link>
       <pubDate>Wed, 06 Jan 2021 20:47:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210106/</guid>
+      <guid>https://imzsh.com/posts/20210106/</guid>
       <description>关于 React 框架 和 Vue 框架 的对比，用两者写出同一个程序，对比其代码实现的过程，看看它们的差异究竟有多大？
  转载于：https://blog.csdn.net/csdnnews/article/details/81880378 原文：https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd 作者简介：Sunil Sandhu，一位 Web 全栈工程师 + 空想家。 译者：安翔，责编：屠敏
  众所周知，Vue 和 React 都是目前非常著名的前端框架。我在工作中经常使用 Vue，因此我对它有很深入的了解。同时，我也对 React 充满了好奇，想要学习一下，一探究竟。
@@ -505,10 +505,10 @@ ES6特性如下：
     
     <item>
       <title>React 脚手架项目打包时的路径问题</title>
-      <link>https://shuxhan.com/posts/20210105/</link>
+      <link>https://imzsh.com/posts/20210105/</link>
       <pubDate>Tue, 05 Jan 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210105/</guid>
+      <guid>https://imzsh.com/posts/20210105/</guid>
       <description>create-react-app 脚手架指令可以生成 React 项目，在项目完成之后执行打包命令 npm run build，文件夹内生成 build文件夹，就是打包后的文件，在浏览器运行 index.html 发现页面空白，打开控制台有报错，css 和 js 文件的引用路径有问题。
 浏览 index.html 代码可以发现：
 &amp;lt;!-- index.html --&amp;gt; &amp;lt;!doctype html&amp;gt; &amp;lt;html lang=&amp;#34;zh&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width,initial-scale=1&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;theme-color&amp;#34; content=&amp;#34;#000000&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;description&amp;#34; content=&amp;#34;Web site created using create-react-app&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;React App&amp;lt;/title&amp;gt; &amp;lt;link href=&amp;#34;/static/css/main.3394d54e.chunk.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;noscript&amp;gt;You need to enable JavaScript to run this app.&amp;lt;/noscript&amp;gt; &amp;lt;div id=&amp;#34;root&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt;!function (e) { function r(r) { for (var n, l, f = r[0], i = r[1], a = r[2], c = 0, s = []; c &amp;lt; f.</description>
@@ -516,10 +516,10 @@ ES6特性如下：
     
     <item>
       <title>如何在 React 中引入 less？</title>
-      <link>https://shuxhan.com/posts/20210104/</link>
+      <link>https://imzsh.com/posts/20210104/</link>
       <pubDate>Mon, 04 Jan 2021 20:50:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210104/</guid>
+      <guid>https://imzsh.com/posts/20210104/</guid>
       <description>本文主要写如何在 React 中引入 less 。因为 less 和 css 非常像，因此很容易学习。而且 less 仅对 css 语言增加了少许方便的扩展，这就是 less 如此易学的原因之一。
 1.安装 less npm install less less-loader --save-dev 2.暴露 webpack 文件 利用 npx create-react-app 搭建的 React 项目，默认隐藏 webpack 配置文件，引入 less 需要修改 webpack 配置文件，因此我们需要执行命令暴露 webpack 配置文件。
  这里需要注意，一旦暴露，无法回退。
@@ -531,10 +531,10 @@ git add . git commit -m &amp;#34;init&amp;#34; 然后再执行 npm run eject
     
     <item>
       <title>为什么 key 是必须的？</title>
-      <link>https://shuxhan.com/posts/20210101/</link>
+      <link>https://imzsh.com/posts/20210101/</link>
       <pubDate>Fri, 01 Jan 2021 20:48:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210101/</guid>
+      <guid>https://imzsh.com/posts/20210101/</guid>
       <description>之前有说到，在 React 中渲染列表的时候，要给每一个数据加一个 key 值，赋予一个确定的标示，而且也详细描述了如何给一个标示，方法知道了，那么为什么要这么做呢？
 在 React 中如何渲染列表？
 在默认条件下，当递归 DOM 节点的子元素时，React 会同时遍历两个子元素的列表；当产生差异时，生成一个 mutation。
@@ -549,10 +549,10 @@ key
     
     <item>
       <title>React 学习笔记（三）</title>
-      <link>https://shuxhan.com/posts/20201229/</link>
+      <link>https://imzsh.com/posts/20201229/</link>
       <pubDate>Tue, 29 Dec 2020 13:26:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201229/</guid>
+      <guid>https://imzsh.com/posts/20201229/</guid>
       <description>来源于：https://react.docschina.org/docs/forms.html
 一、表单 在 React 中，html 表单元素的工作方式和其他的 DOM 元素不太一样，因为表单内部通常会保持一些内部的 state，比如下面这个纯 html 表单只接受一个名称：
 &amp;lt;form&amp;gt; &amp;lt;label&amp;gt; 名字: &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;name&amp;#34; /&amp;gt; &amp;lt;/label&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;提交&amp;#34; /&amp;gt; &amp;lt;/form&amp;gt; 这个表单具有默认的 html 表单行为，即在用户提交表单之后自动刷新页面。如果你在 React 中执行相同的代码，它仍然有效。
@@ -565,10 +565,10 @@ class NameForm extends React.Component { constructor(props) { super(props); this
     
     <item>
       <title>React －－万物皆可组件</title>
-      <link>https://shuxhan.com/posts/20201221/</link>
+      <link>https://imzsh.com/posts/20201221/</link>
       <pubDate>Mon, 21 Dec 2020 13:19:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201221/</guid>
+      <guid>https://imzsh.com/posts/20201221/</guid>
       <description>一、React 组件是什么？  组件，从概念上类似于 javascript 函数，他接受任意入参（props），并返回作用于描述页面展示内容的 React 元素。
  组件允许你将 UI 拆分为独立可复用的代码片段，并对每个片段进行独立构思。
 1.创建一个组件 // 函数组件 function Welcome(props) { return &amp;lt;h1&amp;gt;Hello, {props.name}&amp;lt;/h1&amp;gt;; } // class组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } 2.渲染组件 class Welcome extends React.Component { render() { return &amp;lt;h1&amp;gt;Hello, {this.props.name}&amp;lt;/h1&amp;gt;; } } ReactDOM.render( &amp;lt;Welcome /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;) ); 3.组件 React的基础原则有三条，分别是：
@@ -577,10 +577,10 @@ class NameForm extends React.Component { constructor(props) { super(props); this
     
     <item>
       <title>javascript 进阶问题</title>
-      <link>https://shuxhan.com/posts/20201219/</link>
+      <link>https://imzsh.com/posts/20201219/</link>
       <pubDate>Sat, 19 Dec 2020 13:17:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201219/</guid>
+      <guid>https://imzsh.com/posts/20201219/</guid>
       <description>Github：https://github.com/lydiahallie/javascript-questions
 相当不错的一个 Github 仓库，javascript questions ，作者每周都会发布一些有关 javascript 的题目，虽然不难但是考察细节，刷了一会，其实一些很简单的问题，结果因为细节思考不到位直接出错。
  引用作者的话：我在我的 Instagram 上每天都会发布 JavaScript 的多选问题，并且同时也会在这个仓库中发布。
@@ -590,10 +590,10 @@ class NameForm extends React.Component { constructor(props) { super(props); this
     
     <item>
       <title>React 学习笔记（二）</title>
-      <link>https://shuxhan.com/posts/20201216/</link>
+      <link>https://imzsh.com/posts/20201216/</link>
       <pubDate>Wed, 16 Dec 2020 13:15:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201216/</guid>
+      <guid>https://imzsh.com/posts/20201216/</guid>
       <description>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同
 React 事件的命名采用小驼峰式（camelCase），而不是纯小写
 使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串
@@ -608,10 +608,10 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
     
     <item>
       <title>React 中的占位符 Fragment</title>
-      <link>https://shuxhan.com/posts/20201212/</link>
+      <link>https://imzsh.com/posts/20201212/</link>
       <pubDate>Sat, 12 Dec 2020 13:10:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201212/</guid>
+      <guid>https://imzsh.com/posts/20201212/</guid>
       <description>在 React 项目中， render 方法只能有一个根元素，一般都是 &amp;lt;div&amp;gt; &amp;lt;div/&amp;gt; ，然后在里面写上我们的组件，渲染到浏览器一看，除了我们想要显示的组件，外面还套着一层 div ，如果在写项目的时候，套了很多曾组件，那么每一层都会多出来一个父级元素 div ，不美观，而且在调整样式的时候会有些麻烦
 因此， React 提供了一个占位符 Fragment，写法是：
 // index.js  import React, { Component,Fragment } from &amp;#39;react&amp;#39; export default class index extends Component { render() { return ( &amp;lt;Fragment&amp;gt; &amp;lt;h2&amp;gt;hello,wolrd&amp;lt;/h2&amp;gt; &amp;lt;/Fragment&amp;gt; ) } } 在引入 React 的时候，增加一个属性 Fragment ，然后 render()方法下唯一的根元素我们用 &amp;lt;Fragment&amp;gt; &amp;lt;/Fragment&amp;gt; 来代替，这时候再看浏览器，就不会显示多余的标签了，直接显示 &amp;lt;h2&amp;gt;标签</description>
@@ -619,10 +619,10 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
     
     <item>
       <title>为什么不可变性在 React 中那么重要？</title>
-      <link>https://shuxhan.com/posts/20201202/</link>
+      <link>https://imzsh.com/posts/20201202/</link>
       <pubDate>Wed, 02 Dec 2020 13:09:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201202/</guid>
+      <guid>https://imzsh.com/posts/20201202/</guid>
       <description>根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
  React 文档
  一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
@@ -634,10 +634,10 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
     
     <item>
       <title>webpack安装配置指令</title>
-      <link>https://shuxhan.com/posts/20201126/</link>
+      <link>https://imzsh.com/posts/20201126/</link>
       <pubDate>Thu, 26 Nov 2020 13:08:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201126/</guid>
+      <guid>https://imzsh.com/posts/20201126/</guid>
       <description>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。
 减少io请求,通常我们在请求后，会返回一个html到浏览器。这时，我们如果打开控制台，就会发现在html页面通过script,link等标签引用的静态资源， 浏览器会再次发出请求去获取这些资源。但是webpack的打包，将所有的静态资源都合并好了，减少了io请求。
 # 安装webpack npm install --save-dev webpack # 安装webpack-cli依赖 npm install --save-dev webpack-cli # 创建新项目 mkdir demo # cd项目 cd demo # 初始化 npm init -y # 安装开发版本cli npm install webpack webpack-cli --save-dev 新建一个html文件和一个js文件，工程目录如下
@@ -647,10 +647,10 @@ function component() { var element = document.createElement(&amp;#39;div&amp;#39
     
     <item>
       <title>vue学习笔记(3)－－computed, watch，calss, style</title>
-      <link>https://shuxhan.com/posts/20201125/</link>
+      <link>https://imzsh.com/posts/20201125/</link>
       <pubDate>Wed, 25 Nov 2020 13:05:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201125/</guid>
+      <guid>https://imzsh.com/posts/20201125/</guid>
       <description>一、计算属性computed 1.例子 &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{message}}&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;{{revermessage}}&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var vm = new Vue({ el: &amp;#39;#app&amp;#39;, data: { message: &amp;#39;hello,wolrd&amp;#39; }, computed: { revermessage: function() { return this.message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) } } }) &amp;lt;/script&amp;gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
 此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
 2.计算属性缓存和方法 还可以通过在表达式中调用方法来达到想要的效果
@@ -663,10 +663,10 @@ function component() { var element = document.createElement(&amp;#39;div&amp;#39
     
     <item>
       <title>vue学习笔记(2)－－vue实例和模板语法</title>
-      <link>https://shuxhan.com/posts/20201124/</link>
+      <link>https://imzsh.com/posts/20201124/</link>
       <pubDate>Tue, 24 Nov 2020 13:05:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201124/</guid>
+      <guid>https://imzsh.com/posts/20201124/</guid>
       <description>一、vue实例 1.创建vue实例 一个vue实例应该通过new Vue来创建根实例，所有的 vue 组件其实都是 vue 实例
 var vm = new Vue({ ... }) 当一个实例被创建时，data对象中的 property 都被加入到vue的响应式系统中，当值发生改变时，试图也会改变
 var data = {a: 1} var vm = new Vue({ data: data }) 此时在控制台输入vm.a == data.a会返回true，变量data已经被赋给vue实例中的data对象了
@@ -679,10 +679,10 @@ data: { newTodoText: &amp;#39;&amp;#39;, visitCount: 0, hideCompletedTods: fasle
     
     <item>
       <title>vue学习笔记(1)－－什么是vue?</title>
-      <link>https://shuxhan.com/posts/20201123/</link>
+      <link>https://imzsh.com/posts/20201123/</link>
       <pubDate>Mon, 23 Nov 2020 13:04:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201123/</guid>
+      <guid>https://imzsh.com/posts/20201123/</guid>
       <description>一、什么是vue? 练习时使用，最新版本
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 生产时使用，明确版本号的版本，避免造成不可预见的问题
 &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue@2.6.12&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; hello world
@@ -695,10 +695,10 @@ vue官网例子：
     
     <item>
       <title>React 学习笔记（一）</title>
-      <link>https://shuxhan.com/posts/20201122/</link>
+      <link>https://imzsh.com/posts/20201122/</link>
       <pubDate>Sun, 22 Nov 2020 13:02:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201122/</guid>
+      <guid>https://imzsh.com/posts/20201122/</guid>
       <description>react学习笔记，记录我在开发和学习过程中遇到的问题和知识点
 2013年5月Facebook推出了React.js开源软件前端框架，函数式编程，是使用人数最多的前端框架，也拥有最健全的文档和完善的社区
 React官网
@@ -713,10 +713,10 @@ yarn install然后重新启动npm start或者yarn start
     
     <item>
       <title>对象，类和接口之间的关系</title>
-      <link>https://shuxhan.com/posts/20201121/</link>
+      <link>https://imzsh.com/posts/20201121/</link>
       <pubDate>Sat, 21 Nov 2020 13:01:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201121/</guid>
+      <guid>https://imzsh.com/posts/20201121/</guid>
       <description>类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象，对象通过他们公开的方法来定义他们与外界的交互行为，而方法就形成了与外界交互的接口
 类，对象和接口 1.类和对象 区别：
  对象是类的一个实例。就比如一个人，他有具体的属性，身高，体重，姓名等状态，跑步，跳舞等行为 类是抽象的概念，代表一类事物的模版。对一类对象的行为和状态进行描述，抽离出其共性，形成类  关系：
@@ -734,10 +734,10 @@ yarn install然后重新启动npm start或者yarn start
     
     <item>
       <title>vue使用cli脚手架构建项目工程</title>
-      <link>https://shuxhan.com/posts/20201120/</link>
+      <link>https://imzsh.com/posts/20201120/</link>
       <pubDate>Fri, 20 Nov 2020 13:03:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201120/</guid>
+      <guid>https://imzsh.com/posts/20201120/</guid>
       <description>vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题
 1.下载安装node 测试一下是否成功安装，
 $ node -v // 返回下载的版本号 2.安装webpack环境 $ npm install webpack -g // 如果失败，可能是因为用户没有权限 // 使用下面这种，管理员权限 $ sudo npm install webpack -g 如果返回版本号代表成功，如果没有，则需要输入下面的命令
@@ -751,10 +751,10 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
     
     <item>
       <title>react学习路径－－怎么学习react？</title>
-      <link>https://shuxhan.com/posts/20201119/</link>
+      <link>https://imzsh.com/posts/20201119/</link>
       <pubDate>Thu, 19 Nov 2020 13:02:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201119/</guid>
+      <guid>https://imzsh.com/posts/20201119/</guid>
       <description>转载于:https://github.com/petehunt/react-howto，react开源作者对于react框架的一个学习路径的建议，个人感觉还是相当不错的学习路线
  如何学习React? 如果你是一个 React (或者前端) 新手, 出于以下的原因, 你可能会对这个生态圈感到困惑:
  React 的目标群体历来是喜欢尝试新事物的开发者和前端专家. Facebook 开源的内容是应用在他们的实际应用中, 因此他们没有关注那些比 Facebook 小的工程需求. 现有的 React 指引水平参差不齐.  在本文中, 我会假设你已有使用 HTML, CSS 和 JavaScript 开发网页的基础.
@@ -768,10 +768,10 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
     
     <item>
       <title>在js中运算不能随便把value属性定义成变量</title>
-      <link>https://shuxhan.com/posts/20201118/</link>
+      <link>https://imzsh.com/posts/20201118/</link>
       <pubDate>Wed, 18 Nov 2020 13:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201118/</guid>
+      <guid>https://imzsh.com/posts/20201118/</guid>
       <description>在写一个小demo的时候，无意中发现定义变量的时候直接写入value，会导致获取不到数据，或者获取的不是我们想要的内容，在js中运算不能随便把value属性定义成变量
 先看一段代码
 &amp;lt;input type=&amp;#34;text&amp;#34;&amp;#34; id=&amp;#34;a&amp;#34;&amp;gt; &amp;lt;span&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;b&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;button&amp;#34; value=&amp;#34;=&amp;#34; onclick=&amp;#34;beto()&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;sub&amp;#34; disabled&amp;gt; &amp;lt;script&amp;gt; function beto() { var a = document.getElementById(&amp;#39;a&amp;#39;).value var b = document.getElementById(&amp;#39;b&amp;#39;).value var sub = document.getElementById(&amp;#39;sub&amp;#39;).value sub = a + b } &amp;lt;/script&amp;gt; 就这么一看，逻辑貌似没有问题，获取a和b的value，乘法运算，然后输出sub
@@ -785,10 +785,10 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
     
     <item>
       <title>事件监听函数，以及事件的捕获和冒泡机制</title>
-      <link>https://shuxhan.com/posts/20201117/</link>
+      <link>https://imzsh.com/posts/20201117/</link>
       <pubDate>Tue, 17 Nov 2020 13:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201117/</guid>
+      <guid>https://imzsh.com/posts/20201117/</guid>
       <description>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
 事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
@@ -802,10 +802,10 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name
     
     <item>
       <title>getElementBy系列和querySelector系列的区别</title>
-      <link>https://shuxhan.com/posts/20201116/</link>
+      <link>https://imzsh.com/posts/20201116/</link>
       <pubDate>Mon, 16 Nov 2020 12:59:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201116/</guid>
+      <guid>https://imzsh.com/posts/20201116/</guid>
       <description>querySelector和querySelectorAll的用法和getElementBy大致一样，获取的时候带上符号，getElementBy获取的是元素的动态集合，querySelector获取的是元素的静态集合。
 但是需要注意：getElementBy系列和querySelector系列的区别
 比如，我们写一个for循环，每次获取li标签的时候，ul生成一个li子元素
@@ -817,10 +817,10 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
     
     <item>
       <title>DOM－－文档对象模型</title>
-      <link>https://shuxhan.com/posts/20201115/</link>
+      <link>https://imzsh.com/posts/20201115/</link>
       <pubDate>Sun, 15 Nov 2020 12:58:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201115/</guid>
+      <guid>https://imzsh.com/posts/20201115/</guid>
       <description>DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
 一、什么是DOM？ DOM中文名文档对象模型，英文名Document Object Model，我们简称为DOM，是针对html和xml文档的一种API，将html以一种树状结构呈现出来，可以更直观去研究文档结构，我们将这种树状文档结构称为－－DOM树，或者节点树，一样的概念
 js通过dom节点，可以对文档的html标签，属性，css样式，以及具体的内容做出修改，并对页面中的所有事件进行响应
@@ -829,10 +829,10 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
     
     <item>
       <title>有关js函数，方法的一些补充总结</title>
-      <link>https://shuxhan.com/posts/20201114/</link>
+      <link>https://imzsh.com/posts/20201114/</link>
       <pubDate>Sat, 14 Nov 2020 12:57:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201114/</guid>
+      <guid>https://imzsh.com/posts/20201114/</guid>
       <description>数据类型，构造函数，原型和原型链的一些讲解补充
 一、数据类型 1.5个基本类型 string number boolean undefined 未定义 null 值为空 symbol 表示一个符号，符号类型是唯一的并且是不可修改的
 最常见的还是前三种，字符串，数字，布尔值
@@ -845,10 +845,10 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
     
     <item>
       <title>为什么getTime()返回1970年至今的毫秒？</title>
-      <link>https://shuxhan.com/posts/20201113/</link>
+      <link>https://imzsh.com/posts/20201113/</link>
       <pubDate>Fri, 13 Nov 2020 12:56:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201113/</guid>
+      <guid>https://imzsh.com/posts/20201113/</guid>
       <description>今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
  为什么要是1970年呢？
  new Date().getTime(); // xxxxxxxxxxx 这个起源于unix的诞生，因为Unix在1969年被开发出来，1971年正式发布，在这之前没有机器会需要来表示1970-01-01-00:00:00之前的时间，后面的语言很多就沿用了这一习惯，js只是也沿用了这种习惯而已。
@@ -872,10 +872,10 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
     
     <item>
       <title>面向对象编程</title>
-      <link>https://shuxhan.com/posts/20201112/</link>
+      <link>https://imzsh.com/posts/20201112/</link>
       <pubDate>Thu, 12 Nov 2020 12:58:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201112/</guid>
+      <guid>https://imzsh.com/posts/20201112/</guid>
       <description>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
 一、什么是面向对象编程 js是基于原型的，基于面向对象编程
 面向对象就是把数据和对数据的操作方法放在一起，作为一个整体——对象。对同类对象抽象出其共性，形成类
@@ -891,10 +891,10 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
     
     <item>
       <title>javascript——函数、变量和方法</title>
-      <link>https://shuxhan.com/posts/20201104/</link>
+      <link>https://imzsh.com/posts/20201104/</link>
       <pubDate>Wed, 04 Nov 2020 21:12:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201104/</guid>
+      <guid>https://imzsh.com/posts/20201104/</guid>
       <description>当代码出现有规律的重复之后，可以利用函数，定义变量，调用方法，不用去重复的改动代码，只需要进行函数的修改。基本上所有的高级语言都支持函数，javascript也不例外，它可以像变量一样被使用，方便且强大，因此本文对js函数进行系统的学习，并在学习过程中做了详细的笔记以及样例。
 一、函数的定义和调用 1.定义函数 function abs(x) { if(x = 0) { return x; } else { return -x; } }  function()指出这是一个函数定义 abs是函数的代码 (x)里面的内容是函数的参数 {...}的内容是函数体，可以包括若干语句，甚至可以没有任何语句   函数体中，必须以return结尾，才可以把结果返回，如果不用return结尾的话，就会返回undefined
  也可以直接定义一个对象，这个对象也可以写成函数的方式
@@ -908,10 +908,10 @@ function abs(x) { // 检查参数x是否为数字  if (typeof x !</description>
     
     <item>
       <title>HTML事件属性--DOM</title>
-      <link>https://shuxhan.com/posts/20201029/</link>
+      <link>https://imzsh.com/posts/20201029/</link>
       <pubDate>Thu, 29 Oct 2020 21:12:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201029/</guid>
+      <guid>https://imzsh.com/posts/20201029/</guid>
       <description>研究html的对象，事件和方法，从js的角度来思考，这个标签的属性是通过什么方法，触发什么事件来实现的
   键盘鼠标事件   页面窗口事件   表单事件   一、window事件属性 针对window对象触发的事件，在&amp;lt;body&amp;gt;中执行
 1.onbeforeprint／onafterprint 在浏览器打印之间/后触发
@@ -931,10 +931,10 @@ demo查看
     
     <item>
       <title>javascript——基本语法</title>
-      <link>https://shuxhan.com/posts/20201021/</link>
+      <link>https://imzsh.com/posts/20201021/</link>
       <pubDate>Wed, 21 Oct 2020 21:11:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20201021/</guid>
+      <guid>https://imzsh.com/posts/20201021/</guid>
       <description>在学习js基本语法的过程中，把遇见的知识点和问题记录喜下来，以便未来复习和参考。
 数据类型有：数据，字符串，数组，数字，布尔值等。
 一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：
@@ -956,10 +956,10 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
     
     <item>
       <title>chrome浏览器中对autoplay的一些处理技巧</title>
-      <link>https://shuxhan.com/posts/20200911/</link>
+      <link>https://imzsh.com/posts/20200911/</link>
       <pubDate>Fri, 11 Sep 2020 21:08:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20200911/</guid>
+      <guid>https://imzsh.com/posts/20200911/</guid>
       <description>我在写博客的时候，想给博客网页添加自己喜欢的音乐，这样我在写作和阅读的时候，心情也会比较愉悦，这个时候，我们就需要用到audio这个标签。
 &amp;lt;audio src=&amp;#34;&amp;#34;&amp;gt;&amp;lt;/audio&amp;gt; 同时audio标签还带有很多实用的属性，常用的有以下几个：
  src &amp;ndash; 这个就不说了，懂的都懂 autoplay &amp;ndash; 如果出现该属性，音频在就绪后马上播放 controls &amp;ndash; 网页中显示音频控件 loop &amp;ndash; 循环播放 muted &amp;ndash; 默认静音  但是我在设置 autoplay 的时候发现，chrome对自动播放深恶痛绝，直接从根源上限制了这个属性的开启，意思是说，这个属性直接禁用，在打开网页没有交互的情况下，不允许自动播放。
@@ -971,10 +971,10 @@ new Array(1,2,3)	//[1,2,3] 数组的索引
     
     <item>
       <title>文字溢出隐藏以及和flex冲突的问题</title>
-      <link>https://shuxhan.com/posts/20200803/</link>
+      <link>https://imzsh.com/posts/20200803/</link>
       <pubDate>Mon, 03 Aug 2020 21:08:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20200803/</guid>
+      <guid>https://imzsh.com/posts/20200803/</guid>
       <description>在某些段落中，页面要求文字只显示一行，但是width固定，而文字过长，就会出现一个需求，超过长度限制的文字被隐藏且显示省略号，css 支持这样的属性。
 单行文本溢出隐藏
 div{ overflow: hidden; white-space: nowrap; text-overflow: ellipsis; } 多行文本溢出隐藏
@@ -989,10 +989,10 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
     
     <item>
       <title>vue生命周期</title>
-      <link>https://shuxhan.com/posts/20200619/</link>
+      <link>https://imzsh.com/posts/20200619/</link>
       <pubDate>Fri, 19 Jun 2020 21:07:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20200619/</guid>
+      <guid>https://imzsh.com/posts/20200619/</guid>
       <description>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。
 每个vue实例在被创建的时候都要经过一系列的初始化过程——例如，需要把设置数据监听、编译模板、将实例挂载到DOM并在数据变化时更新DOM等，我们要把这一系列的过程称为组件的生命周期（组件从注册到销毁的整个过程）。我们有时候需要在组件生命周期的某个过程中，执行某些代码，基于此，vue提供了生命周期钩子函数，给了用户在不同阶段添加自己的代码的机会。
 但是在此之前，我们要详细的介绍下组件的生命周期，以及生命后期中每个阶段组件完成和未完成的部分。

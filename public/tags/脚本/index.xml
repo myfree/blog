@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>脚本 on 求索日记</title>
-    <link>https://shuxhan.com/tags/%E8%84%9A%E6%9C%AC/</link>
+    <link>https://imzsh.com/tags/%E8%84%9A%E6%9C%AC/</link>
     <description>Recent content in 脚本 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shuxhan.com/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>掘金抽奖脚本</title>
-      <link>https://shuxhan.com/posts/20210913/</link>
+      <link>https://imzsh.com/posts/20210913/</link>
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shuxhan.com/posts/20210913/</guid>
+      <guid>https://imzsh.com/posts/20210913/</guid>
       <description>复制到 console 即可运行。
 stime = Date.parse(new Date()); result = {} count = 0 flag = true while (flag) { obj = await fetch(&amp;#39;https://api.juejin.cn/growth_api/v1/lottery/draw&amp;#39;, { method: &amp;#39;POST&amp;#39;, credentials: &amp;#34;include&amp;#34;, headers: { &amp;#39;Content-type&amp;#39;: &amp;#39;application/json; charset=UTF-8&amp;#39; } }) .then(res =&amp;gt; { obj = res.json() return obj }) if (obj.err_no === 0) { if (obj.data.lottery_name in result) { result[obj.data.lottery_name] += 1 } else { result[obj.data.lottery_name] = 1 } count ++ } else { flag = false } } etime = Date.</description>
     </item>

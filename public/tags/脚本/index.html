@@ -3,20 +3,20 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>脚本 - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="alternate" type="application/rss+xml" href="https://shuxhan.com/tags/%E8%84%9A%E6%9C%AC/index.xml" title="求索日记" />
+	<link rel="alternate" type="application/rss+xml" href="https://imzsh.com/tags/%E8%84%9A%E6%9C%AC/index.xml" title="求索日记" />
 	<meta itemprop="name" content="脚本">
 <meta itemprop="description" content=""><meta property="og:title" content="脚本" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://shuxhan.com/tags/%E8%84%9A%E6%9C%AC/" />
+<meta property="og:url" content="https://imzsh.com/tags/%E8%84%9A%E6%9C%AC/" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="脚本"/>
 <meta name="twitter:description" content=""/>
-<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="https://shuxhan.com/css/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/main.css" />
 
-	<script src="https://shuxhan.com/js/feather.min.js"></script>
+	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
 	
@@ -25,44 +25,46 @@
 
 <body>
 	<div class="container wrapper list">
-		<div class="header">
+		<header>
+	<div class="header">
 
-	<h5 class="site-title">
-		<a href="https://shuxhan.com/">Nov8nana</a>
-	</h5>
-	
+		<h5 class="site-title">
+			<a href="https://imzsh.com/">Nov8nana</a>
+		</h5>
 
-	<nav class="nav">
-		<ul class="flat">
-			
-			<li>
-				<a href="/">首页</a>
-			</li>
-			
-			<li>
-				<a href="/posts">归档</a>
-			</li>
-			
-			<li>
-				<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-			</li>
-			
-			<li>
-				<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-			</li>
-			
-			<li>
-				<a href="/about">关于我</a>
-			</li>
-			
-		</ul>
-		<div class="nav-menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</nav>
-</div>
+		<nav class="nav">
+			<ul class="flat">
+				
+				<li>
+					<a href="/">首页</a>
+				</li>
+				
+				<li>
+					<a href="/posts">归档</a>
+				</li>
+				
+				<li>
+					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+				</li>
+				
+				<li>
+					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+				</li>
+				
+				<li>
+					<a href="/about">关于我</a>
+				</li>
+				
+			</ul>
+			<div class="nav-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+
+	</div>
+</header>
 
 		<div class="section">
 			
@@ -89,22 +91,29 @@
 
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
-		<span>© 2020 - 2021</span> ·求索日记 ·
-		<a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
-		<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
-			<span style="margin: 0;"> 浙公网安备 33010802011426号</span>
-		</a>
+		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
+
 	</div>
 	<a class="top-btn" id="">
-    <div>
-      <i></i>
-      <i></i>
-    </div>
-  </a>
+		<div>
+			<i></i>
+			<i></i>
+		</div>
+	</a>
 </div>
+<script>
+	var s1 = '2020-06-14';
+	s1 = new Date(s1.replace(/-/g, "/"));
+	s2 = new Date();
+	var days = s2.getTime() - s1.getTime();
+	var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+	document.getElementById('days').innerHTML = number_of_days;
+</script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
-<script src="https://shuxhan.com/js/main.js"></script>
-<script src="https://shuxhan.com/js/copycode.js"></script><script>feather.replace()</script>
+<script src="https://imzsh.com/js/main.js"></script>
+<script src="https://imzsh.com/js/copycode.js"></script><script>
+	feather.replace()
+</script>
 </body>
 
 </html>

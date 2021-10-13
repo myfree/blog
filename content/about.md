@@ -8,7 +8,7 @@ layout: "about"
 
 这是一个我在闲暇时间写的博客，会写一些生活琐事，也会写一些技术笔记。我的本意是想在生活中不断追寻新的感悟，因此博客叫做求索日记。
 
-Blog: [https://shuxhan.com](https://shuxhan.com)
+Blog: [https://imzsh.com](https://imzsh.com)
 
 E-mail: shuxhan@163.com
 
