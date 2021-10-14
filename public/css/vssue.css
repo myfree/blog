@@ -503,8 +503,13 @@
 .vssue :not(.vssue-comment-content) a {
   cursor: pointer;
   font-weight: 500;
-  color: var(--green);
+  color: #000;
   text-decoration: none
+}
+
+.vssue :not(.vssue-comment-content) a:hover {
+  text-decoration: underline;
+  color: #0969da;
 }
 
 .vssue :not(.vssue-comment-content) hr {
@@ -710,7 +715,9 @@
 }
 
 .markdown-body a {
-  background-color: transparent
+  background-color: transparent;
+  color: #0366d6 !important;
+  font-weight: 400 !important;
 }
 
 .markdown-body a:active,
@@ -1021,7 +1028,8 @@
 .markdown-body blockquote {
   border-left: .25em solid #dfe2e5;
   color: #6a737d;
-  padding: 0 1em
+  padding: 6px 1em;
+  background: none;
 }
 
 .markdown-body blockquote>:first-child {

@@ -21,7 +21,13 @@
     </nav>
 
     <div class=link-nav>
-
+      <ul class="flat">
+        {{ range .Site.Params.Social }}
+        <li>
+          <a target="_blank" href="{{ .url }}">{{ .name }}</a>
+        </li>
+        {{ end }}
+      </ul>
       
     </div>
   </div>

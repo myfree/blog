@@ -44,13 +44,15 @@ weight = 5
 
 [[params.social]]
 name = "Github"
-icon = "github"
 url = "https://github.com/Nov8nana/"
 
 [[params.social]]
 name = "RSS"
-icon = "rss"
 url = "/index.xml"
+
+[[params.social]]
+name = "图床"
+url = "https://img.shuxhan.com"
 
 [markup]
   [markup.goldmark]

@@ -333,12 +333,27 @@ ul {
 }
 
 .aside-header .nav li a {
+    width: 90%;
     display: block;
     color: rgba(0, 0, 0, .75) !important;
     font-weight: 600;
     font-size: 17px;
-    padding: 8px 0;
+    padding: 8px 1%;
     padding-left: 4px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+}
+
+.aside-header .nav li a:hover {
+    background: #ddd;
 }
 
 .aside-header .nav {
@@ -369,6 +384,22 @@ ul {
 
 .nav-menu {
     display: none;
+}
+
+.link-nav {
+    margin-top: 3rem;
+}
+
+.link-nav ul {
+    width: 80%;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.link-nav ul li a {
+    display: block;
+    padding-left: 6px;
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .section .section-header {
@@ -794,6 +825,10 @@ figcaption {
 }
 
 @media (max-width:1080px) {
+    .link-nav {
+        display: none;
+    }
+
     .recent-posts {
         display: block;
     }
@@ -819,6 +854,10 @@ figcaption {
 
     .aside-header .nav ul {
         display: none;
+    }
+
+    .aside-header .nav li a {
+        width: 100%;
     }
 
     .aside-header .nav-menu {
