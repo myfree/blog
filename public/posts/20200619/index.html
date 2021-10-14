@@ -79,57 +79,62 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">vue生命周期</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">vue生命周期</h1>
+					</div>
+					<div class="post-time">发布于: 2020-06-19</div>
 				</div>
-				<div class="post-time">发布于: 2020-06-19</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
@@ -149,9 +154,9 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 </nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。</p>
+
+				<div class="markdown">
+					<p>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。</p>
 <!-- more -->
 <p>每个vue实例在被创建的时候都要经过一系列的初始化过程——例如，需要把设置数据监听、编译模板、将实例挂载到DOM并在数据变化时更新DOM等，我们要把这一系列的过程称为组件的<code>生命周期</code>（组件从注册到销毁的整个过程）。我们有时候需要在组件生命周期的某个过程中，执行某些代码，基于此，vue提供了<code>生命周期钩子函数</code>，给了用户在不同阶段添加自己的代码的机会。</p>
 <p>但是在此之前，我们要详细的介绍下组件的生命周期，以及生命后期中每个阶段组件完成和未完成的部分。</p>
@@ -242,24 +247,24 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 </p>
 <p>可以看打到销毁Vue实例时会调用这两个函数</p>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/vue">vue</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/vue">vue</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -287,12 +292,7 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -317,5 +317,12 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

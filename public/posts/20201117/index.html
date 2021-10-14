@@ -52,57 +52,62 @@
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">事件监听函数，以及事件的捕获和冒泡机制</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">事件监听函数，以及事件的捕获和冒泡机制</h1>
+					</div>
+					<div class="post-time">发布于: 2020-11-17</div>
 				</div>
-				<div class="post-time">发布于: 2020-11-17</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
@@ -118,9 +123,9 @@
 </nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，<code>事件流</code>，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流</p>
+
+				<div class="markdown">
+					<p>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，<code>事件流</code>，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流</p>
 <!-- more -->
 <h2 id="函数事件">函数事件</h2>
 <p>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件</p>
@@ -331,26 +336,26 @@
 2.缺点：IE不支持</p>
 </blockquote>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/js">js</a></li>
-							
-							<li class="tag-li"><a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/js">js</a></li>
+						
+						<li class="tag-li"><a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -378,12 +383,7 @@
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -408,5 +408,12 @@
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

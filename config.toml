@@ -9,6 +9,7 @@ paginate = 7
   favicon = "https://img.shuxhan.com/favicon.png"
 	subtitle = "路漫漫其修远兮，吾将上下而求索！"
   author = "Nov8nana"
+  Authorimg = "https://img.shuxhan.com/author.png"
 
 	# Enable a table of contents
 	toc = true

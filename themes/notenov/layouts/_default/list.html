@@ -4,41 +4,44 @@
 
 <body>
 	<div class="container wrapper list">
-		{{ partial "head.html" . }}
+		<div class="recent-posts section">
+			{{ partial "aside.html" . }}
+			<div class="posts">
+				{{ if isset .Data "Term" }}
+				<h2>{{ .Data.Term }}</h2>
+				{{ else }}
+				<h2 class="page-title">{{ .Name }}</h2>
+				{{ end }}
 
-		<div class="section">
-			{{ if isset .Data "Term" }}
-			<h2>{{ .Data.Term }}</h2>
-			{{ else }}
-			<h2 class="page-title">{{ .Name }}</h2>
-			{{ end }}
+				<ul class="flat">
+					{{- range .Data.Pages -}}
+					{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
+					{{- else -}}
+					<li class="post-list">
+						<div class="post-header">
+							<div class="meta">
+								<div class="date">
+									<span class="day list-time">{{ dateFormat "2006/01/02" .Date }}</span>
+								</div>
+							</div>
+							<div class="matter">
+								<div class="title small">
+									<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup
+											class="draft-label">DRAFT</sup>{{ end }}</a>
+								</div>
 
-			<ul class="posts flat">
-				{{- range .Data.Pages -}}
-				{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
-				{{- else -}}
-				<li class="post post-list">
-					<div class="post-header">
-						<div class="meta">
-							<div class="date">
-								<span class="day list-time">{{ dateFormat "2006/01/02" .Date }}</span>
 							</div>
 						</div>
-						<div class="matter">
-							<h4 class="title small">
-								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
-							</h4>
-
-						</div>
-					</div>
-				</li>
-				{{- end -}}
-				{{- end -}}
-			</ul>
+					</li>
+					{{- end -}}
+					{{- end -}}
+				</ul>
+				{{ partial "footer.html" . }}
+			</div>
 		</div>
 	</div>
 
-	{{ partial "footer.html" . }}
+	
 </body>
 
 </html>

@@ -34,64 +34,69 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">掘金个人主页头像旋转效果</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">掘金个人主页头像旋转效果</h1>
+					</div>
+					<div class="post-time">发布于: 2021-02-03</div>
 				</div>
-				<div class="post-time">发布于: 2021-02-03</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。</p>
+
+				<div class="markdown">
+					<p>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。</p>
 <p>下面是具体代码，img 是头像元素，直接写在 hover 中即可。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#ff79c6">img</span>:hover {
     <span style="color:#ff79c6">transform</span>: <span style="color:#8be9fd;font-style:italic">rotate</span>(<span style="color:#bd93f9">666</span><span style="color:#8be9fd">turn</span>);
@@ -102,24 +107,24 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 }
 </code></pre></div><p>ps：今天是2021年2月4号，农历腊月二十三，传统的小年，祝朋友们小年愉快。不知不觉，快过年了。</p>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/css">css</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/css">css</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -147,12 +152,7 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -177,5 +177,12 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

@@ -3,44 +3,47 @@
 {{ partial "header.html" . }}
 <body>
 	<div class="container wrapper">
-		{{ partial "head.html" . }}
+		<div class="recent-posts section">
+			{{ partial "aside.html" . }}
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">{{ .Title }}</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">{{ .Title }}</h1>
+					</div>
+					<div class="post-time">发布于: {{ dateFormat "2006-01-02" .Date }}</div>
 				</div>
-				<div class="post-time">发布于: {{ dateFormat "2006-01-02" .Date }}</div>
-			</div>
 
-			{{ partial "toc.html" . }}
-					
-			<div class="markdown">
-				{{ .Content }}
-			</div>
+				{{ partial "toc.html" . }}
 
-			<div class="tags">
-				{{ if ne .Type "page" }}
+				<div class="markdown">
+					{{ .Content }}
+				</div>
+
+				<div class="tags">
+					{{ if ne .Type "page" }}
 					{{ if gt .Params.tags 0 }}
-						<ul class="flat">
-							{{ range .Params.tags }}
-							<li class="tag-li"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-							{{ end }}
-						</ul>
+					<ul class="flat">
+						{{ range .Params.tags }}
+						<li class="tag-li"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+						{{ end }}
+					</ul>
 					{{ end }}
-				{{ end }}
-			</div>
+					{{ end }}
+				</div>
 
-			<div class="back">
-				<a href="{{ $.Site.BaseURL }}"><span aria-hidden="true">← Back</span></a>
+				<div class="back">
+					<a href="{{ $.Site.BaseURL }}"><span aria-hidden="true">← Back</span></a>
+				</div>
+				{{ partial "comments.html" . }}
+				{{ partial "footer.html" . }}
 			</div>
-			{{ partial "comments.html" . }}
-
+			
 		</div>
-		
 	</div>
-	
-	{{ partial "footer.html" . }}
+
+
 </body>
+
 </html>

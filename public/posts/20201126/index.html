@@ -40,64 +40,69 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">webpack安装配置指令</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">webpack安装配置指令</h1>
+					</div>
+					<div class="post-time">发布于: 2020-11-26</div>
 				</div>
-				<div class="post-time">发布于: 2020-11-26</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。</p>
+
+				<div class="markdown">
+					<p>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。</p>
 <!-- more -->
 <p>减少io请求,通常我们在请求后，会返回一个html到浏览器。这时，我们如果打开控制台，就会发现在html页面通过script,link等标签引用的静态资源， 浏览器会再次发出请求去获取这些资源。但是webpack的打包，将所有的静态资源都合并好了，减少了io请求。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#6272a4"># 安装webpack</span>
@@ -262,26 +267,26 @@ module.exports <span style="color:#ff79c6">=</span> {
 <p>然后在<code>index.js</code>中引入：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">import</span> data from <span style="color:#f1fa8c">&#39;./data.json&#39;</span>
 </code></pre></div>
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
-							
-							<li class="tag-li"><a href="/tags/webpack">webpack</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
+						
+						<li class="tag-li"><a href="/tags/webpack">webpack</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -309,12 +314,7 @@ module.exports <span style="color:#ff79c6">=</span> {
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -339,5 +339,12 @@ module.exports <span style="color:#ff79c6">=</span> {
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

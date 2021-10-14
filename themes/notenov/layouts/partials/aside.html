@@ -1,0 +1,28 @@
+<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Params.Author }}</a>
+      <!-- <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.Authorimg }}"></a> -->
+    </h5>
+
+    <nav class="nav">
+      <ul class="flat">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class=link-nav>
+
+      
+    </div>
+  </div>
+</div>

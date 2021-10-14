@@ -55,64 +55,69 @@ key
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">为什么 key 是必须的？</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">为什么 key 是必须的？</h1>
+					</div>
+					<div class="post-time">发布于: 2021-01-01</div>
 				</div>
-				<div class="post-time">发布于: 2021-01-01</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>之前有说到，在 React 中渲染列表的时候，要给每一个数据加一个 key 值，赋予一个确定的标示，而且也详细描述了如何给一个标示，方法知道了，那么为什么要这么做呢？</p>
+
+				<div class="markdown">
+					<p>之前有说到，在 React 中渲染列表的时候，要给每一个数据加一个 key 值，赋予一个确定的标示，而且也详细描述了如何给一个标示，方法知道了，那么为什么要这么做呢？</p>
 <!-- more -->
 <p><a href="../20201216-react-note-2/#%E4%B8%89%E3%80%81%E8%BD%AC%E6%8D%A2%E5%88%97%E8%A1%A8">在 React 中如何渲染列表？</a></p>
 <p>在默认条件下，当递归 DOM 节点的子元素时，React 会同时遍历两个子元素的列表；当产生差异时，生成一个 mutation。</p>
@@ -159,24 +164,24 @@ key
 <p>最后，你也可以使用元素在数组中的下标作为 key。这个策略在元素不进行重新排序时比较合适，如果有顺序修改，diff 就会变得慢。</p>
 <p>当基于下标的组件进行重新排序时，组件 state 可能会遇到一些问题。由于组件实例是基于它们的 key 来决定是否更新以及复用，如果 key 是一个下标，那么修改顺序时会修改当前的 key，导致非受控组件的 state（比如输入框）可能相互篡改导致无法预期的变动。</p>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/react">react</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/react">react</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -204,12 +209,7 @@ key
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -234,5 +234,12 @@ key
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

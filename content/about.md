@@ -22,3 +22,4 @@ the road ahead will be long and our climb will be steep.
 
 (目前没有添加友链的计划，所以一些申请我就直接略过了~)
 
+>这里是关于我的个人信息，同时也是一个留言板。

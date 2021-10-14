@@ -19,10 +19,10 @@ $(function () {
   $('.nav-menu').click(function () {
     if (i == 1) {
       $(this).toggleClass('nav-menu-open');
-      $('.header nav ul').toggleClass('nav-menu-ul')
+      $('.aside-header .nav ul').toggleClass('nav-menu-ul')
     } else {
       $('.nav-menu').removeClass('nav-menu-open');
-      $('.header nav ul').removeClass('nav-menu-ul')
+      $('.aside-header .nav ul').removeClass('nav-menu-ul')
     }
   });
 

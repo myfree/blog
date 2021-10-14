@@ -58,64 +58,69 @@ react官方文档
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">关于react的一份学习计划</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">关于react的一份学习计划</h1>
+					</div>
+					<div class="post-time">发布于: 2020-11-27</div>
 				</div>
-				<div class="post-time">发布于: 2020-11-27</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p>有关react框架的学习计划，除了之前推荐的react开源作者写的学习建议，我还参考了阮一峰的react实例教程，写的通俗易懂，又难易并进，可以很快的掌握react的核心要点</p>
+
+				<div class="markdown">
+					<p>有关react框架的学习计划，除了之前推荐的react开源作者写的学习建议，我还参考了阮一峰的react实例教程，写的通俗易懂，又难易并进，可以很快的掌握react的核心要点</p>
 <!-- more -->
 <p>之前说了，为了公司的项目决定学习react框架，看了一份react.js开源作者的一份学习计划，<a href="../20201119-react-learning-path">react学习路径－－怎么学习react？</a>个人感觉还是不错，但是需要看的文档比较多且官方文档没有那么详细的讲解，只说个原理，有些难以参透。</p>
 <p>在网络上浏览很久，发现大家对阮一峰的react教程风评不错，就去看了一下。</p>
@@ -132,24 +137,24 @@ react官方文档
 <p>把这个库clone下来，然后跟着练习。</p>
 <p>只要有一定的javascript基本，我觉得学习react并不困难，当然这只是入门，想要更深入的了解他，我觉得还有一段路程去经历，以后也会慢慢记录在react使用中遇到的问题，以及一些知识点的笔记。</p>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/react">react</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/react">react</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -177,12 +182,7 @@ react官方文档
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -207,5 +207,12 @@ react官方文档
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>

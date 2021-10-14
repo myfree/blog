@@ -46,64 +46,69 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 
 <body>
 	<div class="container wrapper">
-		<header>
-	<div class="header">
+		<div class="recent-posts section">
+			<div class="aside">
+  <div class="aside-header">
+    <h5 class="site-title">
+      <a href="https://imzsh.com/">Nov8nana</a>
+      
+    </h5>
 
-		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
-		</h5>
+    <nav class="nav">
+      <ul class="flat">
+        
+        <li>
+          <a href="/">首页</a>
+        </li>
+        
+        <li>
+          <a href="/posts">归档</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+        </li>
+        
+        <li>
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+        </li>
+        
+        <li>
+          <a href="/about">关于我</a>
+        </li>
+        
+      </ul>
+      <div class="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
 
-		<nav class="nav">
-			<ul class="flat">
-				
-				<li>
-					<a href="/">首页</a>
-				</li>
-				
-				<li>
-					<a href="/posts">归档</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-				</li>
-				
-				<li>
-					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-				</li>
-				
-				<li>
-					<a href="/about">关于我</a>
-				</li>
-				
-			</ul>
-			<div class="nav-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</nav>
+    <div class=link-nav>
 
-	</div>
-</header>
+      
+    </div>
+  </div>
+</div>
+			<div class="posts">
 
-		<div class="post section">
-			<div class="post-header posts-header">
-				
-				<div class="matter">
-					<h1 class="title">getElementBy系列和querySelector系列的区别</h1>
+				<div class="post-header posts-header">
+
+					<div class="matter">
+						<h1 class="title">getElementBy系列和querySelector系列的区别</h1>
+					</div>
+					<div class="post-time">发布于: 2020-11-16</div>
 				</div>
-				<div class="post-time">发布于: 2020-11-16</div>
-			</div>
 
-			<div class="post-toc" id="post-toc">
+				<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
-			<div class="markdown">
-				<p><code>querySelector</code>和<code>querySelectorAll</code>的用法和<code>getElementBy</code>大致一样，获取的时候带上符号，getElementBy获取的是元素的<code>动态集合</code>，querySelector获取的是元素的<code>静态集合</code>。</p>
+
+				<div class="markdown">
+					<p><code>querySelector</code>和<code>querySelectorAll</code>的用法和<code>getElementBy</code>大致一样，获取的时候带上符号，getElementBy获取的是元素的<code>动态集合</code>，querySelector获取的是元素的<code>静态集合</code>。</p>
 <!-- more -->
 <p><red>但是需要注意：getElementBy系列和querySelector系列的区别</red></p>
 <p>比如，我们写一个for循环，每次获取li标签的时候，ul生成一个li子元素</p>
@@ -147,24 +152,24 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 </span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
 </code></pre></div><p>静态集合体现在<code>querySelectorAll('li')</code>获取到ul里所有li后，不管后续再动态添加了多少li，都是不会对其参数影响</p>
 
-			</div>
+				</div>
 
-			<div class="tags">
-				
+				<div class="tags">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a></li>
-							
-						</ul>
 					
-				
-			</div>
+					<ul class="flat">
+						
+						<li class="tag-li"><a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a></li>
+						
+					</ul>
+					
+					
+				</div>
 
-			<div class="back">
-				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-			</div>
-			<section id="comments">
+				<div class="back">
+					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+				</div>
+				<section id="comments">
   <hr>
   
 
@@ -192,12 +197,7 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
   </script>
 
 </section>
-
-		</div>
-		
-	</div>
-	
-	<div class="footer wrapper">
+				<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -222,5 +222,12 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
+			</div>
+			
+		</div>
+	</div>
+
+
 </body>
+
 </html>
