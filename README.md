@@ -3,7 +3,7 @@
 * 项目源码仓库: `main`
 * 静态文件路径: `/public`
 
-Bolg: [https://shuxhan.com](https://shuxhan.com)
+Bolg: [https://imzsh.com](https://imzsh.com)
 
 Comment Repo: [https://github.com/Nov8nana/blog-comment-Vssue](https://github.com/Nov8nana/blog-comment-Vssue)
 
