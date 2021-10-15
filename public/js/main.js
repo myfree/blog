@@ -26,8 +26,6 @@ $(function () {
     }
   });
 
-
-
 })
 
 console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')
