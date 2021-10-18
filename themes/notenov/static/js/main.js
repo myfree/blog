@@ -46,3 +46,4 @@ for (var i = 1; i < myNav.length; i++) {
     myNav[0].className = "";
   }
 }
+

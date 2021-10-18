@@ -1,50 +1,14 @@
 <section id="comments">
   <hr>
-  <!-- <div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="{{ .Site.Params.CusdisId }}"
-  data-page-id="{{ .RelPermalink }}"
-  data-page-url="{{ .RelPermalink }}"
-  data-page-title="{{ .Title }}"
-></div>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-<script>
-  window.CUSDIS_LOCALE = {
-    "powered_by": "评论由 Cusdis 提供",
-    "post_comment": "发送",
-    "loading": "加载中",
-    "email": "邮箱地址 (可选)",
-    "nickname": "昵称",
-    "reply_placeholder": "回复内容...",
-    "reply_btn": "回复",
-    "sending": "发送中...",
-    "mod_badge": "管理员",
-    "content_is_required": "内容不能为空",
-    "nickname_is_required": "昵称不能为空",
-    "comment_has_been_sent": "评论已发送，管理员审核通过后会展示"
-  }
-</script> -->
-
-  <div id="vssue"></div>
-  <!-- <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css"> -->
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/vssue.css" />
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+  <div id="tcomment"></div>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/twikoo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <script>
-    new Vue({
-      el: '#vssue',
-      data: {
-        title: '{{ .Title }}',
-        options: {
-          owner: 'Nov8nana',
-          repo: 'blog-comment-Vssue',
-          clientId: '165c1f06227b75546d96',
-          clientSecret: '278f65bee5c6a473078446e278e26438615fdd75', // 只有在使用某些平台时需要
-          autoCreateIssue: true
-        },
-      },
-
-      template: `<vssue :title="title" :options="options"></vssue>`,
+    twikoo.init({
+      envId: 'shuxhan-2gcz5b7m7f845ec3',
+      el: '#tcomment',
+      path: 'window.location.pathname',
+      lang: 'zh-CN',
     })
   </script>
 

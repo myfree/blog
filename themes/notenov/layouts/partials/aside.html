@@ -1,8 +1,11 @@
 <div class="aside">
   <div class="aside-header">
     <h5 class="site-title">
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Params.Author }}</a>
-      <!-- <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.Authorimg }}"></a> -->
+      
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.Authorimg }}">
+        <span>{{ .Site.Params.Author }}</span>
+      </a>
     </h5>
 
     <nav class="nav">

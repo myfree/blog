@@ -47,8 +47,11 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 			<div class="aside">
   <div class="aside-header">
     <h5 class="site-title">
-      <a href="https://imzsh.com/">Nov8nana</a>
       
+      <a href="https://imzsh.com/">
+        <img src="https://img.shuxhan.com/author.png">
+        <span>Nov8nana</span>
+      </a>
     </h5>
 
     <nav class="nav">
@@ -105,7 +108,6 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 			<div class="posts">
 
 				<div class="post-header posts-header">
-
 					<div class="matter">
 						<h1 class="title">使用js随机生成背景颜色</h1>
 					</div>
@@ -237,28 +239,15 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 				</div>
 				<section id="comments">
   <hr>
-  
-
-  <div id="vssue"></div>
-  
-  <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/vssue.css" />
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+  <div id="tcomment"></div>
+  <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <script>
-    new Vue({
-      el: '#vssue',
-      data: {
-        title: '使用js随机生成背景颜色',
-        options: {
-          owner: 'Nov8nana',
-          repo: 'blog-comment-Vssue',
-          clientId: '165c1f06227b75546d96',
-          clientSecret: '278f65bee5c6a473078446e278e26438615fdd75', 
-          autoCreateIssue: true
-        },
-      },
-
-      template: `<vssue :title="title" :options="options"></vssue>`,
+    twikoo.init({
+      envId: 'shuxhan-2gcz5b7m7f845ec3',
+      el: '#tcomment',
+      path: 'window.location.pathname',
+      lang: 'zh-CN',
     })
   </script>
 
