@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "关于我"
 date: 2020-06-14
 layout: "about"
 ---

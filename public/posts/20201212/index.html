@@ -32,9 +32,9 @@
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -74,17 +74,17 @@
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">React 中的占位符 Fragment</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-12</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -93,7 +93,7 @@
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>在 React 项目中， render 方法只能有一个根元素，一般都是 <code>&lt;div&gt; &lt;div/&gt;</code> ，然后在里面写上我们的组件，渲染到浏览器一看，除了我们想要显示的组件，外面还套着一层 div ，如果在写项目的时候，套了很多曾组件，那么每一层都会多出来一个父级元素 div ，不美观，而且在调整样式的时候会有些麻烦</p>
 <p>因此， React 提供了一个占位符 Fragment，写法是：</p>
@@ -116,13 +116,13 @@
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/react">react</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/react">react</a></li>
 					
+				</ul>
+				
 				
 			</div>
 
@@ -147,9 +147,9 @@
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -176,4 +176,5 @@
 	feather.replace()
 </script>
 </body>
+
 </html>

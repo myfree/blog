@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
 
-<body>
-	<div class="container wrapper list">
-		{{ partial "head.html" . }}
-
+<body>{{ partial "header.html" . }}
+	<div class="main list">
 		<div class="section">
 			{{ if isset .Data "Term" }}
-			<h2>{{ .Data.Term }}</h2>
+			<h2 class="page-title">{{ .Data.Term }}</h2>
 			{{ else }}
 			<h2 class="page-title">{{ .Name }}</h2>
 			{{ end }}

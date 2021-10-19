@@ -38,9 +38,9 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -80,17 +80,17 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">webpack安装配置指令</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-26</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -99,7 +99,7 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。</p>
 <!-- more -->
@@ -270,15 +270,15 @@ module.exports <span style="color:#ff79c6">=</span> {
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
-							
-							<li class="tag-li"><a href="/tags/webpack">webpack</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
 					
+					<li class="tag-li"><a href="/tags/webpack">webpack</a></li>
+					
+				</ul>
+				
 				
 			</div>
 
@@ -303,9 +303,9 @@ module.exports <span style="color:#ff79c6">=</span> {
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -332,4 +332,5 @@ module.exports <span style="color:#ff79c6">=</span> {
 	feather.replace()
 </script>
 </body>
+
 </html>

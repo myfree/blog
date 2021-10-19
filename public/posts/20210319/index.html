@@ -35,9 +35,9 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -77,17 +77,17 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">用ajax请求获取数据</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-03-19</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -96,7 +96,7 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的<code>data.json</code>文件，然后用<code>get</code>请求数据，下面是部分代码</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// ajax 请求获取数据
@@ -123,15 +123,15 @@ picShow();
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/ajax">ajax</a></li>
-							
-							<li class="tag-li"><a href="/tags/js">js</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/ajax">ajax</a></li>
 					
+					<li class="tag-li"><a href="/tags/js">js</a></li>
+					
+				</ul>
+				
 				
 			</div>
 
@@ -156,9 +156,9 @@ picShow();
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -185,4 +185,5 @@ picShow();
 	feather.replace()
 </script>
 </body>
+
 </html>

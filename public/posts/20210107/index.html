@@ -50,9 +50,9 @@
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -92,17 +92,17 @@
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">基于 React 的富文本编辑器－－Braft Editor</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-01-07</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -118,7 +118,7 @@
 </nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。</p>
 <p>今天分享的是一款基于 React 的富文本编辑器－－Braft Editor。</p>
@@ -178,15 +178,15 @@ yarn add braft-editor
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/react">react</a></li>
-							
-							<li class="tag-li"><a href="/tags/%E7%BB%84%E4%BB%B6">组件</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/react">react</a></li>
 					
+					<li class="tag-li"><a href="/tags/%E7%BB%84%E4%BB%B6">组件</a></li>
+					
+				</ul>
+				
 				
 			</div>
 
@@ -211,9 +211,9 @@ yarn add braft-editor
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -240,4 +240,5 @@ yarn add braft-editor
 	feather.replace()
 </script>
 </body>
+
 </html>

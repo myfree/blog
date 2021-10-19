@@ -77,9 +77,9 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -119,17 +119,17 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">vue生命周期</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-06-19</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -153,7 +153,7 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 </nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。</p>
 <!-- more -->
@@ -250,13 +250,13 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/vue">vue</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/vue">vue</a></li>
 					
+				</ul>
+				
 				
 			</div>
 
@@ -281,9 +281,9 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -310,4 +310,5 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 	feather.replace()
 </script>
 </body>
+
 </html>

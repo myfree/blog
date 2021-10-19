@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<!-- <html {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }}> -->
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
 
 <body>
-	<div class="container wrapper">
-		{{ partial "head.html" . }}
-
+	{{ partial "header.html" . }}
+	<div class="main">
 		<div class="recent-posts section">
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<div class="post">
-					
-						<div class="post-header">
-							
-							<div class="matter">
-								<h3 class="title small">
-									<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
-									<span class="day">{{ dateFormat "Jan 02,2006" .Date }}</span>
-								</h3>
-								<span class="description">
-									{{ if isset .Params "description" }}
-									{{ .Description }}
-									{{ else if gt (len .RawContent) 120 }}
-									{{ slicestr .RawContent 0 120 }}...
-									{{ else }}
-									{{ .RawContent }}
-									{{ end }}
-								</span>
-							</div>
+
+					<div class="post-header">
+
+						<div class="matter">
+							<h3 class="title small">
+								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
+								<span class="day">{{ dateFormat "Jan 02,2006" .Date }}</span>
+							</h3>
+							<span class="description">
+								{{ if isset .Params "description" }}
+								{{ .Description }}
+								{{ else if gt (len .RawContent) 120 }}
+								{{ slicestr .RawContent 0 120 }}...
+								{{ else }}
+								{{ .RawContent }}
+								{{ end }}
+							</span>
 						</div>
-					
+					</div>
+
 				</div>
 				{{ end }}
 				{{ template "partials/paginator.html" . }}

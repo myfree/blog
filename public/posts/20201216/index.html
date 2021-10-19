@@ -53,9 +53,9 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
 	
 </head>
 
+
 <body>
-	<div class="container wrapper">
-		<header>
+	<header>
 	<div class="header">
 
 		<h5 class="site-title">
@@ -95,17 +95,17 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
 
 	</div>
 </header>
-
+	<div class="main">
 		<div class="post section">
 			<div class="post-header posts-header">
-				
+
 				<div class="matter">
 					<h1 class="title">React 学习笔记（二）</h1>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-16</p>
-					<p>阅读:  <span id="twikoo_visitors"></span> 次</p>
-					<p><a href="#comments">点击评论</a></p>
+					<p>阅读: <span id="twikoo_visitors"></span> 次</p>
+					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
 
@@ -140,7 +140,7 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
 </nav>
   </div>
 </div>
-					
+
 			<div class="markdown">
 				<p>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同</p>
 <p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写</p>
@@ -494,13 +494,13 @@ ReactDOM.render(
 
 			<div class="tags">
 				
+				
+				<ul class="flat">
 					
-						<ul class="flat">
-							
-							<li class="tag-li"><a href="/tags/react">react</a></li>
-							
-						</ul>
+					<li class="tag-li"><a href="/tags/react">react</a></li>
 					
+				</ul>
+				
 				
 			</div>
 
@@ -525,9 +525,9 @@ ReactDOM.render(
 </section>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
@@ -554,4 +554,5 @@ ReactDOM.render(
 	feather.replace()
 </script>
 </body>
+
 </html>
