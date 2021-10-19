@@ -34,112 +34,92 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
 
 <body>
 	<div class="container wrapper">
-		<div class="recent-posts section">
-			<div class="aside">
-  <div class="aside-header">
-    <h5 class="site-title">
-      
-      <a href="https://imzsh.com/">
-        <img src="https://img.shuxhan.com/author.png">
-        <span>Nov8nana</span>
-      </a>
-    </h5>
+		<header>
+	<div class="header">
 
-    <nav class="nav">
-      <ul class="flat" id="nav">
-        
-        <li>
-          <a href="/">首页</a>
-        </li>
-        
-        <li>
-          <a href="/posts">文章</a>
-        </li>
-        
-        <li>
-          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
-        </li>
-        
-        <li>
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
-        </li>
-        
-        <li>
-          <a href="/about">关于我</a>
-        </li>
-        
-      </ul>
-      <div class="nav-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+		<h5 class="site-title">
+			<a href="https://imzsh.com/">Nov8nana</a>
+		</h5>
 
-    <div class=link-nav>
-      <ul class="flat">
-        
-        <li>
-          <a target="_blank" href="https://github.com/Nov8nana/">Github</a>
-        </li>
-        
-        <li>
-          <a target="_blank" href="/index.xml">RSS</a>
-        </li>
-        
-        <li>
-          <a target="_blank" href="https://img.shuxhan.com">图床</a>
-        </li>
-        
-      </ul>
-      
-    </div>
-  </div>
-</div>
-			<div class="posts">
+		<nav class="nav">
+			<ul class="flat">
+				
+				<li>
+					<a href="/">首页</a>
+				</li>
+				
+				<li>
+					<a href="/posts">文章</a>
+				</li>
+				
+				<li>
+					<a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94">生活随笔</a>
+				</li>
+				
+				<li>
+					<a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/">编程技术</a>
+				</li>
+				
+				<li>
+					<a href="/about">关于我</a>
+				</li>
+				
+			</ul>
+			<div class="nav-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
 
-				<div class="post-header posts-header">
-					<div class="matter">
-						<h1 class="title">npm install 报错和取消本地代理的问题</h1>
-					</div>
-					<div class="post-time">发布于: 2021-08-19</div>
+	</div>
+</header>
+
+		<div class="post section">
+			<div class="post-header posts-header">
+				
+				<div class="matter">
+					<h1 class="title">npm install 报错和取消本地代理的问题</h1>
 				</div>
+				<div class="post-time">发布于: 2021-08-19</div>
+			</div>
 
-				<div class="post-toc" id="post-toc">
+			<div class="post-toc" id="post-toc">
   <div class="post-toc-content always-active">
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-
-				<div class="markdown">
-					<p><code>npm install</code>下载依赖包的时候出现下面错误，请求失败。</p>
+					
+			<div class="markdown">
+				<p><code>npm install</code>下载依赖包的时候出现下面错误，请求失败。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm ERR! FetchError: request to https://registry.npm.taobao.org/cnpm failed, reason: connect ECONNREFUSED 127.0.0.1:1181
 </code></pre></div><p>调试过后发现是本地代理的问题，取消它。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm config delete proxy
 npm config delete https-proxy
 </code></pre></div><p><code>npm install</code> 成功运行，完毕。</p>
 
-				</div>
+			</div>
 
-				<div class="tags">
+			<div class="tags">
+				
 					
+						<ul class="flat">
+							
+							<li class="tag-li"><a href="/tags/%E6%8A%A5%E9%94%99">报错</a></li>
+							
+							<li class="tag-li"><a href="/tags/npm">npm</a></li>
+							
+						</ul>
 					
-					<ul class="flat">
-						
-						<li class="tag-li"><a href="/tags/%E6%8A%A5%E9%94%99">报错</a></li>
-						
-						<li class="tag-li"><a href="/tags/npm">npm</a></li>
-						
-					</ul>
-					
-					
-				</div>
+				
+			</div>
 
-				<div class="back">
-					<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
-				</div>
-				<section id="comments">
+			<div class="back">
+				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
+			</div>
+			<section id="comments">
   <hr>
+  <h4>评论~</h4>
   <div id="tcomment"></div>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
@@ -153,7 +133,12 @@ npm config delete https-proxy
   </script>
 
 </section>
-				<div class="footer wrapper">
+
+		</div>
+		
+	</div>
+	
+	<div class="footer wrapper">
 	<div style="padding:10px 0;">
 		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
 
@@ -178,12 +163,5 @@ npm config delete https-proxy
 <script src="https://imzsh.com/js/copycode.js"></script><script>
 	feather.replace()
 </script>
-			</div>
-			
-		</div>
-	</div>
-
-
 </body>
-
 </html>

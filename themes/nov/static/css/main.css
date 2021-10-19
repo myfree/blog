@@ -43,10 +43,9 @@
 }
 
 body {
-    font-family: Source Sans, sans-serif;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Heiti SC, Hiragino Sans GB, Microsoft YaHei, Dengxian, Simsun, sans-serif;
+    font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
     font-weight: 400;
-    color: #111827;
+    color: #3b3e48;
     line-height: 1.8em;
     font-size: 16px;
     overflow-x: hidden;
@@ -63,15 +62,6 @@ a {
 a:hover {
     color: rgb(156, 163, 175);
 }
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #333;
-}
-
 
 hr {
     display: block;
@@ -128,12 +118,6 @@ table tbody+tbody {
     border-top: 2px solid #dee2e6;
 }
 
-/* Breaks gists
-table tbody tr:nth-of-type(even) {
-  background-color: rgba(0, 0, 0, 0.15);
-}
-*/
-
 table th {
     background-color: #212529;
     border-color: #32383e;
@@ -170,8 +154,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: #111827;
-    /* font-weight: 500; */
     line-height: 1.3em;
     margin: 30px 0 20px 0;
 }
@@ -249,9 +231,8 @@ ul {
 
 .post .markdown {
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 3rem;
-    color: #2c3e50;
     font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
@@ -355,7 +336,7 @@ header {
 }
 
 .site-title a {
-    color: #004050;
+    color: #3b3e48;
     text-decoration: none !important;
     font-size: 1.6rem;
     font-weight: 500;
@@ -365,6 +346,7 @@ header {
 
 .site-title a:hover {
     border-bottom-width: 3px;
+    color: #000;
 }
 
 .header .site-description {
@@ -392,7 +374,7 @@ header {
 }
 
 .header nav li a {
-    font-size: 0.96rem;
+    font-size: 1rem;
     color: #00323c;
 }
 
@@ -452,26 +434,32 @@ header {
 }
 
 .recent-posts .posts .post {
-    margin-bottom: 45px;
+    margin-bottom: 46px;
 }
 
 .recent-posts .posts .post a {
-    display: block;
+    color: rgb(48, 48, 48);
+    display: inline-block;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
-    padding: 4px;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    font-weight: 400;
+    font-size: 1.4rem;
 }
 
 .recent-posts .posts .post a:hover {
-    background: rgba(221, 221, 221, 0.2);
+    color: #000;
 }
 
 .post-header {
     display: flex;
-
 }
 
 .post-header .meta .date {
@@ -526,8 +514,10 @@ header {
 
 .post .title.small {
     margin: 0 0 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
 }
 
 .post .post-header {
@@ -537,18 +527,40 @@ header {
 .post-list .post-header {
     margin-bottom: 10px;
     align-items: center;
+    flex-direction: row-reverse;
+    border-bottom: 1px #7d828a dashed;
 }
 
 .post-list .title.small {
     font-weight: 500;
-    font-size: 1.06rem;
+    font-size: 18px;
+}
+
+.post-list .title.small a {
+    color: #3b3e48;
+}
+
+.post-list .title.small a:hover {
+    color: #000;
 }
 
 .post .post-header .matter {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.625;
-    color: #88847b;
     word-break: break-all;
+    flex: 1;
+}
+
+.post .post-header .matter .description {
+    opacity: 0.9;
+    font-size: 0.96rem;
+}
+
+.post .post-header .matter .day {
+    opacity: 0.6;
+    font-size: 1rem;
+    width: 130px;
+    display: block;
 }
 
 .post .draft-label {
@@ -672,6 +684,10 @@ header {
         display: block;
         overflow-x: auto;
         width: 100%;
+    }
+
+    .post-list .title.small {
+        font-size: 16px;
     }
 }
 
@@ -842,7 +858,11 @@ figcaption {
     }
 }
 
-@media (max-width:840px) {
+@media (max-width:500px) {
+    .post .title.small {
+        display: block;
+    }
+
     .site-title a {
         font-size: 1.6rem;
     }
