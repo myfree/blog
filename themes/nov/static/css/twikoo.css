@@ -20,3 +20,11 @@
   cursor: pointer;
   opacity: 0.9;
 }
+
+.tk-replies[data-v-d82ce9a0] {
+  max-height: inherit !important;
+}
+
+.tk-expand {
+  display: none;
+}

@@ -842,7 +842,7 @@ figcaption {
 .post-toc {
     position: sticky;
     z-index: 99999;
-    top: 174px;
+    top: 200px;
     margin-left: 105%;
     width: 300px;
     height: 0;
