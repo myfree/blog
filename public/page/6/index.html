@@ -78,21 +78,16 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210120/">ES5 和 ES6 的区别？</a>
-									<span class="day">Jan 20,2021</span>
+									<a href="/posts/20201212/">React 中的占位符 Fragment</a>
+									<span class="day">Dec 12,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
 
-## 一、javascript 由三部分组成
 
-### 1.ECMAScript（核心）
-
-它规定了语言的组成部分：法语，类型，语句，关键字，操作符等等。
-
-![](https://shuxhan-imgbed.os...
+在 React 项目中， render 方法只能有一个根元素，一般都是 `&lt;div&gt; &lt;div/&gt;` ，然后在里面写上我们的组件，渲染到浏览器一看，除了我们想要显示的组件，外面还套着一层 div ，如果在写项目的时候，套了很...
 									
 								</span>
 							</div>
@@ -106,18 +101,131 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210118/">webpack 的核心概念和构建流程</a>
-									<span class="day">Jan 18,2021</span>
+									<a href="/posts/20201202/">为什么不可变性在 React 中那么重要？</a>
+									<span class="day">Dec 02,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
 
-## 1.webpack 的核心概念
+根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
 
-1. **entry（入口）**：一个可执行模块或者库的入口。定义了打包后的入口文件。
-2. **output（出口）**：指示 webpack 如何去输出，以及在哪里输出。
+&lt;!-- more --&gt;
+
+&gt;[Reac...
+									
+								</span>
+							</div>
+						</div>
+					
+				</div>
+				
+				<div class="post">
+					
+						<div class="post-header">
+							
+							<div class="matter">
+								<h3 class="title small">
+									<a href="/posts/20201127/">关于react的一份学习计划</a>
+									<span class="day">Nov 27,2020</span>
+								</h3>
+								<span class="description">
+									
+									
+
+
+有关react框架的学习计划，除了之前推荐的react开源作者写的学习建议，我还参考了阮一峰的react实例教程，写的通俗易懂，又难易并进，可以很快的掌握react的核心要点
+
+&lt;!-- more --&gt;
+
+之前说了，为...
+									
+								</span>
+							</div>
+						</div>
+					
+				</div>
+				
+				<div class="post">
+					
+						<div class="post-header">
+							
+							<div class="matter">
+								<h3 class="title small">
+									<a href="/posts/20201126/">webpack安装配置指令</a>
+									<span class="day">Nov 26,2020</span>
+								</h3>
+								<span class="description">
+									
+									
+
+
+进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。
+&lt;!-- more --&gt;
+减少io请求,通常我们在请求后，会返回一个html到浏览器。这时，...
+									
+								</span>
+							</div>
+						</div>
+					
+				</div>
+				
+				<div class="post">
+					
+						<div class="post-header">
+							
+							<div class="matter">
+								<h3 class="title small">
+									<a href="/posts/20201125/">vue学习笔记(3)－－computed, watch，calss, style</a>
+									<span class="day">Nov 25,2020</span>
+								</h3>
+								<span class="description">
+									
+									
+
+
+
+
+
+## 一、计算属性computed
+
+### 1.例子
+
+```html
+&lt;div id=&#34;app&#34;&gt;
+  &lt;div&gt;{{message}}&lt;/div&gt;
+  &lt;div&gt;{{revermessage}}&lt;...
+									
+								</span>
+							</div>
+						</div>
+					
+				</div>
+				
+				<div class="post">
+					
+						<div class="post-header">
+							
+							<div class="matter">
+								<h3 class="title small">
+									<a href="/posts/20201124/">vue学习笔记(2)－－vue实例和模板语法</a>
+									<span class="day">Nov 24,2020</span>
+								</h3>
+								<span class="description">
+									
+									
+
+
+
+## 一、vue实例
+
+### 1.创建vue实例
+
+一个vue实例应该通过`new Vue`来创建根实例，所有的 vue 组件其实都是 vue 实例
+
+```js
+var vm = new Vue({
   ...
 									
 								</span>
@@ -132,17 +240,22 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210117/">小张厨房日记（二）</a>
-									<span class="day">Jan 17,2021</span>
+									<a href="/posts/20201123/">vue学习笔记(1)－－什么是vue?</a>
+									<span class="day">Nov 23,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
 
-自从上次更新厨房日记之后，好像过了两个月多，实际上我一直在进阶我的厨艺，为什么没有更新我的厨房日记呢？因为实际在做的过程中我发现，每种菜的组合太多了，没必要组合一次就写一篇攻略，那样就有些做无用功了，没有太大的意义。
 
-思来...
+## 一、什么是vue?
+
+练习时使用，最新版本
+
+```html
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt;
+```...
 									
 								</span>
 							</div>
@@ -156,17 +269,20 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210116/">许嵩的歌又一次被抄袭！</a>
-									<span class="day">Jan 16,2021</span>
+									<a href="/posts/20201122/">React 学习笔记（一）</a>
+									<span class="day">Nov 22,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
 
-最新网上爆出风风火火的一件事，许嵩的《有何不可》被抄袭，抄袭者为罗聪，《简单的幸福》。
+react学习笔记，记录我在开发和学习过程中遇到的问题和知识点
 
-我从14年开始听许嵩的歌，一直到现在，许多年过去了，他的歌依旧脍炙人口，从之前的抒情浪漫情歌，批判社会的思想，一直到现在具体哲学内涵，...
+&lt;!-- more --&gt;
+
+
+2013年5月Facebook推出了React.js开源软件前端框架，函数式编程，是使用人数最多的前端框架，也拥有最健全...
 									
 								</span>
 							</div>
@@ -180,19 +296,19 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210107/">基于 React 的富文本编辑器－－Braft Editor</a>
-									<span class="day">Jan 07,2021</span>
+									<a href="/posts/20201121/">对象，类和接口之间的关系</a>
+									<span class="day">Nov 21,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
+类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象，对象通过他们公开的方法来定义他们与外界的交互行为，而方法就形成了与外界交互的接口
 
-最近发了很多关于 React 的文章，记录遇到的新技术点，以及在写代码过程中遇到的问题，希望可以帮助到和我遇到同样问题的同学。
+&lt;!-- more --&gt;
 
-今天分享的是一款基于 React 的富文本编辑器－－Braft Editor。
 
-&lt;!--...
+![](https://vkcey...
 									
 								</span>
 							</div>
@@ -206,39 +322,22 @@
 							
 							<div class="matter">
 								<h3 class="title small">
-									<a href="/posts/20210106/">使用 React 与 Vue 创建同一款 App，差别究竟有多大？</a>
-									<span class="day">Jan 06,2021</span>
+									<a href="/posts/20201120/">vue使用cli脚手架构建项目工程</a>
+									<span class="day">Nov 20,2020</span>
 								</h3>
 								<span class="description">
 									
 									
 
+vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题
+&lt;!-- more --&gt;
+### 1.下载安装node
 
+测试一下是否成功安装，
 
-关于 [React 框架](https://react.docschina.org/) 和 [Vue 框架](https://cn.vuejs.org/) 的对比，用两者写出同一个程序，对比其代码实现的过程，看看它们的差异究...
-									
-								</span>
-							</div>
-						</div>
-					
-				</div>
-				
-				<div class="post">
-					
-						<div class="post-header">
-							
-							<div class="matter">
-								<h3 class="title small">
-									<a href="/posts/20210105/">React 脚手架项目打包时的路径问题</a>
-									<span class="day">Jan 05,2021</span>
-								</h3>
-								<span class="description">
-									
-									
-
-
-
-`create-react-app` 脚手架指令可以生成 React 项目，在项目完成之后执行打包命令 `npm run build`，文件夹内生成 `build`文件夹，就是打包后的文件，在浏览器运行 `index.htm...
+```shell
+$ node -v
+// 返回下载的版本号...
 									
 								</span>
 							</div>

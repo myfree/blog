@@ -1,3 +1,6 @@
+#comments {
+  padding-top: 20px;
+}
 .twikoo .el-textarea__inner {
   min-height: 100px !important;
 }
