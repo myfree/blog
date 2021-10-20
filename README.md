@@ -1,11 +1,6 @@
 # Blog
 
-* 项目源码仓库: `main`
-* 静态文件路径: `/public`
-
-## 个人博客
-
-* 项目地址: [https://github.com/Nov8nana/hugo-blog](https://github.com/Nov8nana/hugo-blog)
+* 源码仓库: [https://github.com/Nov8nana/blog](https://github.com/Nov8nana/blog)
 * 在线阅读 Bolg: [https://imzsh.com](https://imzsh.com)
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>vue学习笔记(3)－－computed, watch，calss, style - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>vue学习笔记(3)－－computed, watch，calss, style - 求索日记</title><link rel="icon" type="image/png" href=https://img.shuxhan.com/favicon-2.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="vue学习笔记(3)－－computed, watch，calss, style">
 <meta itemprop="description" content="一、计算属性computed 1.例子 &lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, computed: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
 此时vm.severmessage依赖于vm.message的变化，对message改变数据，会引起severmessage的更新
@@ -52,7 +52,10 @@
 	<div class="header">
 
 		<h5 class="site-title">
-			<a href="https://imzsh.com/">Nov8nana</a>
+			<a href="https://imzsh.com/">
+				
+				<span>Nov8nana</span>	
+			</a>
 		</h5>
 
 		<nav class="nav">

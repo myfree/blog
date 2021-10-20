@@ -42,8 +42,14 @@
     box-shadow: none;
 }
 
+@font-face {
+    font-family: SF Pro Text;
+    src: url(https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn/font/PingFangSC-Medium.woff2);
+}
+
 body {
     font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
+    font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
     color: #3b3e48;
     line-height: 1.8em;
@@ -131,7 +137,6 @@ textarea {
 blockquote {
     margin: 0;
     font-style: italic;
-    font-size: 1rem;
     border-left: 3px solid #32383e8e;
     padding-left: 20px;
     background: #eee;
@@ -231,9 +236,9 @@ ul {
 
 .post .markdown {
     line-height: 1.8;
-    /* font-size: 1.05rem; */
+    font-size: 1.1rem;
     margin-bottom: 3rem;
-    /* font-family: Inter, Noto Sans SC, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; */
+    opacity: 0.98;
 }
 
 .post .markdown a:hover {
@@ -338,6 +343,7 @@ header {
     margin: 0;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .site-title a {
@@ -347,6 +353,11 @@ header {
     font-weight: 500;
     display: flex;
     align-items: center;
+    height: 100%;
+}
+
+.site-title a img {
+    height: 100%;
 }
 
 .site-title a:hover {
@@ -379,8 +390,8 @@ header {
 }
 
 .header nav li a {
-    font-size: 1rem;
-    color: #00323c;
+    color: #3b3e48;
+    font-size: 1.08rem;
 }
 
 .header nav li a:hover {
@@ -456,7 +467,7 @@ header {
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .recent-posts .posts .post a:hover {
@@ -501,7 +512,7 @@ header {
 .post-header h1.title {
     margin: -10px 0 0 0;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: rgb(48, 48, 48);
 }
 
@@ -535,7 +546,8 @@ header {
 
 .post .post-header .post-mater p {
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 0.92rem;
+    margin-bottom: 0;
 }
 
 .post-list .post-header {
@@ -547,7 +559,7 @@ header {
 
 .post-list .title.small {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .post-list .title.small a {
@@ -566,16 +578,18 @@ header {
 }
 
 .post .post-header .matter .description {
-    opacity: 0.9;
-    font-size: 0.96rem;
+    opacity: 0.8;
+    font-size: 1.04rem;
 }
 
 .post .post-header .matter .day {
-    opacity: 0.6;
+    opacity: 0.8;
     font-size: 1rem;
     width: 130px;
     display: block;
     text-align: right;
+    font-weight: 500;
+    color: #3b3e48;
 }
 
 .post .draft-label {
@@ -606,7 +620,7 @@ header {
 .page-title {
     margin: -10px 0 20px 0;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: rgb(48, 48, 48);
 }
 
@@ -616,7 +630,7 @@ header {
 }
 
 .footer {
-    font-size: 0.9rem;
+    font-size: 0.96rem;
     color: #999;
     border-top: 1px solid #f4f4f4;
     margin-top: 40px;
@@ -627,10 +641,6 @@ header {
 
 .footer a {
     color: #666;
-}
-
-.footer a:hover {
-    color: #3700ff;
 }
 
 .tag-cloud {
@@ -707,7 +717,7 @@ header {
     }
 
     .post-list .title.small {
-        font-size: 16px;
+        font-size: 1.1rem;
     }
 }
 
@@ -843,6 +853,10 @@ figcaption {
 }
 
 @media (max-width:500px) {
+    .post .post-header .matter .day {
+        text-align: left;
+    }
+
     .post .title.small {
         display: block;
     }
@@ -928,7 +942,6 @@ figcaption {
     .header nav ul.nav-menu-ul a {
         display: block;
         text-align: center;
-        font-size: 1.02;
     }
 }
 
