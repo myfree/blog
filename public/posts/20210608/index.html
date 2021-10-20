@@ -35,7 +35,6 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -94,11 +93,12 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。</p>
@@ -238,8 +238,20 @@ Vue.use(VueAxios, axios)
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

@@ -30,7 +30,7 @@ $(function () {
   });
 
   // 点击文章目录，平滑跳转
-  $('#TableOfContents a').click(function () {
+  $('#autoMenu ul>li>a').click(function () {
     $('html, body').animate({
       scrollTop: $($.attr(this, 'href')).offset().top
     }, 500);

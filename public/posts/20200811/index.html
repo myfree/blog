@@ -29,7 +29,6 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -88,11 +87,12 @@
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>本书从前端开发人员的需求出发，以“流”为线索，从结构、内容到美化装饰灯方面，全面且深入地讲解前端开发人员必须了解和掌握的大量的CSS知识点。同时，作者结合多年的从业经验，通过大量的实战案例，详尽解析CSS的相关知识与常见问题。</p>
@@ -159,8 +159,20 @@
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

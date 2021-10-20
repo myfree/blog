@@ -38,7 +38,6 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&#3
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -97,11 +96,12 @@ function addEvent(type, toDo) { if (window.attachEvent) { window.attachEvent(&#3
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>页面监听是我们经常用的一个功能，下面两个段代码表示两个事件，分别在页面滚动500px和1000px的时候触发，在代码中使用了箭头函数。</p>
@@ -203,8 +203,20 @@ addEvent(<span style="color:#f1fa8c">&#39;scroll&#39;</span>, <span style="color
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

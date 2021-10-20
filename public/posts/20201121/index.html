@@ -59,7 +59,6 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -118,20 +117,12 @@
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#类对象和接口">类，对象和接口</a>
-      <ul>
-        <li><a href="#1类和对象">1.类和对象</a></li>
-        <li><a href="#2什么是接口">2.什么是接口？</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>类是对的类型，类是具有相同属性和方法的一组集合，一个类可以对应多个对象，对象通过他们公开的方法来定义他们与外界的交互行为，而方法就形成了与外界交互的接口</p>
@@ -229,8 +220,20 @@
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

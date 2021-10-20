@@ -29,7 +29,6 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -88,11 +87,12 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。</p>
@@ -165,8 +165,20 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

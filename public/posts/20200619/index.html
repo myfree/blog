@@ -74,7 +74,6 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -133,26 +132,12 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一组件的生命周期">一、组件的生命周期</a>
-      <ul>
-        <li><a href="#1beforecreate">1.beforeCreate</a></li>
-        <li><a href="#2created">2.created</a></li>
-        <li><a href="#3beforemount">3.beforeMount</a></li>
-        <li><a href="#4mounted">4.mounted</a></li>
-        <li><a href="#5beforeupdate">5.beforeUpdate</a></li>
-        <li><a href="#6updated">6.updated</a></li>
-        <li><a href="#7beforedestroy">7.beforeDestroy</a></li>
-        <li><a href="#8destroyed">8.destroyed</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>学习vue中一个非常重要的领域，就是生命周期，它包含了很多的内容。每个vue实例在被创建的时候都要经历一系列的初始化过程，这个过程就是vue的生命周期。</p>
@@ -305,8 +290,20 @@ mounted: function () { console.log(&#39;mounted:&#39;,document.getElementsByTagN
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

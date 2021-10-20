@@ -41,7 +41,6 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -100,19 +99,12 @@
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#直接修改数据">直接修改数据</a></li>
-    <li><a href="#新数据替换旧数据">新数据替换旧数据</a></li>
-    <li><a href="#简化复杂的功能">简化复杂的功能</a></li>
-    <li><a href="#跟踪数据的改变">跟踪数据的改变</a></li>
-    <li><a href="#确定在-react-中何时重新渲染">确定在 React 中何时重新渲染</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据</p>
@@ -202,8 +194,20 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

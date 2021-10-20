@@ -44,7 +44,6 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -103,27 +102,12 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一vue实例">一、vue实例</a>
-      <ul>
-        <li><a href="#1创建vue实例">1.创建vue实例</a></li>
-        <li><a href="#2生命周期函数">2.生命周期函数</a></li>
-      </ul>
-    </li>
-    <li><a href="#二模板语法">二、模板语法</a>
-      <ul>
-        <li><a href="#1插值">1.插值</a></li>
-        <li><a href="#2指令">2.指令</a></li>
-        <li><a href="#3缩写">3.缩写</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<h2 id="一vue实例">一、vue实例</h2>
@@ -384,8 +368,20 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

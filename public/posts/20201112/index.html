@@ -53,7 +53,6 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -112,37 +111,12 @@
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一什么是面向对象编程">一、什么是面向对象编程</a>
-      <ul>
-        <li><a href="#1面向过程程序设计">1.面向过程程序设计</a></li>
-        <li><a href="#2面向对象程序设计">2.面向对象程序设计</a></li>
-      </ul>
-    </li>
-    <li><a href="#二创建对象的方法">二、创建对象的方法</a>
-      <ul>
-        <li><a href="#1创建字面量和实例">1.创建字面量和实例</a></li>
-        <li><a href="#2工厂模式">2.工厂模式</a></li>
-        <li><a href="#3构造函数">3.构造函数</a></li>
-        <li><a href="#4-原型模式">4. 原型模式</a></li>
-        <li><a href="#5混合模式推荐使用">5.混合模式(推荐使用)</a></li>
-      </ul>
-    </li>
-    <li><a href="#三原型原型链">三、原型，原型链</a>
-      <ul>
-        <li><a href="#1原型对象">1.原型对象</a></li>
-        <li><a href="#2__proto__和prototype的区别">2.__proto__和prototype的区别</a></li>
-        <li><a href="#3继承">3.继承</a></li>
-        <li><a href="#4es6新方法class">4.ES6新方法－－class</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。</p>
@@ -677,8 +651,20 @@ son.hello();    <span style="color:#6272a4">// Hello, xm!
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

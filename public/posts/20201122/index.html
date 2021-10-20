@@ -50,7 +50,6 @@ yarn install然后重新启动npm start或者yarn start
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -109,39 +108,12 @@ yarn install然后重新启动npm start或者yarn start
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一开发环境准备">一、开发环境准备</a>
-      <ul>
-        <li><a href="#1如何使用脚手架工具">1.如何使用脚手架工具？</a></li>
-        <li><a href="#2使用脚手架工具创建一个项目">2.使用脚手架工具创建一个项目</a></li>
-        <li><a href="#3运行项目">3.运行项目</a></li>
-        <li><a href="#4工程目录">4.工程目录</a></li>
-      </ul>
-    </li>
-    <li><a href="#二react-组件">二、React 组件</a>
-      <ul>
-        <li><a href="#1react-模块的作用">1.React 模块的作用</a></li>
-        <li><a href="#2conponent-模块">2.Conponent 模块</a></li>
-        <li><a href="#3引入多个组件">3.引入多个组件</a></li>
-        <li><a href="#4组件">4、组件</a></li>
-      </ul>
-    </li>
-    <li><a href="#三使用react编写todolist功能">三、使用React编写ToDoList功能</a></li>
-    <li><a href="#四jsx语法">四、JSX语法</a>
-      <ul>
-        <li><a href="#1jsx基本语法">1.JSX基本语法</a></li>
-        <li><a href="#2元素渲染">2.元素渲染</a></li>
-        <li><a href="#3更新已渲染的元素">3.更新已渲染的元素</a></li>
-      </ul>
-    </li>
-    <li><a href="#五生命周期">五、生命周期</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<p>react学习笔记，记录我在开发和学习过程中遇到的问题和知识点</p>
@@ -534,8 +506,20 @@ setInterval(tick, <span style="color:#bd93f9">1000</span>);
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

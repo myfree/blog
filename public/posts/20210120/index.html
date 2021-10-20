@@ -59,7 +59,6 @@ ES6特性如下：
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -118,29 +117,12 @@ ES6特性如下：
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一javascript-由三部分组成">一、javascript 由三部分组成</a>
-      <ul>
-        <li><a href="#1ecmascript核心">1.ECMAScript（核心）</a></li>
-        <li><a href="#2dom文档对象模型">2.DOM（文档对象模型）</a></li>
-        <li><a href="#3bom浏览器对象模型">3.BOM（浏览器对象模型）</a></li>
-      </ul>
-    </li>
-    <li><a href="#二什么是es5">二、什么是ES5？</a>
-      <ul>
-        <li><a href="#1strict模式">1.strict模式</a></li>
-        <li><a href="#2array增加方法">2.Array增加方法</a></li>
-        <li><a href="#3object方法">3.Object方法</a></li>
-        <li><a href="#2什么是es6">2.什么是ES6?</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<h2 id="一javascript-由三部分组成">一、javascript 由三部分组成</h2>
@@ -461,8 +443,20 @@ key <span style="color:#ff79c6">==</span> key2  <span style="color:#6272a4">//fa
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>

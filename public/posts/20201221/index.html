@@ -32,7 +32,6 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
-	
 </head>
 
 
@@ -91,23 +90,12 @@
 				</div>
 			</div>
 
-			<div class="post-toc" id="post-toc">
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一react-组件是什么">一、React 组件是什么？</a>
-      <ul>
-        <li><a href="#1创建一个组件">1.创建一个组件</a></li>
-        <li><a href="#2渲染组件">2.渲染组件</a></li>
-        <li><a href="#3组件">3.组件</a></li>
-      </ul>
-    </li>
-    <li><a href="#二组件的划分">二、组件的划分</a></li>
-    <li><a href="#三设计原则">三、设计原则</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
+			
+
+<div class="autoMenu" id="autoMenu" data-autoMenu></div>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
 
 			<div class="markdown">
 				<h2 id="一react-组件是什么">一、React 组件是什么？</h2>
@@ -251,8 +239,20 @@ ReactDOM.render(
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
+<script src="https://imzsh.com/js/copycode.js"></script>
+<script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
-<script src="https://imzsh.com/js/copycode.js"></script><script>
+<script>
+	$("#autoMenu").autoMenu({
+		levelOne: 'h2', 
+		levelTwo: 'h3', 
+		width: 260, 
+		
+		
+		offTop: 100 
+	});
+</script><script>
 	feather.replace()
 </script>
 </body>
