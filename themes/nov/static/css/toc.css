@@ -52,6 +52,9 @@
 	padding: 2px 4px;
 	position: relative;
 	padding-left: 20px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .autoMenu ul>li>a::before {

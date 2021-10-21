@@ -2,6 +2,10 @@
   padding-top: 20px;
 }
 
+#comments h4 {
+  padding: 0;
+}
+
 .twikoo .el-textarea__inner {
   min-height: 100px !important;
 }

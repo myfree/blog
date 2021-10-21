@@ -41,7 +41,7 @@
 				</li>
 				
 				<li>
-					<a href="/posts">文章</a>
+					<a href="/posts">归档</a>
 				</li>
 				
 				<li>
@@ -62,7 +62,7 @@
 						<i class="fa fa-search"></i>
 					</a>
 					<div id="fastSearch">
-						<input id="searchInput" tabindex="0">
+						<input id="searchInput" tabindex="0" autocomplete="off">
 						<ul id="searchResults">
 						</ul>
 					</div>
@@ -337,16 +337,44 @@ npm ERR! FetchError: request to https://registry.npm.taobao.org/cnpm ...
 				
 				
 
-<ul class="pagination">
-	<li class="page-item page-prev">
-	
-	</li>
-	<li class="page-item page-next">
-	
-    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
-	
-	</li>
-</ul>
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a href="#" aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a href="#" aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a href="#" aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/page/8/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+
 
 
 			</div>

@@ -160,7 +160,8 @@ h4,
 h5,
 h6 {
     line-height: 1.3em;
-    margin: 30px 0 20px 0;
+    margin: 0 0 20px 0;
+    padding-top: 50px;
 }
 
 h1 {
@@ -239,6 +240,15 @@ ul {
     font-size: 1.02rem;
     margin-bottom: 3rem;
     opacity: 1;
+}
+
+.post .markdown p {
+    margin-bottom: 0;
+}
+
+.post .markdown table {
+    margin: 0;
+    margin-top: 10px;
 }
 
 .post .markdown img {
@@ -335,6 +345,7 @@ header {
 
 .header .site-title {
     margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     height: 100%;
@@ -504,6 +515,7 @@ header {
 }
 
 .post-header h1.title {
+    padding: 0;
     margin: -10px 0 0 0;
     font-weight: 400;
     font-size: 1.6rem;
@@ -523,6 +535,7 @@ header {
 }
 
 .post .title.small {
+    padding: 0;
     margin: 0 0 10px 0;
     font-size: 1.3rem;
     font-weight: 600;
@@ -554,6 +567,7 @@ header {
 .post-list .title.small {
     font-weight: 500;
     font-size: 1.04rem;
+    padding: 0;
 }
 
 .post-list .title.small a {
@@ -616,6 +630,7 @@ header {
     font-weight: 400;
     font-size: 1.8rem;
     color: rgb(48, 48, 48);
+    padding: 0;
 }
 
 .list .posts .post-header .meta {
@@ -647,30 +662,31 @@ header {
 
 .pagination {
     margin: 0;
-    padding: 0;
+    margin-bottom: 10px;
     text-align: left;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
 }
 
 .pagination li {
     list-style: none;
     display: inline-block;
-    margin: 0;
-    padding: 0;
+    margin: 0 2px;
 }
 
-.pagination .page-prev {
-    margin-right: 20px;
-    padding-right: 20px;
-}
-
-.pagination .page-item.page-prev {
-    text-align: left;
-}
-
-.pagination .page-item.page-next {
-    text-align: right;
+.pagination li a {
+    display: block;
+    color: #000;
+    background: #ddd;
+    width: 40px;
+    height: 34px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -846,7 +862,7 @@ figcaption {
     height: 100%;
 }
 
-@media (max-width:500px) {
+@media (max-width:768px) {
     .post .post-header .matter .day {
         text-align: left;
     }
@@ -982,7 +998,6 @@ figcaption {
     height: 31px;
     font-size: 1em;
     color: #465373;
-    font-weight: bold;
     background-color: #95B0F4;
     border-radius: 3px 3px 0px 0px;
     border: none;
@@ -1041,7 +1056,7 @@ figcaption {
     font-size: 20px;
 }
 
-@media (max-width:500px) {
+@media (max-width:768px) {
 
     .search-menu {
         text-align: center;
