@@ -32,6 +32,7 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
@@ -42,10 +43,9 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 		<h5 class="site-title">
 			<a href="https://imzsh.com/">
 				
-				<span>Nov8nana</span>	
+				<span>Nov8nana</span>
 			</a>
 		</h5>
-
 		<nav class="nav">
 			<ul class="flat">
 				
@@ -69,6 +69,17 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 					<a href="/about">关于我</a>
 				</li>
 				
+				
+				<li class="search-menu">
+					<a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
+						<i class="fa fa-search"></i>
+					</a>
+					<div id="fastSearch">
+						<input id="searchInput" tabindex="0">
+						<ul id="searchResults">
+						</ul>
+					</div>
+				</li>
 			</ul>
 			<div class="nav-menu">
 				<span></span>
@@ -93,10 +104,7 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 				</div>
 			</div>
 
-			
-
-<div class="autoMenu" id="autoMenu" data-autoMenu></div>
-
+			<div class="autoMenu" id="autoMenu" data-autoMenu></div>
 <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
 
 
@@ -164,7 +172,8 @@ picShow();
 
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
-		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
+		<span><i class="fa fa-copyright"></i> 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天
+		,继续加油！
 
 	</div>
 	<a class="top-btn" id="">
@@ -183,10 +192,11 @@ picShow();
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
-
 <script src="https://imzsh.com/js/copycode.js"></script>
 <script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
+<script src="https://imzsh.com/js/fastsearch.js"></script>
+<script src="https://imzsh.com/js/fuse.js"></script>
 <script>
 	$("#autoMenu").autoMenu({
 		levelOne: 'h2', 

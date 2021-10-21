@@ -1,12 +1,2 @@
-<!-- {{ if or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
-<div class="post-toc" id="post-toc">
-  {{- $globalAutoCollapseToc := .Site.Params.autoCollapseToc | default false }}
-  <div class="post-toc-content{{ if not (or .Params.autoCollapseToc (and $globalAutoCollapseToc (ne .Params.autoCollapseToc false))) }} always-active{{ end }}">
-    {{.TableOfContents}}
-  </div>
-</div>
-{{- end }} -->
-
 <div class="autoMenu" id="autoMenu" data-autoMenu></div>
-
 <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/toc.css" />

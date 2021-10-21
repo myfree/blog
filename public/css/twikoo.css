@@ -1,6 +1,5 @@
 #comments {
   padding-top: 20px;
-  font-family: initial;
 }
 
 .twikoo .el-textarea__inner {
@@ -29,9 +28,4 @@
 
 .tk-expand {
   display: none;
-}
-
-.tk-content[data-v-d82ce9a0] {
-  font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1.08rem;
 }

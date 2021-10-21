@@ -19,6 +19,7 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
@@ -29,10 +30,9 @@
 		<h5 class="site-title">
 			<a href="https://imzsh.com/">
 				
-				<span>Nov8nana</span>	
+				<span>Nov8nana</span>
 			</a>
 		</h5>
-
 		<nav class="nav">
 			<ul class="flat">
 				
@@ -56,6 +56,17 @@
 					<a href="/about">关于我</a>
 				</li>
 				
+				
+				<li class="search-menu">
+					<a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
+						<i class="fa fa-search"></i>
+					</a>
+					<div id="fastSearch">
+						<input id="searchInput" tabindex="0">
+						<ul id="searchResults">
+						</ul>
+					</div>
+				</li>
 			</ul>
 			<div class="nav-menu">
 				<span></span>
@@ -79,7 +90,7 @@
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210608/">在 vue 中使用 axios 调用数据</a>
-								<span class="day">Jun 08,2021</span>
+								<span class="day">2021-06-08</span>
 							</h3>
 							<span class="description">
 								
@@ -108,7 +119,7 @@ npm install axios
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210530/">宝塔如何实现进程守护？</a>
-								<span class="day">May 30,2021</span>
+								<span class="day">2021-05-30</span>
 							</h3>
 							<span class="description">
 								
@@ -135,7 +146,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210527/">css 中 fixed 定位属性和动画的冲突问题及解决方法</a>
-								<span class="day">May 27,2021</span>
+								<span class="day">2021-05-27</span>
 							</h3>
 							<span class="description">
 								
@@ -162,7 +173,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210513/">Oracle数据库安装教程（超详细）</a>
-								<span class="day">May 13,2021</span>
+								<span class="day">2021-05-13</span>
 							</h3>
 							<span class="description">
 								
@@ -187,7 +198,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210511/">Typecho博客搭建及优化教程(详细)</a>
-								<span class="day">May 11,2021</span>
+								<span class="day">2021-05-11</span>
 							</h3>
 							<span class="description">
 								
@@ -210,7 +221,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210509/">网站引入iframe视频，如何实现高度自适应?</a>
-								<span class="day">May 09,2021</span>
+								<span class="day">2021-05-09</span>
 							</h3>
 							<span class="description">
 								
@@ -231,7 +242,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210507/">呼吸之野</a>
-								<span class="day">May 07,2021</span>
+								<span class="day">2021-05-07</span>
 							</h3>
 							<span class="description">
 								
@@ -256,7 +267,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210424/">基耶斯洛夫斯基和他的现实</a>
-								<span class="day">Apr 24,2021</span>
+								<span class="day">2021-04-24</span>
 							</h3>
 							<span class="description">
 								
@@ -279,7 +290,7 @@ base run.sh
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210421/">基于 docsify 搭建一个文档</a>
-								<span class="day">Apr 21,2021</span>
+								<span class="day">2021-04-21</span>
 							</h3>
 							<span class="description">
 								
@@ -304,7 +315,7 @@ docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比�
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210403/">清明时节雨纷纷</a>
-								<span class="day">Apr 03,2021</span>
+								<span class="day">2021-04-03</span>
 							</h3>
 							<span class="description">
 								
@@ -343,7 +354,8 @@ docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比�
 	</div>
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
-		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
+		<span><i class="fa fa-copyright"></i> 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天
+		,继续加油！
 
 	</div>
 	<a class="top-btn" id="">
@@ -362,10 +374,11 @@ docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比�
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
-
 <script src="https://imzsh.com/js/copycode.js"></script>
 <script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
+<script src="https://imzsh.com/js/fastsearch.js"></script>
+<script src="https://imzsh.com/js/fuse.js"></script>
 <script>
 	$("#autoMenu").autoMenu({
 		levelOne: 'h2', 

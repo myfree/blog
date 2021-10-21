@@ -19,6 +19,7 @@
 	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
@@ -29,10 +30,9 @@
 		<h5 class="site-title">
 			<a href="https://imzsh.com/">
 				
-				<span>Nov8nana</span>	
+				<span>Nov8nana</span>
 			</a>
 		</h5>
-
 		<nav class="nav">
 			<ul class="flat">
 				
@@ -56,6 +56,17 @@
 					<a href="/about">关于我</a>
 				</li>
 				
+				
+				<li class="search-menu">
+					<a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
+						<i class="fa fa-search"></i>
+					</a>
+					<div id="fastSearch">
+						<input id="searchInput" tabindex="0">
+						<ul id="searchResults">
+						</ul>
+					</div>
+				</li>
 			</ul>
 			<div class="nav-menu">
 				<span></span>
@@ -79,7 +90,7 @@
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210225/">使用宝塔面板安装 autoPicCdn 图床工具</a>
-								<span class="day">Feb 25,2021</span>
+								<span class="day">2021-02-25</span>
 							</h3>
 							<span class="description">
 								
@@ -102,7 +113,7 @@
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210214/">西溪，良渚，宋城</a>
-								<span class="day">Feb 14,2021</span>
+								<span class="day">2021-02-14</span>
 							</h3>
 							<span class="description">
 								
@@ -128,7 +139,7 @@
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210204/">typecho 博客小表情无法显示问题</a>
-								<span class="day">Feb 04,2021</span>
+								<span class="day">2021-02-04</span>
 							</h3>
 							<span class="description">
 								
@@ -152,7 +163,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210203/">掘金个人主页头像旋转效果</a>
-								<span class="day">Feb 03,2021</span>
+								<span class="day">2021-02-03</span>
 							</h3>
 							<span class="description">
 								
@@ -175,7 +186,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210201/">湘湖游玩相册</a>
-								<span class="day">Feb 01,2021</span>
+								<span class="day">2021-02-01</span>
 							</h3>
 							<span class="description">
 								
@@ -199,7 +210,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210120/">ES5 和 ES6 的区别？</a>
-								<span class="day">Jan 20,2021</span>
+								<span class="day">2021-01-20</span>
 							</h3>
 							<span class="description">
 								
@@ -227,7 +238,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210118/">webpack 的核心概念和构建流程</a>
-								<span class="day">Jan 18,2021</span>
+								<span class="day">2021-01-18</span>
 							</h3>
 							<span class="description">
 								
@@ -253,7 +264,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210117/">小张厨房日记（二）</a>
-								<span class="day">Jan 17,2021</span>
+								<span class="day">2021-01-17</span>
 							</h3>
 							<span class="description">
 								
@@ -277,7 +288,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210116/">许嵩的歌又一次被抄袭！</a>
-								<span class="day">Jan 16,2021</span>
+								<span class="day">2021-01-16</span>
 							</h3>
 							<span class="description">
 								
@@ -301,7 +312,7 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 						<div class="matter">
 							<h3 class="title small">
 								<a href="/posts/20210107/">基于 React 的富文本编辑器－－Braft Editor</a>
-								<span class="day">Jan 07,2021</span>
+								<span class="day">2021-01-07</span>
 							</h3>
 							<span class="description">
 								
@@ -341,7 +352,8 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 	</div>
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
-		<span>© 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天 ,继续加油！
+		<span><i class="fa fa-copyright"></i> 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天
+		,继续加油！
 
 	</div>
 	<a class="top-btn" id="">
@@ -360,10 +372,11 @@ typecho 博客建立完成之后，会发现如果插入一些小表情，页面
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
 <script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
-
 <script src="https://imzsh.com/js/copycode.js"></script>
 <script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
+<script src="https://imzsh.com/js/fastsearch.js"></script>
+<script src="https://imzsh.com/js/fuse.js"></script>
 <script>
 	$("#autoMenu").autoMenu({
 		levelOne: 'h2', 

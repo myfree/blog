@@ -49,7 +49,7 @@
 
 body {
     font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
-    font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
+    /* font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif; */
     font-weight: 400;
     color: #3b3e48;
     line-height: 1.8em;
@@ -66,7 +66,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    /* color:  */
+    opacity: 0.9;
 }
 
 hr {
@@ -236,14 +236,9 @@ ul {
 
 .post .markdown {
     line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 1.02rem;
     margin-bottom: 3rem;
-    opacity: 0.98;
-}
-
-.post .markdown a:hover {
-    color: #1e90ff;
-    text-decoration: underline;
+    opacity: 1;
 }
 
 .post .markdown img {
@@ -321,7 +316,6 @@ header {
     height: 50px;
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     max-width: 1400px;
     padding: 0 10px;
@@ -391,7 +385,7 @@ header {
 
 .header nav li a {
     color: #3b3e48;
-    font-size: 1.08rem;
+    font-size: 1.02rem;
 }
 
 .header nav li a:hover {
@@ -467,7 +461,7 @@ header {
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .recent-posts .posts .post a:hover {
@@ -512,7 +506,7 @@ header {
 .post-header h1.title {
     margin: -10px 0 0 0;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: rgb(48, 48, 48);
 }
 
@@ -559,7 +553,7 @@ header {
 
 .post-list .title.small {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.04rem;
 }
 
 .post-list .title.small a {
@@ -571,15 +565,15 @@ header {
 }
 
 .post .post-header .matter {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.625;
     word-break: break-all;
     flex: 1;
 }
 
 .post .post-header .matter .description {
-    opacity: 0.8;
-    font-size: 1.04rem;
+    opacity: 0.9;
+    font-size: 0.95rem;
 }
 
 .post .post-header .matter .day {
@@ -872,7 +866,7 @@ figcaption {
     .nav-menu {
         display: block;
         position: absolute;
-        top: -15px;
+        top: 8px;
         right: 0;
         width: 40px;
         height: 30px;
@@ -967,5 +961,104 @@ figcaption {
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
         opacity: 1;
+    }
+}
+
+#fastSearch {
+    visibility: hidden;
+    position: absolute;
+    right: 54px;
+    top: 4px;
+    display: inline-block;
+    width: 320px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    z-index: 9;
+}
+
+#fastSearch input {
+    padding: 4px;
+    width: 100%;
+    height: 31px;
+    font-size: 1em;
+    color: #465373;
+    font-weight: bold;
+    background-color: #95B0F4;
+    border-radius: 3px 3px 0px 0px;
+    border: none;
+    outline: none;
+    text-align: left;
+    display: inline-block;
+}
+
+#fastSearch ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#searchResults li {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    margin-left: 0em;
+    background-color: #E1E7F7;
+    border-bottom: 1px dotted #465373;
+}
+
+#searchResults li .title {
+    font-size: .9em;
+    margin: 0;
+    display: inline-block;
+}
+
+#searchResults {
+    visibility: inherit;
+    display: inline-block;
+    width: 328px;
+    margin: 0;
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+}
+
+#searchResults a {
+    text-decoration: none !important;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+#searchResults a:hover,
+#searchResults a:focus {
+    outline: 0;
+    background-color: #95B0F4;
+    color: #fff;
+}
+
+#search-btn {
+    position: sticky;
+    font-size: 20px;
+}
+
+@media (max-width:500px) {
+
+    .search-menu {
+        text-align: center;
+    }
+
+    #fastSearch {
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #fastSearch ul {
+        margin-top: 40px;
+    }
+
+    #searchResults {
+        width: 100%;
     }
 }

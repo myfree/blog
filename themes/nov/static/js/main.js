@@ -1,6 +1,7 @@
 $(function () {
   // iframe自适应
   $('iframe').wrap('<p class="iframe"></p>')
+  $('.post .markdown a').attr('target','_blank')
 
   // 手机端导航栏切换模式
   var i = 1;

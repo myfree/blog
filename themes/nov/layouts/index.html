@@ -16,7 +16,7 @@
 						<div class="matter">
 							<h3 class="title small">
 								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
-								<span class="day">{{ dateFormat "Jan 02,2006" .Date }}</span>
+								<span class="day">{{ dateFormat "2006-01-02" .Date }}</span>
 							</h3>
 							<span class="description">
 								{{ if isset .Params "description" }}
