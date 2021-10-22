@@ -3,12 +3,14 @@
 {{ partial "head.html" . }}
 
 <body>{{ partial "header.html" . }}
+
 	<div class="main list">
+		{{ partial "sidebar.html" . }}
 		<div class="section">
 			{{ if isset .Data "Term" }}
-			<h2 class="page-title">{{ .Data.Term }}</h2>
+			<span class="page-title">{{ .Data.Term }}</span>
 			{{ else }}
-			<h2 class="page-title">{{ .Name }}</h2>
+			<span class="page-title">{{ .Name }}</span>
 			{{ end }}
 
 			<ul class="posts flat">

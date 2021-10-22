@@ -35,19 +35,12 @@ tags:
 ## 3.有哪些常见的 loader ？
 
 1. babel-loader：把es6转成es5；
-
 2. css-loader：加载css，支持模块化，压缩，文件导入等特性；
-
 3. style-loader：把css代码注入到js中，通过dom操作去加载css；
-
 4. eslint-loader：通过Eslint检查js代码；
-
 5. image-loader：加载并且压缩图片晚间；
-
 6. file-loader：文件输出到一个文件夹中，在代码中通过相对url去引用输出的文件；
-
 7. url-loader：和file-loader类似，文件很小的时候可以base64方式吧文件内容注入到代码中。
-
 8. source-map-loader：加载额外的source map文件，方便调试。
 
 ## 4.业务场景和对应解决方案
@@ -136,11 +129,12 @@ module.exports = {
         new AutoWebPlugin('./src/'),
     ]
 };
+```
 
 **分析：**
 1. `AutoWebPlugin`会把./src/目录下所有每个文件夹作为一个单页页面的入口，自动为所有的页面入口配置一个 `WebPlugin` 输出对应的html。
 2. 要新增一个页面就在 `./src/` 下新建一个文件夹包含这个单页应用所依赖的代码，`AutoWebPlugin` 自动生成一个名叫文件夹名称的html文件。
-```
+
 
 ### 3.代码分隔优化
 

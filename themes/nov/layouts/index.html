@@ -4,6 +4,7 @@
 <body>
 	{{ partial "header.html" . }}
 	<div class="main">
+		{{ partial "sidebar.html" . }}
 		<div class="recent-posts section">
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
@@ -14,10 +15,10 @@
 					<div class="post-header">
 
 						<div class="matter">
-							<h3 class="title small">
+							<div class="title small">
 								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
 								<span class="day">{{ dateFormat "2006-01-02" .Date }}</span>
-							</h3>
+							</div>
 							<span class="description">
 								{{ if isset .Params "description" }}
 								{{ .Description }}
@@ -34,7 +35,9 @@
 				{{ end }}
 				{{ template "partials/paginator.html" . }}
 			</div>
+
 		</div>
+		
 	</div>
 	{{ partial "footer.html" . }}
 </body>

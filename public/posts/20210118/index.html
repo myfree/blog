@@ -6,7 +6,7 @@
 	<meta itemprop="name" content="webpack 的核心概念和构建流程">
 <meta itemprop="description" content="1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3."><meta itemprop="datePublished" content="2021-01-18T19:59:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-18T19:59:00+00:00" />
-<meta itemprop="wordCount" content="363">
+<meta itemprop="wordCount" content="361">
 <meta itemprop="keywords" content="js,webpack," /><meta property="og:title" content="webpack 的核心概念和构建流程" />
 <meta property="og:description" content="1.webpack 的核心概念  entry（入口）：一个可执行模块或者库的入口。定义了打包后的入口文件。 output（出口）：指示 webpack 如何去输出，以及在哪里输出。 path: 打包文件存放的绝对路径 publicPath: 网站运行时的访问路径 filename: 打包后的文件名 module（模块）：在 webpack 里，一切皆模块，一个模块对应一个文件。webpack 会从配置的 entry 中开始递归找出所有依赖的模块。 chunk（代码块）：一个 chunk 由多个 模块 组合而成。可以将可执行的模块和他所依赖的模块组合成一个 chunk ，这就是打包。 loader（模块转换器）：用于把一个模块原内容按照需求转换成新的内容。例如：es6 转换为 es5，scss 转换为 css 等。 plugin（扩展）：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。  2.webpack 构建流程  初始化参数：解析 webpack 的配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。 开始编译：上一步得到的参数初始化 compiler 对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。 确定入口：其配置的 entry 入口，开始解析文件构建的 AST 语法树，找出依赖，递归下去。 编译模块：根据文件类型和 loader 配置，调用所有配置的 loader 对文件进行转换，再找出该模块依赖的模块，再递归本步骤知道所有入口依赖的文件都经过了本步骤的处理。 完成模块编译并输出：递归完后，得到每个文件结果，包含了每个模块及她们之间的依赖关系，根据 entry 配置生成代码块 chunk 。 输出完成：输出所有的 chunk 到文件系统。  3." />
 <meta property="og:type" content="article" />
@@ -82,6 +82,75 @@
 	</div>
 </header>
 	<div class="main">
+		<div class="sidebar">
+
+  
+  <div class="sidebar-about">
+    <h4>About Me</h4>
+    <div class="sidebar-about-p">
+      <p>Author: Nov8nana</p>
+      <p>路漫漫其修远兮，吾将上下而求索！这是我的个人博客，记录一些琐事和笔记。</p>
+    </div>
+    <a href="/about">more ></a>
+  </div>
+
+  
+  
+  
+  <div class="related-content">
+    <h4>相关文章</h4>
+    <ul>
+      
+      <li>
+        <a href="/posts/20201219/">
+          <span>javascript 进阶问题</span>
+          <span class="day">(2020-12-19)</span>
+        </a>
+
+      </li>
+      
+      <li>
+        <a href="/posts/20201126/">
+          <span>webpack安装配置指令</span>
+          <span class="day">(2020-11-26)</span>
+        </a>
+
+      </li>
+      
+      <li>
+        <a href="/posts/20201118/">
+          <span>在js中运算不能随便把value属性定义成变量</span>
+          <span class="day">(2020-11-18)</span>
+        </a>
+
+      </li>
+      
+      <li>
+        <a href="/posts/20201117/">
+          <span>事件监听函数，以及事件的捕获和冒泡机制</span>
+          <span class="day">(2020-11-17)</span>
+        </a>
+
+      </li>
+      
+      <li>
+        <a href="/posts/20201114/">
+          <span>有关js函数，方法的一些补充总结</span>
+          <span class="day">(2020-11-14)</span>
+        </a>
+
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  
+  <div class="autoMenu" id="autoMenu" data-autoMenu></div>
+  <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
+
+
+</div>
 		<div class="post section">
 			<div class="post-header posts-header">
 
@@ -90,14 +159,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-01-18</p>
-					<p>阅读: <span id="twikoo_visitors">?</span> 次</p>
+					<p>阅读: <span id="twikoo_visitors">0</span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
-
-			<div class="autoMenu" id="autoMenu" data-autoMenu></div>
-<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
-
 
 			<div class="markdown">
 				<h2 id="1webpack-的核心概念">1.webpack 的核心概念</h2>
@@ -123,30 +188,14 @@ filename: 打包后的文件名</li>
 </ol>
 <h2 id="3有哪些常见的-loader-">3.有哪些常见的 loader ？</h2>
 <ol>
-<li>
-<p>babel-loader：把es6转成es5；</p>
-</li>
-<li>
-<p>css-loader：加载css，支持模块化，压缩，文件导入等特性；</p>
-</li>
-<li>
-<p>style-loader：把css代码注入到js中，通过dom操作去加载css；</p>
-</li>
-<li>
-<p>eslint-loader：通过Eslint检查js代码；</p>
-</li>
-<li>
-<p>image-loader：加载并且压缩图片晚间；</p>
-</li>
-<li>
-<p>file-loader：文件输出到一个文件夹中，在代码中通过相对url去引用输出的文件；</p>
-</li>
-<li>
-<p>url-loader：和file-loader类似，文件很小的时候可以base64方式吧文件内容注入到代码中。</p>
-</li>
-<li>
-<p>source-map-loader：加载额外的source map文件，方便调试。</p>
-</li>
+<li>babel-loader：把es6转成es5；</li>
+<li>css-loader：加载css，支持模块化，压缩，文件导入等特性；</li>
+<li>style-loader：把css代码注入到js中，通过dom操作去加载css；</li>
+<li>eslint-loader：通过Eslint检查js代码；</li>
+<li>image-loader：加载并且压缩图片晚间；</li>
+<li>file-loader：文件输出到一个文件夹中，在代码中通过相对url去引用输出的文件；</li>
+<li>url-loader：和file-loader类似，文件很小的时候可以base64方式吧文件内容注入到代码中。</li>
+<li>source-map-loader：加载额外的source map文件，方便调试。</li>
 </ol>
 <h2 id="4业务场景和对应解决方案">4.业务场景和对应解决方案</h2>
 <h3 id="1单页应用">1.单页应用</h3>
@@ -213,11 +262,12 @@ module.exports <span style="color:#ff79c6">=</span> {
 </span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">new</span> AutoWebPlugin(<span style="color:#f1fa8c">&#39;./src/&#39;</span>),
     ]
 };
-
-<span style="color:#ff79c6">**</span>分析：<span style="color:#ff79c6">**</span>
-<span style="color:#bd93f9">1.</span> <span style="color:#f1fa8c">`AutoWebPlugin`</span>会把.<span style="color:#ff79c6">/</span>src<span style="color:#ff79c6">/</span>目录下所有每个文件夹作为一个单页页面的入口，自动为所有的页面入口配置一个 <span style="color:#f1fa8c">`WebPlugin`</span> 输出对应的html。
-<span style="color:#bd93f9">2.</span> 要新增一个页面就在 <span style="color:#f1fa8c">`./src/`</span> 下新建一个文件夹包含这个单页应用所依赖的代码，<span style="color:#f1fa8c">`AutoWebPlugin`</span> 自动生成一个名叫文件夹名称的html文件。
-</code></pre></div><h3 id="3代码分隔优化">3.代码分隔优化</h3>
+</code></pre></div><p><strong>分析：</strong></p>
+<ol>
+<li><code>AutoWebPlugin</code>会把./src/目录下所有每个文件夹作为一个单页页面的入口，自动为所有的页面入口配置一个 <code>WebPlugin</code> 输出对应的html。</li>
+<li>要新增一个页面就在 <code>./src/</code> 下新建一个文件夹包含这个单页应用所依赖的代码，<code>AutoWebPlugin</code> 自动生成一个名叫文件夹名称的html文件。</li>
+</ol>
+<h3 id="3代码分隔优化">3.代码分隔优化</h3>
 <p>一个好的代码分割对浏览器首屏效果提升很大。</p>
 <p><strong>最常见的react体系：</strong></p>
 <ol>
@@ -369,7 +419,6 @@ module.exports <span style="color:#ff79c6">=</span> EndWebpackPlugin;
 </section>
 
 		</div>
-
 	</div>
 
 	<div class="footer wrapper">
