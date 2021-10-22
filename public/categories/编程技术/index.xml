@@ -6,7 +6,21 @@
     <description>Recent content in 编程技术 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通过 getTimezoneOffset() 方法判断当前时区是否为夏令时</title>
+      <link>https://imzsh.com/posts/20211022/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imzsh.com/posts/20211022/</guid>
+      <description>getTimezoneOffset() 方法 方法返回 UTC 时间和本地时间之间的时差，以分钟为单位。
+ 世界协调时间 (UTC) 是世界时间标准设定的时间, UTC 时间与 GMT 时间（格林威治时间）相同。
+ 测一下我所在时区和标准时区的时间差
+function myDate () { var d = new Date(); var n = d.getTimezoneOffset(); console.log(n) } myDate(); // PS E:\demo&amp;gt; node 1.js // -480 也就是 480分钟（8个小时），北京时间是东八区，刚好与格林威治时间相差8个小时，这说明 getTimezoneOffset() 方法是很有效的。
+接下来利用这个方法，判断一下当前时区是否为夏令时。
+const time1 = new Date(2021, 0, 1); const time2 = new Date(2021, 6, 1); if (time1.getTimezoneOffset() != time2.getTimezoneOffset()) { console.log(&amp;#39;夏令时&amp;#39;); } else { console.log(&amp;#39;非夏令时&amp;#39;); } // PS E:\demo&amp;gt; node 1.</description>
+    </item>
+    
     <item>
       <title>使用js随机生成背景颜色</title>
       <link>https://imzsh.com/posts/20210929/</link>

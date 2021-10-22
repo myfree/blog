@@ -138,9 +138,14 @@ blockquote {
     margin: 0;
     font-style: italic;
     border-left: 3px solid #32383e8e;
-    padding-left: 20px;
     background: #eee;
-    padding: 1px 10px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+blockquote p {
+    margin: 0;
 }
 
 blockquote cite {
