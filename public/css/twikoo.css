@@ -6,10 +6,6 @@
   padding: 0;
 }
 
-.twikoo .el-textarea__inner {
-  min-height: 100px !important;
-}
-
 .twikoo .tk-tag[data-v-d82ce9a0] {
   display: inline !important;
   padding: 0.2em 0.5em !important;
@@ -32,4 +28,93 @@
 
 .tk-expand {
   display: none;
+}
+
+.tk-meta-input[data-v-5087bc56] {
+  flex-wrap: wrap;
+}
+
+.tk-meta-input .el-input[data-v-5087bc56] {
+  flex: auto;
+  width: 100%;
+  background: #f9f9f9;
+  margin: 0;
+  margin-left: 0;
+  margin-bottom: 10px;
+  height: 44px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.tk-meta-input .el-input+.el-input[data-v-5087bc56] {
+  margin-left: 0;
+}
+
+.tk-meta-input .el-input[data-v-5087bc56] .el-input-group__prepend {
+  background: none;
+  border: none;
+  font-size: 0.94rem;
+}
+
+.el-input--small .el-input__inner {
+  border: none;
+  height: 100%;
+  font-size: 1rem;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
+
+.twikoo .el-textarea__inner {
+  font-size: 1rem;
+  border-radius: 6px;
+  min-height: 140px !important;
+  border: none;
+  background: #f9f9f9;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  resize: none;
+}
+
+.twikoo .el-input__inner:focus,
+.twikoo .el-textarea__inner:focus {
+  box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+}
+
+.tk-preview-container[data-v-619b4c52] {
+  border: none;
+  background: #f9f9f9;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.tk-content[data-v-d82ce9a0] {
+  background: #f9f9f9;
+  padding: 0 10px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+@media (max-width:767px) {
+  .tk-meta-input .el-input+.el-input[data-v-5087bc56] {
+    margin-top: 0;
+  }
 }

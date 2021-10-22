@@ -30,6 +30,11 @@
     background: #000;
 }
 
+code[class*="language-"],
+pre[class*="language-"] {
+    text-shadow: none !important;
+}
+
 #TableOfContents::-webkit-scrollbar {
     box-shadow: none;
 }
@@ -523,7 +528,7 @@ header {
 }
 
 .recent-posts .posts .post {
-    margin-bottom: 46px;
+    margin-top: 36px;
 }
 
 .recent-posts .posts .post a {
@@ -579,7 +584,7 @@ header {
 .posts-header {
     display: block;
     padding-bottom: 0 !important;
-    margin: 20px 0 10px !important;
+    margin: 20px 0 20px !important;
 }
 
 .post-header h1.title {
@@ -694,7 +699,7 @@ header {
 
 .page-title {
     display: block;
-    margin: -10px 0 20px 0;
+    margin: 10px 0 20px 0;
     font-weight: 400;
     font-size: 1.8rem;
     color: rgb(48, 48, 48);
