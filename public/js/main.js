@@ -38,6 +38,8 @@ $(function () {
     return false;
   });
 
+  $('.autoMenu>ul>li:nth-child(1)').before('<li class="mulu">目录</li>')
+
   // 点击标题下方评论按钮时，平时滚动到底部评论区
   $('#tocomment').click(function () {
     $('html, body').animate({
@@ -45,7 +47,20 @@ $(function () {
     }, 500);
     return false;
   });
+
+  
 })
+
+
+var ascii = `
+  _    _      _ _        __          __        _     _ 
+ | |  | |    | | |       \\ \\        / /       | |   | |
+ | |__| | ___| | | ___    \\ \\  /\\  / /__  _ __| | __| |
+ |  __  |/ _ \\ | |/ _ \\    \\ \\/  \\/ / _ \\| '__| |/ _\` |
+ | |  | |  __/ | | (_) |    \\  /\\  / (_) | |  | | (_| |
+ |_|  |_|\\___|_|_|\\___/      \\/  \\/ \\___/|_|  |_|\\__,_|                                                                                                                                                                                  
+`
+console.log(`%c${ascii}`,'color:#e59de3')
 
 // 我的悄悄话
 console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')

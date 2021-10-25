@@ -316,8 +316,9 @@ ul {
 }
 
 .section {
-    padding: 0 10px;
+    padding: 0 20px;
     flex: 1;
+    max-width: 800px;
 }
 
 .main {
@@ -664,12 +665,10 @@ header {
 
 .post .post-header .matter .day {
     opacity: 0.8;
-    font-size: 1rem;
-    width: 130px;
-    display: block;
-    text-align: right;
+    font-size: 0.92rem;
     font-weight: 500;
     color: #3b3e48;
+    text-align: right;
 }
 
 .post .draft-label {
@@ -735,9 +734,7 @@ header {
 }
 
 .pagination {
-    margin: 0;
-    margin-bottom: 10px;
-    text-align: left;
+    margin: 30px auto;
     text-align: center;
 }
 
@@ -937,10 +934,6 @@ figcaption {
 }
 
 @media (max-width:768px) {
-    .post .post-header .matter .day {
-        text-align: left;
-    }
-
     .post .title.small {
         display: block;
     }

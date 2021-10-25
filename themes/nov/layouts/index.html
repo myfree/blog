@@ -17,7 +17,7 @@
 						<div class="matter">
 							<div class="title small">
 								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
-								<span class="day">{{ dateFormat "2006-01-02" .Date }}</span>
+								
 							</div>
 							<span class="description">
 								{{ if isset .Params "description" }}
@@ -28,6 +28,7 @@
 								{{ .RawContent }}
 								{{ end }}
 							</span>
+							<div class="day"><span>posted @</span><span>{{ dateFormat "2006-01-02" .Date }}</span></div>
 						</div>
 					</div>
 

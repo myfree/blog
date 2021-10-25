@@ -10,6 +10,7 @@
 }
 
 .autoMenu {
+	margin-top: 50px;
 	position: sticky;
 	top: 100px;
 	width: 300px;
@@ -21,6 +22,12 @@
 	max-height: 600px;
 	overflow-y: scroll;
 	padding: 0;
+}
+
+.autoMenu>ul>li:nth-child(1) {
+	font-weight: 600;
+	color: #000;
+	padding-left: 4px;
 }
 
 .autoMenu>ul::-webkit-scrollbar-track {
