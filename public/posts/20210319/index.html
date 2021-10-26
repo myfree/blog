@@ -29,10 +29,10 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/main.css" />
 
-	<script src="https://imzsh.com/js/feather.min.js"></script>
 	
 
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
 </head>
 
 
@@ -99,6 +99,12 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
     <div class="sidebar-about-p">
       <p>Nov8nana</p>
       <p>路漫漫其修远兮，吾将上下而求索！这是我的个人博客，记录一些琐事和笔记。</p>
+      <ul class="links">
+        <li><a target="_blank" href="https://github.com/Nov8nana"><i class="fa fa-github"></i></a></li>
+        <li><a href="mailto:shuxhan@163.com"><i class="fa fa-envelope"></i></a></li>
+        <li><a target="_blank" href="/index.xml"><i class="fa fa-rss"></i></a></li>
+        <li><a target="_blank" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a></li>
+      </ul>
     </div>
     <a href="/about">more ></a>
   </div>
@@ -155,8 +161,14 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
   
 
   
+  <div>
+    <h4>最近评论</h4>
+    <ul id="hot-comments"></ul>
+  </div>
+
+  
   <div class="autoMenu" id="autoMenu" data-autoMenu>
-    
+
   </div>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/toc.css" />
 
@@ -221,14 +233,9 @@ picShow();
   <h4>评论~</h4>
   <div id="tcomment"></div>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
-  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
+
   <script>
-    twikoo.init({
-      envId: 'shuxhan-2gcz5b7m7f845ec3',
-      el: '#tcomment',
-      path: 'window.location.pathname',
-      lang: 'zh-CN',
-    })
+    
   </script>
 
 </section>
@@ -257,24 +264,14 @@ picShow();
 	var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
 	document.getElementById('days').innerHTML = number_of_days;
 </script>
-<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+
 <script src="https://imzsh.com/js/copycode.js"></script>
 <script src="https://imzsh.com/js/toc.js"></script>
 <script src="https://imzsh.com/js/main.js"></script>
 <script src="https://imzsh.com/js/fastsearch.js"></script>
 <script src="https://imzsh.com/js/fuse.js"></script>
-<script>
-	$("#autoMenu").autoMenu({
-		levelOne: 'h2', 
-		levelTwo: 'h3', 
-		width: 260, 
-		
-		
-		offTop: 100 
-	});
-</script><script>
-	feather.replace()
-</script>
+<script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
+<script src="https://imzsh.com/js/twikoo.js"></script>
 </body>
 
 </html>

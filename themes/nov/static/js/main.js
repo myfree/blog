@@ -60,7 +60,7 @@ var ascii = `
  | |  | |  __/ | | (_) |    \\  /\\  / (_) | |  | | (_| |
  |_|  |_|\\___|_|_|\\___/      \\/  \\/ \\___/|_|  |_|\\__,_|                                                                                                                                                                                  
 `
-console.log(`%c${ascii}`,'color:#e59de3')
+console.log(`%c${ascii}`,'color:#1e90ff')
 
 // 我的悄悄话
 console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')

@@ -54,7 +54,9 @@ pre[class*="language-"] {
 
 body {
     font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
-    /* font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif; */
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Hiragino Sans GB', 'Roboto', 'Segoe UI', 'Microsoft Yahei',
+        '微软雅黑', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica', 'Arial', 'STHeiti', sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol';
     font-weight: 400;
     color: #3b3e48;
     line-height: 1.8em;
@@ -332,12 +334,30 @@ ul {
     padding-top: 26px;
 }
 
-.sidebar-about H4 {
-    margin: 0;
+.main .sidebar .links {
     padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.main .sidebar .links li {
+    margin-right: 14px;
+}
+
+.main .sidebar .links a {
+    color: #333;
+}
+
+.main .sidebar .links a i.fa {
+    font-size: 20px;
+}
+
+.sidebar h4 {
+    font-size: 20px;
     font-weight: 400;
+    margin: 30px 0 10px;
+    padding: 0;
     color: rgba(62, 59, 63, 0.9);
-    font-size: 24px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -350,14 +370,6 @@ ul {
     margin: 0;
     margin-bottom: 10px;
     line-height: 1.6;
-}
-
-.related-content h4 {
-    margin: 30px 0 10px;
-    padding: 0;
-    font-weight: 400;
-    font-size: 22px;
-    border-bottom: 1px solid #ddd;
 }
 
 .related-content ul {
@@ -382,6 +394,43 @@ ul {
 .related-content ul a .day {
     opacity: 0.8;
     font-size: 12px;
+}
+
+#hot-comments {
+    padding: 0;
+    list-style: none;
+}
+
+#hot-comments li {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    margin: 20px 0;
+    padding: 0 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+#hot-comments li .name a {
+    font-weight: 600;
+    color: #000;
+    font-size: 14px;
+}
+
+#hot-comments li .name span {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+#hot-comments li .content {
+    font-size: 15px;
+    display: block;
+}
+
+#hot-comments li .content:hover {
+    text-decoration: none;
+    opacity: 0.9;
 }
 
 header {
@@ -533,7 +582,7 @@ header {
 }
 
 .recent-posts .posts .post a {
-    color: rgb(48, 48, 48);
+    color: #333;
     display: inline-block;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -622,6 +671,7 @@ header {
 
 .post .post-header .post-mater {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .post .post-header .post-mater p {

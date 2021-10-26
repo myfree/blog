@@ -44,18 +44,6 @@ name = "关于我"
 url = "/about"
 weight = 5
 
-[[params.social]]
-name = "Github"
-url = "https://github.com/Nov8nana/"
-
-[[params.social]]
-name = "Rss"
-url = "/index.xml"
-
-[[params.social]]
-name = "图床"
-url = "https://img.shuxhan.com"
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
