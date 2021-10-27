@@ -53,12 +53,10 @@ pre[class*="language-"] {
 }
 
 body {
-    font-family: trebuchet ms, Verdana, verdana ref, segoe ui, Candara, lucida grande, lucida sans unicode, lucida sans, Tahoma, sans-serif;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Hiragino Sans GB', 'Roboto', 'Segoe UI', 'Microsoft Yahei',
         '微软雅黑', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica', 'Arial', 'STHeiti', sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-family: "sofiapro-medium",Arial,Tahoma,PingFangSC,sans-serif,"Segoe UI Emoji","Noto Emoji";
-    font-weight: 400;
+    font-weight: 500;
     color: #3b3e48;
     line-height: 1.8em;
     font-size: 16px;
@@ -182,11 +180,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 h4 {
@@ -257,6 +255,11 @@ ul {
 
 .post .markdown p {
     margin-bottom: 0;
+}
+
+.post .markdown ol,
+.post .markdown ul {
+    padding-left: 20px;
 }
 
 .post .markdown table {
@@ -333,7 +336,7 @@ ul {
 .main .sidebar {
     width: 300px;
     margin-left: 20px;
-    padding-top: 30px;
+    padding-top: 27px;
 }
 
 .main .sidebar .links {
@@ -404,9 +407,7 @@ ul {
 }
 
 #hot-comments li {
-    /* box-shadow: 0 5px 10px rgb(0 0 0 / 10%); */
-    /* margin: 20px 0; */
-    /* padding: 0 10px; */
+    border-bottom: 1px dashed #d3d3d3;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -524,7 +525,8 @@ header {
 
 .header nav li a {
     color: #3b3e48;
-    font-size: 1.02rem;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .header nav li a:hover {
@@ -627,8 +629,8 @@ header {
 
 .post-header .meta .date .list-time {
     font-size: 1rem;
+    font-weight: 400;
 }
-
 
 .post-header .meta .date .rest {
     display: block;
@@ -647,7 +649,7 @@ header {
     padding: 0;
     margin: -10px 0 0 0;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: rgb(48, 48, 48);
 }
 
@@ -682,8 +684,9 @@ header {
 
 .post .post-header .post-mater p {
     margin-right: 10px;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     margin-bottom: 0;
+    opacity: 0.8;
 }
 
 .post-list .post-header {
@@ -700,7 +703,9 @@ header {
 }
 
 .post-list .title.small a {
-    color: #3b3e48;
+    color: #000;
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 .post-list .title.small a:hover {

@@ -23,11 +23,11 @@ docs serve 然后在浏览器打开 localhost:3000 就可以查看了。
  _navbar.md  导航栏
 * [关于](/) 然后在 index.html 调用。
 window.$docsify = { ... loadNavbar: true, ... } 如图：
-_sidebar.md  侧边栏
+_sidebar.md  侧边栏
 * [基于docsify搭建一个文档](基于docsify搭建一个文档.md) 在 index.html 调用。
 window.$docsify = { ... loadSidebar: true, ... } 如图：
-README.md  主页
-## about  博客地址：[https://shuxhan.com](https://shuxhan.com) 作者：shuxhan 时间：2021.</description>
+README.md  主页
+## about  博客地址：[https://shuxhan.com](https://shuxhan.com) 作者：shuxhan 时间：2021.04.20 本文档作为博客的文章备份，如果对文章有一些其他的评论可以直接点击链接到原地址。 如图：</description>
     </item>
     
   </channel>

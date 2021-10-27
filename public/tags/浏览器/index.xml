@@ -34,9 +34,9 @@
 首先我想到之前的一个问题，0.5px 的边框该如何实现，通过 scale(0.5) 可以实现，这是 css3 新属性。
 所以当时我就写了通过 transform:scale() 可以实现。不过后续在面试的中，面试官也没有提及这些问题。
  回到家之后，吃完饭坐在电脑旁，正准备逛一逛 github ，突然想起来了这么一个问题，就自己测试了一遍：
-&amp;lt;div style=&amp;#34;font-size: 13px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 12px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 11px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; 竟然真的存在这样的问题，Chrome 12px 以下的字体无法正常显示，均显示为12px。
+&amp;lt;div style=&amp;#34;font-size: 13px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 12px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 11px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; 竟然真的存在这样的问题，Chrome 12px 以下的字体无法正常显示，均显示为12px。
 然后我用 scale 设置了一下属性，
-&amp;lt;div style=&amp;#34;font-size: 13px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 12px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 11px;transform: scale(0.5);&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; 字体确实可以再次缩小到自己想到的程度，但是存在一些弊端，所有带有长度的属性均被缩小，比如图中的div的长度，本来默认是 100% ，但是显示只有原来的一半了。
+&amp;lt;div style=&amp;#34;font-size: 13px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 12px;&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;font-size: 11px;transform: scale(0.5);&amp;#34;&amp;gt; 测试 &amp;lt;/div&amp;gt; 字体确实可以再次缩小到自己想到的程度，但是存在一些弊端，所有带有长度的属性均被缩小，比如图中的div的长度，本来默认是 100% ，但是显示只有原来的一半了。
 虽然存在这么个问题，但是按照我自己的预估，平时我们浏览的网站基本没有低于12px大小的字体吧！反正我是没有遇到过，我估计面试题也是想考验我们对一些生僻知识的处理吧，不过也不算生僻，前有0.5px，后有12px，其实都大同小异。
 在遇到这个问题的时候，确实可以通过 scale() 处理一下，然后在认真设置其他属性，尽量避免更多的弊端。</description>
     </item>

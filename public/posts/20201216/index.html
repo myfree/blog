@@ -200,7 +200,7 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-16</p>
-					<p>阅读: <span id="twikoo_visitors">0</span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=location">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
@@ -389,10 +389,7 @@ ReactDOM.render(
   }
 }
 </code></pre></div><h3 id="2key">2.key</h3>
-<p>
-  <img src="https://i.loli.net/2020/12/28/mIt3Gk7YTpoysuL.jpg" alt="">
-
-</p>
+<p><img src="https://i.loli.net/2020/12/28/mIt3Gk7YTpoysuL.jpg" alt=""></p>
 <p>运行代码之后，页面会正常显示，但是控制台会报一个错误。<code>Each child in a list should have a unique &quot;key&quot; prop.</code>，意思是当你创建一个元素时，必须包括一个特殊的 <code>key</code> 属性。</p>
 <p>现在给每个列表元素分配一个key：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">function</span> NumberList(props) {

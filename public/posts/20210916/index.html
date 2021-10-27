@@ -10,10 +10,11 @@
 他通常是用于静态博客的一个第三方评论系统，但是官方文档没有提供如何在 hugo 中使用的参数，我也是报错了多次才琢磨出来。
 1. 本地部署 根据提示，注册账号，然后 Add website ，建立一个仓库。
 进入它，然后点击 setting。
-Embed Code 会提供几行代码以及一些 api,复制他们。
-data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
+Embed Code 会提供几行代码以及一些 api,复制他们。
+data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
 &lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis.com&#34; data-app-id=&#34;xxxxxxxxx&#34; data-page-id=&#34;{{ PAGE_ID }}&#34; data-page-url=&#34;{{ PAGE_URL }}&#34; data-page-title=&#34;{{ PAGE_TITLE }}&#34; &gt;&lt;/div&gt; &lt;script async defer src=&#34;https://cusdis.com/js/cusdis.es.js&#34;&gt;&lt;/script&gt; 将这些代码复制到本地主题的 comments.html 文件内（就是评论的那个模块，每个主题或许都不一样，注意分辨）。
-这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。"><meta itemprop="datePublished" content="2021-09-16T00:00:00+00:00" />
+这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。
+&lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis."><meta itemprop="datePublished" content="2021-09-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="143">
 <meta itemprop="keywords" content="博客," /><meta property="og:title" content="hugo 如何使用 Cusdis ?" />
@@ -23,10 +24,11 @@
 他通常是用于静态博客的一个第三方评论系统，但是官方文档没有提供如何在 hugo 中使用的参数，我也是报错了多次才琢磨出来。
 1. 本地部署 根据提示，注册账号，然后 Add website ，建立一个仓库。
 进入它，然后点击 setting。
-Embed Code 会提供几行代码以及一些 api,复制他们。
-data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
+Embed Code 会提供几行代码以及一些 api,复制他们。
+data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
 &lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis.com&#34; data-app-id=&#34;xxxxxxxxx&#34; data-page-id=&#34;{{ PAGE_ID }}&#34; data-page-url=&#34;{{ PAGE_URL }}&#34; data-page-title=&#34;{{ PAGE_TITLE }}&#34; &gt;&lt;/div&gt; &lt;script async defer src=&#34;https://cusdis.com/js/cusdis.es.js&#34;&gt;&lt;/script&gt; 将这些代码复制到本地主题的 comments.html 文件内（就是评论的那个模块，每个主题或许都不一样，注意分辨）。
-这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。" />
+这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。
+&lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210916/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-16T00:00:00+00:00" />
@@ -40,10 +42,11 @@
 他通常是用于静态博客的一个第三方评论系统，但是官方文档没有提供如何在 hugo 中使用的参数，我也是报错了多次才琢磨出来。
 1. 本地部署 根据提示，注册账号，然后 Add website ，建立一个仓库。
 进入它，然后点击 setting。
-Embed Code 会提供几行代码以及一些 api,复制他们。
-data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
+Embed Code 会提供几行代码以及一些 api,复制他们。
+data-app-id 是注册时自动生成的，注意保密，每个人都不一样。
 &lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis.com&#34; data-app-id=&#34;xxxxxxxxx&#34; data-page-id=&#34;{{ PAGE_ID }}&#34; data-page-url=&#34;{{ PAGE_URL }}&#34; data-page-title=&#34;{{ PAGE_TITLE }}&#34; &gt;&lt;/div&gt; &lt;script async defer src=&#34;https://cusdis.com/js/cusdis.es.js&#34;&gt;&lt;/script&gt; 将这些代码复制到本地主题的 comments.html 文件内（就是评论的那个模块，每个主题或许都不一样，注意分辨）。
-这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。"/>
+这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。
+&lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis."/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/main.css" />
 
@@ -200,7 +203,7 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-09-16</p>
-					<p>阅读: <span id="twikoo_visitors">0</span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=location">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
@@ -213,15 +216,9 @@
 <h2 id="1-本地部署">1. 本地部署</h2>
 <p>根据提示，注册账号，然后 <code>Add website</code> ，建立一个仓库。</p>
 <p>进入它，然后点击 <code>setting</code>。</p>
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@a67c700292029f27c830a4a764fa3902aeb0be05/2021/09/16/68aa68c985a8a9560645c60a98adad6f.png" alt="">
-
-</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@a67c700292029f27c830a4a764fa3902aeb0be05/2021/09/16/68aa68c985a8a9560645c60a98adad6f.png" alt=""></p>
 <p><code>Embed Code</code> 会提供几行代码以及一些 api,复制他们。</p>
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@5be297168c318a53fe7d2d8b1bd83d96582d44d9/2021/09/16/059b79361e36b23f0c4ee59f2d69a990.png" alt="">
-
-</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@5be297168c318a53fe7d2d8b1bd83d96582d44d9/2021/09/16/059b79361e36b23f0c4ee59f2d69a990.png" alt=""></p>
 <p><code>data-app-id</code> 是注册时自动生成的，注意保密，每个人都不一样。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;cusdis_thread&#34;</span>
   <span style="color:#50fa7b">data-host</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://cusdis.com&#34;</span>
@@ -248,15 +245,9 @@
 <h2 id="2-邮箱提醒">2. 邮箱提醒</h2>
 <p>除了必备的评论功能， Cusdis 还提供了一个非常快速的邮箱提醒功能，不需要绑定密匙，直接输入自己的邮箱即可。</p>
 <p>先勾选这个 Email Notification，然后点击下方的 Advanced Notification Settings (高级通知设置)</p>
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@dc0d7be6ea100a144d7b8d3ec89db9f6793d74a3/2021/09/16/75641c05cbe66afcbb4ffdfb79bb464e.png" alt="">
-
-</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@dc0d7be6ea100a144d7b8d3ec89db9f6793d74a3/2021/09/16/75641c05cbe66afcbb4ffdfb79bb464e.png" alt=""></p>
 <p>就可以进入设置，输入自己的邮箱。</p>
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@bc3a40d9021c16cc236bbfe0354168d3bb8f594b/2021/09/16/a3d47cb11f1662d3894da79ead79d852.png" alt="">
-
-</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Nov8nana/pic-cdn@bc3a40d9021c16cc236bbfe0354168d3bb8f594b/2021/09/16/a3d47cb11f1662d3894da79ead79d852.png" alt=""></p>
 <h2 id="3-中文化">3. 中文化</h2>
 <p>默认的评论和提示文字均为英文，对我们很不友好，这里提供一个不错的解决方案，在引入 Cusdis 之后，顺便复制引入下面这段代码。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">script</span>&gt;

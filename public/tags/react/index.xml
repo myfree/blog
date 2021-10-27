@@ -168,13 +168,13 @@ react官方文档
       <description>react学习笔记，记录我在开发和学习过程中遇到的问题和知识点
 2013年5月Facebook推出了React.js开源软件前端框架，函数式编程，是使用人数最多的前端框架，也拥有最健全的文档和完善的社区
 React官网
-16版本之后的react叫做 react fiber
+16版本之后的react叫做 react fiber
 一、开发环境准备  引入.js文件来使用React 通过脚手架工具来编码，但是最终代码不能运行，需要通过webpack等来编译  （官方提供的脚手架工具 Create-react-app ）
-1.如何使用脚手架工具？  下载node.js ， 进入官方网站  node -v //node版本号 npm -v //npm 版本号 2.使用脚手架工具创建一个项目 打开命令行工具，依次执行命令
+1.如何使用脚手架工具？  下载node.js ， 进入官方网站  node -v //node版本号 npm -v //npm 版本号 2.使用脚手架工具创建一个项目 打开命令行工具，依次执行命令
 npx create-react-app my-app //创建项目 cd my-app //进入项目 npm start //运行项目 正常情况下就会在浏览器中弹出以下页面，说明项目运行成功
-3.运行项目 安装依赖包，在命令行中输入:
+3.运行项目 安装依赖包，在命令行中输入:
 yarn install然后重新启动npm start或者yarn start
-4.工程目录 build //打包之后自动生成的目录public-- //生成的页面内容| favicon.ico| index.html| manifest.json //不需要，可以删除src----- //放置的是项目的源代码 | index.js //入口的js文件，放置整个项目需要引入的第三方模块或者文件| index.css //项目页面的全局css样式| App.</description>
+4.工程目录 build //打包之后自动生成的目录public-- //生成的页面内容| favicon.ico| index.html| manifest.json //不需要，可以删除src----- //放置的是项目的源代码 | index.js //入口的js文件，放置整个项目需要引入的第三方模块或者文件| index.css //项目页面的全局css样式| App.js //负责往页面渲染一些内容| App.</description>
     </item>
     
     <item>

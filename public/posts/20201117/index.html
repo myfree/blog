@@ -7,9 +7,9 @@
 <meta itemprop="description" content="事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
 事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
-true是捕获，false是冒泡，默认为冒泡事件
+true是捕获，false是冒泡，默认为冒泡事件
 1.addEventListener()－－添加事件监听函数 给元素添加一个事件，假如有多个事件，不会覆盖，会依次执行
-&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
+&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
   2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
  2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
 &lt;!-- css --&gt; &lt;style&gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &lt;/style&gt; &lt;!-- html --&gt; &lt;div id=&#34;demo&#34;&gt;&lt;/div&gt; &lt;input type=&#34;button&#34; value=&#34;点击移除&#34; onclick=&#34;remove()&#34;&gt; &lt;div id=&#34;show&#34;&gt;&lt;/div&gt; &lt;!-- js --&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;mousemove&#34;, myfun) function myfun() { document."><meta itemprop="datePublished" content="2020-11-17T13:00:00+00:00" />
@@ -19,9 +19,9 @@
 <meta property="og:description" content="事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
 事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
-true是捕获，false是冒泡，默认为冒泡事件
+true是捕获，false是冒泡，默认为冒泡事件
 1.addEventListener()－－添加事件监听函数 给元素添加一个事件，假如有多个事件，不会覆盖，会依次执行
-&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
+&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
   2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
  2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
 &lt;!-- css --&gt; &lt;style&gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &lt;/style&gt; &lt;!-- html --&gt; &lt;div id=&#34;demo&#34;&gt;&lt;/div&gt; &lt;input type=&#34;button&#34; value=&#34;点击移除&#34; onclick=&#34;remove()&#34;&gt; &lt;div id=&#34;show&#34;&gt;&lt;/div&gt; &lt;!-- js --&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;mousemove&#34;, myfun) function myfun() { document." />
@@ -35,9 +35,9 @@
 <meta name="twitter:description" content="事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
 函数事件 事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件
 事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
-true是捕获，false是冒泡，默认为冒泡事件
+true是捕获，false是冒泡，默认为冒泡事件
 1.addEventListener()－－添加事件监听函数 给元素添加一个事件，假如有多个事件，不会覆盖，会依次执行
-&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
+&lt;div id=&#34;demo&#34;&gt;dom&lt;/div&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun) document.getElementById(&#39;demo&#39;).addEventListener(&#34;click&#34;, myfun1) function myfun() { console.log(&#39;事件监听函数&#39;) } function myfun1() { console.log(&#39;addEventListener&#39;) } &lt;/script&gt;  注意： 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件 正常情况下，第二个参数直接写函数名并且不加参数()，如果加了参数()则表示立即执行，不需要触发第一个参数要求的条件
   2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
  2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
 &lt;!-- css --&gt; &lt;style&gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &lt;/style&gt; &lt;!-- html --&gt; &lt;div id=&#34;demo&#34;&gt;&lt;/div&gt; &lt;input type=&#34;button&#34; value=&#34;点击移除&#34; onclick=&#34;remove()&#34;&gt; &lt;div id=&#34;show&#34;&gt;&lt;/div&gt; &lt;!-- js --&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;mousemove&#34;, myfun) function myfun() { document."/>
@@ -197,7 +197,7 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-17</p>
-					<p>阅读: <span id="twikoo_visitors">0</span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=location">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
 				</div>
 			</div>
@@ -208,10 +208,7 @@
 <h2 id="函数事件">函数事件</h2>
 <p>事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件</p>
 <p><code>事件流</code>，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流</p>
-<p>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/ed20b5e5-b6db-4f1a-af69-4479be1c6151.png" alt="">
-
-</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/ed20b5e5-b6db-4f1a-af69-4479be1c6151.png" alt=""></p>
 <p>true是捕获，false是冒泡，默认为冒泡事件</p>
 <!-- more -->
 <h3 id="1addeventlistener添加事件监听函数">1.addEventListener()－－添加事件监听函数</h3>
@@ -229,10 +226,7 @@
         console.log(<span style="color:#f1fa8c">&#39;addEventListener&#39;</span>)
     }
 &lt;/<span style="color:#ff79c6">script</span>&gt;
-</code></pre></div><p>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/1da0721f-98e6-4c4e-810c-88f42bff554d.jpg" alt="">
-
-</p>
+</code></pre></div><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/1da0721f-98e6-4c4e-810c-88f42bff554d.jpg" alt=""></p>
 <blockquote>
 <p>注意：
 1.这里有一个细节，addEventListener()里面有两个参数，第一个表示触发的条件，第二个表示触发的事件
@@ -272,10 +266,7 @@
 <h3 id="3利用事件的捕获和冒泡做点事情">3.利用事件的捕获和冒泡做点事情</h3>
 <p>addEventListener()和removeEventListener()其实拥有三个参数，刚才说过了，第一个表示触发条件，第二个表示触发事件，第三个参数正常情况下可以省略，但是要知道它代表的意思</p>
 <p>用布尔值来表示，true或者false，默认是false</p>
-<p>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/297eedab-74a9-4417-baa4-0242c2f66630.png" alt="">
-
-</p>
+<p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/297eedab-74a9-4417-baa4-0242c2f66630.png" alt=""></p>
 <ul>
 <li>true表示在捕获阶段调用事件处理程序</li>
 <li>false表示在冒泡阶段调用事件处理程序</li>
