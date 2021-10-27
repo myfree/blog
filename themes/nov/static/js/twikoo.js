@@ -1,5 +1,5 @@
 //判断网址,防止访客网址不写http和https
-function wangzhi(e) {
+function wangzhi (e) {
   http = e.slice(0, 4)
   https = e.slice(0, 5)
   if (http == "http" || https == "https") {
@@ -13,17 +13,17 @@ function wangzhi(e) {
 }
 
 //调用twikoo最新评论主函数
-function newcomment() {
+function newcomment () {
   twikoo.getRecentComments({
     envId: 'shuxhan-2gcz5b7m7f845ec3', // 环境 ID
     pageSize: 5, // 获取多少条，默认：10，最大：100
     includeReply: true, // 是否包括最新回复，默认：false
   }).then(function (res) {
-    console.log(res);
+    // console.log(res);
     var hotComments = $("#hot-comments");
     for (var i = 0; i < res.length; i++) {
       if (i === 0) {
-        console.log(res[0]);
+        // console.log(res[0]);
       }
       var nick = res[i].nick; //访客姓名
       var content = res[i].commentText; //评论内容
@@ -48,6 +48,7 @@ function newcomment() {
 $(function () {
   newcomment(); //调用newcomment
 });
+
 twikoo.init({
   envId: 'shuxhan-2gcz5b7m7f845ec3',
   el: '#tcomment',

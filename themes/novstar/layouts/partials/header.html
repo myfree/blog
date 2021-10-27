@@ -1,0 +1,37 @@
+<header>
+	<div class="header">
+
+		<h5 class="site-title">
+			<a href="{{ .Site.BaseURL }}">
+				<!-- <img src="{{ .Site.Params.Authorimg }}" alt=""> -->
+				<span>{{ .Site.Params.Author }}</span>
+			</a>
+		</h5>
+		<nav class="nav">
+			<ul class="flat">
+				{{ range .Site.Menus.main }}
+				<li>
+					<a href="{{ .URL }}">{{ .Name }}</a>
+				</li>
+				{{ end }}
+				<!-- 搜索 -->
+				<li class="search-menu">
+					<a id="search-btn" style="display: inline-block;" href="javascript:void(0);">
+						<i class="fa fa-search"></i>
+					</a>
+					<div id="fastSearch">
+						<input id="searchInput" tabindex="0" autocomplete="off">
+						<ul id="searchResults">
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="nav-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+
+	</div>
+</header>
