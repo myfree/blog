@@ -30,6 +30,10 @@
     background: #000;
 }
 
+.fa {
+    vertical-align: middle;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
     text-shadow: none !important;
@@ -371,7 +375,7 @@ ul {
 }
 
 .sidebar-about-p p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin: 0;
     margin-bottom: 10px;
     line-height: 1.6;
@@ -418,7 +422,7 @@ ul {
 #hot-comments li .name a {
     font-weight: 500;
     color: #000;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 #hot-comments li .name span {
@@ -440,7 +444,7 @@ ul {
 
 header {
     width: 100%;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 6%);
+    box-shadow: 0 0 10px rgb(14 14 14 / 26%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -483,11 +487,24 @@ header {
 .site-title a {
     color: #3b3e48;
     text-decoration: none !important;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.site-title a span {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 4px 6px;
+    margin-right: 4px;
 }
 
 .site-title a img {
@@ -601,8 +618,8 @@ header {
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
-    font-weight: 500;
-    font-size: 1.4rem;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .recent-posts .posts .post a:hover {
@@ -648,9 +665,9 @@ header {
 .post-header h1.title {
     padding: 0;
     margin: -10px 0 0 0;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.4rem;
-    color: rgb(48, 48, 48);
+    color: #333;
 }
 
 .post-time {
@@ -1125,8 +1142,8 @@ figcaption {
     width: 100%;
     height: 31px;
     font-size: 1em;
-    color: #465373;
-    background-color: #95B0F4;
+    color: #000;
+    background: #e0e0e0;
     border-radius: 3px 3px 0px 0px;
     border: none;
     outline: none;
@@ -1145,7 +1162,7 @@ figcaption {
     padding: 0;
     list-style: none;
     margin-left: 0em;
-    background-color: #E1E7F7;
+    background: #e0e0e0;
     border-bottom: 1px dotted #465373;
 }
 
@@ -1160,7 +1177,6 @@ figcaption {
     display: inline-block;
     width: 328px;
     margin: 0;
-    max-height: calc(100vh - 120px);
     overflow: hidden;
 }
 
@@ -1175,7 +1191,7 @@ figcaption {
 #searchResults a:hover,
 #searchResults a:focus {
     outline: 0;
-    background-color: #95B0F4;
+    background: #333;
     color: #fff;
 }
 
@@ -1213,5 +1229,142 @@ figcaption {
 
     #searchResults {
         width: 100%;
+    }
+}
+
+/*Preloader*/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+}
+
+.preloader:before,
+.preloader:after {
+    content: '';
+    border: 5px solid #D19A04;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -40px;
+}
+
+.preloader:before {
+    -webkit-animation: pulse-outer 0.8s ease-in infinite;
+    -moz-animation: pulse-outer 0.8s ease-in infinite;
+    animation: pulse-outer 0.8s ease-in infinite;
+}
+
+.preloader:after {
+    -webkit-animation: pulse-inner 0.8s linear infinite;
+    -moz-animation: pulse-inner 0.8s linear infinite;
+    animation: pulse-inner 0.8s linear infinite;
+}
+
+@-webkit-keyframes pulse-outer {
+    0% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+
+    100% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+
+@-moz-keyframes pulse-outer {
+    0% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+
+    100% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+
+@keyframes pulse-outer {
+    0% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+
+    100% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+}
+
+@-webkit-keyframes pulse-inner {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+}
+
+@-moz-keyframes pulse-inner {
+    0% {
+        -moz-transform: scale(0);
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+}
+
+@keyframes pulse-inner {
+    0% {
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        filter: alpha(opacity=100);
     }
 }

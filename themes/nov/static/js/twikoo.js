@@ -37,8 +37,8 @@ function newcomment () {
         '<li><div><div class="name" title="' +
         nick + '"><a target="_blank" rel="noopener external nofollow noreferrer" href="' + link + '">' +
         nick + '</a><span>' + updatedAt +
-        '</span></div> <a class="content" href="' + url + commentId + '">' +
-        newcontent + '</a></div></li>');
+        '</span><a class="content" href="' + url + commentId + '">' +
+        newcontent + '</a></div> </div></li>');
     }
   }).catch(function (err) {
     console.error(err);

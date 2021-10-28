@@ -42,8 +42,7 @@ js通过dom节点，可以对文档的html标签，属性，css样式，以及�
 
 		<h5 class="site-title">
 			<a href="https://imzsh.com/">
-				
-				<span>Nov8nana</span>
+				<span>求索</span>日记
 			</a>
 		</h5>
 		<nav class="nav">
@@ -747,9 +746,7 @@ isSameNode－－判断两个元素是否<code>相同</code></li>
 
 	<div class="footer wrapper">
 	<div style="padding:10px 0;">
-		<span><i class="fa fa-copyright"></i> 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天
-		,继续加油！
-
+		<span><i class="fa fa-copyright"></i> 2020 - 2021</span> · 求索日记 · 本博客已运行 <span id="days">0</span> 天,继续加油！
 	</div>
 	<a class="top-btn" id="">
 		<div>
@@ -757,15 +754,12 @@ isSameNode－－判断两个元素是否<code>相同</code></li>
 			<i></i>
 		</div>
 	</a>
+
+	<div id="preloader" class="preloader">
+		
+	</div>
 </div>
-<script>
-	var s1 = '2020-06-14';
-	s1 = new Date(s1.replace(/-/g, "/"));
-	s2 = new Date();
-	var days = s2.getTime() - s1.getTime();
-	var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-	document.getElementById('days').innerHTML = number_of_days;
-</script>
+
 
 <script src="https://imzsh.com/js/copycode.js"></script>
 <script src="https://imzsh.com/js/toc.js"></script>

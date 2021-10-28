@@ -1,7 +1,14 @@
 $(function () {
   // iframe自适应
   $('iframe').wrap('<p class="iframe"></p>')
-  $('.post .markdown a').attr('target','_blank')
+  $('.post .markdown a').attr('target', '_blank')
+  $('.post .markdown a').append('<i class="fa fa-share-square-o"></i>')
+
+  //页面加载完毕后淡出
+  window.onload = function () {
+    $('#status').fadeOut();
+    $('#preloader').delay(100).fadeOut('slow');
+  };
 
   // 手机端导航栏切换模式
   var i = 1;
@@ -48,11 +55,16 @@ $(function () {
     return false;
   });
 
-  
+  var s1 = '2020-06-14';
+  s1 = new Date(s1.replace(/-/g, "/"));
+  s2 = new Date();
+  var days = s2.getTime() - s1.getTime();
+  var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+  document.getElementById('days').innerHTML = number_of_days;
 })
 
 
-var ascii = `
+var shuhan = `
   _    _      _ _        __          __        _     _ 
  | |  | |    | | |       \\ \\        / /       | |   | |
  | |__| | ___| | | ___    \\ \\  /\\  / /__  _ __| | __| |
@@ -60,8 +72,10 @@ var ascii = `
  | |  | |  __/ | | (_) |    \\  /\\  / (_) | |  | | (_| |
  |_|  |_|\\___|_|_|\\___/      \\/  \\/ \\___/|_|  |_|\\__,_|                                                                                                                                                                                  
 `
-console.log(`%c${ascii}`,'color:#1e90ff')
+console.log(`%c${shuhan}`, 'color:#1e90ff')
 
 // 我的悄悄话
 console.log('Powered by hugo and Author by Nov8nana ⚡ date 2020.06.14 https://github.com/Nov8nana')
 console.log('Your smile is like the sweetest bite in watermelon. 🍉 The person I like is called xx. ❤\n')
+
+
