@@ -2,7 +2,7 @@ $(function () {
   // iframe自适应
   $('iframe').wrap('<p class="iframe"></p>')
   $('.post .markdown a').attr('target', '_blank')
-  $('.post .markdown a').append('<i class="fa fa-share-square-o"></i>')
+  $('.post .markdown a').append('<i style="font-size:12px;" class="fa fa-share"></i>')
 
   //页面加载完毕后淡出
   window.onload = function () {

@@ -1,6 +1,7 @@
 :root {
-  --twikoobg: #91b9be1a;
+  --twikoobg: #f2f3f5;
 }
+
 #comments {
   padding-top: 20px;
   margin-bottom: 5rem;
@@ -13,6 +14,17 @@
 .twikoo .tk-tag[data-v-d82ce9a0] {
   display: inline !important;
   padding: 0.2em 0.5em !important;
+}
+
+.tk-tag-green[data-v-d82ce9a0] {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .twikoo img {
@@ -108,6 +120,7 @@
 }
 
 .tk-content[data-v-d82ce9a0] {
+  font-size: 15px;
   background: var(--twikoobg);
   padding: 0 10px;
   border-radius: 6px;
@@ -127,6 +140,18 @@
 
 .tk-action-icon.__markdown[data-v-619b4c52] svg {
   display: none;
+}
+
+.tk-action-icon[data-v-8d454e16] svg {
+  fill: #333;
+}
+
+.tk-action-link[data-v-8d454e16] {
+  color: #333;
+}
+
+.tk-comment:hover .tk-actions[data-v-d82ce9a0] a {
+  color: #333;
 }
 
 @media (max-width:767px) {

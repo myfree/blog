@@ -276,8 +276,7 @@ ul {
 }
 
 .post .markdown code {
-    background: #282a36;
-    opacity: 0.8;
+    background: #00000080;
     color: #fff;
     font-family: source code pro, Consolas, Monaco, Menlo, Consolas, monospace;
     border-radius: 3px;
@@ -504,7 +503,6 @@ header {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     padding: 4px 6px;
-    margin-right: 4px;
 }
 
 .site-title a img {
@@ -541,13 +539,45 @@ header {
 }
 
 .header nav li a {
+    position: relative;
     color: #3b3e48;
     font-size: 16px;
     font-weight: 500;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
 }
 
 .header nav li a:hover {
     color: #000;
+    text-decoration: none;
+}
+
+.header nav li a::after {
+    display: none;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #999;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+
+.header nav li a:hover::after {
+    display: block;
 }
 
 .nav-menu {
@@ -694,6 +724,28 @@ header {
     margin-bottom: 0;
 }
 
+.post .post-header .img-fluid {
+    margin-top: 5px;
+    margin-right: 10px;
+    max-width: 200px;
+    max-height: 110px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+
+.post .post-header .img-fluid:hover {
+    opacity: 0.8;
+}
+
 .post .post-header .post-mater {
     display: flex;
     flex-wrap: wrap;
@@ -737,9 +789,13 @@ header {
 }
 
 .post .post-header .matter .description {
-    /* opacity: 0.9; */
     font-size: 0.95rem;
-    color: #252f3f;
+    color: #666;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .post .post-header .matter .day {
@@ -1016,10 +1072,6 @@ figcaption {
         display: block;
     }
 
-    .site-title a {
-        font-size: 1.6rem;
-    }
-
     .header nav ul {
         display: none;
     }
@@ -1229,6 +1281,26 @@ figcaption {
 
     #searchResults {
         width: 100%;
+    }
+}
+
+@media(max-width:500px) {
+    .post .post-header {
+        display: block;
+    }
+
+    .recent-posts .posts .post {
+        border-bottom: 1px dashed #d3d3d3;
+        padding-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .post .post-header .img-fluid {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
     }
 }
 

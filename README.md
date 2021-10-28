@@ -21,6 +21,23 @@ hugo -D
 
 ```
 
+如何写文章？按照下面模版。
+
+```html
+---
+title: hello, world
+date: 2020-06-14
+categories: 
+  - 记录
+tags: 
+  - blog
+images: [
+  "https://cdn.jsdelivr.net/....."
+]
+---
+
+```
+
 ## Question
 
 如果有任何疑问或错误，欢迎在 issues 进行提问或给予修正意见。

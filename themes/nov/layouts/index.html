@@ -13,6 +13,11 @@
 				<div class="post">
 
 					<div class="post-header">
+						<a class="post-image" href="{{ .RelPermalink }}">
+							{{ if .Params.Images }}
+							{{ partial "helpers/image" (dict "filename" (index .Params.Images 0) "alt" .Title "class" "img-fluid" "resources" .Resources) }}
+							{{ end }}
+						</a>
 						<div class="matter">
 							<div class="title small">
 								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
@@ -36,7 +41,7 @@
 			</div>
 
 		</div>
-		
+
 	</div>
 	{{ partial "footer.html" . }}
 </body>
