@@ -633,6 +633,8 @@ header {
 
 .recent-posts .posts .post {
     margin-top: 36px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #d3d3d3;
 }
 
 .recent-posts .posts .post a {
@@ -727,8 +729,7 @@ header {
 .post .post-header .img-fluid {
     margin-top: 5px;
     margin-right: 10px;
-    max-width: 200px;
-    max-height: 110px;
+    width: 200px;
     box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -1290,9 +1291,7 @@ figcaption {
     }
 
     .recent-posts .posts .post {
-        border-bottom: 1px dashed #d3d3d3;
-        padding-bottom: 20px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .post .post-header .img-fluid {
