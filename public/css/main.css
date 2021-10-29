@@ -362,7 +362,7 @@ ul {
 
 .sidebar h4 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 30px 0 10px;
     padding: 0;
     color: rgba(62, 59, 63, 0.9);
@@ -633,8 +633,7 @@ header {
 
 .recent-posts .posts .post {
     margin-top: 36px;
-    padding-bottom: 20px;
-    border-bottom: 2px dashed #d3d3d3;
+    /* border-bottom: 2px dashed #d3d3d3; */
 }
 
 .recent-posts .posts .post a {
@@ -844,6 +843,27 @@ header {
 .list .posts .post-header .meta {
     margin-bottom: 0;
     margin-left: 5px;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.tags li {
+    margin-top: 14px;
+    margin-right: 24px;
+}
+
+.tags li a {
+    display: inline-block;
+    color: #333;
+}
+
+.tags li a:hover {
+    color: #1e90ff;
 }
 
 .footer {

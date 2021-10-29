@@ -4,11 +4,10 @@ $(function () {
   $('.post .markdown a').attr('target', '_blank')
   $('.post .markdown a').append('<i style="font-size:12px;" class="fa fa-share"></i>')
 
-  //页面加载完毕后淡出
-  window.onload = function () {
+  setTimeout(function () {
     $('#status').fadeOut();
     $('#preloader').delay(100).fadeOut('slow');
-  };
+  }, 200)
 
   // 手机端导航栏切换模式
   var i = 1;
@@ -45,7 +44,7 @@ $(function () {
     return false;
   });
 
-  $('.autoMenu>ul>li:nth-child(1)').before('<li class="mulu">目录</li>')
+  $('.autoMenu>ul>li:nth-child(1)').before('<h4 class="mulu">目录</h4>')
 
   // 点击标题下方评论按钮时，平时滚动到底部评论区
   $('#tocomment').click(function () {

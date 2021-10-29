@@ -27,14 +27,19 @@ url = "/posts"
 weight = 2
 
 [[menu.main]]
-name = "编程技术"
-url = "/categories/编程技术/"
-weight = 4
+name = "标签"
+url = "/tags"
+weight = 2
 
-[[menu.main]]
-name = "生活随笔"
-url = "/categories/生活随笔"
-weight = 3
+# [[menu.main]]
+# name = "编程技术"
+# url = "/categories/编程技术/"
+# weight = 4
+
+# [[menu.main]]
+# name = "生活随笔"
+# url = "/categories/生活随笔"
+# weight = 3
 
 [[menu.main]]
 name = "关于我"

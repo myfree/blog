@@ -190,7 +190,7 @@ demo查看
     </item>
     
     <item>
-      <title>javascript——基本语法</title>
+      <title></title>
       <link>https://imzsh.com/posts/20201021/</link>
       <pubDate>Wed, 21 Oct 2020 21:11:00 +0000</pubDate>
       
@@ -199,7 +199,7 @@ demo查看
 数据类型有：数据，字符串，数组，数字，布尔值等。
 一、数据类型 1.number 2.布尔值 只有true和false两种，可以直接用true和false来表达，比如：
 true;	//true false;	//false 2&amp;gt;1;	//true 2&amp;gt;3;	//fasle 与	&amp;amp;&amp;amp; 两者同时为true，运算结果为true
-**或	|| ** 只要有一个为true，运算结果就是true
+或	|| 只要有一个为true，运算结果就是true
 非	！ 当程序为true时，运算结果取反为false
 var age = 15; if(age &amp;gt;= 18) { alert(&amp;#39;adult&amp;#39;) }else{ alert(&amp;#39;teenager&amp;#39;) } age值是15，当age大于且等于18的时候浏览器弹出adult，反之弹出teenager
 3.字符串 4.比较运算符 ==和===

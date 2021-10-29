@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 求索日记</title>
+    <title>标签 on 求索日记</title>
     <link>https://imzsh.com/tags/</link>
-    <description>Recent content in Tags on 求索日记</description>
+    <description>Recent content in 标签 on 求索日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://imzsh.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>js</title>
       <link>https://imzsh.com/tags/js/</link>
@@ -82,7 +82,7 @@
     <item>
       <title>总结</title>
       <link>https://imzsh.com/tags/%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Wed, 21 Jul 2021 17:47:00 +0000</pubDate>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://imzsh.com/tags/%E6%80%BB%E7%BB%93/</guid>
       <description></description>
@@ -91,7 +91,7 @@
     <item>
       <title>感想</title>
       <link>https://imzsh.com/tags/%E6%84%9F%E6%83%B3/</link>
-      <pubDate>Wed, 21 Jul 2021 17:47:00 +0000</pubDate>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://imzsh.com/tags/%E6%84%9F%E6%83%B3/</guid>
       <description></description>

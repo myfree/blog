@@ -1,5 +1,5 @@
 ---
-title: javascript——基本语法
+title: 
 date: 2020-10-21 21:11:00
 updated: 2021-03-19 21:12:15
 categories: 
@@ -34,7 +34,7 @@ false;	//false
 **与	&&**
 两者同时为`true`，运算结果为`true`
 
-**或	|| **
+**或	||**
 只要有一个为`true`，运算结果就是`true`
 
 **非	！**
