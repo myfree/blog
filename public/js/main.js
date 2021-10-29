@@ -44,7 +44,7 @@ $(function () {
     return false;
   });
 
-  $('.autoMenu>ul>li:nth-child(1)').before('<h4 class="mulu">目录</h4>')
+  $('.autoMenu>ul>li:nth-child(1)').before('<h4 class="mulu">TOC</h4>')
 
   // 点击标题下方评论按钮时，平时滚动到底部评论区
   $('#tocomment').click(function () {

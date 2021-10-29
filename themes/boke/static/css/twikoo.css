@@ -1,5 +1,5 @@
 :root {
-  --twikoobg: #f2f3f5;
+  --twikoobg: #f6f7f8c7;
 }
 
 #comments {
@@ -7,8 +7,30 @@
   margin-bottom: 5rem;
 }
 
+.comments-title {
+  margin-bottom: 20px;
+}
+
 #comments h4 {
   padding: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.comments-title p {
+  color: #6b7280;
+  margin: 0;
+  margin-top: 4px;
+  letter-spacing: .025em;
+  font-size: 14px;
+}
+
+#comments h4 i {
+  margin-right: 6px;
 }
 
 .twikoo .tk-tag[data-v-d82ce9a0] {
@@ -63,6 +85,7 @@
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  border: 1px solid #d3d3d35e;
 }
 
 .tk-meta-input .el-input+.el-input[data-v-5087bc56] {
@@ -102,6 +125,7 @@
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   resize: none;
+  border: 1px solid #d3d3d35e;
 }
 
 .twikoo .el-input__inner:focus,
@@ -128,6 +152,7 @@
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  border: 1px solid #d3d3d35e;
 }
 
 .twikoo .tk-extras {

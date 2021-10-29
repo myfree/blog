@@ -4,7 +4,6 @@
 <body>
 	{{ partial "header.html" . }}
 	<div class="main">
-		{{ partial "sidebar.html" . }}
 		<div class="recent-posts section">
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}

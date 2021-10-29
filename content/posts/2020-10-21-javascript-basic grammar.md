@@ -1,5 +1,5 @@
 ---
-title: 
+title: js基本属性
 date: 2020-10-21 21:11:00
 updated: 2021-03-19 21:12:15
 categories: 

@@ -57,14 +57,13 @@ pre[class*="language-"] {
 }
 
 body {
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Hiragino Sans GB', 'Roboto', 'Segoe UI', 'Microsoft Yahei',
-        '微软雅黑', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica', 'Arial', 'STHeiti', sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-weight: 500;
-    color: #3b3e48;
+    color: #212529f2;
     line-height: 1.8em;
     font-size: 16px;
     overflow-x: hidden;
+    background: rgba(246, 247, 248, 1);
 }
 
 a {
@@ -175,8 +174,8 @@ h4,
 h5,
 h6 {
     line-height: 1.3em;
-    margin: 0 0 20px 0;
-    padding-top: 50px;
+    /* margin: 0 0 20px 0; */
+    /* padding-top: 50px; */
 }
 
 h1 {
@@ -321,125 +320,40 @@ ul {
 
 .main {
     margin: 80px auto 0;
-    max-width: 1100px;
+    max-width: 800px;
 }
 
-.section {
-    padding: 0 20px;
-    flex: 1;
-    max-width: 800px;
+.main .article {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     box-sizing: border-box;
 }
 
-.main {
-    display: flex;
-    flex-direction: row-reverse;
+.list {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-sizing: border-box;
+    min-height: 300px;
 }
 
-.main .sidebar {
-    width: 300px;
-    margin-left: 20px;
-    padding-top: 27px;
+.section {
+    box-sizing: border-box;
 }
 
-.main .sidebar .links {
-    padding: 0;
-    list-style: none;
-    display: flex;
-}
-
-.main .sidebar .links li {
-    margin-right: 14px;
-}
-
-.main .sidebar .links a {
-    color: #333;
-}
-
-.main .sidebar .links a i.fa {
-    font-size: 20px;
-}
-
-.sidebar h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 30px 0 10px;
-    padding: 0;
-    color: rgba(62, 59, 63, 0.9);
-    border-bottom: 1px solid #ddd;
-}
-
-.sidebar-about-p {
-    margin-top: 6px;
-}
-
-.sidebar-about-p p {
-    font-size: 1rem;
-    margin: 0;
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.related-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.related-content ul a {
-    color: #2c2c3b;
-    display: block;
-    padding: 4px 0 0;
-    line-height: 1.4;
-    margin-bottom: 10px;
-}
-
-.related-content ul a:hover {
-    text-decoration: none;
-    color: #4183c4;
-}
-
-.related-content ul a .day {
-    opacity: 0.8;
-    font-size: 12px;
-}
-
-#hot-comments {
-    padding: 0;
-    list-style: none;
-}
-
-#hot-comments li {
-    border-bottom: 1px dashed #d3d3d3;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-}
-
-#hot-comments li .name a {
-    font-weight: 500;
-    color: #000;
-    font-size: 15px;
-}
-
-#hot-comments li .name span {
-    font-size: 14px;
-    padding-left: 10px;
-}
-
-#hot-comments li .content {
-    font-size: 15px;
-    display: block;
-    color: #333;
-}
-
-#hot-comments li .content:hover {
-    text-decoration: none;
-    opacity: 0.9;
-    color: #1e90ff;
-}
 
 header {
     width: 100%;
@@ -458,7 +372,8 @@ header {
     position: relative;
     display: flex;
     justify-content: space-between;
-    max-width: 1080px;
+    align-items: center;
+    max-width: 1245px;
     padding: 0 10px;
     box-sizing: border-box;
 }
@@ -521,7 +436,6 @@ header {
 }
 
 .header nav {
-    border-top: 1px solid #eee;
     position: relative;
 }
 
@@ -534,50 +448,25 @@ header {
 .header nav li {
     display: inline-block;
     list-style: none;
-    margin: 0 16px 0 0;
-    padding: 10px 4px;
 }
 
 .header nav li a {
     position: relative;
-    color: #3b3e48;
+    color: #6b7280;
     font-size: 16px;
     font-weight: 500;
-    transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -ms-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
+    padding: 6px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
 }
 
 .header nav li a:hover {
     color: #000;
     text-decoration: none;
-}
-
-.header nav li a::after {
-    display: none;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #999;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -ms-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-}
-
-.header nav li a:hover::after {
-    display: block;
+    background: #ebeced
 }
 
 .nav-menu {
@@ -632,8 +521,16 @@ header {
 }
 
 .recent-posts .posts .post {
-    margin-top: 36px;
-    /* border-bottom: 2px dashed #d3d3d3; */
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: .375rem;
+    -webkit-border-radius: .375rem;
+    -moz-border-radius: .375rem;
+    -ms-border-radius: .375rem;
+    -o-border-radius: .375rem;
 }
 
 .recent-posts .posts .post a {
@@ -649,12 +546,13 @@ header {
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
-    font-weight: 600;
-    font-size: 1.25rem;
+    font-weight: 400;
+    font-size: 1.4rem;
 }
 
 .recent-posts .posts .post a:hover {
     color: #000;
+    text-decoration: none;
 }
 
 .post-header {
@@ -696,7 +594,7 @@ header {
 .post-header h1.title {
     padding: 0;
     margin: -10px 0 0 0;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.4rem;
     color: #333;
 }
@@ -790,7 +688,8 @@ header {
 
 .post .post-header .matter .description {
     font-size: 0.95rem;
-    color: #666;
+    color: #6b7280;
+    line-height: 26px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -1100,7 +999,7 @@ figcaption {
     .nav-menu {
         display: block;
         position: absolute;
-        top: 8px;
+        top: -14px;
         right: 0;
         width: 40px;
         height: 30px;
@@ -1276,6 +1175,8 @@ figcaption {
 @media (max-width:1000px) {
     .main {
         display: block;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .main .sidebar {

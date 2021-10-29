@@ -1,7 +1,7 @@
 baseURL = "https://imzsh.com/"
 languageCode = "en-us"
 title = "求索日记"
-theme = "nov"
+theme = "boke"
 paginate = 10
 
 [outputs]
@@ -29,22 +29,12 @@ weight = 2
 [[menu.main]]
 name = "标签"
 url = "/tags"
-weight = 2
-
-# [[menu.main]]
-# name = "编程技术"
-# url = "/categories/编程技术/"
-# weight = 4
-
-# [[menu.main]]
-# name = "生活随笔"
-# url = "/categories/生活随笔"
-# weight = 3
+weight = 3
 
 [[menu.main]]
 name = "关于我"
 url = "/about"
-weight = 5
+weight = 4
 
 [markup]
   [markup.goldmark]
