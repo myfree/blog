@@ -6,17 +6,21 @@
 	<div class="main">
 		<div class="recent-posts section">
 			<div class="posts">
+				<div class="top-swiper post">
+					<div class="post-header">
+						<div class="matter">
+							<i class="fa fa-times"></i>
+							<h4>公告:</h4>
+							<span class="description"><i class="fa fa-wrench"></i> {{ .Site.Params.Placard }}</span>
+						</div>
+					</div>
+				</div>
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<div class="post">
 
 					<div class="post-header">
-						<!-- <a class="post-image" href="{{ .RelPermalink }}">
-							{{ if .Params.Images }}
-							{{ partial "image" (dict "filename" (index .Params.Images 0) "alt" .Title "class" "img-fluid" "resources" .Resources) }}
-							{{ end }}
-						</a> -->
 						<div class="matter">
 							<div class="title small">
 								<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>

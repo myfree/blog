@@ -1,7 +1,6 @@
 ---
 title: hello, world
-date: 2020-06-14 20:57:00
-updated: 2021-07-29 17:33:03
+date: 2020-06-14
 categories: 
   - 生活随笔
 tags: 

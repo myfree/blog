@@ -8,13 +8,14 @@ paginate = 10
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  favicon = "https://img.shuxhan.com/favicon-2.png" # 
-	subtitle = "路漫漫其修远兮，吾将上下而求索！"
+  favicon = "https://img.shuxhan.com/favicon-2.png" # 站点icon
+	subtitle = "路漫漫其修远兮，吾将上下而求索！" # 副标题
+  placard = "首次进入站点建议 /ctrl+f5/ 清理一次缓存，防止更新后一些内容没有被浏览器刷新。" # 首页公告
   author = "Nov8nana"
 	toc = true
 
 [permalinks]
-  posts = "/posts/:year:month:day"
+  posts = "/posts/:year:month:day" # 域名url
 
 [[menu.main]]
 name = "首页"

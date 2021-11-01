@@ -1,3 +1,6 @@
+:root {
+    --borderRadius: 2px;
+}
 /* body滚动样式 */
 ::-webkit-scrollbar {
     width: 10px;
@@ -30,10 +33,6 @@
     background: #000;
 }
 
-.fa {
-    vertical-align: middle;
-}
-
 code[class*="language-"],
 pre[class*="language-"] {
     text-shadow: none !important;
@@ -58,6 +57,7 @@ pre[class*="language-"] {
 
 body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-family: Noto Sans SC,sans-serif;
     font-weight: 500;
     color: #212529f2;
     line-height: 1.8em;
@@ -328,11 +328,11 @@ ul {
     border: 1px solid #e5e7eb;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
     padding: 12px 20px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: var(--borderRadius);
+    -webkit-border-radius: var(--borderRadius);
+    -moz-border-radius: var(--borderRadius);
+    -ms-border-radius: var(--borderRadius);
+    -o-border-radius: var(--borderRadius);
     box-sizing: border-box;
 }
 
@@ -341,11 +341,11 @@ ul {
     border: 1px solid #e5e7eb;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
     padding: 12px 20px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: var(--borderRadius);
+    -webkit-border-radius: var(--borderRadius);
+    -moz-border-radius: var(--borderRadius);
+    -ms-border-radius: var(--borderRadius);
+    -o-border-radius: var(--borderRadius);
     box-sizing: border-box;
     min-height: 300px;
 }
@@ -526,11 +526,11 @@ header {
     border: 1px solid #e5e7eb;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     padding: 12px 20px;
-    border-radius: .375rem;
-    -webkit-border-radius: .375rem;
-    -moz-border-radius: .375rem;
-    -ms-border-radius: .375rem;
-    -o-border-radius: .375rem;
+    border-radius: var(--borderRadius);
+    -webkit-border-radius: var(--borderRadius);
+    -moz-border-radius: var(--borderRadius);
+    -ms-border-radius: var(--borderRadius);
+    -o-border-radius: var(--borderRadius);
 }
 
 .recent-posts .posts .post a {
@@ -547,7 +547,7 @@ header {
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 20px;
 }
 
 .recent-posts .posts .post a:hover {
@@ -654,7 +654,7 @@ header {
     margin-right: 10px;
     font-size: 0.9rem;
     margin-bottom: 0;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .post-list .post-header {
@@ -689,8 +689,8 @@ header {
 }
 
 .post .post-header .matter .description {
-    font-size: 0.95rem;
-    color: #6b7280;
+    font-size: 15px;
+    color: #9ea0a6;
     line-height: 26px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -769,12 +769,14 @@ header {
 
 .footer {
     font-size: 0.96rem;
-    color: #999;
+    color: #000;
+    opacity: 0.6;
     border-top: 1px solid #f4f4f4;
     margin-top: 40px;
     padding: 15px 10px;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .footer a {
@@ -817,22 +819,6 @@ header {
 }
 
 @media (max-width: 900px) {
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    h4 {
-        font-size: 1rem;
-    }
-
     .container {
         margin-top: 10px;
     }
@@ -1181,17 +1167,7 @@ figcaption {
     font-size: 20px;
 }
 
-@media (max-width:1000px) {
-    .main {
-        display: block;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
 
-    .main .sidebar {
-        display: none;
-    }
-}
 
 @media (max-width:768px) {
 
@@ -1377,4 +1353,25 @@ figcaption {
         opacity: 1;
         filter: alpha(opacity=100);
     }
+}
+
+.top-swiper {
+    position: relative;
+}
+
+.top-swiper h4 {
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.top-swiper .fa-times {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+
+.top-swiper .fa-times:hover {
+    cursor: pointer;
+    color: #444;
 }

@@ -11,5 +11,3 @@ E-mail: shuxhan@163.com
 Github: [https://github.com/Nov8nana](https://github.com/Nov8nana)
 
 the road ahead will be long and our climb will be steep.
-
-

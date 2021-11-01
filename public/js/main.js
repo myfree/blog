@@ -54,6 +54,15 @@ $(function () {
     return false;
   });
 
+  if ($(window).width() <= 1228) {
+    $('.post .post-header').after($('.autoMenu'))
+  }
+
+  // 首页公告 相关事件
+  $('.fa-times').click(function(){
+    $('.top-swiper').remove();
+  })
+
   var s1 = '2020-06-14';
   s1 = new Date(s1.replace(/-/g, "/"));
   s2 = new Date();

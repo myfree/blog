@@ -4,6 +4,7 @@
 	top: 80px;
 	width: 200px;
 	height: 0;
+	z-index: 9;
 }
 
 .sidebar .autoMenu {
@@ -64,4 +65,10 @@
 
 .autoMenu ul li.active {
 	background: #dbe8f5;
+}
+
+@media (max-width:1240px) {
+	.autoMenu {
+		width: 100% !important;
+	}
 }

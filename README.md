@@ -31,9 +31,6 @@ categories:
   - 记录
 tags: 
   - blog
-images: [
-  "https://cdn.jsdelivr.net/....."
-]
 ---
 
 ```
