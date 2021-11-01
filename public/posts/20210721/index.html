@@ -86,10 +86,8 @@
 <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/main.css" />
 
-	
-
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="https://cdn.shuxhan.com/jquery3.6.0.js"></script>
+	<script src="https://imzsh.com/lib/js/jquery3.6.0.js"></script>
 </head>
 
 
@@ -233,12 +231,16 @@
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
-
   <script>
-
+    twikoo.init({
+      envId: 'shuxhan-2gcz5b7m7f845ec3',
+      el: '#tcomment',
+      path: 'window.location.pathname',
+      lang: 'zh-CN',
+    })
   </script>
-
 </section>
 
 		</div>
@@ -260,13 +262,14 @@
 	</div>
 
 	<div class="script">
-	<script src="https://imzsh.com/js/copycode.js"></script>
-	<script src="https://imzsh.com/js/toc.js"></script>
+	
+	<script src="https://imzsh.com/lib/js/copycode.js"></script>
+	<script src="https://imzsh.com/lib/js/fastsearch.js"></script>
+	<script src="https://imzsh.com/lib/js/fuse.js"></script>
+	<script src="https://imzsh.com/lib/js/toc.js"></script>
+
+	
 	<script src="https://imzsh.com/js/main.js"></script>
-	<script src="https://imzsh.com/js/fastsearch.js"></script>
-	<script src="https://imzsh.com/js/fuse.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
-	<script src="https://imzsh.com/js/twikoo.js"></script>
 </div>
 </div>
 

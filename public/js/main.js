@@ -59,9 +59,15 @@ $(function () {
   }
 
   // 首页公告 相关事件
-  $('.fa-times').click(function(){
+  $('.fa-times').click(function () {
     $('.top-swiper').remove();
   })
+
+  // 图片放大预览
+  $('.post .markdown img').wrap('<a target="_blank" class="swipebox"></a>')
+  var $i = $(".post .markdown img").attr("src")
+  console.log($i);
+  $('.post .markdown a.swipebox').attr('href',$i)
 
   var s1 = '2020-06-14';
   s1 = new Date(s1.replace(/-/g, "/"));
