@@ -250,7 +250,7 @@ ul {
 }
 
 .post .markdown {
-    line-height: 1.8;
+    line-height: 2;
     font-size: 1.02rem;
     margin-bottom: 3rem;
     opacity: 1;
@@ -576,6 +576,7 @@ header {
 .post-header .meta .date .list-time {
     font-size: 1rem;
     font-weight: 400;
+    opacity: 0.6;
 }
 
 .post-header .meta .date .rest {
@@ -657,6 +658,7 @@ header {
 }
 
 .post-list .post-header {
+    display: flex !important;
     margin-bottom: 10px;
     align-items: center;
     flex-direction: row-reverse;
@@ -1099,23 +1101,30 @@ figcaption {
 
 #fastSearch {
     visibility: hidden;
-    position: absolute;
-    right: 54px;
-    top: 4px;
+    position: fixed;
+    left: 50%;
+    top: 20%;
     display: inline-block;
-    width: 320px;
+    width: 450px;
     margin: 0 10px 0 0;
     padding: 0;
     z-index: 9;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+
 }
 
 #fastSearch input {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 60%);
     padding: 4px;
     width: 100%;
-    height: 31px;
+    height: 40px;
     font-size: 1em;
-    color: #000;
-    background: #e0e0e0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 3px 3px 0px 0px;
     border: none;
     outline: none;
@@ -1147,7 +1156,7 @@ figcaption {
 #searchResults {
     visibility: inherit;
     display: inline-block;
-    width: 328px;
+    width: 458px;
     margin: 0;
     overflow: hidden;
 }
@@ -1195,15 +1204,17 @@ figcaption {
         right: 0;
         width: 100%;
         margin-right: 0;
+        position: absolute;
     }
 
-    #fastSearch ul {
-        margin-top: 40px;
+    #fastSearch input {
+        box-shadow: none;
     }
 
     #searchResults {
         width: 100%;
     }
+
 }
 
 @media(max-width:500px) {
@@ -1211,16 +1222,23 @@ figcaption {
         display: block;
     }
 
-    .recent-posts .posts .post {
-        margin-top: 10px;
+    .recent-posts .posts .post a,
+    .post-header h1.title {
+        font-size: 1.24rem;
+        font-weight: 600;
     }
 
-    .post .post-header .img-fluid {
-        max-width: 100%;
-        max-height: 100%;
-        width: 100%;
-        height: auto;
-        margin-bottom: 0;
+    .post-list .post-header {
+        flex-direction: column-reverse;
+        align-items: baseline;
+    }
+
+    .list .posts .post-header .meta {
+        margin-left: 0;
+    }
+
+    .post-list .title.small a {
+        font-weight: 600;
     }
 }
 

@@ -107,10 +107,11 @@
   -moz-transition: all 0.1s linear;
   -ms-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
+  font-size: 15px;
 }
 
 .twikoo .el-textarea__inner {
-  font-size: 1rem;
+  font-size: 15px;
   border-radius: 6px;
   min-height: 140px !important;
   border: none;
