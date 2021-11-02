@@ -1,23 +1,14 @@
-.sidebar {
-	position: sticky;
-	margin-left: -220px;
-	top: 80px;
-	width: 200px;
-	height: 0;
-	z-index: 9;
-}
-
 .sidebar .autoMenu {
-	width: 200px !important;
-	background: #fff;
-	/* border: 1px solid #e5e7eb; */
-	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+	width: 260px !important;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-ms-border-radius: 10px;
 	-o-border-radius: 10px;
 	box-sizing: border-box;
+
+	height: 0;
+	z-index: 9;
 }
 
 .autoMenu .mulu {
@@ -34,10 +25,12 @@
 	margin: 0;
 	overflow-y: scroll;
 	max-height: 600px;
+	background: #fff;
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
 }
 
 .autoMenu ul::-webkit-scrollbar {
-	width: 4px;
+	width: 0;
 	background: #fff;
 }
 

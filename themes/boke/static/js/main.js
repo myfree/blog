@@ -54,7 +54,7 @@ $(function () {
     return false;
   });
 
-  if ($(window).width() <= 1228) {
+  if ($(window).width() <= 900) {
     $('.post .post-header').after($('.autoMenu'))
   }
 

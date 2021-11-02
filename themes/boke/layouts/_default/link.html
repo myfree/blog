@@ -10,14 +10,12 @@
       {{ if isset .Data "Term" }}
       <span class="page-title">{{ .Data.Term }}</span>
       {{ else }}
-      <span class="page-title">📌 {{ .Name }}</span>
+      <span class="page-title">{{ .Name }}</span>
       {{ end }}
 
-      <ul class="tags">
-        {{ range .Site.Taxonomies.tags }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} {{ .Count }}</a></li>
-        {{ end }}
-      </ul>
+      <div class="markdown link">
+				{{ .Content }}
+			</div>
 
     </div>
   </div>

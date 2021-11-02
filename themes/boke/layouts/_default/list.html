@@ -4,9 +4,9 @@
 
 <body>{{ partial "header.html" . }}
 
-	<div class="main list">
+	<div class="main">
 		{{ partial "sidebar.html" . }}
-		<div class="section">
+		<div class="section list">
 			{{ if isset .Data "Term" }}
 			<span class="page-title">{{ .Data.Term }}</span>
 			{{ else }}
