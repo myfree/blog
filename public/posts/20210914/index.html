@@ -9,7 +9,7 @@
  data-to 属性代表最后想要递增到的数值 data-speed 代表数值想要递增的过程时间  class=&quot;num-ber&quot; 和 id=&quot;count-number&quot; 按照这个填入。
 &lt;p&gt; &lt;span class=&#34;num-ber&#34; id=&#34;count-number&#34; data-to=&#34;40&#34; data-speed=&#34;1000&#34;&gt;&lt;/span&gt;&#43; &lt;/p&gt; 引入 jquery 之后再添加下面的 js 代码。
 $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var c = $.extend({}, $.fn.countTo.defaults, { from: $(this).data(&#34;from&#34;), to: $(this).data(&#34;to&#34;), speed: $(this).data(&#34;speed&#34;), refreshInterval: $(this).data(&#34;refresh-interval&#34;), decimals: $(this).data(&#34;decimals&#34;) }, a); var h = Math.ceil(c.speed / c.refreshInterval), i = (c.to - c.from) / h; var j = this, f = $(this), e = 0, g = c."><meta itemprop="datePublished" content="2021-09-14T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-09-14T00:00:00+00:00" />
+
 <meta itemprop="wordCount" content="208">
 <meta itemprop="keywords" content="jquery," /><meta property="og:title" content="使用jq做一个数字递增效果" />
 <meta property="og:description" content="数字递增，顾名思义就是数字不断增加，数字递增的效果就是要一定时间内，让数字有一个增加的特效，一般用于强调某个内容。
@@ -20,7 +20,7 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210914/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-09-14T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用jq做一个数字递增效果"/>
@@ -62,11 +62,11 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -103,7 +103,7 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -125,8 +125,10 @@ $.fn.countTo = function (a) { a = a || {}; return $(this).each(function () { var
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-09-14</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -219,6 +221,8 @@ $(<span style="color:#f1fa8c">&#34;.num-ber&#34;</span>).each(count);
   b.countTo(a)
 };
 </code></pre></div>
+
+
 			</div>
 
 			<div class="tags">
@@ -236,21 +240,51 @@ $(<span style="color:#f1fa8c">&#34;.num-ber&#34;</span>).each(count);
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

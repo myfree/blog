@@ -6,7 +6,7 @@
 	<meta itemprop="name" content="清明时节雨纷纷">
 <meta itemprop="description" content="清明时节雨纷纷，路上行人欲断魂。
 云栖竹径 "><meta itemprop="datePublished" content="2021-04-03T16:13:00+00:00" />
-<meta itemprop="dateModified" content="2021-04-03T16:13:00+00:00" />
+
 <meta itemprop="wordCount" content="2">
 <meta itemprop="keywords" content="旅游," /><meta property="og:title" content="清明时节雨纷纷" />
 <meta property="og:description" content="清明时节雨纷纷，路上行人欲断魂。
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210403/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-03T16:13:00+00:00" />
-<meta property="article:modified_time" content="2021-04-03T16:13:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="清明时节雨纷纷"/>
@@ -53,11 +53,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -94,7 +94,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -116,8 +116,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-04-03</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -129,6 +131,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@bdece7343a8feb980d1d5da2af1018bb909673c6/2021/04/03/5753d64ad69892c2b64de4a726f63724.png" alt=""></p>
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@4d74d81e1ce087c046775dac4a35ea2153f3e0fd/2021/04/04/b3839222eaf37e4520e183104b876430.png" alt=""></p>
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@63f84f53bcbc221a501a582b9dd9e3e06a00e640/2021/04/04/c9d1b928b996ee283177be0fa246543b.png" alt=""></p>
+
+
 
 			</div>
 
@@ -147,21 +151,74 @@
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20210214/">
+							<span>西溪，良渚，宋城</span>
+							<span class="day">(2021-02-14)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210201/">
+							<span>湘湖游玩相册</span>
+							<span class="day">(2021-02-01)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

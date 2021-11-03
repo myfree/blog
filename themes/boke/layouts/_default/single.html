@@ -14,13 +14,17 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: {{ dateFormat "2006-01-02" .Date }}</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
 			<div class="markdown">
 				{{ .Content }}
+
+
 			</div>
 
 			<div class="tags">
@@ -38,6 +42,25 @@
 			<div class="back">
 				<a href="{{ $.Site.BaseURL }}"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			<!-- 相关文章 -->
+			{{ $related := (where site.RegularPages "Type" "in" site.Params.mainSections).Related . | first 5 }}
+			{{ with $related }}
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					{{ range . }}
+					<li>
+						<a href="{{ .RelPermalink }}">
+							<span>{{ .Title }}</span>
+							<span class="day">({{ dateFormat "2006-01-02" .Date }})</span>
+						</a>
+
+					</li>
+					{{ end }}
+				</ul>
+			</div>
+			{{ end }}
 			{{ partial "comments.html" . }}
 
 		</div>

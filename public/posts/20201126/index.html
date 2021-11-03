@@ -9,7 +9,7 @@
 # 安装webpack npm install --save-dev webpack # 安装webpack-cli依赖 npm install --save-dev webpack-cli # 创建新项目 mkdir demo # cd项目 cd demo # 初始化 npm init -y # 安装开发版本cli npm install webpack webpack-cli --save-dev 新建一个html文件和一个js文件，工程目录如下
 demo |- package.json &#43; |- index.html &#43; |- /src &#43; |- index.js src/index.js:
 function component() { var element = document.createElement(&#39;div&#39;); // Lodash（目前通过一个 script 脚本引入）对于执行这一行是必需的  element.innerHTML = _.join([&#39;Hello&#39;, &#39;webpack&#39;], &#39; &#39;); return element; } document."><meta itemprop="datePublished" content="2020-11-26T13:08:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-26T13:08:00+00:00" />
+
 <meta itemprop="wordCount" content="301">
 <meta itemprop="keywords" content="工具,webpack," /><meta property="og:title" content="webpack安装配置指令" />
 <meta property="og:description" content="进行重新加载编译。实际就是将浏览器不认识的语法编译成浏览器认识的语法。比如less编译成css，ES6 语法 转成 ES5等等。
@@ -20,7 +20,7 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201126/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-26T13:08:00+00:00" />
-<meta property="article:modified_time" content="2020-11-26T13:08:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="webpack安装配置指令"/>
@@ -62,11 +62,11 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -103,7 +103,7 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -125,8 +125,10 @@ function component() { var element = document.createElement(&#39;div&#39;); // L
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-26</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -296,6 +298,8 @@ module.exports <span style="color:#ff79c6">=</span> {
 <p>然后在<code>index.js</code>中引入：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">import</span> data from <span style="color:#f1fa8c">&#39;./data.json&#39;</span>
 </code></pre></div>
+
+
 			</div>
 
 			<div class="tags">
@@ -315,21 +319,51 @@ module.exports <span style="color:#ff79c6">=</span> {
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

@@ -41,7 +41,7 @@ Linux系统的话，本文使用Centos 8系统讲解。
 计划任务可按周期添加执行，支持SHELL脚本，提供网站、数据库备份以及日志切割，且支持一键备份到又拍云存储空间，或者其他云存储空间里；通过web界面就可以轻松管理安装所用的服务器软件，还有实用的扩展插件；集成方便高效的文件管理器，支持上传、下载、打包、解压以及文件编辑查看。
 进入搭建正题：
 6.安装宝塔 选择服务器时，选择系统镜像，不要选择服务商提供的应用镜像，操作系统选择Centos，版本的话7和8都可以。当然你也可以选择其他系统，，，"><meta itemprop="datePublished" content="2021-05-11T22:29:00+00:00" />
-<meta itemprop="dateModified" content="2021-05-11T22:29:00+00:00" />
+
 <meta itemprop="wordCount" content="152">
 <meta itemprop="keywords" content="博客,转载,typecho," /><meta property="og:title" content="Typecho博客搭建及优化教程(详细)" />
 <meta property="og:description" content="1.前言 本文从Typecho 简介开始讲解，其中包括服务器的选择，以及域名注册，服务器系统选择 ，宝塔安装，环境配置，Typecho安装包括中间的防采坑注意事项，为您提供完整的保姆级搭建流程，请珍惜哦！
@@ -84,7 +84,7 @@ Linux系统的话，本文使用Centos 8系统讲解。
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210511/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-11T22:29:00+00:00" />
-<meta property="article:modified_time" content="2021-05-11T22:29:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Typecho博客搭建及优化教程(详细)"/>
@@ -158,11 +158,11 @@ Linux系统的话，本文使用Centos 8系统讲解。
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -199,7 +199,7 @@ Linux系统的话，本文使用Centos 8系统讲解。
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -221,8 +221,10 @@ Linux系统的话，本文使用Centos 8系统讲解。
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-05-11</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -347,6 +349,8 @@ Linux系统的话，本文使用Centos 8系统讲解。
 <p>原文地址来自我的好友：https://www.moeor.com/24.html</p>
 </blockquote>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -368,21 +372,90 @@ Linux系统的话，本文使用Centos 8系统讲解。
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20210509/">
+							<span>网站引入iframe视频，如何实现高度自适应?</span>
+							<span class="day">(2021-05-09)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210424/">
+							<span>基耶斯洛夫斯基和他的现实</span>
+							<span class="day">(2021-04-24)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210204/">
+							<span>typecho 博客小表情无法显示问题</span>
+							<span class="day">(2021-02-04)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20200614/">
+							<span>hello, world</span>
+							<span class="day">(2020-06-14)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

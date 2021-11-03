@@ -12,7 +12,7 @@ vm.a = 2 // data.a = 2  data.a = 3 // vm.a = 3 当数据改变时，视图也会
 如果一开始就知道后面会添加一个property，但是一开始不存在或为空，需要设置一些初始值
 data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos: [], error: null } 使用Object.freeze()方法的时候，无法修改数据引起视图变化
  Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze() 返回和传入的参数相同的对象。"><meta itemprop="datePublished" content="2020-11-24T13:05:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-24T13:05:00+00:00" />
+
 <meta itemprop="wordCount" content="405">
 <meta itemprop="keywords" content="vue,笔记," /><meta property="og:title" content="vue学习笔记(2)－－vue实例和模板语法" />
 <meta property="og:description" content="一、vue实例 1.创建vue实例 一个vue实例应该通过new Vue来创建根实例，所有的 vue 组件其实都是 vue 实例
@@ -26,7 +26,7 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201124/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-24T13:05:00+00:00" />
-<meta property="article:modified_time" content="2020-11-24T13:05:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="vue学习笔记(2)－－vue实例和模板语法"/>
@@ -71,11 +71,11 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -112,7 +112,7 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -134,8 +134,10 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-24</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -331,6 +333,8 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 &lt;<span style="color:#ff79c6">a</span> @[<span style="color:#50fa7b">event</span>]=&#34;<span style="color:#50fa7b">doSomething</span>&#34;&gt; ... &lt;/<span style="color:#ff79c6">a</span>&gt;
 </code></pre></div><p>它们看起来可能与普通的 HTML 略有不同，但<code>:</code>与<code>@</code>对于 attribute 名来说都是合法字符，在所有支持 Vue 的浏览器都能被正确地解析。而且，它们不会出现在最终渲染的标记中。缩写语法是完全可选的，但随着你更深入地了解它们的作用，你会庆幸拥有它们。</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -350,21 +354,98 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20201123/">
+							<span>vue学习笔记(1)－－什么是vue?</span>
+							<span class="day">(2020-11-23)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201120/">
+							<span>vue使用cli脚手架构建项目工程</span>
+							<span class="day">(2020-11-20)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201117/">
+							<span>事件监听函数，以及事件的捕获和冒泡机制</span>
+							<span class="day">(2020-11-17)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201116/">
+							<span>getElementBy系列和querySelector系列的区别</span>
+							<span class="day">(2020-11-16)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201115/">
+							<span>DOM－－文档对象模型</span>
+							<span class="day">(2020-11-15)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

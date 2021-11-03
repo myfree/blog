@@ -15,7 +15,7 @@
 想要弄明白面向对象，需要先理解类和对象的概念
 《什么是类和对象？》
 二、创建对象的方法 1.创建字面量和实例 window.onload = function() { // 实例  var person = new Object(); person.name = &#39;小明&#39;; person.age = 22; person.year = function() { console.log(this.name &#43; &#39;今年&#39; &#43; this.age &#43; &#39;岁了！&#39;) }; person.year(); // 字面量  var student = { name: &#39;小明&#39;, age: 22, year: function () { console.log(this.name &#43; &#39;今年&#39; &#43; this.age &#43; &#39;岁了！&#39;) } } student."><meta itemprop="datePublished" content="2020-11-12T12:58:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-12T12:58:00+00:00" />
+
 <meta itemprop="wordCount" content="900">
 <meta itemprop="keywords" content="js,编程," /><meta property="og:title" content="面向对象编程" />
 <meta property="og:description" content="面向对象把构成问题的transaction分解成各个对象，而建立对象的目的也不是为了完成一个个步骤，而是为了描述某个事物在解决整个问题的过程中所发生的行为，意在写出通用代码，加强代码重用，屏蔽差异性。
@@ -32,7 +32,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201112/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-12T12:58:00+00:00" />
-<meta property="article:modified_time" content="2020-11-12T12:58:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="面向对象编程"/>
@@ -80,11 +80,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -121,7 +121,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -143,8 +143,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-12</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -605,6 +607,8 @@ son.hello();    <span style="color:#6272a4">// Hello, xm!
 <p>但是！</p>
 <p>目前并不是所有的浏览器都支持<code>class</code>，所以在选择的时候一定要慎重！</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -624,21 +628,51 @@ son.hello();    <span style="color:#6272a4">// Hello, xm!
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

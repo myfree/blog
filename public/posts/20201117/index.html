@@ -13,7 +13,7 @@ true是捕获，false是冒泡，默认为冒泡事件
   2.在这里绑定事件的时候，事件名不能和定义的变量名一样，否则无效
  2.removeEventListener()－－移除事件监听函数 下面这个demo，当鼠标在div中移动的时候，出现随机数，点击按钮后，移除事件监听函数
 &lt;!-- css --&gt; &lt;style&gt; #demo { width: 100px; height: 100px; border: 1px solid #000; } &lt;/style&gt; &lt;!-- html --&gt; &lt;div id=&#34;demo&#34;&gt;&lt;/div&gt; &lt;input type=&#34;button&#34; value=&#34;点击移除&#34; onclick=&#34;remove()&#34;&gt; &lt;div id=&#34;show&#34;&gt;&lt;/div&gt; &lt;!-- js --&gt; &lt;script&gt; document.getElementById(&#39;demo&#39;).addEventListener(&#34;mousemove&#34;, myfun) function myfun() { document."><meta itemprop="datePublished" content="2020-11-17T13:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-17T13:00:00+00:00" />
+
 <meta itemprop="wordCount" content="300">
 <meta itemprop="keywords" content="js,笔记," /><meta property="og:title" content="事件监听函数，以及事件的捕获和冒泡机制" />
 <meta property="og:description" content="事件一般是用于浏览器和用户操作之间的交互，当用户执行某些特殊的操作时，浏览器给予反应，触发绑定的事件，事件流，事件发生时会在元素节点和根节点之间按照约定的顺序传播，事件经过的所有节点都会受到事件的影响，这个传播过程被称为DOM事件流
@@ -28,7 +28,7 @@ true是捕获，false是冒泡，默认为冒泡事件
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201117/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-17T13:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-17T13:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="事件监听函数，以及事件的捕获和冒泡机制"/>
@@ -74,11 +74,11 @@ true是捕获，false是冒泡，默认为冒泡事件
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -115,7 +115,7 @@ true是捕获，false是冒泡，默认为冒泡事件
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -137,8 +137,10 @@ true是捕获，false是冒泡，默认为冒泡事件
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-17</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -345,6 +347,8 @@ true是捕获，false是冒泡，默认为冒泡事件
 2.缺点：IE不支持</p>
 </blockquote>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -364,21 +368,98 @@ true是捕获，false是冒泡，默认为冒泡事件
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20201114/">
+							<span>有关js函数，方法的一些补充总结</span>
+							<span class="day">(2020-11-14)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201116/">
+							<span>getElementBy系列和querySelector系列的区别</span>
+							<span class="day">(2020-11-16)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201115/">
+							<span>DOM－－文档对象模型</span>
+							<span class="day">(2020-11-15)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201112/">
+							<span>面向对象编程</span>
+							<span class="day">(2020-11-12)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201104/">
+							<span>javascript——函数、变量和方法</span>
+							<span class="day">(2020-11-04)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

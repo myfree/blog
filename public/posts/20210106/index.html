@@ -13,7 +13,7 @@
 两个应用程序的外观如下：
 两个应用程序的 CSS 代码几乎一样，但这些代码的位置存在差异。考虑到这一点，我们来看看这两个应用程序的文件结构：
 你会发现它们的结构几乎完全相同。唯一的区别在于 React App 拥有三个 CSS 文件，而 Vue App 中没有 CSS 文件。这是因为 React 的 create-react-app 组件需要一个附带文件来保存其样式，而 Vue CLI 采用全包方法，其样式在实际组件文件中声明。"><meta itemprop="datePublished" content="2021-01-06T20:47:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-06T20:47:00+00:00" />
+
 <meta itemprop="wordCount" content="512">
 <meta itemprop="keywords" content="" /><meta property="og:title" content="使用 React 与 Vue 创建同一款 App，差别究竟有多大？" />
 <meta property="og:description" content="关于 React 框架 和 Vue 框架 的对比，用两者写出同一个程序，对比其代码实现的过程，看看它们的差异究竟有多大？
@@ -28,7 +28,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210106/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-01-06T20:47:00+00:00" />
-<meta property="article:modified_time" content="2021-01-06T20:47:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 React 与 Vue 创建同一款 App，差别究竟有多大？"/>
@@ -74,11 +74,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -115,7 +115,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -137,8 +137,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-01-06</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -300,6 +302,8 @@
 <p>**Vue ToDo：**<a href="https://github.com/sunil-sandhu/vue-todo">https://github.com/sunil-sandhu/vue-todo</a></p>
 <p>**React ToDo：**<a href="https://github.com/sunil-sandhu/react-todo">https://github.com/sunil-sandhu/react-todo</a></p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -311,21 +315,51 @@
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

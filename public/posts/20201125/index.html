@@ -12,7 +12,7 @@
 区别是：计算属性是基于他们的响应式依赖进行缓存的，只有当响应式依赖，也就是message发生改变时才会重新求值，就意味着，只要message还没改变，多次访问revermessage计算属性只会返回之前计算结果的缓存，而不是直接执行计算属性的函数
 而方法，在每次触发重新渲染时，调用方法都会执行一次函数，这就多了一份开销
 我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代"><meta itemprop="datePublished" content="2020-11-25T13:05:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-25T13:05:00+00:00" />
+
 <meta itemprop="wordCount" content="371">
 <meta itemprop="keywords" content="vue,笔记," /><meta property="og:title" content="vue学习笔记(3)－－computed, watch，calss, style" />
 <meta property="og:description" content="一、计算属性computed 1.例子 &lt;div id=&#34;app&#34;&gt; &lt;div&gt;{{message}}&lt;/div&gt; &lt;div&gt;{{revermessage}}&lt;/div&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue({ el: &#39;#app&#39;, data: { message: &#39;hello,wolrd&#39; }, computed: { revermessage: function() { return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }) &lt;/script&gt; 声明一个计算属性severmessage，在computed中被指向对message进行一些方法操作后的返回值
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201125/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-25T13:05:00+00:00" />
-<meta property="article:modified_time" content="2020-11-25T13:05:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="vue学习笔记(3)－－computed, watch，calss, style"/>
@@ -71,11 +71,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -112,7 +112,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -134,8 +134,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-25</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -331,6 +333,8 @@
 </code></pre></div><p><strong>自动添加前缀</strong></p>
 <p>当<code>v-bind:style</code>需要使用浏览器前缀的时候，如：<code>-webkit-</code>等，vue会自动侦测并帮生成相应的前缀</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -350,21 +354,98 @@
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20201124/">
+							<span>vue学习笔记(2)－－vue实例和模板语法</span>
+							<span class="day">(2020-11-24)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201123/">
+							<span>vue学习笔记(1)－－什么是vue?</span>
+							<span class="day">(2020-11-23)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201120/">
+							<span>vue使用cli脚手架构建项目工程</span>
+							<span class="day">(2020-11-20)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201117/">
+							<span>事件监听函数，以及事件的捕获和冒泡机制</span>
+							<span class="day">(2020-11-17)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201116/">
+							<span>getElementBy系列和querySelector系列的区别</span>
+							<span class="day">(2020-11-16)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

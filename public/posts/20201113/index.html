@@ -23,7 +23,7 @@ http://en.wikipedia.org/wiki/Unix_time
 System.out.println(Integer.MAX_VALUE);
 2147483647
 Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647。另外1年365天的总秒数是31536000，2147483647/31536000 = 68.1,也就是说32位能表示的最长时间是68年，而实际上到2038年01月19日03时14分07秒，便会到达最大时间，过了这个时间点，所有32位操作系统时间便会变为10000000 00000000 00000000 00000000也就是1901年12月13日20时45分52秒，这样便会出现时间回归的现象，很多软件便会运行异常了。"><meta itemprop="datePublished" content="2020-11-13T12:56:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-13T12:56:00+00:00" />
+
 <meta itemprop="wordCount" content="76">
 <meta itemprop="keywords" content="杂谈," /><meta property="og:title" content="为什么getTime()返回1970年至今的毫秒？" />
 <meta property="og:description" content="今天在写new Date()时候，无意中发现了一个很有意思的方法，getTime()，百度了一下，有人说是计算从1970年1月1日至今的毫秒数
@@ -48,7 +48,7 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201113/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-13T12:56:00+00:00" />
-<meta property="article:modified_time" content="2020-11-13T12:56:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="为什么getTime()返回1970年至今的毫秒？"/>
@@ -104,11 +104,11 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -145,7 +145,7 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -167,8 +167,10 @@ Integer在JAVA内用32位表示，因此32位能表示的最大值是2147483647�
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-13</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -211,6 +213,8 @@ UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970.
 <p>最后一个问题:</p>
 <p>上面System.out.println(new Date(0))，打印出来的时间是8点而非0点，原因是存在系统时间和本地时间的问题，其实系统时间依然是0点，只不过我的电脑时区设置为东8区，故打印的结果是8点。</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -228,21 +232,51 @@ UNIX considers the epoch (when did time begin) to be midnight, January 1, 1970.
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

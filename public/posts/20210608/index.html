@@ -9,7 +9,7 @@
 npm install axios 然后在 main.js 文件中引入。
 import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.use(VueAxios, axios) 以我的一个工程目录作为实例，看一下代码。
 // ListThere.vue  // html 代码 ... &lt;div&gt;{{ info }}&lt;/div&gt; ... // js 代码 import axios from &#34;axios&#34;; export default { name: &#34;ListThere&#34;, data() { return { ... }; }, components: { ... }, methods: { ... }, mounted() { axios .get(&#34;http://api.h-camel.com/api?mod=interview&amp;ctr=issues&amp;act=today&#34;) .then((response) =&gt; (this."><meta itemprop="datePublished" content="2021-06-08T21:02:00+00:00" />
-<meta itemprop="dateModified" content="2021-06-08T21:02:00+00:00" />
+
 <meta itemprop="wordCount" content="151">
 <meta itemprop="keywords" content="ajax,vue,axios," /><meta property="og:title" content="在 vue 中使用 axios 调用数据" />
 <meta property="og:description" content="如何在 vue 中完成一次接口的调用？首选就是 axios，方便快捷又好用，支持各种 api ,封装也很方便。
@@ -20,7 +20,7 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210608/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-06-08T21:02:00+00:00" />
-<meta property="article:modified_time" content="2021-06-08T21:02:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 vue 中使用 axios 调用数据"/>
@@ -62,11 +62,11 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -103,7 +103,7 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -125,8 +125,10 @@ import axios from &#39;axios&#39; import VueAxios from &#39;vue-axios&#39; Vue.u
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-06-08</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -205,6 +207,8 @@ Vue.use(VueAxios, axios)
 }
 </code></pre></div><p>如果接口有问题，或者我们调用时代码写错了，都会给出报错提示，具体什么样的错误会有什么样的警告，需要我们一一去经历摸索。</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -226,21 +230,98 @@ Vue.use(VueAxios, axios)
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20210322/">
+							<span>ajax 和 js 事件的执行顺序</span>
+							<span class="day">(2021-03-22)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210322/">
+							<span>ajax拼接模版字符串的几种方法</span>
+							<span class="day">(2021-03-22)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210319/">
+							<span>用ajax请求获取数据</span>
+							<span class="day">(2021-03-19)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201125/">
+							<span>vue学习笔记(3)－－computed, watch，calss, style</span>
+							<span class="day">(2020-11-25)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201124/">
+							<span>vue学习笔记(2)－－vue实例和模板语法</span>
+							<span class="day">(2020-11-24)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

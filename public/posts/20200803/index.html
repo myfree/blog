@@ -14,7 +14,7 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 只要保证flex布局和隐藏的样式不在同级元素中就可以，所以在文字外部多包裹一层标签。
 可以采用下面这段代码的写法；
 &lt;p&gt; &lt;!-- 我们在这一层的标签进行flex布局 --&gt; &lt;span&gt; &lt;!-- 这一层的标签我们引入文字过长隐藏的样式 --&gt; &lt;!-- 文本 --&gt; &lt;/span&gt; &lt;/p&gt; "><meta itemprop="datePublished" content="2020-08-03T21:08:00+00:00" />
-<meta itemprop="dateModified" content="2020-08-03T21:08:00+00:00" />
+
 <meta itemprop="wordCount" content="42">
 <meta itemprop="keywords" content="css," /><meta property="og:title" content="文字溢出隐藏以及和flex冲突的问题" />
 <meta property="og:description" content="在某些段落中，页面要求文字只显示一行，但是width固定，而文字过长，就会出现一个需求，超过长度限制的文字被隐藏且显示省略号，css 支持这样的属性。
@@ -30,7 +30,7 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20200803/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-03T21:08:00+00:00" />
-<meta property="article:modified_time" content="2020-08-03T21:08:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="文字溢出隐藏以及和flex冲突的问题"/>
@@ -77,11 +77,11 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -118,7 +118,7 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -140,8 +140,10 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-08-03</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -173,6 +175,8 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
     &lt;/<span style="color:#ff79c6">span</span>&gt;
 &lt;/<span style="color:#ff79c6">p</span>&gt;
 </code></pre></div>
+
+
 			</div>
 
 			<div class="tags">
@@ -190,21 +194,51 @@ flex布局是前端写代码经常使用的一种布局方式，简单便捷且�
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

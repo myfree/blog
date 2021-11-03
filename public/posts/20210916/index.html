@@ -15,7 +15,7 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 &lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis.com&#34; data-app-id=&#34;xxxxxxxxx&#34; data-page-id=&#34;{{ PAGE_ID }}&#34; data-page-url=&#34;{{ PAGE_URL }}&#34; data-page-title=&#34;{{ PAGE_TITLE }}&#34; &gt;&lt;/div&gt; &lt;script async defer src=&#34;https://cusdis.com/js/cusdis.es.js&#34;&gt;&lt;/script&gt; 将这些代码复制到本地主题的 comments.html 文件内（就是评论的那个模块，每个主题或许都不一样，注意分辨）。
 这个时候如果你 hugo server 基本都会报错，因为没有修改 {{ PAGE_ID }} 等内容，这不是 hugo 官方提供的参数，按照我下面的格式，将 id, url, title 重写一下即可。
 &lt;div id=&#34;cusdis_thread&#34; data-host=&#34;https://cusdis."><meta itemprop="datePublished" content="2021-09-16T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-09-16T00:00:00+00:00" />
+
 <meta itemprop="wordCount" content="143">
 <meta itemprop="keywords" content="博客," /><meta property="og:title" content="hugo 如何使用 Cusdis ?" />
 <meta property="og:description" content="Cusdis 是一个界面清爽、注重隐私的轻量级 (~5kb gzip) 评论系统，可以很方便地与 React、Vue 或其他博客系统结合，并且还提供了一个后台来管理所有的评论。
@@ -32,7 +32,7 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210916/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-09-16T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hugo 如何使用 Cusdis ?"/>
@@ -80,11 +80,11 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -121,7 +121,7 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -143,8 +143,10 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-09-16</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -208,6 +210,8 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 &lt;/<span style="color:#ff79c6">script</span>&gt;
 </code></pre></div><p>。。。</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -225,21 +229,98 @@ data-app-id 是注册时自动生成的，注意保密，每个人都不一样�
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20210721/">
+							<span>关于我为什么要写博客？</span>
+							<span class="day">(2021-07-21)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210511/">
+							<span>Typecho博客搭建及优化教程(详细)</span>
+							<span class="day">(2021-05-11)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210509/">
+							<span>网站引入iframe视频，如何实现高度自适应?</span>
+							<span class="day">(2021-05-09)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210204/">
+							<span>typecho 博客小表情无法显示问题</span>
+							<span class="day">(2021-02-04)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20200614/">
+							<span>hello, world</span>
+							<span class="day">(2020-06-14)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

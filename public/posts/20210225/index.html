@@ -13,7 +13,7 @@
 配置文件 找到目录中的 up.php 配置文件，
 将下面两个地方配置好，具体的内容在代码里。
 //必选项 define(&#34;TYPE&#34;,&#34;GITHUB&#34;);//选择github //define(&#34;TYPE&#34;,&#34;GITEE&#34;);//选择gitee，如果使用gitee，需要手动建立master分支，可以看这里 https://gitee.com/help/articles/4122  define(&#34;USER&#34;,&#34;shuxhan&#34;);//你的GitHub/Gitee的用户名  define(&#34;REPO&#34;,&#34;pic-cdn&#34;);//必须是上面用户名下的 公开仓库  define(&#34;MAIL&#34;,&#34;shuxhan@163.com&#34;);//邮箱无所谓，随便写  define(&#34;TOKEN&#34;,&#34;971b0a96ff5af545d5fe081f829cf5542007e70b&#34;); // Github 去这个页面 https://github.com/settings/tokens生成一个有写权限的token（repo：Full control of private repositories 和write:packages前打勾） // gitee 去往这个页面 https://gitee."><meta itemprop="datePublished" content="2021-02-25T22:41:00+00:00" />
-<meta itemprop="dateModified" content="2021-02-25T22:41:00+00:00" />
+
 <meta itemprop="wordCount" content="112">
 <meta itemprop="keywords" content="工具," /><meta property="og:title" content="使用宝塔面板安装 autoPicCdn 图床工具" />
 <meta property="og:description" content="很多小伙伴在做个人网站或者博客时，总能用到各种各样的图床工具，毕竟在写文章的时候需要插入一些图片，我也不例外，来盘点一下之前用的工具，
@@ -28,7 +28,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210225/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-25T22:41:00+00:00" />
-<meta property="article:modified_time" content="2021-02-25T22:41:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用宝塔面板安装 autoPicCdn 图床工具"/>
@@ -74,11 +74,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -115,7 +115,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -137,8 +137,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-02-25</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -203,6 +205,8 @@ define(<span style="color:#f1fa8c">&#34;TOKEN&#34;</span>,<span style="color:#f1
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@ff0049589d0e277fa7a0ad1c935ef8cbfcfb9f2b/2021/02/25/908c287c823d4ceb7752e9071cde6737.png" alt=""></p>
 <p>通过 jsdelivr 加速，结果非常令人满意，以后就决定使用 github + jsdelivr + autoPicCdn 来做图床工具啦！</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -220,21 +224,66 @@ define(<span style="color:#f1fa8c">&#34;TOKEN&#34;</span>,<span style="color:#f1
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20201126/">
+							<span>webpack安装配置指令</span>
+							<span class="day">(2020-11-26)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

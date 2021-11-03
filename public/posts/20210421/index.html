@@ -19,7 +19,7 @@ _sidebar.md  侧边栏
 window.$docsify = { ... loadSidebar: true, ... } 如图：
 README.md  主页
 ## about  博客地址：[https://shuxhan.com](https://shuxhan.com) 作者：shuxhan 时间：2021.04.20 本文档作为博客的文章备份，如果对文章有一些其他的评论可以直接点击链接到原地址。 如图："><meta itemprop="datePublished" content="2021-04-21T20:19:00+00:00" />
-<meta itemprop="dateModified" content="2021-04-21T20:19:00+00:00" />
+
 <meta itemprop="wordCount" content="67">
 <meta itemprop="keywords" content="文档," /><meta property="og:title" content="基于 docsify 搭建一个文档" />
 <meta property="og:description" content="一、搭建 docsify 是一个类似 vuepress, gitbook 等静态文档程序，但是对比之前，个人还是喜欢 docsify 的风格和源码。不想要那么多附带的功能，能满足写文章，目录的功能就行了。
@@ -40,7 +40,7 @@ README.md  主页
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210421/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-21T20:19:00+00:00" />
-<meta property="article:modified_time" content="2021-04-21T20:19:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="基于 docsify 搭建一个文档"/>
@@ -92,11 +92,11 @@ README.md  主页
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -133,7 +133,7 @@ README.md  主页
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -155,8 +155,10 @@ README.md  主页
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-04-21</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -215,6 +217,8 @@ README.md  主页
 </code></pre></div><p>如图：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@8a0c5037e44751a245cfe74c50f94c68aa7cb773/2021/04/21/f8380a54ab6e27eab43998e28ade42d4.png" alt=""></p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -232,21 +236,51 @@ README.md  主页
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

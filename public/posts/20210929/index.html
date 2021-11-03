@@ -10,7 +10,7 @@ const randomHex = () =&gt; `#${Math.floor(Math.random() * 0xffffff).toString(16)
 接下来就需要将这个颜色传给上面的 li 标签，首先需要将所有的 li 遍历然后生成一个数组，可以使用 for 循环进行遍历。
 var arr = document.getElementsByTagName(&#39;li&#39;), temp = []; for (var i = 0; i &lt; arr.length; i&#43;&#43;) { temp.push(arr[i].innerHTML); } 然后再对数组进行循环处理，每个 li 标签要要运行一遍随机生成颜色，并且传给自身。同样也是通过 for 循环进行操作。
 var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li."><meta itemprop="datePublished" content="2021-09-29T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-09-29T00:00:00+00:00" />
+
 <meta itemprop="wordCount" content="222">
 <meta itemprop="keywords" content="js," /><meta property="og:title" content="使用js随机生成背景颜色" />
 <meta property="og:description" content="先写一个简单的 html 页面出来
@@ -22,7 +22,7 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20210929/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-09-29T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用js随机生成背景颜色"/>
@@ -65,11 +65,11 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -106,7 +106,7 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -128,8 +128,10 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-09-29</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -227,6 +229,8 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 &lt;/<span style="color:#ff79c6">html</span>&gt;
 </code></pre></div><p>如果有更好的写法，欢迎评论!</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -244,21 +248,98 @@ var li = document.getElementsByTagName(&#34;li&#34;); for (var i = 0; i &lt; li.
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20210326/">
+							<span>实时监听页面的变化</span>
+							<span class="day">(2021-03-26)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210319/">
+							<span>用ajax请求获取数据</span>
+							<span class="day">(2021-03-19)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20210118/">
+							<span>webpack 的核心概念和构建流程</span>
+							<span class="day">(2021-01-18)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201219/">
+							<span>javascript 进阶问题</span>
+							<span class="day">(2020-12-19)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201118/">
+							<span>在js中运算不能随便把value属性定义成变量</span>
+							<span class="day">(2020-11-18)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>

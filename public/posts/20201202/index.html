@@ -11,7 +11,7 @@
 简化复杂的功能 不可变性使得复杂的特性更容易实现。在后面的章节里，我们会实现一种叫做“时间旅行”的功能。“时间旅行”可以使我们回顾井字棋的历史步骤，并且可以“跳回”之前的步骤。这个功能并不是只有游戏才会用到——撤销和恢复功能在开发中是一个很常见的需求。不直接在数据上修改可以让我们追溯并复用游戏的历史记录
 跟踪数据的改变 如果直接修改数据，那么就很难跟踪到数据的改变。跟踪数据的改变需要可变对象可以与改变之前的版本进行对比，这样整个对象树都需要被遍历一次
 确定在 React 中何时重新渲染 不可变性最主要的优势在于它可以帮助我们在 React 中创建 pure components。我们可以很轻松的确定不可变数据是否发生了改变，从而确定何时对组件进行重新渲染"><meta itemprop="datePublished" content="2020-12-02T13:09:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-02T13:09:00+00:00" />
+
 <meta itemprop="wordCount" content="71">
 <meta itemprop="keywords" content="react,编程," /><meta property="og:title" content="为什么不可变性在 React 中那么重要？" />
 <meta property="og:description" content="根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据
@@ -24,7 +24,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://imzsh.com/posts/20201202/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-02T13:09:00+00:00" />
-<meta property="article:modified_time" content="2020-12-02T13:09:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="为什么不可变性在 React 中那么重要？"/>
@@ -68,11 +68,11 @@
 				</li>
 				
 				<li>
-					<a href="/link">友链</a>
+					<a href="/message">留言</a>
 				</li>
 				
 				<li>
-					<a href="/about">关于我</a>
+					<a href="/about">关于</a>
 				</li>
 				
 				
@@ -109,7 +109,7 @@
       <a target="_blnak" href="https://img.shuxhan.com"><i class="fa fa-picture-o"></i></a>
     </div>
   </div>
-
+ 
   <div class="cate">
     <div class="post">
       <h4>分类</h4>
@@ -131,8 +131,10 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-02</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
+								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
+
 				</div>
 			</div>
 
@@ -163,6 +165,8 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 <h2 id="确定在-react-中何时重新渲染">确定在 React 中何时重新渲染</h2>
 <p>不可变性最主要的优势在于它可以帮助我们在 React 中创建 pure components。我们可以很轻松的确定不可变数据是否发生了改变，从而确定何时对组件进行重新渲染</p>
 
+
+
 			</div>
 
 			<div class="tags">
@@ -182,21 +186,98 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 			<div class="back">
 				<a href="https://imzsh.com/"><span aria-hidden="true">← Back</span></a>
 			</div>
+			<hr>
+			
+			
+			
+			<div class="related-content">
+				<h4>相关文章</h4>
+				<ul>
+					
+					<li>
+						<a href="/posts/20201127/">
+							<span>关于react的一份学习计划</span>
+							<span class="day">(2020-11-27)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201122/">
+							<span>React 学习笔记（一）</span>
+							<span class="day">(2020-11-22)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201121/">
+							<span>对象，类和接口之间的关系</span>
+							<span class="day">(2020-11-21)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201119/">
+							<span>react学习路径－－怎么学习react？</span>
+							<span class="day">(2020-11-19)</span>
+						</a>
+
+					</li>
+					
+					<li>
+						<a href="/posts/20201112/">
+							<span>面向对象编程</span>
+							<span class="day">(2020-11-12)</span>
+						</a>
+
+					</li>
+					
+				</ul>
+			</div>
+			
 			<section id="comments">
-  <hr>
+  
   <div class="comments-title">
-    <h4><i class="fa fa-commenting-o"></i> Comments</h4>
+    
     <p>Leave a comment to join the discussion.</p>
   </div>
   <div id="tcomment"></div>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="https://imzsh.com/css/twikoo.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
   <script>
     twikoo.init({
       envId: 'shuxhan-2gcz5b7m7f845ec3',
       el: '#tcomment',
       path: 'window.location.pathname',
       lang: 'zh-CN',
+      onCommentLoaded: function () {
+        var commentContents = document.getElementsByClassName('tk-content');
+        for (var i = 0; i < commentContents.length; i++) {
+          var commentItem = commentContents[i];
+          var imgEls = commentItem.getElementsByTagName('img');
+          if (imgEls.length > 0) {
+            for (var j = 0; j < imgEls.length; j++) {
+              var imgEl = imgEls[j];
+              var aEl = document.createElement('a');
+              aEl.setAttribute('class', 'tk-lg-link');
+              aEl.setAttribute('href', imgEl.getAttribute('src'));
+              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+              aEl.appendChild(imgEl.cloneNode(false));
+              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+              imgEl.remove();
+            }
+            lightGallery(commentItem, {
+              selector: '.tk-lg-link',
+              share: false
+            });
+          }
+        }
+      }
     })
   </script>
 </section>
