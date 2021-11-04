@@ -137,14 +137,12 @@ function abs(x) { // 检查参数x是否为数字  if (typeof x !"/>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-04</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>当代码出现有规律的重复之后，可以利用函数，定义变量，调用方法，不用去重复的改动代码，只需要进行函数的修改。基本上所有的高级语言都支持函数，javascript也不例外，它可以像变量一样被使用，方便且强大，因此本文对js函数进行系统的学习，并在学习过程中做了详细的笔记以及样例。</p>
 <!-- more -->
 <h2 id="一函数的定义和调用">一、函数的定义和调用</h2>
@@ -559,8 +557,6 @@ name;   <span style="color:#6272a4">// &#39;小明&#39;
 </span><span style="color:#6272a4"></span>math.max.call(<span style="color:#ff79c6">null</span>, [<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">2</span>,<span style="color:#bd93f9">3</span>]);   <span style="color:#6272a4">// 3
 </span></code></pre></div><p>两者的结果是一样的，调用普通函数时，把<code>this</code>绑定为<code>null</code></p>
 
-
-
 			</div>
 
 			<div class="tags">
@@ -591,7 +587,6 @@ name;   <span style="color:#6272a4">// &#39;小明&#39;
 							<span>HTML事件属性--DOM</span>
 							<span class="day">(2020-10-29)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -599,7 +594,6 @@ name;   <span style="color:#6272a4">// &#39;小明&#39;
 							<span>js基本属性</span>
 							<span class="day">(2020-10-21)</span>
 						</a>
-
 					</li>
 					
 				</ul>

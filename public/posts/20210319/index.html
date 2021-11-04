@@ -122,14 +122,12 @@ live server 不明白的可以百度看看，也是一个技巧。"/>
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-03-19</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>通过jquery进行ajax请求数据是一种较为简便的方式，我简单写了一个本地的<code>data.json</code>文件，然后用<code>get</code>请求数据，下面是部分代码</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// ajax 请求获取数据
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> picShow(){
@@ -150,8 +148,6 @@ picShow();
 </code></pre></div><p>但是这样做有一个弊端，无法在本地预览，<strong>因为浏览器禁止客户端直接获取本地数据</strong>，这也算一个跨域问题了，不过这也是为了保证用户的安全。当然这对前端来说很不爽！</p>
 <p>其实解决的方法也很简单，通过node服务，用<code>live server</code>在本地跑一下，就可以让ajax获取数据，当然还有其他更好的解决方法，或者直接在服务器跑，通过jsonp等等。</p>
 <p><code>live server</code> 不明白的可以百度看看，也是一个技巧。</p>
-
-
 
 			</div>
 
@@ -185,7 +181,6 @@ picShow();
 							<span>webpack 的核心概念和构建流程</span>
 							<span class="day">(2021-01-18)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -193,7 +188,6 @@ picShow();
 							<span>javascript 进阶问题</span>
 							<span class="day">(2020-12-19)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -201,7 +195,6 @@ picShow();
 							<span>在js中运算不能随便把value属性定义成变量</span>
 							<span class="day">(2020-11-18)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -209,7 +202,6 @@ picShow();
 							<span>事件监听函数，以及事件的捕获和冒泡机制</span>
 							<span class="day">(2020-11-17)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -217,7 +209,6 @@ picShow();
 							<span>有关js函数，方法的一些补充总结</span>
 							<span class="day">(2020-11-14)</span>
 						</a>
-
 					</li>
 					
 				</ul>

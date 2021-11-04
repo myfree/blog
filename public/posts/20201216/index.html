@@ -140,14 +140,12 @@ class Demo extends React.Component { render() { // 事件函数  function myfun(
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-16</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>React 元素的事件处理和 DOM 元素的很相似，但是有一点语法上的不同</p>
 <p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写</p>
 <p>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串</p>
@@ -493,8 +491,6 @@ ReactDOM.render(
 <p>Vue 中渲染列表使用的是特殊指令 <code>v-for</code>，其中也有 <code>key</code> 的相关用法</p>
 <p>React 中采用的是 <code>map()</code> 方法遍历数组，然后渲染列表</p>
 
-
-
 			</div>
 
 			<div class="tags">
@@ -525,7 +521,6 @@ ReactDOM.render(
 							<span>React 中的占位符 Fragment</span>
 							<span class="day">(2020-12-12)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -533,7 +528,6 @@ ReactDOM.render(
 							<span>为什么不可变性在 React 中那么重要？</span>
 							<span class="day">(2020-12-02)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -541,7 +535,6 @@ ReactDOM.render(
 							<span>关于react的一份学习计划</span>
 							<span class="day">(2020-11-27)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -549,7 +542,6 @@ ReactDOM.render(
 							<span>React 学习笔记（一）</span>
 							<span class="day">(2020-11-22)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -557,7 +549,6 @@ ReactDOM.render(
 							<span>react学习路径－－怎么学习react？</span>
 							<span class="day">(2020-11-19)</span>
 						</a>
-
 					</li>
 					
 				</ul>

@@ -258,6 +258,7 @@ ul {
 
 .post .markdown p {
     margin-bottom: 0;
+    word-break: break-all;
 }
 
 .post .markdown ol,

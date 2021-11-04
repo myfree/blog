@@ -119,14 +119,12 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-02-03</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>在浏览掘金社区的时候，发现一个很有意思的小彩蛋，在个人主页将鼠标悬浮在头像上，会不停的加速旋转，我感觉挺有意思，f12 看看这个样式怎么写的，发现用到了 css3 的相关技术。</p>
 <p>下面是具体代码，img 是头像元素，直接写在 hover 中即可。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#ff79c6">img</span>:hover {
@@ -137,8 +135,6 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
     <span style="color:#ff79c6">transition-timing-function</span>: <span style="color:#8be9fd;font-style:italic">cubic-bezier</span>(<span style="color:#bd93f9">.34</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">.84</span>,<span style="color:#bd93f9">1</span>);
 }
 </code></pre></div><p>ps：今天是2021年2月4号，农历腊月二十三，传统的小年，祝朋友们小年愉快。不知不觉，快过年了。</p>
-
-
 
 			</div>
 
@@ -170,7 +166,6 @@ img:hover { transform: rotate(666turn); transition-delay: 1s; transition-propert
 							<span>文字溢出隐藏以及和flex冲突的问题</span>
 							<span class="day">(2020-08-03)</span>
 						</a>
-
 					</li>
 					
 				</ul>

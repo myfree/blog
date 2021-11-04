@@ -119,22 +119,18 @@ npm config delete proxy npm config delete https-proxy npm install 成功运行�
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-08-19</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p><code>npm install</code>下载依赖包的时候出现下面错误，请求失败。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm ERR! FetchError: request to https://registry.npm.taobao.org/cnpm failed, reason: connect ECONNREFUSED 127.0.0.1:1181
 </code></pre></div><p>调试过后发现是本地代理的问题，取消它。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm config delete proxy
 npm config delete https-proxy
 </code></pre></div><p><code>npm install</code> 成功运行，完毕。</p>
-
-
 
 			</div>
 

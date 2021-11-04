@@ -131,14 +131,12 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-16</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p><code>querySelector</code>和<code>querySelectorAll</code>的用法和<code>getElementBy</code>大致一样，获取的时候带上符号，getElementBy获取的是元素的<code>动态集合</code>，querySelector获取的是元素的<code>静态集合</code>。</p>
 <!-- more -->
 <p><red>但是需要注意：getElementBy系列和querySelector系列的区别</red></p>
@@ -183,8 +181,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 </span><span style="color:#6272a4"></span>&lt;/<span style="color:#ff79c6">script</span>&gt;
 </code></pre></div><p>静态集合体现在<code>querySelectorAll('li')</code>获取到ul里所有li后，不管后续再动态添加了多少li，都是不会对其参数影响</p>
 
-
-
 			</div>
 
 			<div class="tags">
@@ -215,7 +211,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 							<span>DOM－－文档对象模型</span>
 							<span class="day">(2020-11-15)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -223,7 +218,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 							<span>有关js函数，方法的一些补充总结</span>
 							<span class="day">(2020-11-14)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -231,7 +225,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 							<span>javascript——函数、变量和方法</span>
 							<span class="day">(2020-11-04)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -239,7 +232,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 							<span>HTML事件属性--DOM</span>
 							<span class="day">(2020-10-29)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -247,7 +239,6 @@ conosle.log(li.length) // 6 重新用querySelector获取一遍元素
 							<span>js基本属性</span>
 							<span class="day">(2020-10-21)</span>
 						</a>
-
 					</li>
 					
 				</ul>

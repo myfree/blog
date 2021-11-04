@@ -122,14 +122,12 @@ alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_un
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-02-04</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>typecho 博客建立完成之后，会发现如果插入一些小表情，页面渲染完之后，表情不会显示，并且表情之后的内容全部消失，导致体验感很差。</p>
 <p>表情无法显示的原因是 uft-8 编码的问题，无法识别小表情，需要将其改成 utf8mb4</p>
 <h3 id="第一步进入数据库">第一步，进入数据库</h3>
@@ -158,8 +156,6 @@ alter table typecho_comments convert to character set utf8mb4 collate utf8mb4_un
 ), Typecho_Db<span style="color:#ff79c6">::</span><span style="color:#50fa7b">READ</span> <span style="color:#ff79c6">|</span> Typecho_Db<span style="color:#ff79c6">::</span><span style="color:#50fa7b">WRITE</span>);
 Typecho_Db<span style="color:#ff79c6">::</span><span style="color:#50fa7b">set</span>(<span style="color:#8be9fd;font-style:italic">$db</span>);
 </code></pre></div><p>在文章后台重新输入小表情，然后保存回到页面，小表情成功显示了。</p>
-
-
 
 			</div>
 
@@ -193,7 +189,6 @@ Typecho_Db<span style="color:#ff79c6">::</span><span style="color:#50fa7b">set</
 							<span>hello, world</span>
 							<span class="day">(2020-06-14)</span>
 						</a>
-
 					</li>
 					
 				</ul>

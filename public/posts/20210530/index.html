@@ -131,14 +131,12 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-05-30</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>为了方便写一些东西，pc端和手机端都可以同步，我用leanote搭建了一个在线笔记，但是必须在服务器后台运行一个指令</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">base run.sh
 </code></pre></div><p>不然就访问不了端口，我也不可能时刻在终端保持指令运行，所以就需要把指令放在服务器后台，让它自己保持运行，刚好有这么一插件 <code>Supervisor管理器 2.2</code> 。</p>
@@ -151,8 +149,6 @@ base run.sh 不然就访问不了端口，我也不可能时刻在终端保持�
 <p><img src="https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn@99cbe9c312426d7f5156ec3dc05b8ab91af45461/2021/05/30/03d6e938f29023b5b16032b73143b4fa.png" alt=""></p>
 <p>让它一直保持启动状态就可以，其他的不用动，以后就不用打开服务器终端输入指令了，直接在浏览器访问端口，就可以访问网页。</p>
 <p>如果为了更方便，做个反代处理即可。</p>
-
-
 
 			</div>
 

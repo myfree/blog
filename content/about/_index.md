@@ -22,8 +22,8 @@ the road ahead will be long and our climb will be steep.
 
 **站点信息**
 
-
 名称: 求索日记  
+简介: 路漫漫其修远兮，吾将上下而求索！  
 链接: https://imzsh.com  
 头像: https://img.shuxhan.com/author.png  
 

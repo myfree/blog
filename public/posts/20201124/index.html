@@ -134,14 +134,12 @@ data: { newTodoText: &#39;&#39;, visitCount: 0, hideCompletedTods: fasle, todos:
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-24</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<h2 id="一vue实例">一、vue实例</h2>
 <h3 id="1创建vue实例">1.创建vue实例</h3>
 <p>一个vue实例应该通过<code>new Vue</code>来创建根实例，所有的 vue 组件其实都是 vue 实例</p>
@@ -333,8 +331,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 &lt;<span style="color:#ff79c6">a</span> @[<span style="color:#50fa7b">event</span>]=&#34;<span style="color:#50fa7b">doSomething</span>&#34;&gt; ... &lt;/<span style="color:#ff79c6">a</span>&gt;
 </code></pre></div><p>它们看起来可能与普通的 HTML 略有不同，但<code>:</code>与<code>@</code>对于 attribute 名来说都是合法字符，在所有支持 Vue 的浏览器都能被正确地解析。而且，它们不会出现在最终渲染的标记中。缩写语法是完全可选的，但随着你更深入地了解它们的作用，你会庆幸拥有它们。</p>
 
-
-
 			</div>
 
 			<div class="tags">
@@ -367,7 +363,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 							<span>vue学习笔记(1)－－什么是vue?</span>
 							<span class="day">(2020-11-23)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -375,7 +370,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 							<span>vue使用cli脚手架构建项目工程</span>
 							<span class="day">(2020-11-20)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -383,7 +377,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 							<span>事件监听函数，以及事件的捕获和冒泡机制</span>
 							<span class="day">(2020-11-17)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -391,7 +384,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 							<span>getElementBy系列和querySelector系列的区别</span>
 							<span class="day">(2020-11-16)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -399,7 +391,6 @@ vm.$data <span style="color:#ff79c6">===</span> data <span style="color:#6272a4"
 							<span>DOM－－文档对象模型</span>
 							<span class="day">(2020-11-15)</span>
 						</a>
-
 					</li>
 					
 				</ul>

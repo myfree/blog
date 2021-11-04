@@ -137,14 +137,12 @@ $ vue init webpack vuedemo // 名字自己根据要求起,vuedemo  Project name 
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-11-20</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>vue使用cli脚手架构建项目工程，执行的命令以及遇到的相关的问题</p>
 <!-- more -->
 <h3 id="1下载安装node">1.下载安装node</h3>
@@ -208,8 +206,6 @@ Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specificHTML
 </code></pre></div><p>打包完成之后，会在根目录下生成一个dist文件夹，需要修改配置文件的路径，可以在本地查看</p>
 <p>项目上线发布，直接上传dist到服务器即可</p>
 
-
-
 			</div>
 
 			<div class="tags">
@@ -240,7 +236,6 @@ Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specificHTML
 							<span>vue生命周期</span>
 							<span class="day">(2020-06-19)</span>
 						</a>
-
 					</li>
 					
 				</ul>

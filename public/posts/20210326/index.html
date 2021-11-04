@@ -122,14 +122,12 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2021-03-26</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>问题产生于需求，因为项目需要适配pc和移动端多套布局，所以某些元素在特定的宽度下会产生错位的现象。</p>
 <p>如果是在css中，可以很好的判断，使用媒体查询可以实时检测页面的宽度，从而给予标签不同的属性。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#ff79c6">media</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">max-width</span>:768px<span style="color:#ff79c6">)</span>{
@@ -146,8 +144,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 })
 </code></pre></div><p>具体操作的细节可以尝试一下，还是很不错的一个方法，同时注意 <code>window</code> ，因为这是个例子我就直接写了，实际编码中，慎用 
 <code>window</code> 事件。</p>
-
-
 
 			</div>
 
@@ -179,7 +175,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 							<span>用ajax请求获取数据</span>
 							<span class="day">(2021-03-19)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -187,7 +182,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 							<span>webpack 的核心概念和构建流程</span>
 							<span class="day">(2021-01-18)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -195,7 +189,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 							<span>javascript 进阶问题</span>
 							<span class="day">(2020-12-19)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -203,7 +196,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 							<span>在js中运算不能随便把value属性定义成变量</span>
 							<span class="day">(2020-11-18)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -211,7 +203,6 @@ window.addEventListener(&#39;load&#39;, function() { window.addEventListener(&#3
 							<span>事件监听函数，以及事件的捕获和冒泡机制</span>
 							<span class="day">(2020-11-17)</span>
 						</a>
-
 					</li>
 					
 				</ul>

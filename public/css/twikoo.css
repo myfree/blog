@@ -276,4 +276,8 @@
   .el-button--primary {
     position: static;
   }
+
+  .tk-meta-input .el-input[data-v-5087bc56] {
+    width: 100%;
+  }
 }

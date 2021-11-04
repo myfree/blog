@@ -131,14 +131,12 @@
 				</div>
 				<div class="post-mater">
 					<p>发布于: 2020-12-02</p>
-					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)"
-								onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
+					<p>阅读: <span id="twikoo_visitors"><a href="javascript:void(0)" onclick()="location=history.go(0) ">点击刷新</a></span> 次</p>
 					<p><a id="tocomment" href="#comments">点击评论</a></p>
-
 				</div>
 			</div>
 
-			<div class="markdown">
+			<div class="markdown gallery" id="auto-loop">
 				<p>根据官网文档来解释，为什么不可变性的概念在 React 中非常重要的原因，一般来说，有两种改变数据的方式。第一种方式是直接修改变量的值，第二种方式是使用新的一份数据替换旧数据</p>
 <!-- more -->
 <blockquote>
@@ -164,8 +162,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 <p>如果直接修改数据，那么就很难跟踪到数据的改变。跟踪数据的改变需要可变对象可以与改变之前的版本进行对比，这样整个对象树都需要被遍历一次</p>
 <h2 id="确定在-react-中何时重新渲染">确定在 React 中何时重新渲染</h2>
 <p>不可变性最主要的优势在于它可以帮助我们在 React 中创建 pure components。我们可以很轻松的确定不可变数据是否发生了改变，从而确定何时对组件进行重新渲染</p>
-
-
 
 			</div>
 
@@ -199,7 +195,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 							<span>关于react的一份学习计划</span>
 							<span class="day">(2020-11-27)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -207,7 +202,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 							<span>React 学习笔记（一）</span>
 							<span class="day">(2020-11-22)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -215,7 +209,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 							<span>对象，类和接口之间的关系</span>
 							<span class="day">(2020-11-21)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -223,7 +216,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 							<span>react学习路径－－怎么学习react？</span>
 							<span class="day">(2020-11-19)</span>
 						</a>
-
 					</li>
 					
 					<li>
@@ -231,7 +223,6 @@ player.score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2<
 							<span>面向对象编程</span>
 							<span class="day">(2020-11-12)</span>
 						</a>
-
 					</li>
 					
 				</ul>
